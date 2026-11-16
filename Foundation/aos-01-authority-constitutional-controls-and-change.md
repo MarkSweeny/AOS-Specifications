@@ -1,0 +1,838 @@
+# AOS-01 — Authority, constitutional controls and change
+
+Document: aos-01-authority-constitutional-controls-and-change · Source revision or record: v0.12
+
+AOS Specifications v1.0 · Edition dated 3 November 2026
+
+Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.
+
+AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/
+
+Preserve third-party credits. Referenced external works remain subject to their own terms.
+
+Canonical collection: https://www.governanceintelligence.co.uk/aos
+
+Publication copy with editorial notices, public references and disclosure edits where applicable.
+
+**DEC-104 adopted — 29 October 2026:** Current revision 0.12. Each mandatory protected-finding category requires assessed technical-failure and implicated-person interference arrangements with an appropriately independent authorised alternative and no implicated sole release gatekeeper. [Decision/amendment record](../Supporting-Specifications/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29.md). External reporting is conditional on justified lawful authority, not a default. Exact profiles/permissions, protected_finding v0.3 compatibility and actual evidence remain gates; amended wording retains ordinary separate review and cases are planned/unexecuted. Earlier contrary or narrower baselines are history for this scope.
+
+**DEC-103 adopted — 29 October 2026:** Current revision 0.11. Decision validity/effective time, attributable evidence/authentication, minutes approval and permission to execute are separate. DEC-087 is partly superseded; [decision/amendment and legal-source record](../Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.md). No universal later-minutes or second decision-record approval gate. Exact instruments/evidence policy, KX-06 v0.3 compatibility and ordinary separate review/readiness gates remain required; cases unexecuted. Earlier contrary wording is historical only where explicitly identified.
+
+**DEC-102 adopted — 29 October 2026:** Mark approved demonstrated adequacy of organisation-defined classifications/settings against governing constraints. Current document revision 0.10; see the [decision and amendment record](../Supporting-Specifications/aos-dec-102-classification-and-configuration-adequacy-2026-10-29.md). Earlier baselines are dated history. DEC-099–101 retained; detailed amended requirements remain subject to separate review/readiness gates and cases remain planned/unexecuted.
+
+**DEC-100 adopted — 29 October 2026:** Mark approved separate advance-authorised minimum control-metadata access. Current document revision 0.9; this notice supersedes earlier baseline notices for the affected scope only. See the [decision and amendment record](../Supporting-Specifications/aos-dec-100-control-metadata-access-2026-10-29.md). DEC-099 remains approved. Requirements remain proposed wording implementing the approved direction; cases remain planned/unexecuted and ordinary separate review/readiness gates apply.
+
+**Editorial edition — 29 October 2026:** Mark authorised documentary corrections D-01–09. This edition reconciles navigation, count/revision pointers, conformance links and historical scope labels; existing technical meanings, requirement/IF/decision identities and proposed/planned status are retained. The internal version below identifies the retained functional baseline; this dated editorial edition identifies the corrected document. See the [current document inventory](../Supporting-Specifications/aos-current-document-inventory-2026-10-29.md) and [correction record](../Supporting-Specifications/aos-documentary-corrections-2026-10-29.md). Earlier dated adoption baselines are historical snapshots; exact logical family/view revisions are in Exchange Register §4.
+
+| Document control | Value |
+| --- | --- |
+| Version / date | 0.12 / 29 October 2026 |
+| Status | Review draft; all component requirement wording proposed |
+| Architecture baseline | AOS-00/Map v0.25, DEC-001–089; AOS-30 functional alignment 7 October 2026 |
+| Source baseline | Foundational Principles v4; AOS Reasoning Principles v6; Governance Intelligence Tests, controlled supplied source set |
+| Accountable component owner / custodian | Roles required; appointments unresolved |
+| Project baseline approver | Mark Sweeny |
+| Operational approvers | Relevant organisation's board and authorised governance/operational roles, as specified below; actual appointments and instruments unresolved |
+| Author | Codex, at Mark's request |
+| Reviewer | Independent project review deferred; separate reviewer unassigned |
+| Quality / template | AOS-QS v0.1; component template v0.4 |
+| Release scope | Whole-component logical specification; bounded implementation not authorised |
+| Readiness | Author-reviewed draft; no formal G1/G2/G3/G4 approval |
+| Approval record | Existing architectural directions retain their standing; no whole-document, exact requirement, build or activation approval |
+| Change history | 0.1 initial principle-derived component draft. 0.2 incorporates approved DEC-042–044; clarifies REQ-024, adds REQ-039–044 and VER-019/020, extends VER-012 and distinguishes settled direction from residual detailed dependencies. 0.3 — 6 October: common decision-baseline/status/interface reconciliation (KR-09 label portion), preserves historical approvals and proposed/planned records; register formatting repaired where applicable (KR-10); see §19.1.  0.4 — DEC-062–066 common exchange adoption; five new proposed adoption REQs/six planned cases; AOS-03 REQ-040 sequencing clarified where applicable.  0.5 — DEC-067–072 control coordination/withholding notification; eight proposed REQs/eight planned cases and reciprocal source/field adoption; original records preserved. 0.6 — DEC-073–078 protected reporting/recovery and standards provenance; six proposed REQs/six planned VERs; prior records preserved.  v0.7 — DEC-086 external-research support, reciprocal AOS-04/02/01 allocation and own component profile; previous records preserved. 7 October — authorised AOS-30 functional adoption, Chair/board approval propagation and material-correction alignment; no new identifiers or operating power. |
+
+### Current catalogue inventory — editorial reconciliation, 29 October 2026
+
+The normative tables contain **70 retained numbered requirement records** and **46 planned verification case identities**. These are catalogue counts, not independent obligations, active-scope coverage, executed tests or accepted results. Earlier totals in dated adoption supplements describe those steps only. The [current document inventory](../Supporting-Specifications/aos-current-document-inventory-2026-10-29.md) records the suite baseline and count method.
+
+## 1. Purpose and scope
+
+### 1.1 Purpose
+
+AOS-01 defines how organisational authority is represented, validated, changed, restricted and evidenced across the AOS. Its purpose is to preserve the distinction between the organisation's human-conferred purpose and the functions its software can perform.
+
+An agent that can execute an operation is not thereby entitled to execute it. A technically successful action is not evidence of valid delegation. AOS-01 supplies the shared authority semantics against which executors are controlled; it does not replace the people or institutions whose powers make the authority valid.
+
+### 1.2 Architectural problem
+
+Without this component, each intelligence or supplier could infer permission from its own interpretation, technical access, previous actions or operational usefulness. Accumulated interpretation could silently become constitutional authority. The system could also withhold a prohibited external action while failing to route a separately permitted internal escalation.
+
+### 1.3 Intended outcome
+
+For a proposed action, the AOS can establish which current instrument permits or prohibits it, the applicable domain/context/conditions, the accountable human role, and any reserved human decision. Uncertainty withholds dependent execution. Changes follow the required approval route and produce reconstructable evidence.
+
+### 1.4 Scope
+
+Authority instruments; permission and prohibition semantics; Mode 1 parameters and Mode 2 reservation; organisation-approved consequential-action classification; human/agent delegation; contextual determination; constitutional and schedule change; suspension, revocation and reinstatement policy; protected escalation obligations; activation conditions; accountability and explanation interfaces.
+
+### 1.5 Exclusions
+
+AOS-02 owns common record structures and provenance. AOS-03 owns identity/access/consent/data-use determinations. AOS-04 defines agent execution behaviour; AOS-05 runtime enforcement and resilience. AOS-13 tracks operational workflows; AOS-14 governs external exchange; AOS-20–25 interpret, prepare, present and review governance material. AOS-30 supports human decisions; AOS-40 owns assembled acceptance and commissioning.
+
+Repair dates, completion evidence, contact-channel selection, procurement limits and employment procedures belong to their relevant profiles/components. They do not define universal authority principles.
+
+## 2. Authority and sources
+
+### 2.1 Source standing
+
+FP v4 and RP v6 govern. AOS-00 records approved design directions and proposed system requirements. GT supplies governance assessment tests, not a software certification scheme. Books and working notes remain explanatory/proposal sources within that hierarchy.
+
+Sources read for this draft: FP v4 and RP v6 text extracted from the controlled supplied DOCX files; GT supplied text; AOS-00 v0.10, Map v0.7, AOS-QS v0.1 and template v0.3; Shared Contracts, Core Record Contracts and Operational Profiles v0.1 with their 4–5 October dispositions. The original source manifest remains unchanged. No new legal or supplier standard is adopted or verified here.
+
+### 2.2 Approved architecture directions used
+
+| Direction | Controlling locator | Meaning for AOS-01 |
+| --- | --- | --- |
+| Non-waivable core; human adjudication; withhold uncertain authority | DEC-003/004/006; REQ-005–007/023/031/032 | Operational configuration cannot waive foundational constraints |
+| GI prepares; humans adjudicate; shared controls enforce | DEC-005; REQ-040 | An intelligence cannot approve its own interpretation as permission |
+| Delegation governance; authoritative human records | DEC-007/008/009; REQ-024/025/033 | Grants/expansions need formal human approval; authoritative decisions require empowered human approval |
+| Purpose and schedule protection | DEC-024/025; REQ-045–048 | Board-only telos amendment; executive proposal, Committee review, board sign-off for schedule amendment; authorised temporary suspension/reinstatement |
+| Consequential classification | DEC-021; REQ-049 | Organisation supplies classification within non-waivable core |
+| Explanation; current control; correction; reconciliation | DEC-027–030 | Explain constraints by default; check current authority before effect; reassess affected work; reconcile unknown effects |
+| Handoff and fallback | DEC-033/034 | Acknowledgement of responsibility is distinct from delivery; fallback needs its own authority |
+| Resident-agreed channels | DEC-041 | Applicable resident communications require evidenced agreement as well as permission; AOS-11/03 own the detail |
+
+DEC-031/032/035–040 supply demonstration/evidence/profile directions. They are not general rules that all expenditure or every operational promise must always receive per-action human approval. Their approved overdue-repair scope remains intact.
+
+### 2.3 Vocabulary and authority boundaries
+
+**Authority instrument:** an approved governance record defining powers, obligations, prohibitions and applicable conditions. **Delegation:** a specific power conferred by an empowered human institution or role; no subdelegation right is inferred. **Determination:** an evidenced result for an exact proposed action/context, not a new grant. **Activation:** making approved configured capability available after prerequisites; approval and activation are distinct.
+
+**Mode 1:** operation within board-authorised governance parameters. **Mode 2:** human adjudication of incommensurable values, permanently reserved. **Consequential classification:** an organisation's operational classification; it does not redefine or waive Mode 2.
+
+**Suspension:** temporary removal of usable permission under the approved schedule. **Revocation:** withdrawal under an approved withdrawal instrument/process; detailed commissioning procedure remains open. **Reinstatement:** restoration through the approved schedule route, not a technical restart.
+
+Trust boundaries: organisational instance; human institution versus software; requester versus independent control; governance approval versus technical administration; authority versus data use; internal escalation versus external contact; interpretation/precedent versus constitutional amendment.
+
+### DEC-100 — independent minimum control-metadata access
+
+The organisation shall authorise in advance a separate, tightly bounded permission for its checking services to read only the minimum control information necessary to assess a request. That permission must be verifiable independently of whether the requested business action is allowed. It grants no wider access to resident, employee or other operational information. If the required permission or current control information cannot be verified, the affected action remains withheld and the uncertainty is referred for accountable handling.
+
+The control profile identifies the checking service/identity, approving authority and instrument, organisation, permitted metadata records/fields and read operations, assessment purpose, validity/withdrawal/currentness evidence and accountable review route. A service does not obtain this permission from the business request, a model instruction or a favourable result issued by the other check. AOS-01 owns authority for the checking operation; AOS-03 owns permitted metadata use; AOS-02 preserves controlled records; AOS-05 enforces the declared access boundary. Startup and recovery must establish the advance permission/current state through an independently usable approved verification path; no unbounded bootstrap identity, data access or outage privilege is inferred. Separately permitted service/human fallback retains its own authority and duties. Exact profile, verification mechanism and compatibility/evidence are prerequisites before dependent reliance; this direction supplies no credentials, wire schema or live operating permission.
+
+### DEC-102 — classification and configuration adequacy
+
+Organisation-defined classifications and settings must demonstrate that they preserve AOS governing constraints before they can be relied upon. Accountable competent assessment is required before use and after material changes; authorisation alone does not establish adequacy. Missing or inadequate settings block the affected reliance and require owned resolution.
+
+Classification considers actual effects on organisational commitments, protected information, rights, services, financial exposure and resource use, including cumulative effects; financial and resource consequences remain distinct. Settings cannot transfer permanently reserved human judgement to automation, remove mandatory reporting, manufacture data-use permission or bypass a prohibition. “Consequential” triggers the applicable controls; it does not automatically require individual human approval for every properly delegated routine action. Organisations retain responsibility for justified local values and legitimate powers. No universal threshold, duration, moral weight or permission is supplied by this decision.
+
+The profile identifies its owner/approver and competent assessor, scope, governing constraints, chosen values/class definitions and reasons, financial/resource units and aggregation assumptions, normal/boundary/cumulative/adverse examples, assessment evidence/limitations, material-change triggers and action on missing or inadequate settings. An AI recommendation or approval record is insufficient by itself. Actual effect and applicable constraints govern assessment, not the label assigned to an operation. A smaller action cannot evade a bound by splitting related work; mandatory reporting and reserved judgement remain protected. AOS-01 owns the governing validation obligation with relevant domain/control owners; AOS-40 assesses scope-specific gate evidence; profile owners supply the actual configuration and review. Dependent effects remain withheld where required, while separately permitted service/reporting duties retain their own powers and owners.
+
+### DEC-104 — protected reporting under failure and implicated-person interference
+
+Each mandatory protected-finding category shall have an approved reporting arrangement assessed against both technical failure and interference by implicated people. The profile shall identify the intended recipient, possible conflicts and an appropriately independent authorised alternative; an implicated person shall not be the sole gatekeeper deciding whether the required finding reaches its authorised audience.
+
+Authority/use permissions, minimum report content, recipient verification, custody, route/change dependencies, tracking ownership, acceptance, cover and escalation are established in advance. An external route is included where justified and lawfully authorised; external reporting is not a universal default and a finding creates no extra disclosure power. Planned exercises address failed infrastructure, unavailable/implicated recipients, apparent alternatives controlled by the same implicated gatekeeper and attempted suppression. Missing adequate arrangements remain an explicit owned gap, prevent claims of operational protected-reporting assurance and withhold affected dependent reliance under existing gates; they do not create false delivery, ownership transfer or blanket shutdown of separately authorised service. Original tracking duty persists until actual scoped acceptance.
+
+The organisation’s profile binds each required finding class to normal/alternate authorised audiences, conflict criteria/evidence and accountable assessment, disclosure basis/minimal payload, independently verifiable recipients/permissions, credentials/custody and route/reconfiguration controls, failure/compromise assumptions, tracking/cover/escalation, human fallback, evidence and review triggers. Test both infrastructure/common-dependency independence and organisational release/recipient/custody control; neither implies the other. No administrator, executive sign-off or report-validation step may silently remove a required duty. The declared threat/governance scope and residual limitations must be visible: this is not an unlimited guarantee against every holder of legal/constitutional change powers. Inadequacy returns to an empowered accountable reviewer; the reporting agent cannot invent a recipient or grant itself onward-disclosure authority.
+
+## 3. Responsibilities
+
+| Responsibility | AOS-01 owns | Other authoritative responsibility |
+| --- | --- | --- |
+| Governance authority | Meaning and validation of instruments, grants, limits and reserved decisions | Organisation creates lawful valid powers; AOS-30 records approved decisions |
+| Determination | Context-bound permission/prohibition result | AOS-03 authenticates actors and determines data use; AOS-04/05 prevent dependent execution |
+| Change | Required approval sequence and activation conditions | AOS-02 versioned records; AOS-30 approval workflow; platform implements activation |
+| Restriction | Suspension/revocation/reinstatement semantics | Authorised people decide; AOS-04/05 enforce and AOS-13 handles affected tasks |
+| Protected escalation | Required classes/audiences and change protection | GI/domain charters define findings; AOS-13/30 track accountable handoff; AOS-05 provides enforcement assurance |
+| Boundary defence | Evidence needed for Mode 1/2 and constitutional review | Board judges; AOS-25 monitors; AOS-40 tests system behaviour |
+
+The project owner approves specification direction, not live powers for a future organisation. A custodian manages records only within separately conferred powers. IT administration does not imply authority to grant, expand or reinstate delegation.
+
+### 3.1 Component external-research responsibility
+
+Under DEC-086, AOS-01 has an assigned research agent/capability with a controlled profile inheriting AOS-04 v0.7 §§3.1/6.6. Its remit covers external authority/delegation and constitutional-change practices, regulatory governance expectations and authority-control incidents relevant to its own function and specification. The accountable component owner owns relevance and substantive implications. External access/source verification follows AOS-14; common evidence/profile/run/finding/disposition views follow AOS-02 v0.7 §6.6. A shared research service may execute the profile, retaining distinct remit, coverage and accountable review. Sources, jurisdictions, cadence/triggers, rubric, recipients/deadlines/cover and appointments remain profile dependencies; no activation or legal finding is claimed. Internal control/record monitoring remains separately specified.
+
+## 4. Capabilities, functions and requirements
+
+### 4.1 Capabilities
+
+All IDs in this section carry prefix AOS-01.
+
+| CAP ID | Outcome | FUN IDs |
+| --- | --- | --- |
+| CAP-001 | Controlled instruments and classifications | FUN-001/002 |
+| CAP-002 | Current contextual authority determination | FUN-003/004 |
+| CAP-003 | Protected change and activation | FUN-005/006 |
+| CAP-004 | Controlled restriction and reinstatement | FUN-007/008 |
+| CAP-005 | Accountable protected referral and explanation | FUN-009/010 |
+| CAP-006 | Govern research delegation and candidate-change powers, including AOS-01’s own external-research remit | FUN-011 |
+
+
+### 4.2 Functions
+
+| FUN ID | Trigger / inputs | Behaviour and output | Authority / uncertainty / failure |
+| --- | --- | --- | --- |
+| FUN-001 | Proposed instrument plus approval/provenance | Validate organisation, issuer powers, exact revision and applicable constraints; admitted draft or validated approved instrument | No self-approval; conflicting/missing authority stays unresolved |
+| FUN-002 | Proposed action classification/Mode 1 parameter | Validate board-authorised instrument and reserved boundaries; configuration result | No inferred threshold; invalid/unapproved configuration cannot enable affected capability |
+| FUN-003 | Exact action request with actor/context/instruments | Evaluate explicit grant, prohibitions, conditions, reservations and current restrictions; REC-A result | No allow from absence of prohibition; missing/conflicting material input produces unresolved |
+| FUN-004 | Execution checkpoint or material evidence/control change | Revalidate affected action revision and current restrictions; fresh result/invalidation evidence | Last enforceable point profile required; no instantaneous-revocation claim |
+| FUN-005 | Proposed telos or schedule amendment | Verify required human approval sequence and exact proposed version; eligible/rejected/pending result | No activation from analytical recommendation or draft decision |
+| FUN-006 | Activation request for approved version | Validate effective period, compatible controls/configuration and release prerequisites; activation evidence | Approved-but-not-active remains distinct; failed partial activation cannot claim whole-path readiness |
+| FUN-007 | Authorised suspension/withdrawal request | Validate scope and suspender/withdrawer powers; restrict affected delegation and notify control dependencies | No new grant; evidence/control delivery limits reported |
+| FUN-008 | Reinstatement request | Validate approved route, current conditions and exact scope; permitted restoration or withheld result | Restart and elapsed timeout cannot supply approval |
+| FUN-009 | Unresolved authority or protected finding | Supply separately authorised internal referral and required audience constraints | Cannot invent recipient; delivery is not acknowledgement; failures remain visible |
+| FUN-010 | Constraint result or review request | Supply permitted explanation, source/version and referral route or recorded reviewed exception | Disclosure restricted by AOS-03; exception never waives enforcement |
+| FUN-011 | Research profile/change finding and human disposition | Validate remit/decision powers; retain candidate versus approved version and authorised response | No authority from source publication, proposal acceptance or task configuration; current controls apply |
+
+
+### 4.3 Requirement register
+
+All IDs below have prefix **AOS-01-REQ-**. Each is a proposed component obligation unless marked I (interface) or D (design constraint). Source markers S/E mean source-derived translation/engineering derivation, not approval status.
+
+Shared metadata: origin v0.1, 5 October 2026; **proposed**; release whole-component logical baseline, implementation scope unapproved; owner AOS-01 component custodian (unassigned); project approver Mark; operational instruments require the organisation's board/authorised roles. Change history initial derivation. Blocking dependencies are in §§6/16/17; VER identifiers have prefix AOS-01-VER-. Parent REQs are proposed AOS-00 v0.11 wording. REQ-001–038 originated in v0.1; REQ-024 is clarified in v0.2. REQ-039–044 originate in v0.2, 5 October, with the same proposed status and shared metadata. DEC directions retain their recorded approval standing.
+
+| ID | Proposed obligation | Category / exact derivation and rationale | FUN / dependency | VER |
+| --- | --- | --- | --- | --- |
+| 001 | The authority control shall admit an instrument as authoritative only with evidence of approval by an issuer empowered for its scope. | governance/S; RP v6 domain 8 “The agentic delegation framework is a governance document…”; REQ-025; valid source of power | 001; ISS-001/002 | 001 |
+| 002 | An authority instrument shall identify its organisation instance and exact effective revision. | I/identity/E; AOS-00 REQ-035, REC-R01; avoid cross-instance/stale grants | 001; CON-002 | 001 |
+| 003 | A grant shall identify the permitted action scope, domain, context and conditions. | I/delegation/S; RP8 “Agent authority is domain-specific…”; REQ-006; explicit bounds | 001/003; ISS-002 | 002 |
+| 004 | A delegation instrument shall identify its applicable explicit prohibitions. | I/delegation/S; RP8 “Agents operate under explicitly delegated authority…”; prohibit implied exceptions | 001/003; ISS-002 | 002 |
+| 005 | An agent action authority result shall require an explicit applicable permission. | authority/S; RP8 same principle; REQ-006; no grant by silence | 003; CON-001 | 002 |
+| 006 | An authority result shall not permit an action contrary to an applicable non-waivable constraint. | authority/S; DEC-004, REQ-031; no configuration waiver | 003; ISS-002 | 003 |
+| 007 | The authority control shall withhold an allow result when material authority evidence is missing or inconsistent. | authority/E; DEC-003, REQ-007; no uncertain grant | 003; ISS-003 | 004 |
+| 008 | Each authority determination shall bind to the exact action revision and material context evaluated. | I/authority/E; REC-R06, SC-R04, RP8 contextual principle; no substitution | 003/004; CON-001 | 005 |
+| 009 | Each allow result shall identify the accountable human role for the governing delegation. | I/accountability/S; RP1 “The ‘AI said so’ test…” and RP7 audit principle; REQ-012 | 003; ISS-001 | 001/005 |
+| 010 | The authority control shall invalidate an affected pending determination when a material change defeats its governing conditions. | authority/E; DEC-028/029, REC-R08; selective reassessment | 004; ISS-003/004 | 005/006 |
+| 011 | The authority service shall provide current determination evidence at the profile-defined last enforceable checkpoint before consequential effect. | authority/S; DEC-028, REQ-040; current permission | 004; ISS-004 | 006 |
+| 012 | The authority control shall not grant data-use permission by virtue of an action delegation. | boundary/E; REQ-004/040, REC-R15; independent AOS-03 determination | 003; CON-001/004 | 007 |
+| 013 | The authority control shall reserve adjudication between incommensurable values to authorised humans. | governance/S; FP2; RP2 “Mode 2 is permanently human”; REQ-005 | 002/003; ISS-002/005 | 008 |
+| 014 | A Mode 1 parameter shall require a documented board-authorised governance instrument before use. | governance/S; RP2 “Every Mode 1 boundary is a governance instrument…”; no technical appetite setting | 002; ISS-002/005 | 008 |
+| 015 | The action capability activation check shall require the organisation's approved consequential-action classification and evidence that it satisfies the governing-constraint adequacy assessment under DEC-102. | governance/S; DEC-021/102, REQ-049; no universal threshold | 002/006; ISS-005 | 008/014 |
+| 016 | The authority control shall reject delegation of the board's telos-amendment decision. | governance/S; DEC-024, REQ-045; board acting as body | 005; CON-003 | 009 |
+| 017 | A telos amendment shall become eligible for activation only with board-body approval of that exact amendment. | change/S; DEC-024, REQ-045; exact human decision | 005/006; ISS-006 | 009 |
+| 018 | A schedule amendment shall become eligible for activation only after executive proposal, Committee review and board sign-off of the same amendment. | change/S; DEC-025, REQ-046; protected sequence | 005/006; ISS-006 | 010 |
+| 019 | A grant or expansion of agent delegation shall require the formal human approval route applicable to the equivalent human delegation. | change/S; DEC-007, REQ-025; agent powers are governance | 005; ISS-002/006 | 010 |
+| 020 | The authority control shall reject analytical learning or accumulated precedent as approval to amend authority. | change/S; RP6 “Where the organisation's purpose is interpreted…”; REQ-015; no silent drift | 005; CON-003 | 011 |
+| 021 | The authority service shall permit temporary suspension only by a person or role authorised for that scope in the operational schedule. | restriction/S; DEC-025, REQ-047; restriction without expansion | 007; ISS-001/007 | 012 |
+| 022 | A suspended delegation shall remain unusable for its affected action scope until valid reinstatement. | restriction/E; DEC-025, REC-R20; no stale grant | 003/007/008; CON-002 | 006/012 |
+| 023 | Reinstatement shall require the process approved in the operational schedule. | restriction/S; DEC-025, REQ-048; no administrator assumption | 008; ISS-007 | 012 |
+| 024 | Permanent withdrawal of an individual grant shall require withdrawal powers explicitly conferred by the operational schedule. | restriction/S; DEC-043, RP8 explicit delegation; distinct from schedule amendment | 007; ISS-007 | 012 |
+| 025 | Authority change notification shall identify affected scope, exact version and effective restriction boundary. | I/change/E; QS-12, REC-A §4 lifecycle; ordered current control | 004/007; CON-002 | 006/013 |
+| 026 | An unresolved authority referral shall use an independently authorised internal route. | escalation/S; RP8 “Internal escalation…”; REQ-009/023; no invented emergency permission | 009; ISS-008 | 004/013 |
+| 027 | The authority profile shall identify findings with protected delivery obligations and their required audiences. | governance/S; RP8 “Certain classes of finding must reach…”; constitutional operating condition | 001/009; ISS-009 | 013 |
+| 028 | Ordinary administration shall not disable a protected delivery obligation outside its approved governance change route. | protection/E; RP8 protected-finding principle; REQ-040; mechanism/threat model open | 005/009; ISS-009 | 013 |
+| 029 | An authority result shall explain constraint meaning, authority basis and referral route unless a recorded reviewed exception applies. | I/explanation/S; DEC-027, REC-R10; legibility within disclosure controls | 010; ISS-010 | 015 |
+| 030 | An explanation exception shall not change the underlying permission or prohibition. | authority/S; DEC-027; no waiver through redaction | 003/010; ISS-010 | 015 |
+| 031 | Approval status shall remain distinguishable from activation status. | I/change/E; QS-09/25, REC-A lifecycle; no draft activation | 006; CON-002/003 | 014 |
+| 032 | Activation shall require validation of the applicable approved organisation authority configuration. | authority/S; DEC-006, REQ-032; configured permission before capability | 006; ISS-002/004/005 | 014 |
+| 033 | Authority records shall preserve earlier revisions and amendment evidence under approved retention/access rules. | I/evidence/E; QS-13/19, REQ-012; reconstructability without unlimited retention | 001/005/007; CON-002 | 016 |
+| 034 | A human decision used as authority shall identify the decision-maker's powers for the exact decision scope. | I/approval/S; DEC-008, REQ-024, REC-R09; signature is not unlimited power | 001/003/005; CON-003 | 001/009 |
+| 035 | AOS-01 shall not accept AI observation or real-time capture of board deliberation as an authority-record input. | D/governance/S; RP2 boardroom principle; REQ-008; post-meeting approved record only | 001; CON-003 | 009 |
+| 036 | A consequential repetition request shall require the approved reconciliation result before a new authority determination permits repeat. | recovery/E; DEC-030, REC-R19; authority is not proof of no prior effect | 003; CON-004 | 017 |
+| 037 | AOS-01 shall supply governance review evidence for board determinations defending the Mode 2 boundary on the approved cycle. | governance/S; RP2 “The Mode 1/Mode 2 boundary is under continuous pressure…”; no silent erosion | 002/010; ISS-005; AOS-25/30 | 018 |
+| 038 | A delegation affecting external contact shall reference the applicable human authorisation and resident-channel agreement where relevant. | authority/S; RP8 external-action principle; DEC-041; permission and agreement distinct | 003; CON-004; AOS-03/11/14 | 007/017 |
+| 039 | Agent-to-agent delegation shall require explicit permission to delegate in the originating agent’s approved instrument. | authority/S; DEC-042; no inferred delegation | 003; ISS-002 | 019 |
+| 040 | A receiving agent’s authority shall be established independently within the originating delegation’s scope and restrictions. | authority/S; DEC-042; no expanded downstream powers | 003; CON-001/002 | 019 |
+| 041 | An agent-to-agent delegation shall retain its originating and receiving authority trail. | authority/S; DEC-042; accountable lineage | 001/003; CON-002 | 019 |
+| 042 | Task assignment shall not constitute transfer of authority. | authority/S; DEC-042; capability and permission distinct | 003; CON-001 | 019 |
+| 043 | An applicable explicit prohibition shall prevent an allow result for the affected action. | authority/S; DEC-044; prohibition cannot be ignored | 003; ISS-002 | 020 |
+| 044 | The authority control shall not invent instrument precedence to resolve an unresolved conflict. | authority/S; DEC-044; refer unresolved authority under REQ-007/026 | 003/009; ISS-002 | 020 |
+| 045 | Each component exchange shall reference the common definition, exact revision and profiles allocated to its CON in the Kernel Exchange Register. | I/S; KXR-01/08; DEC-002/065; QS-12/21 | §6.3/§19.2; AOS-02 with semantic owner; register v0.1 | 021/025 |
+| 046 | A receiving exchange shall reject or hold unresolved an unsupported revision unless an explicitly reviewed translation preserves required meaning and restrictions and declares accepted loss. | I/S; KXR-02/07; DEC-065; FP4/6; RP9 | §6.3/§19.2; AOS-02 with semantic owner; register v0.1 | 021 |
+| 047 | Reliance on a fact for a conclusion or action shall evaluate its linked assurance against the required profile for that exact fact revision and intended use. | I/S; KXR-04; DEC-062/063; FP4/6; RP7 | §6.3/§19.2; AOS-02 with semantic owner; register v0.1 | 022/026 |
+| 048 | An exchange acknowledgement shall identify its actually evidenced stage without implying subsequent application, human responsibility or effect. | I/S; KXR-06; DEC-066; RP1; GT M1.13 | §6.3/§19.2; AOS-02 with semantic owner; register v0.1 | 024 |
+| 049 | A checkpoint or later enforcement/effect record shall link to the exact original permission-evaluation revision without rewriting its original result or presenting a pending evidence link as enforcement proof. | I/S; KXR-05; DEC-064; RP7 auditability | §6.3/§19.2; AOS-02 with semantic owner; register v0.1 | 023 |
+| 050 | The authority service shall supply exact current authority and restriction evidence for the operation-bound combined checkpoint. | I/S; DEC-067; KCR-01; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 027/028 |
+| 051 | Authority activation shall remain incomplete for affected functions until every required dependency evidences compatible applied state, while effective restrictions prevent dependent permission. | I/S; DEC-068; KCR-02; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 028 |
+| 052 | An authority change shall identify affected work and track required consumer application or an owned unresolved exception. | I/S; DEC-069; KCR-03; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 029/030 |
+| 053 | Authority instruments for cumulative bounds shall identify approved linked-work scopes, units, values and review powers. | I/S; DEC-070; KCR-04; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 031/032 |
+| 054 | An authority result for cumulatively bounded work shall not be treated as proof of reserved capacity. | I/S; DEC-071; KCR-05; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 031 |
+| 055 | Authority reconsideration of uncertain effects shall preserve their accounting exposure until unused capacity is evidenced. | I/S; DEC-071; KCR-06; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 032 |
+| 056 | An authority-related withheld operation shall retain its separately authorised notification and acknowledged-handoff obligation. | I/S; DEC-071; KCR-07; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 033/034 |
+| 057 | Brake release requiring organisational power shall use the approved powers and reconciled current evidence without authorising automatic replay. | I/S; DEC-072; KCR-08; FP4/5/6/7/10; RP1/7/8/9 | §6.4/§19.3; AOS-01–05 respective owner; Control Coordination v0.1 | 030/034 |
+| 058 | Authority governance shall establish advance powers for each mandatory protected-finding class’s approved normal/independent alternative reporting arrangement, assessed against technical failure and implicated-person interference without an implicated sole release gatekeeper. | I/S; DEC-073/104; KPR-01; STD-05 CP-8/CP-8(2)/(3), IR-6/IR-8; STD-01/02/03/04 scope alignment | §6.5/§19.4; Protected Reporting and Recovery v0.2; AOS-01-CON-001/002/003/004 | 035 |
+| 059 | Advance authority for minimal failure reporting shall be bounded by scope, recipients, validity and separately permitted data use. | I/S; DEC-074; KPR-02; STD-05 AC-6; STD-03/04 scope alignment | §6.5/§19.4; Protected Reporting and Recovery v0.1; AOS-01-CON-001/002/003/004 | 036 |
+| 060 | Authority-related protected handoff shall retain its tracking owner until explicit responsibility acceptance and preserve failed-route escalation and cover duties. | I/S; DEC-075; KPR-03; STD-05 IR-6/IR-8; STD-01 scope alignment; AOS-specific acceptance/continuing duty | §6.5/§19.4; Protected Reporting and Recovery v0.1; AOS-01-CON-001/002/003/004 | 037 |
+| 061 | Recovery shall establish the complete current authority and withdrawal state for affected scope from authoritative evidence before favourable reliance. | I/S; DEC-076; KPR-04; STD-05 CP-9/CP-9(1), AU-9; STD-02/03/04 scope alignment; AOS-specific currentness/completeness | §6.5/§19.4; Protected Reporting and Recovery v0.1; AOS-01-CON-001/002/003/004 | 038 |
+| 062 | Authority recovery shall not revive withdrawn powers from a restored snapshot or treat technical restoration as permission to execute. | I/S; DEC-077; KPR-05; STD-05 CP-10/CP-10(2)/(4)/(6); STD-01/02 scope alignment; AOS-specific current restriction/effect gate | §6.5/§19.4; Protected Reporting and Recovery v0.1; AOS-01-CON-001/002/003/004 | 039 |
+| 063 | Scoped recovery release shall require the approved powers and accepted evidence, with human acceptance for compromise or unresolved consequences where required. | I/S; DEC-078; KPR-06; STD-05 CP-4/CP-4(4); STD-01/02 scope alignment; AOS-specific release/duty gate | §6.5/§19.4; Protected Reporting and Recovery v0.1; AOS-01-CON-001/002/003/004 | 040 |
+| 064 | Research delegation shall identify the approved component profile and the permitted observe/analyse/challenge/propose powers. | C/E; DEC-086; research has bounded powers | FUN-011; AOS-04/02 §6.6 | 041 |
+| 065 | Research-profile configuration shall not remove mandatory reporting duties or expand the applicable delegation. | D/E; DEC-086/075; settings cannot rewrite authority | FUN-011/009; AOS-04/05/30 | 041/042 |
+| 066 | An accepted research candidate shall remain distinct from an approved amendment or authority instrument. | D/E; DEC-086/082; acceptance is not activation | FUN-011/005/006; AOS-02/30 | 042 |
+| 067 | A credible urgent research implication shall be referred through the applicable separately authorised human-response route without waiting for specification amendment. | C/E; DEC-086; response duties survive drafting delay | FUN-011/009; AOS-13/30 | 043 |
+| 068 | A research-derived amendment shall bind the required empowered human approval to its exact revision before controlled activation. | C/E; DEC-086/024/025; no source-to-power shortcut | FUN-011/005/006; AOS-30/04/05 | 044 |
+| 069 | The authority control shall access the control metadata needed to assess a request only through a separately established, advance-authorised minimum-access permission verifiable independently of the requested business action’s outcome. | C/I; DEC-100; independent bootstrap without implied business/data permission | CON-001/002; DEC-100 approved control profile and verification gate | 045 |
+| 070 | The authority control shall withhold dependent reliance on an organisation-defined classification or setting unless accountable competent assessment before use and after material change evidences preservation of the applicable governing constraints. | C/governance; DEC-102 approved direction; approval alone is insufficient | CON-001/002; relevant semantic/profile owners; approved adequacy method and evidence | 046 |
+
+
+## 5. State model
+
+Instrument, delegation and action-determination states are distinct objects. Proposed vocabularies are logical, not an imposed database encoding. Every transition retains actor, scope, version, time/effect boundary and governing approval evidence.
+
+| Object / state | Entry and permitted transition | Authority / evidence / expiry |
+| --- | --- | --- |
+| Instrument draft / proposed | New proposal; may be revised, withdrawn or submitted | No usable grant; proposal identity and source |
+| Instrument under review | Required reviewers considering exact version | Review is not approval; pending/no-response remains visible |
+| Approved, not active | Valid approval chain complete | Activation prerequisites outstanding; effective date alone is not readiness |
+| Active | Valid activation under applicable schedule/control configuration | Current restrictions still apply; expiry/supersession/suspension reevaluates affected grants |
+| Rejected / withdrawn / superseded | Recorded disposition or approved replacement | History preserved under retention; no usable new grant from old revision |
+| Delegation usable | Current scope/conditions and required approvals established | Each action still determined; usable is not an unrestricted token |
+| Suspended / revoked / expired | Valid restriction or defined expiry | No allow for affected scope; reinstatement or new grant only through approved route |
+| Determination pending / unresolved | Request incomplete, inconsistent or awaiting reserved decision | Dependent effect withheld; separately authorised referral |
+| Determination allow / deny | Exact evaluated action/current context | Allow subject to defined checkpoint/currentness; deny conveys prohibition/referral |
+| Determination invalidated / consumed / expired | Material change, profile-defined consumption or expiry | New current determination required; repeat also needs reconciliation |
+
+No universal validity period, timeout or one-use grant convention is selected. An applicable explicit prohibition prevents execution. Conflicting effective instruments unresolved by approved precedence produce unresolved authority and an authorised human referral. AOS-01 does not invent “latest wins” or a general exception hierarchy.
+
+## 6. Semantic contracts and interfaces
+
+### 6.1 Contract catalogue
+
+CON IDs have prefix AOS-01. **CON-001 preserves AOS-01-IF-001; CON-002 maps to existing AOS-01-IF-002 — Policy amendment and activation.** CON-002 also carries related instrument/current-state/restriction views; this mapping does not make every view a separate IF. CON-003 uses AOS-30-IF-001 human-decision evidence; CON-004 participates in AOS-13-IF-001 escalation and REC-D/REC-X companion records. Exact view/schema adoption remains open.
+
+| Contract | Purpose / owner | Producer → consumer | Minimum meaning / shared definition |
+| --- | --- | --- | --- |
+| CON-001 / IF-001 | Authority determination; AOS-01 semantics | Authority control → AOS-04/05/13/14 and requesting components | Exact action/request/actor/context, organisation, instruments, restrictions, allow/deny/unresolved, limitations, checkpoint and explanation; Core Records REC-A |
+| CON-002 / AOS-01-IF-002 | Instrument/current-state/change exchange; AOS-01 semantics, AOS-02 common structure | Governance/authority records → controls, executors, review | Exact revision, approval/effective status, restriction scope, supersession and notification evidence; Shared Contracts §4.6 AOS-01-IF-002 policy amendment/activation, plus related REC-A instrument/current-state references; exact view adoption open |
+| CON-003 | Human approval/amendment record; AOS-30 authoritative decision process | Authorised human decision workflow → AOS-01 | Exact proposal, empowered decision-maker/body, sequence, rationale/conditions and approved post-meeting record; current AOS-30/DEC-103 distinguishes decision validity/evidence, record authentication, minutes approval and execution permission; parent debrief/activation contracts |
+| CON-004 | Referral and execution/reconciliation dependency; relevant shared semantic owners | AOS-01 ↔ AOS-03/04/13/14/30 | Separately permitted internal route, recipient/accountability, data-use and applicable channel agreement, execution effect/reconciliation evidence; REC-D/REC-X and escalation brief |
+
+AOS-02 owns common record structures; each semantic owner owns meaning. Every participant adopts the same controlled definition. This draft allocates AOS-01 obligations; it does not declare the other component interfaces fully adopted.
+
+### 6.2 Common interface rules and blockers
+
+Inputs identify exact supported schema/revision, organisation, actor/principal, action/target/payload/context and policy revisions. Missing mandatory scope or unresolved units/condition operators is invalid/unresolved, never an inferred broad grant. Outputs preserve status, limitations, reason and applicable current-control evidence.
+
+Time values preserve source precision and clock context. Monetary/quantity limits use approved units and ranges, not bare numbers. Identity formats, comparison/operator vocabularies, permissible ranges, freshness and response intervals are unresolved commissioning/schema settings in ISS-003/004/005.
+
+Acknowledgement of record admission, notification delivery, control application and human responsibility are different events. Same request identity/content permits deduplicated handling under the contract; materially different content under the same identity is a conflict. Deduplication does not allow reuse of an expired or invalidated grant.
+
+Ordering uses explicit revision/effective scope, not receipt order alone. Notifications may be late/out of order; consumers re-establish current state. Retry does not extend validity or widen permission. Restriction propagation has an approved enforceable boundary and evidence; no global instantaneous revocation guarantee.
+
+Request retries, notification reconciliation and failure response follow approved profiles. AOS-01 unavailability returns unavailable/unresolved rather than allow. Required evidence unavailable blocks dependent effect unless a separately approved fallback supplies valid controls. CON-004 cannot resolve unknown execution by assuming failure.
+
+### 6.3 Reciprocal common-definition adoption, 6 October 2026
+
+AOS-01 adopts [Kernel Exchange Register v0.1](aos-kernel-exchange-register-v0-1.md) §§3–6 at revision 0.1, Core Record Contracts v0.2 and Shared Contracts v0.2 as its single proposed logical definitions. Each local CON retains its identifier and purpose; the register §6 names every produced/consumed family and reciprocal kernel end. No alternative local fields override them. Producers name exact revisions/profiles; receivers validate matching meaning, authorised access and compatibility. Proposed AOS-03-IF-001/REC-D and AOS-04-IF-001/REC-X are catalogue allocations, not schema approval. Required acknowledgement stages and rejection/partial/unresolved responses follow KX-21; actual effect remains REC-X.
+
+DEC-062–066 are approved detailed directions. Organisation role appointments, vocabulary/threshold/unit profiles, executable wire schemas, current-control/propagation and recovery mechanisms, and non-kernel endpoint adoption remain explicit dependencies. Earlier §6 descriptions of pending schema work are resolved only at this common logical level; commissioning and build evidence remain open.
+
+### 6.4 Action-3 reciprocal coordination adoption
+
+AOS-01 adopts [Kernel Control Coordination v0.1](aos-kernel-control-coordination-v0-1.md) §§2–10, Kernel Exchange Register v0.2 and Core/Shared v0.3 as the single proposed logical checkpoint/activation/change/account/reservation/withholding/resume definitions. Original CON IDs remain stable; Register §10 and Control Coordination §9 extend their common family views. Existing §6.3/§19.2 versions identify action-2 history; current declared definition revisions use Register v0.2 §4/§10, never an inferred version conversion.
+
+AOS-01 supplies current authority/restrictions and powers; AOS-03 supplies identity/use/basis/consent; AOS-04 supplies exact task/effect/grouping/demand; AOS-05 gates actual effects and maintains authoritative account/reservation/applied state; AOS-02 supplies common dependency/assurance/account evidence. KX-24 ACC and KX-25 RSV are produced authoritatively by AOS-05 and consumed by AOS-01/02/03/04/05 only within permitted scope; KX-26 WHD is a continuing-duty view from service/execution workflow with AOS-05 blocker evidence, not an automatic notification exemption. Exact dependent CON allocation is the annex §9 table.
+
+Every relevant change tracks receiving application or a reasoned no-material-dependency/owned unresolved result. Withholding creates an accountable separately authorised notification, human responsibility acknowledgement/cover/escalation, traceable coalescing and appropriate resident workflow update through resident-agreed channels. If delivery fails, the duty remains owned. Acknowledged handoff is not service completion. Independent reporting route/current recovered-state proof remain action 4; no claim of delivery capacity here.
+
+### 6.5 Action-4 protected reporting and recovery adoption
+
+AOS-01 adopts [Protected Reporting and Recovery v0.1](aos-kernel-protected-reporting-and-recovery-v0-1.md) §§2–8 as the single proposed logical specification under approved DEC-073–078. Current baseline: AOS-00/Map v0.18; AOS-01–05 v0.6; Core/Shared v0.4; Exchange Register v0.3; Control Coordination v0.2. Existing CON/IF identifiers remain; AOS-01-CON-001/002/003/004 consume/produce the annex §5 views. KX-19 protected finding, KX-20 recovery and KX-26 continuing duty use their newly declared revisions in Register v0.3. Older action-2/3 declarations remain historical and require explicit reviewed compatibility, never automatic conversion.
+
+The common envelope, REC-E/A/D/X/Q and CHECK/ACT/CHG/ACC/RSV/WHD remain distinct. Protected reporting adds separately approved route/permission/recipient/custody and human responsibility evidence; recovery adds authoritative currentness/completeness, isolation/reconciliation and scoped empowered release. Custody, technical receipt, system availability and accepted responsibility are different results. Operational role appointments, deadlines, accepted source mechanisms and actual fallbacks remain commissioning dependencies with no invented default.
+
+Annex §7 records dated primary standards references and per-rule provenance. STD-05 control principles are design sources; ISO references are verified edition/scope alignments pending licensed clause verification. AOS approval is not ISO conformance or certification. AOS-specific no-revival, uncertainty retention, agreed resident channels and acknowledged continuing duty are expressly distinguished from standard-derived principles.
+
+### 6.6 Research powers and change evidence
+
+Existing CON-001/002/003/004 carry research authority, candidate-change/activation, human decision and handoff meanings; no new IF is allocated. All participants reference AOS-02 v0.7 §6.6 supporting views and AOS-04-CON-009 common behaviour/profile contract. Component owners define substantive research remits; AOS-01 validates applicable powers rather than interpreting every external development. Accepted/rejected/deferred/unresolved research dispositions preserve exact finding and decision revisions. Acceptance for drafting, amendment approval, release approval, actual application and outcome closure remain separate; normal instrument/compatibility/revocation rules apply. Live compliance concerns route to empowered reviewers; source verification is not adoption or authority.
+
+### 6.7 AOS-30 decision-record participation — 7 October 2026
+
+Under DEC-103 and current AOS-30 §§5/6.2/10.3, decision validity/effective time, record authentication/evidence, minutes approval and permission to execute are distinct. Reliance uses sufficient attributable evidence assessed under the actual organisation’s legal form, instruments and approved evidence policy; a valid decision may precede minutes approval. A Chair-authenticated record or extract may be evidence through an authorised route, but no signature, draft or extract alone creates decision authority or resolves conflicting evidence. No universal second approval of exact decision wording is imposed where applicable arrangements do not require it. Minute-taker drafting and Company Secretary stewardship remain distinct; non-board decisions use their applicable empowered route. Current authority/data-use/conditions and observed effects remain separate. Missing or disputed sufficient evidence blocks affected automated reliance for accountable resolution, not a declaration of legal invalidity.
+
+CON-003 consumes this exact approval meaning; CON-002 activation remains separately evidenced. No executable schema change is made; the existing logical KX-06 v0.3 meaning is explicitly adopted. Existing REQ/VER identifiers and proposed/planned statuses are preserved.
+
+## 7. Authority and decision boundaries
+
+Board-authorised Mode 1 parameters govern routine operation. Organisations define their consequential-action boundary, but cannot automate Mode 2 adjudication or waive founding constraints. Some consequential execution may be explicitly delegated; a consequential classification is not identical to a permanent Mode 2 designation.
+
+Telos amendment is approved only by the board acting as a body and cannot be delegated. Schedule amendment, including grants/expansion within that instrument, requires executive proposal, AI/Governance/Ethics Committee review and board sign-off. This specification records that chosen architecture; future commissioning must establish valid organisational instruments and bodies rather than assume their existence.
+
+An operational schedule may authorise immediate temporary suspension. That reduction is not permission expansion. Reinstatement follows its approved schedule route. Under DEC-043, permanent withdrawal of an individual grant requires explicit operational-schedule withdrawal powers; changing the schedule itself, including a class of authority, retains the formal amendment sequence. Withdrawal cannot be undone by technical restart or administrator action. Any future restoration requires an explicitly approved governance route; no new restoration power is inferred.
+
+Under DEC-042, agent-to-agent delegation requires explicit permission in the originating instrument and separate establishment of the recipient’s authority within the originating scope/restrictions, with lineage retained. A task assignment transfers no permission. This does not introduce a federated identity system or authorise cross-organisation delegation.
+
+Under DEC-044, applicable explicit prohibitions prevent execution. Unresolved instrument conflict withholds the affected action and is referred to an authorised human; neither model nor administrator may invent precedence. Detailed schema, approved precedence encoding and operational withdrawal procedures remain open, while these general directions are settled.
+
+AI analysis may surface conflicts and recommend options. It cannot grant itself powers, adjudicate incommensurable values, approve a constitutional amendment, treat revealed preferences as authority or regard developer policy as the organisation's delegation instrument.
+
+Welfare/consent tension requires explicit board-level determination and valid AOS-03 processing rules; neither welfare priority nor a consent override is invented here. Resident-agreed communication channels are a separate prerequisite from authority, and do not by themselves supply a processing basis.
+
+Human powers are also bounded. A purported authorised instruction that conflicts with non-waivable core conditions cannot enable the prohibited effect. Questions of institutional authority/legality are referred to the appropriate humans and professional owners, not resolved by model inference.
+
+## 8. Reasoning principles applied
+
+### 8.1 FP v4 applicability
+
+| FP | Component application / limitation |
+| --- | --- |
+| 1 Telos, conferred purpose, function | §§1/7, REQ-016–020; software cannot confer purpose |
+| 2 Mode 2 permanently human | REQ-013/037; human judgement quality cannot be proved by signature |
+| 3 Architectural integrity | REQ-006/028/032; separate control from AI interpretation |
+| 4 Radical transparency | REQ-029/033; disclosure remains governed |
+| 5 Structural imperfection | §§5/11/13; outages, conflict and partial activation explicitly handled |
+| 6 Epistemic humility | REQ-007/010; no uncertain grant |
+| 7 No-exit obligation | REQ-038 with AOS-11/03; resident silence supplies no permission; lived experience assessment belongs elsewhere |
+| 8 Constitutional mediator | REQ-016–019/034; board-body powers protected; institutional conduct needs human assessment |
+| 9 Compliance as consequence | Principle-first derivation; verified legal mapping remains AOS-03/21/40 work |
+| 10 Complexity and emergence | §15 contrasting/interaction cases; AOS-25/40 monitor aggregate drift |
+
+### 8.2 RP v6 applicability by controlled domain and locator
+
+| RP locator | Application and coverage |
+| --- | --- |
+| Domain 1: “Every governance process must close…”; “Every human accountability layer…”; “The ‘AI said so’ test…” | REQ-009/026 and AOS-13/30 handoff/outcome dependencies; delivery alone insufficient |
+| Domain 1 option-set principle; domain 4 real-state/options/feedback/revealed-preference principles | AOS-22/30 own option preparation and debrief; AOS-01 consumes approved records without treating inference/preferences as grants; REQ-020/034 |
+| Domain 2, all four commitments | REQ-013/014/035/037; parameters governed, deliberation unobserved, permanent boundary actively defended |
+| Domain 3 1+5 placement, risk intrinsic and cross-layer handoff | §3; REQ-026–028; no extra intelligence or GI enforcement monopoly |
+| Domain 3 Golden Thread | Building-safety delegation accountability context; information quality/verified obligations owned by AOS-10/03/40, not established by AOS-01 |
+| Domain 5 blind spots/perimeter/emergent effects | §11/15/17; authority-coverage gaps explicit; monitoring primarily AOS-14/25/40 |
+| Domain 6 ethics/purpose/equity/no-exit/compliance | §§1/7/9/15; require governed purpose/authority rather than optimisation-created power; ethical outcomes need institutional review |
+| Domain 6 welfare-consent hierarchy | §7, ISS-011; board determination and AOS-03 validation required; no default override |
+| Domain 6 telos/function and accumulating precedent | REQ-016–020; learned interpretation not constitutional approval; AOS-25/30 independent review retained |
+| Domain 6 developer frameworks | §13/16; provider capability/policy cannot confer delegation; assessment/monitoring owned with AOS-04/25/30 |
+| Domain 7 all three transparency commitments | REQ-009/029/033; reconstructable evidence, explicit uncertainty, no private chain-of-thought |
+| Domain 8 all seven delegation commitments | REQ-001/003–012/018–028/038; explicit contextual permission, human authorisation, governed change, purpose/audit and protected audience |
+| Domain 9 all four purpose/sensing commitments | REQ-012/038; AOS-03 data-use controls cannot be bypassed by authority; no behavioural-inference exception invented |
+
+This is an applicability assessment, not a claim that AOS-01 fully implements every source obligation. Component/source traceability must link complementary responsibilities in AOS-02–05/10–14/20–25/30/40; unresolved allocation is retained in ISS-012.
+
+### 8.3 GT applicability
+
+| GT tests | AOS-01 evidence contribution / other owner |
+| --- | --- |
+| M1.1/7/8/10/11/13 | Purpose-bound instruments; current delegations; accountable actions; interaction boundaries; review history |
+| M1.2/3/5/6/9/14 | Supplies authority/accountability context; sensing, risk, performance, legal assurance, value-for-money and Golden Thread evidence owned elsewhere |
+| M1.4/12 | Board capability/self-assessment are institutional review matters; AOS-01 does not certify them |
+| M2.1/3/4/8/9/10/12/13/14/15 | Supports values/reservation/brake/explanation/change evidence and provider governance dependencies; substantive judgements remain human |
+| M2.2/5/6/7/11 | Coherence under pressure, independence, legitimacy, no-exit and collective judgement require human/longitudinal assessment; no automated pass claim |
+
+All 29 tests are accounted for at applicability level. No GT test is reported passed; there is no route to AI observation of deliberation to obtain Mode 2 assessment evidence.
+
+## 9. Data, privacy and disclosure
+
+Component purposes: establish current authority, validate/activate governed changes, maintain restrictions, explain outcomes and supply review/audit evidence. Data comprises instruments, identities/roles via AOS-03, action/context references, approval/effective history, limits and conditions, determinations, restriction events and referral evidence.
+
+Keep source facts, interpretations, proposed instruments, approved decisions and actual effects distinct. Use governed references/projections rather than copying sensitive case files into all authority records. Access is by approved purpose/role; retention, deletion, disclosure and correction are AOS-02/03 profile responsibilities with ISS-010/011 prerequisites.
+
+Role appointment changes can invalidate authority; preserve the decision-maker's powers at decision time rather than infer them from current job title. Historical evidence is not unlimited retention permission. AOS-01 does not derive behavioural/health/performance inferences merely because case information is accessible.
+
+Resident communication requires the applicable agreed channel(s); when agreement/channel availability is unresolved, AOS-11/13 use the approved human route and do not silently substitute an unagreed channel. Exact agreement fields and selection/combination rules remain in the shared profile adoption work.
+
+## 10. Behaviour and workflows
+
+### 10.1 Determine authority
+
+Exact request → authenticate identity/principal via AOS-03 → obtain current organisation instruments → evaluate explicit permission/prohibitions/reservations/conditions → obtain data-use dependency → record allow/deny/unresolved with evidence → executor rechecks at defined checkpoint → capture actual effect → return outcome to AOS-02/13/30/25.
+
+A changed payload, recipient, policy, role or material fact reassesses dependent permission. Unrelated permitted actions continue. Referral uses separate explicit authority. An allow result cannot eliminate other execution prerequisites.
+
+### 10.2 Change and activate
+
+Proposal → exact revision and cross-component impact → applicable human sequence → approved human record → validate compatibility/current configuration → activate under approved conditions → evidence control application → monitor/review outcome.
+
+Changing the proposal materially requires the applicable reviews/sign-off for the changed version, not a mixture of approvals for different proposals. If activation succeeds on only some paths, show those paths and restrict dependent capability rather than report complete activation.
+
+### 10.3 Restrict and restore
+
+Restriction trigger → validate suspender/withdrawer powers → record scope/effective boundary → controls apply restriction → notify/reconcile affected pending work → authorised review and recorded disposition → approved reinstatement or new grant if justified.
+
+No restart, expiry of an incident timer or operator convenience restores permission. Already irreversible effects remain historical; authorised follow-up assesses impact. Required audience escalation cannot be silently disabled through ordinary configuration.
+
+### 10.6 Combined control coordination
+
+For effects, activation, material changes, concurrent reservations, withholding and resumption, apply the common protocol in Control Coordination v0.1 §§3–8. Denial or missing current controls/accounting withholds dependent work; actual application and responsibility are separately evidenced. Timeouts/cancellations do not establish no prior effect or release uncertain capacity. Numeric/profile/role selections remain commissioning dependencies.
+
+### 10.7 Protected reporting and controlled recovery
+
+Apply Protected Reporting and Recovery v0.1 §§3–4: withhold dependent effects, attempt only permitted reporting, retain original tracking owner until accepted handoff and preserve unresolved failure duties. Restore in isolation; prove required authoritative current state and complete material changes, apply current dispositions and reconcile effects/reservations. Only scoped accepted release can restore operation, followed by fresh current CHECK and capacity admission; no automatic queue replay. Unaffected release requires evidence of no material dependency, not mere absence of a known incident.
+
+### 10.8 External research, disposition and amendment
+
+Approved component research profile and exact baseline → permitted external retrieval through AOS-14 → source/provenance/date/applicability evidence → component assessment of relevance and affected requirements/functions/contracts → finding or bounded no-material-finding/coverage-gap result → authorised recipient and accountable handoff → recorded human disposition → controlled change candidate if accepted → required approval, verification, compatible activation and outcome follow-up. Urgent operational/legal/safety implications use their separately authorised response route while specification change remains pending; a research finding supplies no emergency power. One retrieved source may feed several permitted component assessments; each preserves its own implications, review duties and disposition.
+
+## 11. Failure, escalation and recovery
+
+| Condition | Required design behaviour / dependent owner |
+| --- | --- |
+| Missing/expired/conflicting instrument | Unresolved/deny as applicable; withhold dependent effect; authorised referral |
+| Identity or data-use control unavailable | No allow-to-execute implication; AOS-03/04/05 supply withholding evidence |
+| Restriction notification late/out of order | Resolve current governing state at checkpoint; scope/version/effect boundary evidenced |
+| Approval source inconsistent or wrong body | Reject eligibility; retain proposal and diagnostic; no generated approval |
+| Human reviewer unavailable | Pending unresolved decision; AOS-13/30 approved deadlines/cover/referral; no automated substitute |
+| Protected finding suppressed | Record violation and authorised incident route; independent enforcement tests; no claim of invulnerability |
+| Partial activation or control outage | Dependent path remains inactive/unavailable; authorised fallback; no silent bypass |
+| Execution outcome unknown | AOS-04/13/14 reconcile before consequential repeat; new current determination alone cannot prove no prior effect |
+| Backup/rollback restores old policy | Re-establish current restrictions; rollback cannot resurrect withdrawn powers |
+| Urgent welfare/safety concern | Separately delegated internal route; defined human duty; no inferred data-use override or emergency grant |
+
+Local containment preserves independently permitted activity. Exact fallback capacity, deadlines and control availability must be commissioned; this draft does not promise continuous service.
+
+## 12. Evidence, provenance and audit
+
+Reconstruct: trigger and exact request → accessible source/context → actor/principal/accountable role → applicable authority/versions → applied rule/result/limitations → human decision where required → checkpoint → execution/outcome → intervention → disposition.
+
+Record contemporaneous inputs, rule versions, outputs and approved human rationale. Do not demand private model chain-of-thought or reconstruct history from generated explanations. AOS-02 owns stored common evidence; AOS-01 semantic obligations are REQ-008/009/025/029/033/034. External/affected audiences receive permitted explanations/projections, not unrestricted underlying material.
+
+Include proposal approvals and rejections, version sequence, restrictions, failed changes, partial activation and configuration-access attempts. Audit access and evidence lifecycle are independently governed. Retention/deletion conflicts require a resolved profile, not an assumption that audit wins.
+
+## 13. Security and operational requirements
+
+Authority enforcement must not depend solely on a requesting model following instructions. AOS-04/05 implement the defined independent control boundary and attempted-bypass protection; this specification determines what they enforce. The threat model covers malicious requester, misconfigured administrator, stale replica, action substitution, compromised approval input, role confusion, cross-instance leakage and restored old state.
+
+Separate authority approval and technical configuration powers according to approved organisation role constraints; exact segregation and control mechanisms remain ISS-001/004/009. No unsourced universal dual-key requirement or named product is introduced.
+
+Decision response, restriction propagation, clock tolerance, availability, evidence durability and recovery targets require operating conditions, accountable owners and approved values. Absent values block affected readiness. Accessibility applies to human approvals/explanations/handoffs; commissioning must establish formats and human capacity with AOS-30/05.
+
+AI may assist interpretation or conflict detection under AOS-20–25 evaluation controls. It cannot be the only mechanism that verifies issuer powers or issues permission. Unknown policy wording/ambiguous conditions require human resolution; a model confidence score is not authorisation.
+
+## 14. Invariants
+
+INV identifiers have prefix AOS-01; each is explanatory restatement of the listed proposed REQ obligations, not an additional hidden requirement.
+
+| INV | Statement | REQ / VER |
+| --- | --- | --- |
+| INV-001 | No explicit current applicable permission, no dependent agent effect | 005/007/011; 002/004/006 |
+| INV-002 | Mode 2 adjudication is never delegated to software | 013/037; 008/018 |
+| INV-003 | Technical access cannot amend constitutional authority | 016–020; 009–011 |
+| INV-004 | Suspension survives restart until valid restoration | 022/023; 006/012 |
+| INV-005 | Action permission does not supply data-use permission | 012/038; 007 |
+| INV-006 | Protected finding obligations cannot be removed by ordinary configuration | 027/028; 013 |
+| INV-007 | Approval and activation are distinct | 031/032; 014 |
+| INV-008 | No unknown-effect repetition authorised as though the first action failed | 036; 017 |
+| INV-009 | Research-profile approval and proposal acceptance do not confer amendment authority | 064–066/068; 041/042/044 |
+
+
+## 15. Conformance and acceptance
+
+### 15.1 Conformance criteria
+
+CR identifiers have prefix AOS-01. All are proposed; satisfying software cases alone does not establish sound institutional governance.
+
+| CR | Claim that requires evidence | REQs / evidence |
+| --- | --- | --- |
+| CR-001 | Contextual explicit delegation and current controls implemented | 001–012/025/038–044; VER-001–007/019/020 |
+| CR-002 | Human/constitutional boundaries protected | 013–020/034/035/037; VER-008–011/018 |
+| CR-003 | Restriction and protected referral function under failures | 021–028/036; VER-012/013/017 |
+| CR-004 | Explanation, records and activation are controlled | 029–033; VER-014–016 |
+| CR-005 | Component logic withstands contrasting process scenarios | Whole relevant allocation; VER-017–020 plus matrix below |
+
+### Explicit conformance navigation — 29 October 2026
+
+This index completes the documentary navigation from every retained kernel requirement to its proposed conformance criterion and its existing planned case(s). It neither adds a requirement nor claims that a case was executed or that its coverage is adequate. CR-EXCHANGE, CR-COORDINATION, CR-CONTINUITY and CR-RESEARCH below are derived grouping labels local to this component, not new system obligations. Original numbered CR claims remain applicable with their stated scope and limitations. Exact requirement text in §4.3 and case definitions in §15 remain authoritative.
+
+| Derived criterion | Existing obligation family / derivation |
+| --- | --- |
+| CR-EXCHANGE | Common definition/revision, compatibility, assurance and staged evidence adoption; existing §19.2 allocation. |
+| CR-COORDINATION | Current checkpoint, compatible activation, change propagation, cumulative accounting and owned withholding/resumption; existing §19.3 allocation. |
+| CR-CONTINUITY | Protected reporting, accepted human duty and current-state recovery/release; existing §19.4 allocation. |
+| CR-RESEARCH | Controlled research, evidence/coverage, human review and separate amendment authority; existing research requirements and their allocation. |
+
+CR-CONFIGURATION: proposed classification/configuration adequacy claim derived from REQ-070; no additional obligation beyond that requirement.
+
+CR-BOOTSTRAP: the checking service’s own minimum metadata permission is independently established, bounded and current under DEC-100; evidence is assessed through REQ-069 and its planned case.
+
+| Requirement | Proposed criterion (AOS-01 prefix) | Existing planned case(s) | Derivation / applicability |
+| --- | --- | --- | --- |
+| AOS-01-REQ-001 | CR-001 | AOS-01-VER-001 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-002 | CR-001 | AOS-01-VER-001 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-003 | CR-001 | AOS-01-VER-002 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-004 | CR-001 | AOS-01-VER-002 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-005 | CR-001 | AOS-01-VER-002 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-006 | CR-001 | AOS-01-VER-003 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-007 | CR-001 | AOS-01-VER-004 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-008 | CR-001 | AOS-01-VER-005 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-009 | CR-001 | AOS-01-VER-001, AOS-01-VER-005 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-010 | CR-001 | AOS-01-VER-005, AOS-01-VER-006 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-011 | CR-001 | AOS-01-VER-006 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-012 | CR-001 | AOS-01-VER-007 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-013 | CR-002 | AOS-01-VER-008 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-014 | CR-002 | AOS-01-VER-008 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-015 | CR-002 | AOS-01-VER-008, AOS-01-VER-014 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-016 | CR-002 | AOS-01-VER-009 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-017 | CR-002 | AOS-01-VER-009 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-018 | CR-002 | AOS-01-VER-010 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-019 | CR-002 | AOS-01-VER-010 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-020 | CR-002 | AOS-01-VER-011 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-021 | CR-003 | AOS-01-VER-012 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-022 | CR-003 | AOS-01-VER-006, AOS-01-VER-012 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-023 | CR-003 | AOS-01-VER-012 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-024 | CR-003 | AOS-01-VER-012 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-025 | CR-003 | AOS-01-VER-006, AOS-01-VER-013 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-026 | CR-003 | AOS-01-VER-004, AOS-01-VER-013 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-027 | CR-003 | AOS-01-VER-013 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-028 | CR-003 | AOS-01-VER-013 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-029 | CR-004 | AOS-01-VER-015 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-030 | CR-004 | AOS-01-VER-015 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-031 | CR-004 | AOS-01-VER-014 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-032 | CR-004 | AOS-01-VER-014 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-033 | CR-004 | AOS-01-VER-016 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-034 | CR-002 | AOS-01-VER-001, AOS-01-VER-009 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-035 | CR-002 | AOS-01-VER-009 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-036 | CR-003 | AOS-01-VER-017 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-037 | CR-002 | AOS-01-VER-018 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-038 | CR-001 | AOS-01-VER-007, AOS-01-VER-017 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-039 | CR-001 | AOS-01-VER-019 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-040 | CR-001 | AOS-01-VER-019 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-041 | CR-001 | AOS-01-VER-019 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-042 | CR-001 | AOS-01-VER-019 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-043 | CR-001 | AOS-01-VER-020 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-044 | CR-001 | AOS-01-VER-020 | Explicit allocation to the existing numbered claim in §15.1; assess the unchanged requirement through its linked case(s). |
+| AOS-01-REQ-045 | CR-EXCHANGE | AOS-01-VER-021, AOS-01-VER-025 | Existing common exchange and assurance/evidence obligation. |
+| AOS-01-REQ-046 | CR-EXCHANGE | AOS-01-VER-021 | Existing common exchange and assurance/evidence obligation. |
+| AOS-01-REQ-047 | CR-EXCHANGE | AOS-01-VER-022, AOS-01-VER-026 | Existing common exchange and assurance/evidence obligation. |
+| AOS-01-REQ-048 | CR-EXCHANGE | AOS-01-VER-024 | Existing common exchange and assurance/evidence obligation. |
+| AOS-01-REQ-049 | CR-EXCHANGE | AOS-01-VER-023 | Existing common exchange and assurance/evidence obligation. |
+| AOS-01-REQ-050 | CR-COORDINATION | AOS-01-VER-027, AOS-01-VER-028 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-051 | CR-COORDINATION | AOS-01-VER-028 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-052 | CR-COORDINATION | AOS-01-VER-029, AOS-01-VER-030 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-053 | CR-COORDINATION | AOS-01-VER-031, AOS-01-VER-032 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-054 | CR-COORDINATION | AOS-01-VER-031 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-055 | CR-COORDINATION | AOS-01-VER-032 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-056 | CR-COORDINATION | AOS-01-VER-033, AOS-01-VER-034 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-057 | CR-COORDINATION | AOS-01-VER-030, AOS-01-VER-034 | Existing coordinated current-control/effect/duty obligation. |
+| AOS-01-REQ-058 | CR-CONTINUITY | AOS-01-VER-035 | Existing protected-reporting, handoff or recovery obligation. |
+| AOS-01-REQ-059 | CR-CONTINUITY | AOS-01-VER-036 | Existing protected-reporting, handoff or recovery obligation. |
+| AOS-01-REQ-060 | CR-CONTINUITY | AOS-01-VER-037 | Existing protected-reporting, handoff or recovery obligation. |
+| AOS-01-REQ-061 | CR-CONTINUITY | AOS-01-VER-038 | Existing protected-reporting, handoff or recovery obligation. |
+| AOS-01-REQ-062 | CR-CONTINUITY | AOS-01-VER-039 | Existing protected-reporting, handoff or recovery obligation. |
+| AOS-01-REQ-063 | CR-CONTINUITY | AOS-01-VER-040 | Existing protected-reporting, handoff or recovery obligation. |
+| AOS-01-REQ-064 | CR-RESEARCH | AOS-01-VER-041 | Existing research obligation; assessment remains distinct from amendment/activation. |
+| AOS-01-REQ-065 | CR-RESEARCH | AOS-01-VER-041, AOS-01-VER-042 | Existing research obligation; assessment remains distinct from amendment/activation. |
+| AOS-01-REQ-066 | CR-RESEARCH | AOS-01-VER-042 | Existing research obligation; assessment remains distinct from amendment/activation. |
+| AOS-01-REQ-067 | CR-RESEARCH | AOS-01-VER-043 | Existing research obligation; assessment remains distinct from amendment/activation. |
+| AOS-01-REQ-068 | CR-RESEARCH | AOS-01-VER-044 | Existing research obligation; assessment remains distinct from amendment/activation. |
+| AOS-01-REQ-069 | CR-BOOTSTRAP | AOS-01-VER-045 | DEC-100 approved direction; independently verifiable advance permission for the checking service itself. |
+| AOS-01-REQ-070 | CR-CONFIGURATION | AOS-01-VER-046 | DEC-102 approved direction; accountable evidence that classification/settings preserve governing constraints. |
+
+### 15.2 Planned verification register
+
+All cases use prefix **AOS-01-VER-** and are **planned, not executed**. Shared preconditions: fixed document/contract/profile manifest; synthetic identities/instruments; approved fixture values; isolated test environment; no live external effects. Missing prerequisites yield not assessed. Inspect every relevant authority path/record, not an undisclosed sample.
+
+Each row defines input/steps and expected result/evidence. Method is inspection plus test/demonstration where executable. Assessor: appointed AOS-40 authority/security reviewer for controls, organisation governance reviewer for institutional powers, privacy reviewer for data-use boundary; appointments unresolved. Human judgement quality requires a separately defined review rubric and longitudinal assessment.
+
+| VER | REQs | Procedure / representative inputs | Expected result and retained evidence |
+| --- | --- | --- | --- |
+| 001 | 001/002/009/034 | Submit authentic-looking approval by wrong role/body, another instance, then valid exact record | Invalid powers/scope not admitted as authority; validated decision and historical role powers linked |
+| 002 | 003–005 | Same action across allowed/prohibited/missing-permission domains and conditions | Explicit scope respected; no inferred grant; instrument and request revisions recorded |
+| 003 | 006 | Submit purported human-approved waiver of foundational prohibition | Prohibited grant rejected; reason/core source recorded; no activation |
+| 004 | 007/026 | Remove/conflict authority evidence; include independently permitted referral | Dependent action withheld; authorised internal referral possible; absence of route remains unresolved |
+| 005 | 008–010 | Mutate target/payload/role/material evidence after allow; include unrelated work | Original allow cannot cover changed action; affected work reassessed; independently permitted work preserved |
+| 006 | 010/011/022/025 | Apply suspension before checkpoint, late notification, in-flight irreversible action and restart | Enforceable prevention evidenced; race limitations/effects recorded; no promise of instant reversal; stale/restarted grant rejected |
+| 007 | 012/038 | Authority allow with denied data use or missing resident channel agreement; then separately valid prerequisites | No dependent execution from authority alone; exact permitted audience/channel controls recorded |
+| 008 | 013–015 | Routine parameter, unapproved consequential class and incommensurable-values request | Board-authorised Mode 1 only; unapproved capability inactive; Mode 2 referred to empowered humans |
+| 009 | 016/017/034/035 | Individual approves telos change; board approves exact change; attempt live boardroom input | Individual/delegated approval rejected; board-body record eligibility preserved; live capture rejected |
+| 010 | 018/019 | Omit/reorder executive/Committee/board stage; mismatch revisions; attempt agent expansion by admin | Amendment remains ineligible until exact required sequence; formal equivalent approval required |
+| 011 | 020 | Use repeated precedents/model learning as grant or constitutional amendment | No activation without required human approval; analytical evidence remains distinct |
+| 012 | 021–024 | Unauthorised/authorised suspension, absent withdrawal instrument, restart, improper reinstatement | Scope-bound restriction and individual withdrawal only under explicit operational powers; schedule amendment follows its formal route; missing powers unresolved; no administrator/restart restoration; approved route required |
+| 013 | 025–028 | Disable protected audience/route via ordinary admin; fail referral delivery; notifications out of order | Attempt rejected/detected under threat model; required audience and unresolved handoff evidenced; current state reconciled |
+| 014 | 015/031/032 | Approved schedule with missing active dependencies; partial control deployment | Approved-not-active distinct; only validated capability enabled; incomplete paths visible/inactive |
+| 015 | 029/030 | Explain denial; attempt excessive disclosure and unreviewed exception | Permitted meaning/basis/referral; reviewed exception evidence where applicable; permission unchanged |
+| 016 | 033 | Correct instrument; exercise governed retention/delete/access profiles | Earlier effective history and amendment evidence preserved to policy; no unauthorised disclosure or perpetual retention assumption |
+| 017 | 036/038 | Unknown external effect/repeat; internal escalation versus external commitment/contact | Reconciliation gates repeat; external-specific human authorisation/data use/agreement checked; no internal-routing permission laundering |
+| 018 | 037/013 | Review Mode 2 defence mechanism and cross-process matrix with governance reviewer | Board determination evidence/cycle specified; permanent boundary retained; process limitations and residual gaps recorded |
+| 019 | 039–042 | Assign task without delegation permission; propose broader downstream scope; then valid bounded recipient delegation | Task gives no grant; absent/broader powers withheld; recipient authority separately validated; originating/receiving trail retained |
+| 020 | 043/044/007/026 | Permission plus applicable prohibition; conflicting instruments with/without approved precedence; model/admin suggests convenient winner | Prohibition blocks allow; unresolved conflict withholds action and refers through authorised route; no invented hierarchy; approved unambiguous precedence evaluated without overriding applicable prohibition |
+| 021 | 045/046 | Definition/version compatibility; inspect/test exact approved synthetic fixture and definition revisions | KXV-01: supported, unsupported and accepted translated records; original and translation retained, restricted meaning preserved, declared loss suitable for use. Planned, not executed. |
+| 022 | 047 | Assurance status and exact fact binding; inspect/test exact approved synthetic fixture and definition revisions | KXV-02: multiple incomplete/disputed/purpose-bounded assessments; preserve all chains and disagreements; no admission-to-truth or new-revision validation shortcut. Planned, not executed. |
+| 023 | 049 | Original evaluation and later effects; inspect/test exact approved synthetic fixture and definition revisions | KXV-03: permit/deny before effect, later checkpoint/withheld/effect links; original decision reconstructable, absent evidence never proof of enforcement. Planned, not executed. |
+| 024 | 048 | Acknowledgement stages; inspect/test exact approved synthetic fixture and definition revisions | KXV-04: delivery without application/responsibility; no false completion; pure information requires no invented human acknowledgement. Planned, not executed. |
+| 025 | 045 | Reciprocal CON walkthrough; inspect/test exact approved synthetic fixture and definition revisions | KXV-05: inspect every component CON against the same producer/consumer definitions, field/status/units/ack manifest; retain mismatches and non-kernel dependencies. Planned, not executed. |
+| 026 | 047 | Restricted assurance projection; inspect/test exact approved synthetic fixture and definition revisions | KXV-06: permitted projection preserves required assurance substance; unavailable material evidence leaves reliance unresolved; no privacy bypass. Planned, not executed. |
+| 027 | 050 | KCV-01: Exact checkpoint and restriction race; inspect/test exact authorised synthetic fixture and versions | Substitute arguments/current evidence and restrict before/after last enforceable point; affected pre-boundary effect blocked, irreversible crossing and uncertainty/follow-up evidenced. Planned, not executed. |
+| 028 | 050/051 | KCV-02: Partial compatible activation; inspect/test exact authorised synthetic fixture and versions | Wrong/old/missing required applied member and restriction during rollout; affected path withheld, compatible unaffected scope evidenced, no approval-to-activation shortcut. Planned, not executed. |
+| 029 | 052 | KCV-03: Change receipt versus application; inspect/test exact authorised synthetic fixture and versions | Duplicate/conflicting/out-of-order notices and missing consumer; actual applied/no-material-dependency basis or owned unresolved cover/escalation; old permission not revived. Planned, not executed. |
+| 030 | 052/057 | KCV-04: Selective impact and restart; inspect/test exact authorised synthetic fixture and versions | Correct pending input and significant completed consequence; reassess affected work, preserve history and owner review, no replay on restart. Planned, not executed. |
+| 031 | 053/054 | KCV-05: Concurrent overlapping capacity; inspect/test exact authorised synthetic fixture and versions | Parallel workers request same remaining allowance across multiple scopes and provider switch; no partial grant, double spend or account reset evasion; exact authoritative evidence. Planned, not executed. |
+| 032 | 053/055 | KCV-06: Partial/unknown reservation; inspect/test exact authorised synthetic fixture and versions | Expire/cancel/failover after possible effect and cross period boundary; confirmed quantity consumed, uncertain remainder held, release only evidenced unused quantity. Planned, not executed. |
+| 033 | 056 | KCV-07: Withheld duty notification; inspect/test exact authorised synthetic fixture and versions | Accounting/control unavailable, missing acknowledgement, failed route and coalesced repeats; dependent work blocked, separate permitted notification and accountable delivery exception/cover; every operation traceable. Planned, not executed. |
+| 034 | 056/057 | KCV-08: Resident update and controlled resume; inspect/test exact authorised synthetic fixture and versions | Service affected with acknowledgement but unresolved task, unagreed channel and sensitive content, then premature resume; only permitted agreed-channel update, contact duty visible, no replay without current reconciled evidence/approval. Planned, not executed. |
+| 035 | 058 | KPV-01 / DEC-104: approved finding-class profile; primary controls/reporting failure plus implicated or suppressing normal recipient/release controller; false alternative sharing technical dependency or implicated sole gatekeeper; valid authorised independent alternative. | The component supplies its assigned authority/record/use/task/runtime evidence for both technical and organisational independence. No implicated sole release gate; no assumed independence from an alternate address alone. Use only pre-authorised verified minimal-content routes; inadequate arrangements remain owned, block protected-reporting assurance/affected dependent reliance and preserve tracking/service duties. Inspect actual alternate attempt, custody/control, recipient and acceptance evidence; no external-disclosure default. Planned, not executed. |
+| 036 | 059 | KPV-02: Reporting permission and recipient invalid; authorised synthetic fixture, exact profile and source revisions | Expired/wrong-scope advance permission, unverified recipient or excessive content; refuse unauthorised payload, retain minimal permitted fallback if valid, otherwise owned unresolved duty; no emergency grant. Planned, not executed. |
+| 037 | 060 | KPV-03: No human accepts and fallback also fails; authorised synthetic fixture, exact profile and source revisions | Receipt without responsibility acceptance, absent cover, escalation failure and repeated linked reports; original tracking owner persists, all affected work traceable, approved human fallback/owned exception and resident-channel duty remain visible. Planned, not executed. |
+| 038 | 061 | KPV-04: Protected backup is stale or incomplete; authorised synthetic fixture, exact profile and source revisions | Valid integrity check but omitted withdrawal/consent/deletion/change or uncertain source coverage; dependent release blocked until scope-specific currentness and completeness are established from authoritative evidence. Planned, not executed. |
+| 039 | 062 | KPV-05: Restore contains old permission and uncertain effects; authorised synthetic fixture, exact profile and source revisions | Isolated old snapshot with deleted/restricted payload, completed/partial/unknown effects, uncertain reservation and incompatible config; no normal effects, apply dispositions and reconcile exposure, no repeated known effect or hidden retained payload. Planned, not executed. |
+| 040 | 063 | KPV-06: Premature selective release under compound failure; authorised synthetic fixture, exact profile and source revisions | Combine compromise, incomplete current-state evidence, outstanding handoff and provider failover; reject unsupported automatic/human release, accept only evidenced approved unaffected scope, preserve unresolved duties and require fresh CHECK/reservation for continuation. Planned, not executed. |
+| 041 | 064/065 | Missing component remit; operator expands retrieval/delegation or suppresses required reporting through profile edit | Unsupported delegation/configuration rejected; exact powers/profile and protected duty preserved. Planned, not executed. |
+| 042 | 065/066 | Primary source announces a change; reviewer accepts candidate for drafting; agent attempts authority/specification amendment | Publication and acceptance remain evidence/disposition only; unapproved amendment and reporting suppression prevented. Planned, not executed. |
+| 043 | 067 | Urgent regulatory/safety implication with uncertain applicability and delayed specification work | Separately permitted empowered review/handoff proceeds with uncertainty/owner/cover; no emergency power or false closure. Planned, not executed. |
+| 044 | 068 | Approval for one finding/proposal revision supplied for a changed revision, followed by valid exact-version approval | Mismatch withheld; valid applicable human sequence, verification/compatible activation and application evidence required. Planned, not executed. |
+
+
+### 15.3 Contrasting process tests — requirements first, scenarios second
+
+Scenarios test the general specification. They are not sources of universal powers or numerical limits. Any discovered gap becomes an issue/change proposal with source-based rationale and explicit scope.
+
+| Scenario | Tests of AOS-01 | Process-specific configuration / limitation |
+| --- | --- | --- |
+| Overdue repair | Scoped internal escalation/contact, disputed evidence invalidation, accountable human decision and current checks | DEC-031–041 demonstration rules; promises/completion/agreed channels in Operational Profiles; not universal repair policy |
+| Procurement commitment | Explicit financial/target limits, external commitment authorisation, aggregate/context change, unknown-effect repetition | Actual approval powers, currency/budget/aggregation/reconciliation rules unresolved; no automatic spending right inferred |
+| People development / employment | Coaching permission separate from employment judgement; purpose change and sensitive processing | Organisation people/HR rules and AOS-03/12 instruments; example reserves employment decisions as architecture boundary, not a new hiring procedure |
+| Telos or schedule amendment | Board-body reservation, formal sequence, exact versions, suspension and reinstatement | Valid organisation bodies/appointments/operational schedule required |
+| External data disclosure | Principal/recipient/purpose/scope binding; independent data use; revocation/change before effect | Approved sharing/trust/retention/location rules; no assumed federation system |
+| Cross-domain welfare/safety signal | Separately permitted routing, protected audience, consent tension and no-response escalation | Required classes/thresholds/roles and board determination unresolved; no emergency override fabricated |
+
+Procurement aggregation and cumulative small actions require a defined review/control profile: a series of individually permitted actions may change material context or reveal a purpose/authority problem. AOS-25/40 assess aggregate behaviour; numerical budgets or an automatic aggregate denial rule are not invented here.
+
+### DEC-100 planned bootstrap/access case
+
+| VER | REQ coverage | Preconditions / procedure | Expected result / retained evidence |
+| --- | --- | --- | --- |
+| 045 | 069/007 | Startup with a valid advance metadata-read instrument, then missing, expired, withdrawn, wrong-instance or excessive permission. Try to derive the checker’s permission from the pending business request or the other check’s favourable result; request underlying operational records. Interrupt permission/currentness lookup and restore stale metadata. | Minimum scoped metadata reads are permitted only on independently verified advance authority/use evidence; no self-authorisation, circular favourable grant or wider operational access. Unverified/currentness failures withhold affected reliance and retain accountable referral; separately authorised fallback has no enlarged powers. Startup/recovery must re-establish valid current permission before reliance. Retain instrument/profile, checked identity/metadata scope, ordered access attempts, prevention/currentness/referral observations and competent assessor findings. Planned, not executed. |
+
+### DEC-102 planned configuration-adequacy case
+
+| VER | REQ coverage | Preconditions / procedure | Expected result / retained evidence |
+| --- | --- | --- | --- |
+| 046 | 015/070 | Present approved but inadequate classifications/settings: repeated small commitments evade a cumulative bound; low financial cost conceals resource impact; “routine” relabels rights/service/protected-data consequences; a setting transfers reserved judgement, suppresses mandatory reporting or purports to grant prohibited use. Present missing evidence, a material change without reassessment and a justified conformant routine delegation. | Authorisation alone cannot qualify an inadequate configuration. Actual effects/cumulative scope, distinct financial/resource impacts and governing constraints are assessed by a competent accountable reviewer. Affected reliance remains withheld with owned resolution until adequate evidence exists; material change requires reassessment. Properly delegated routine action may proceed under applicable controls without inventing a universal individual-approval rule. Retain profile, powers, chosen values/rationale, fixture/effect evidence, assessor/disposition and scope/limitations. Planned, not executed. |
+
+## 16. Dependencies
+
+| Stage | Dependencies |
+| --- | --- |
+| Drafting | FP/RP/GT, AOS-00/Map/QS/template, shared/core contracts and decisions; no implementation choices needed |
+| Component baseline | Fixed shared schemas/semantics, approved wording, source allocation, scope/role/precedence/expiry profiles and resolved material conflicts |
+| Build | AOS-02/03/04/05/13/14/30 contracts; threat model; fixtures; operating targets; authorised bounded release; separate readiness assessment |
+| Activation | Actual approved organisation instruments, identities/appointments, compatible controls, approved consequential classification, deployed restriction/recording routes, operational human cover |
+| Operation | Current policies/delegations/roles, evidence availability, ongoing review/learning/incident processes and AOS-25/40 assurance |
+
+AOS-21 supplies authoritative corpus and precedent under its governance controls. GI charter AOS-20 supplies authorised obligations, not independent power to bypass shared controls. AOS-30 receives/records human decisions without observing board deliberation.
+
+## 17. Issues
+
+ISS identifiers have prefix AOS-01. All are **open** unless indicated. General subdelegation, withdrawal and conflict directions are resolved under DEC-042–044; welfare and cumulative-limit directions under DEC-051/056 are also settled. Their detailed dependencies remain open; each is a dependency/design question, not a requirement or inferred approval. Component custodian coordinates; listed specialist owners supply evidence. Confidence is high that each prerequisite is material, unresolved on actual implementation/organisation detail.
+
+| ISS | Type / question and source | Affected items / owner | Evidence required / gate |
+| --- | --- | --- | --- |
+| 001 | Dependency: valid bodies/roles, custodian, appointments and segregation; RP1/8 | FUN-001/007/008; organisation governance/AOS-30 | Powers, appointment and succession records; activation |
+| 002 | Design gap: instrument schema, permission/prohibition scope and approved precedence/subdelegation encoding; DEC-042/044 settle general direction, RP8/QS-12 | CON-001/002, REQ-001–007/019/032; AOS-01/02 | Exact approved schema/rules; component baseline/build |
+| 003 | Design gap: material context, units/operators, evidence sufficiency and currentness; REC-A/P02/P03 | FUN-003/004; AOS-01/02/03 | Action-specific typed rules and dependency mapping; build |
+| 004 | Design gap: enforceable checkpoint, race/clock/propagation limits and bypass mechanism; DEC-028 | FUN-004/006; AOS-04/05 | Threat model, approved profiles and test evidence; build/activation |
+| 005 | Dependency: Mode 1 parameters, consequential classification and Mode 2 review cycle; RP2/REQ-049 | FUN-002; organisation board/AOS-25/30 | Approved parameters/designations and review protocol; activation |
+| 006 | Dependency: approval/amendment record schema and institutional sequence; DEC-024/025 | FUN-005/006; AOS-01/02/30 | Exact-version proposal/review/sign-off and effective rules; build/activation |
+| 007 | Question: restriction scope, operational withdrawal procedure, notification/reinstatement and expiry; DEC-043 settles individual withdrawal versus schedule amendment | FUN-007/008; organisation governance/AOS-04/05 | Approved routes, authority, delivery/ordering and restoration conditions; build/activation |
+| 008 | Dependency: referral recipients, acknowledgement, windows and cover; RP1/DEC-033/034 | FUN-009; AOS-13/30 | Approved routes and operating capacity; activation |
+| 009 | Design gap: protected classes/audiences and suppression-resistant controls; RP8 protected-finding principle | REQ-027/028; AOS-20/25/05/30 | Charter obligations, protected change route and threat-model tests; build/activation |
+| 010 | Dependency: explanation exceptions, disclosure/access/retention rules; DEC-027/QS-13 | FUN-010/REQ-033; AOS-03/02/30 | Approved rules, exception reviewer and evidence lifecycle; activation |
+| 011 | Dependency: DEC-051 settles the bounded human welfare-protocol direction; actual board-approved acute-risk hierarchy/instruments, external/sensitive processing basis and professional legal mapping remain open; RP6/9 | REQ-012/038; organisation board/AOS-03/14 | Valid documented instruments/professional assessment; dependent capability activation |
+| 012 | Dependency: shared IF/schema adoption and complete source traceability | §§6/8/19; AOS-02/40 and component owners | Producer/consumer agreement, exact allocations and remaining findings; component baseline |
+| 013 | Design gap: DEC-056 settles cumulative-effect bounds; exact authority/context grouping, measures, periods, review/brake powers and cross-agent enforcement remain open; FP10/GT M1.13 | §15; AOS-01/03/04/05/02/25/40 | Aggregate scenarios, materiality/evaluation profile; relevant build/activation |
+| 014 | Review: sufficiency of authority model across contrasting contexts | §15; Mark/project reviewer | Scenario review, findings and source-grounded revisions; component baseline |
+
+**AOS-01-ISS-015 — research powers/profile commissioning (open dependency):** appoint component research/review roles, approve remit/sources/jurisdiction/cadence/cover and exact supporting-view adoption; AOS-01/04/02/13/14/30 owners. Evidence: approved profile/powers, controlled human disposition and amendment fixtures; gate: dependent build/activation.
+
+## 18. Implementation guidance — non-normative
+
+Possible patterns include typed policy evaluation, versioned instrument stores, separate approval/activation workflow and independently controlled execution gates. Cryptographically bound evidence may support integrity, but cannot prove substantive human powers or quality of judgement.
+
+No policy engine, token format, federation protocol, vendor or topology is mandated. An implementation may consolidate services while preserving auditable responsibility and approval boundaries. Distributed enforcement needs evidence of its actual failure/propagation limits; a central service is not automatically adequate either.
+
+## 19. Traceability and change
+
+REQ rows link source/parent decision → function/contract → planned VER. CAP/INV/CR tables give complementary reverse links. Source applicability in §8 identifies dependencies rather than silently claiming full coverage.
+
+The shared dossiers' REC-R06–10/15/16/19/20 supply authority/context/explanation/current-control/repeat/restart derivations; this component allocates the relevant AOS-01 obligations. It does not duplicate their entire schemas or adopt unrelated repair rules as common law.
+
+Before baseline approval, extend the controlled Source Traceability Matrix with exact AOS-01 REQ/VER links and residual cross-component allocations. This initial component draft does not close source findings by implication.
+
+Mark confirmed on 5 October that specifications are drafted from governing principles and architecture and then tested against processes. A process finding may expose a gap; a general amendment requires explicit source-based justification and a recorded scope/decision. Preserve demonstration-specific directions separately.
+
+Record changes with affected IDs, reason, source/decision, approver, contract compatibility, timing and dependent component review. Research agents observe/analyse/challenge/propose; they cannot approve amendments. No architectural direction is superseded by this initial draft.
+
+### 19.1 Common decision-baseline reconciliation, 6 October 2026
+
+Author review against AOS-00 v0.15 (DEC-001–061) and Specification Map v0.15. Earlier dated source/approval references identify historical derivation, not a competing current baseline. Decisions DEC-001–044 remain applicable as scoped in §§2–8: logical ownership, human reserved powers, common contracts, separate organisation instances, controlled locations, technology neutrality and bounded repair profiles. Repair-specific choices do not become universal rules. DEC-018 remains deferred; independent review remains unassigned. No new decision, permission, numerical setting or requirement approval is inferred.
+
+The table records later-decision applicability and existing document anchors. It is a decision/status reconciliation, not the completed source-to-field-to-producer/consumer traceability required by KR-09.
+
+| Decision set | Applicable direction / responsibility boundary | Existing component anchors | Remaining work / status |
+| --- | --- | --- | --- |
+| DEC-045–048 | AOS-02 owns source identity, assurance and governed lifecycle; HACT remains a verified-scope reference, not an authority instrument. | §§3/6/9; REQ-008/033; CON-001/002; VER-005/016 | Source/schema adoption remains ISS-003/010/012 and KR-01/08. |
+| DEC-049–053 | Independent data-use permission, private assistance, bounded human welfare protocol and reviewable disclosure apply to authority referrals. | REQ-012/029/030/038; CON-004; VER-007/015/017; ISS-010/011 | General welfare direction approved; actual board instruments, lawful basis and professional assessment remain open. |
+| DEC-054–057 | Dynamic delegation cannot expand authority; cumulative controls and configuration changes require the applicable approved powers. | REQ-019/039–041; CON-001/002; VER-010/019; ISS-013 | Aggregate enforcement remains KR-06; exact profiles/approval powers unresolved. |
+| DEC-058–061 | Technical isolation is distinct from constitutional restriction; recovery/failover cannot reinstate withdrawn authority. | REQ-021–025/031/032/036; CON-002/004; VER-006/012/014/017 | Privileged powers, selective continuity and recovery evidence remain shared commissioning dependencies; KR-02/04/05. |
+
+Stable REQ/VER/CON/IF identifiers, requirement wording and planned-case status are preserved. The five current component revisions are v0.3; their historical v0.1/v0.2 records remain intact. KR-09 decision/status/interface-label work is complete; full reciprocal source/REQ/contract/field/VER allocation remains open with the shared-contract work. Author checks are document checks, not executed verification or independent readiness evidence.
+
+### 19.2 Action-2 source/field/consumer/verification allocation
+
+New REQ-045–049 originate in v0.4, 6 October 2026; status proposed, owner inherited from document control, logical scope only. VER-021–026 are planned cases. Earlier records retain their origins; AOS-03 REQ-040 is clarified under DEC-064, not retired. Totals at this historical adoption step: 49 proposed REQs and 26 planned VERs.
+
+| Source / decision | Register obligation / common field | Component REQ → planned VER | Reciprocal adoption |
+| --- | --- | --- | --- |
+| DEC-002/065; QS-12/21; GT M1.13 | KXR-01/02/07/08; definition_revision/profile_manifest; KX-10 field_map/losses | REQ-045/046 → VER-021/025 | Every local CON ↔ declared producer/consumer ends in register §6 |
+| FP4/6; RP7 audit/uncertainty; DEC-046/062/063 | KXR-03/04; REC-E assurance_refs/status, complete REC-Q and use suitability | REQ-047 → VER-022/026 | Evidence producer/AOS-02 ↔ this consumer under independently permitted use |
+| RP7 auditability; DEC-064 | KXR-05; original REC-A/D evaluation, REC-X exact-result/checkpoint/effect links | REQ-049 → VER-023 | AOS-01/03 evaluator ↔ AOS-04 execution/AOS-05 runtime ↔ AOS-02 custody |
+| RP1 accountability; GT M1.13; DEC-066 | KXR-06; KX-21 stage/result/evidence | REQ-048 → VER-024 | Actual receiver/applier/empowered human ↔ sender/tracker; no assumed non-kernel adoption |
+
+Shared fields and reciprocal logical definitions are now adopted at kernel document level. Old local source-matrix/schema issue descriptions remain residual commissioning/full-suite tasks, not a reason to duplicate definitions. Full-suite source allocation and non-kernel adoption remain open; no implemented conformance or independent readiness evidence.
+
+### 19.3 Action-3 exact obligation/field/consumer/verification allocation
+
+REQ-050–057 originate in v0.5, 6 October; proposed logical scope, custodian/approver inherited, no implementation approval. VER-027–034 are planned. Totals at this historical adoption step: 57 proposed REQs/34 planned VERs. Original record wording and IDs remain unchanged.
+
+| Source / approved decision | Common obligation / field / reciprocal ends | Proposed REQ → planned VER |
+| --- | --- | --- |
+| DEC-067; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-01; CHECK.request/current sources/version/outcome; 01/03 controls → 04/05 effect gate, 02 custody | REQ-050 → VER-027/028 |
+| DEC-068; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-02; ACT.required members/applied vector/restriction fence; 01/03/04/05 application → coordinator/02 | REQ-051 → VER-028 |
+| DEC-069; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-03; CHG.consumer application/impact owner; semantic source/02 → all material consumers | REQ-052 → VER-029/030 |
+| DEC-070; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-04; ACC.linked scope/period/units; 04 semantics → 05 accounting, 01/03 constraints, 02 custody | REQ-053 → VER-031/032 |
+| DEC-071; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-05; RSV.complete demand/admission vector; 04 request → 05 authoritative admission → exact executor | REQ-054 → VER-031 |
+| DEC-071; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-06; RSV.confirmed/residual/release evidence; observed effects → 05 account and 02/04 evidence | REQ-055 → VER-032 |
+| DEC-071; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-07; WHD.owner/ack/cover/resident duty; service/05 blockers → permitted operational recipient, 13/30/resident workflow | REQ-056 → VER-033/034 |
+| DEC-072; FP4/5/6/7/10; RP1/7 audit/8 contextual authority/9 purpose; GT M1.13 | KCR-08; BRK.resume evidence/current check; authorised owner/controls/account → 04/05 executor | REQ-057 → VER-030/034 |
+
+Record types and source locators are the annex §§9–10, using unchanged FP/RP/GT versions. Non-kernel adoption and wire/profile/role implementation remain explicit gaps. This source/field/case allocation does not supply executed or independent assurance.
+
+### 19.4 Action-4 sources and reciprocal verification
+
+REQ-058–063 link DEC-073–078/KPR-01–06 to planned VER-035–040/KPV-01–06 one-to-one; all cases include cross-component failure/acceptance evidence. Source references and derivation boundaries are Protected Reporting and Recovery §7; exact fields, ownership and CON reciprocity are §§2/5. Current authoritative source mechanisms, human capacity, numerical profiles and commissioned independence need explicit owners/evidence before release. These cases have not been executed.
+
+### 19.5 External-research traceability
+
+DEC-086 → CAP-006/FUN-011 → existing CON-001–004 and AOS-04-CON-009/AOS-02 §6.6 → REQ-064–068 → VER-041–044. Origin v0.7, 6 October 2026; proposed logical wording, project approver Mark, organisational powers/profile appointments open. Prior source/status/history remain intact; other components’ adoption is tracked separately.
+
+## 20. Build and handover
+
+No build scope is authorised through this draft. A future bounded release needs its exact component/contract/profile manifest, resolved relevant ISS items, approved synthetic fixtures, accepted requirements/cases, platform/control implementation choices and separate readiness assessment. Live activation additionally needs valid organisational instruments and operational cover.
+
+Builder discretion covers implementation technology behind fixed semantics. Stop on missing powers, scope/classification, material context rules, unresolved source conflict, unavailable approved data use, missing checkpoint/restriction/evidence route, unapproved contract versions, ambiguous prior effect, absent human fallback or any proposed widening of delegation.
+
+Author/AI checks do not satisfy the separate-reviewer G3 walkthrough. Independent project review is deferred; organisational independent GI interpretation/precedent reviews remain required under DEC-010–012.
+
+## 21. Review and control
+
+| Quality area | Author assessment / finding |
+| --- | --- |
+| QS-01–03 identity/structure/history | All 21 template sections and summary supplied; stable local/component IDs; no previous AOS-01 found in current reference architecture/V0.1 inventories |
+| QS-04–10 requirement records | 63 proposed obligations; source/category/shared metadata, owners/blockers and planned verification; actual schemas/values unresolved |
+| QS-11–14 architecture/interfaces/lifecycle/failure | Responsibilities/trust boundaries, existing IF-001, three complementary CONs, states, normal/change/restriction paths and failures; interoperable schemas and commissioning detail remain gaps |
+| QS-15–20 operating qualities/authority/principles | Human boundaries, controls, uncertainty, disclosure, audit and learning protection explicit; no measured runtime or institutional adequacy evidence |
+| QS-21–23 traceability/verification | 40 planned cases and contrasting process matrix; source-matrix writeback/cross-component adoption pending; no executed test or GT pass |
+| QS-24–28 review/readiness/handover | Author check only; independent review deferred; no readiness/build/activation claim |
+
+Author verification checks identifier uniqueness, internal REQ/VER links and table structure. No tailoring is claimed; annexes carry referenced detail. Specification-quality conclusion: structured component draft with explicit blockers. Design-adequacy conclusion: principle-derived authority model requiring scenario review, technical assurance and organisational validation.
+
+**Next:** action-4 logical protected reporting/recovery adopted with standards provenance. Read existing GI/human-handoff material before further drafting; non-kernel adoption, commissioning and independent/executed evidence remain open.
+
+**v0.7 research amendment author checks:** stable original requirement/verification rows and approval histories preserved; new REQ/VER sequences and references checked; common profile/view/powers ownership reconciled against AOS-00/Map v0.21 and template v0.4. New cases remain planned; no actual research, runtime, independent review or readiness evidence claimed.
+
+## Component summary
+
+**Purpose:** establish explicit current authority without substituting software function for human purpose or judgement.  
+**Owns:** instruments, contextual permission, protected change/restriction and authority evidence.  
+**Receives:** exact action requests, approved human records, current instruments, identity/data-use and execution evidence.  
+**Produces:** allow/deny/unresolved results, activation/restriction eligibility, explanation and protected referral constraints.  
+**Reserved human authority:** Mode 2, board-body telos amendment and the applicable approval/change powers.  
+**Conformant when:** approved requirements and institutional/control dependencies are evidenced across relevant scenarios.  
+**Open:** organisation powers/settings, exact schemas and implementation of approved precedence/withdrawal/checkpoint rules, protected delivery, source allocation and independent readiness review. General directions under DEC-042–044 are settled.
+
+**Decision disposition, 5 October:** Mark approved all three recommendations (“Agree all three”). AOS-00 v0.11 DEC-042–044 and Map v0.8 record them. This approves direction, not exact requirement wording or the whole document. Remaining work comprises detailed record/schema/control design, source traceability, organisational commissioning and assurance. No additional question is currently submitted to Mark; new material choices discovered during that work require explicit referral.
+
+**Action-2 current disposition, 6 October:** v0.4 uses AOS-00/Map v0.16 and approved DEC-062–066. §6.3/§19.2 record common logical adoption and traceability. Current totals 49 proposed REQs/26 planned VERs; earlier counts/versions in approval histories remain historical. No requirement-wording, executed-case or readiness promotion.
+
+**Action-3 current disposition, 6 October:** DEC-067–072 approved, including revised recommendation 5 notification/acknowledged duty and appropriate resident update. AOS-01 v0.5 adopts Register v0.2, Core/Shared v0.3 and Control Coordination v0.1 against AOS-00/Map v0.17. Current totals 57/34 proposed REQs/planned VERs; no executed assurance or readiness promotion. KR-02/03/06 logically reconciled; actual commissioned implementation remains open.
+
+**Action-4 current disposition, 6 October:** all six directions approved; DEC-073–078 and standards-reference instruction recorded. AOS-01 v0.6; 63 proposed REQs/40 planned VERs. KR-04/05 logically reconciled through the common annex and reciprocal adoption. No executed recovery/report delivery, clause-level ISO conformity, independent assurance or readiness promotion.
+
+
+**External-research current disposition, 6 October:** AOS-01 v0.7; 68 proposed REQs/44 planned VERs against AOS-00/Map v0.21/template v0.4. Approved direction DEC-086; no actual activation, executed assurance or readiness promotion.
+
+## Historical opening status notices — retained provenance
+
+These are dated drafting snapshots, including their then-current versions, totals, completion statements and next tasks. They do not define today's baseline or work queue. The present document retains its proposed/planned status; approved directions retain their recorded scope. Use the current inventory, adopted README and live to-do list for orientation; authoritative requirement and decision text remains in its named sections.
+
+**Historical status notice — AOS-30 alignment — 7 October 2026:** functional drafting and consistency alignment complete under Mark’s instruction. AOS-00/Map v0.25, DEC-001–089; AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3 and AOS-30 v0.3; Shared v0.9/Core v0.6/Exchange Register v0.8; source matrix v0.9 and template v0.4 unchanged; Control Coordination v0.2/Protected Reporting and Recovery v0.1 unchanged. Earlier dated baseline/adoption/next-step entries are history. CR30-01–03 are closed at the functional-document level; implementation/commissioning evidence remains separate. No new DEC/REQ/VER/IF identifier or operating power is introduced.
+

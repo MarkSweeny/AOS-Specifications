@@ -1,0 +1,408 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AOS Specification Quality Standard · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="specification-quality-standard.pdf">PDF</a> &nbsp; <a href="specification-quality-standard.md">Markdown</a></nav><main><h1 id="aos-specification-quality-standard">AOS Specification Quality Standard</h1>
+<p>Document: specification-quality-standard · Source revision or record: AOS-QS v0.1, 18 September 2026</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<table>
+<thead>
+<tr>
+<th>Document control</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Identifier</td>
+<td>AOS-QS</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>18 September 2026</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>First draft for project review; not an approved organisational governance instrument</td>
+</tr>
+<tr>
+<td>Project owner</td>
+<td>Mark Sweeny</td>
+</tr>
+<tr>
+<td>Prepared by</td>
+<td>Codex, at the project owner&#39;s request</td>
+</tr>
+<tr>
+<td>Independent reviewer</td>
+<td>Not yet assigned</td>
+</tr>
+<tr>
+<td>Approval record</td>
+<td>No approval recorded</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>Specifications and capability annexes identified in <code>SPECIFICATION_MAP.md</code></td>
+</tr>
+<tr>
+<td>Change history</td>
+<td>0.1 — initial issue, including template and review checklist</td>
+</tr>
+</tbody></table>
+<h2 id="1-purpose-and-status">1. Purpose and status</h2>
+<p>This standard defines how AOS specifications are to be written, organised, reviewed and controlled so that an AI coding agent can implement an authorised scope without inventing material architectural or governance decisions. It supports <code>PROJECT_OBJECTIVE.md</code> and the component structure in <code>SPECIFICATION_MAP.md</code>.</p>
+<p>It makes two assessments distinct:</p>
+<ul>
+<li><strong>Specification quality:</strong> whether requirements are identifiable, understandable, traceable, consistent, controlled and verifiable.</li>
+<li><strong>Design adequacy:</strong> whether those requirements are the right ones for the organisation, technically feasible, faithful to AOS principles and supported by the necessary human decisions.</li>
+</ul>
+<p>A specification can pass the first assessment and fail the second. Neither assessment, alone, proves that implemented software works or that an operating institution governs well.</p>
+<p>The numbered <strong>QS rules</strong> below are the proposed mandatory rules of this project standard once adopted. Examples and explanatory paragraphs are informative unless incorporated into a numbered rule. This first draft does not retrospectively declare existing documents conformant, approve proposed system capabilities, or authorise deployment.</p>
+<h2 id="2-external-reference-basis">2. External reference basis</h2>
+<p>The external references inform the approach; the QS rules and gates are project-specific provisions, not reproduced standard clauses.</p>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Relevance and limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso-iec-ieee:29148:ed-2:v1:en">ISO/IEC/IEEE 29148:2018 — Requirements engineering</a></td>
+<td>Addresses requirements processes, information items, their contents and format guidance. It provides the principal reference direction for requirements documentation.</td>
+</tr>
+<tr>
+<td><a href="https://www.iso.org/standard/74393.html">ISO/IEC/IEEE 42010:2022 — Architecture description</a></td>
+<td>Addresses the structure and expression of architecture descriptions, separately from the architectures described. It does not prescribe a document medium. It informs the shared architecture and relationships between component specifications.</td>
+</tr>
+<tr>
+<td><a href="https://www.incose.org/resources-publications/">INCOSE — Guide to Writing Requirements</a></td>
+<td>Practical guidance on clear, verifiable requirements, including writing patterns and quality checks. It informs the writing discipline.</td>
+</tr>
+</tbody></table>
+<p>Reference pages checked on 18 September 2026. This version uses public descriptions and available guidance; it is <strong>not a clause-by-clause conformity assessment against the full standards</strong>. No ISO, IEEE or INCOSE certification or endorsement is claimed. Any later external-conformity claim requires the applicable full texts, a defined assessment scope, a mapping to their requirements and evidence of the assessment.</p>
+<p>Markdown is the proposed authoritative authoring format. Readable Word/PDF exports may be supplied when needed. Neither polished presentation nor a particular file type establishes specification quality.</p>
+<h2 id="3-document-control-and-structure">3. Document control and structure</h2>
+<p><strong>QS-01 — Controlled identity.</strong> Every specification shall state its stable identifier, title, version, date, status, scope, owner, author, reviewer, approval record and applicable AOS-QS version. An unassigned role or absent approval shall be stated explicitly. Such absence is permissible during drafting but not where required by a readiness gate.</p>
+<p><strong>QS-02 — Common structure.</strong> Every specification shall use the template in Appendix A or provide a section-to-template mapping. A section may be marked not applicable only with a reason and a recorded reviewer determination. Related details may be held in controlled annexes rather than duplicated.</p>
+<p><strong>QS-03 — Stable identity and history.</strong> Requirements, interfaces, decisions and verification cases shall have stable identifiers that are not reused for different meanings. Changes shall preserve the prior approved baseline and record the author, reason and affected identifiers. Editorial changes shall be distinguished from changes to behaviour, authority, data use or acceptance conditions.</p>
+<p>Recommended identifier patterns are <code>AOS-11-REQ-001</code>, <code>AOS-02-IF-001</code>, <code>AOS-DEC-001</code> and <code>AOS-11-VER-001</code>. The prefixes identify ownership, not deployment units. The D01–D13 questions in the specification map remain source references until individual decision records are created.</p>
+<p><strong>QS-04 — Explicit normative status.</strong> Specifications shall distinguish requirements from rationale, illustrative examples, assumptions, proposals and unresolved decisions. “Shall” denotes a mandatory obligation; “shall not” denotes a prohibition; “may” denotes an explicitly optional behaviour. “Should” is reserved for non-binding guidance and shall not carry a build-critical obligation. Draft requirement wording does not confer approval merely by using “shall”.</p>
+<h2 id="4-requirement-writing-and-records">4. Requirement writing and records</h2>
+<p><strong>QS-05 — One obligation.</strong> Each requirement shall identify the responsible system component or human role and express one independently verifiable obligation. Independently changeable or testable obligations shall have separate identifiers. A condition and its required response may form one requirement.</p>
+<p><strong>QS-06 — Precise meaning.</strong> Requirements shall define or reference the conditions, observable result, timing and boundaries necessary to interpret them consistently. Terms, units, time origins, ranges and error states shall be explicit where relevant. Words such as “promptly”, “appropriate”, “secure”, “robust” and “sufficient” shall not substitute for defined criteria.</p>
+<p><strong>QS-07 — Appropriate level.</strong> Each requirement shall be classified as a stakeholder need, system requirement, component requirement, interface requirement or design constraint. Component requirements shall link to their parent requirement or an explicit derivation decision. A mandated technology or implementation choice shall have a recorded justification; otherwise the specification shall describe required behaviour and leave implementation discretion visible.</p>
+<p><strong>QS-08 — Complete requirement record.</strong> Each requirement shall have the following attributes, either locally or through an unambiguous link to a shared register:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required information</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Identity and statement</td>
+<td>Stable ID and normative text.</td>
+</tr>
+<tr>
+<td>Level and category</td>
+<td>For example, component/security, interface/data or system/governance.</td>
+</tr>
+<tr>
+<td>Source and derivation</td>
+<td>Source ID, version and precise locator; parent requirement or decision where derived.</td>
+</tr>
+<tr>
+<td>Rationale</td>
+<td>Why the obligation is necessary and what failure it addresses.</td>
+</tr>
+<tr>
+<td>Accountability</td>
+<td>Requirement owner and authority that approves it. These may differ.</td>
+</tr>
+<tr>
+<td>Status and release scope</td>
+<td>Proposed, reviewed, approved, superseded or rejected; relevant release or configuration.</td>
+</tr>
+<tr>
+<td>Dependencies</td>
+<td>Referenced interfaces, parameters, assumptions and blocking decisions. Explicit “none” is acceptable.</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Method, linked verification case and objective acceptance condition.</td>
+</tr>
+<tr>
+<td>Change record</td>
+<td>Origin and subsequent material changes.</td>
+</tr>
+</tbody></table>
+<p><strong>QS-09 — No hidden defaults.</strong> A parameter, threshold or permission not yet decided shall be marked unresolved, with an owner and the affected requirements identified. Illustrative values shall be labelled as examples and excluded from build instructions. Configurable parameters shall specify their permitted range or validation rule, authorisation, versioning and behaviour when absent, expired or invalid.</p>
+<p><strong>QS-10 — Source precision.</strong> Requirements shall distinguish directly adopted source obligations, interpretations and new engineering decisions. Source references shall include a heading, principle text locator, section or other durable location; a filename alone is insufficient for an individual requirement. Legal and supplier-dependent requirements shall record jurisdiction or product scope, verification date and a review trigger where applicable. Conflicting sources shall have an explicit resolution record before dependent requirements are approved.</p>
+<p>Example of insufficient wording: “The system shall escalate serious welfare issues quickly.”</p>
+<p>Improved drafting pattern: “When an event meets trigger WEL-01 in approved policy version [identifier], the routing service shall deliver it to that policy&#39;s designated review queue within [approved interval] of event receipt.”</p>
+<p>The second sentence is still a draft until its referenced trigger, policy and interval are resolved. Separate requirements would address delivery evidence, acknowledgment, unavailable recipients, deadline breach and closure. This example supplies no operational welfare threshold.</p>
+<h2 id="5-architecture-data-and-interfaces">5. Architecture, data and interfaces</h2>
+<p><strong>QS-11 — Architectural context.</strong> Each specification shall identify its purpose, stakeholders, concerns, responsibilities, exclusions, dependencies and trust/authority boundaries. The shared architecture shall maintain consistent component, information-flow, execution and deployment views, or justify why a view is unnecessary. Diagrams shall identify their scope and use defined terms; they shall not silently introduce requirements absent from the controlled text or contracts.</p>
+<p><strong>QS-12 — Interface completeness.</strong> Each interface shall identify producer, consumer, owner, purpose, contract version, inputs, outputs, permissions, preconditions and failure responses. Contracts shall define relevant schemas, units, identifiers, valid/invalid values, timing, acknowledgment, duplicate handling, ordering, retries and revocation behaviour. Each item shall be specified or explicitly judged not applicable. Both sides shall reference the same authoritative contract.</p>
+<p><strong>QS-13 — Data lifecycle.</strong> Specifications shall define or reference collection purpose, provenance, permitted access and inference, consent or other authorised basis, retention, correction, deletion and audit treatment for their data. They shall distinguish observations, inferences, proposals, approvals and outcomes. Requirements for persistent evidence shall be reconciled with data-minimisation and deletion requirements rather than allowing one to override the other by implication.</p>
+<p><strong>QS-14 — Behaviour and failure coverage.</strong> Workflows shall describe normal operation, exceptions, invalid inputs, dependency failure, interrupted execution, safe fallback and recovery. Stateful processes shall identify states, permitted transitions and the conditions preventing transition. Consequential handoffs shall state when responsibility transfers, what proves receipt, and what happens if receipt or action does not occur.</p>
+<p><strong>QS-15 — Measurable operating qualities.</strong> Performance, availability, recovery, capacity, accessibility and security requirements shall identify relevant operating conditions and an assessment method. Claims such as “real time”, “always available” or “impossible to bypass” shall not stand without defined limits, assumptions and evidence criteria. A quality may be assessed by structured inspection or analysis where a numerical measure would be inappropriate.</p>
+<h2 id="6-aos-specific-specification-obligations">6. AOS-specific specification obligations</h2>
+<p>These rules concern what must be made explicit and reviewed. The substantive authority comes from the adopted AOS principles and the organisation&#39;s approved instruments.</p>
+<p><strong>QS-16 — Human and agent authority.</strong> Every consequential workflow shall identify what the system can execute, what it must not execute, what requires human judgement, and the authority governing each transition. Human review shall have a named accountable role, required evidence, time conditions and an outcome record. A checkbox or signature shall not be described as proof that substantive judgement occurred.</p>
+<p><strong>QS-17 — Constitutional fidelity.</strong> Each component shall carry a documented applicability assessment against Foundational Principles v4, AOS Reasoning Principles v6 and the Governance Intelligence Tests, using their controlled source versions. This assessment shall address the 1+5 distinction, permanent human Mode 2, boardroom exclusion, purpose limits, protected escalation, uncertainty and feedback where applicable. Exceptions or conflicts require explicit resolution by the appropriate authority; the specification author cannot silently waive them.</p>
+<p><strong>QS-18 — Probabilistic behaviour.</strong> Where AI inference affects an output or action, the specification shall distinguish it from deterministic rules and enforcement. It shall define the intended task, allowed outputs, prohibited behaviour, confidence meaning, evaluation conditions, failure response and model-change review. Quality claims shall identify evaluation data, metrics or human-review rubric, acceptance thresholds and relevant limitations. A model&#39;s self-reported confidence shall not be treated as validated calibration without evidence.</p>
+<p><strong>QS-19 — Evidence without invented reasoning.</strong> Audit requirements shall specify evidence actually captured: inputs, source/version references, applied rules, actions, outputs, uncertainty and approved human rationale. They shall distinguish contemporaneous records from later explanations. Requirements shall not depend on recovering an AI&#39;s private internal reasoning or treat a generated retrospective explanation as proof of the actual decision path.</p>
+<p><strong>QS-20 — Controlled learning and interpretation.</strong> Specifications shall distinguish learning from outcomes, changing an analytical model, changing an operational parameter and amending constitutional authority. Each shall have its own permissions and review path. Revealed preferences and precedent shall not silently acquire authority to amend founding purpose. Where common agent calibration is adopted, its agent definition and GI oversight specification shall cross-reference each other.</p>
+<h2 id="7-traceability-and-verification">7. Traceability and verification</h2>
+<p><strong>QS-21 — Two-way traceability.</strong> The suite shall support navigation from source need or authorised decision to requirement, responsible component, interface and verification case, and back again. Shared rules shall have one authoritative definition. Unallocated requirements, requirements without a source/derivation, incompatible duplicate definitions and verification cases without linked requirements shall be identified during review.</p>
+<p><strong>QS-22 — Verification definition.</strong> Every approved requirement shall have at least one defined verification method and an acceptance condition. Each verification case shall identify:</p>
+<ul>
+<li>Case ID and requirement IDs.</li>
+<li>Method: test, inspection, analysis or demonstration; combinations are permitted.</li>
+<li>Preconditions, configuration, representative inputs and dependencies.</li>
+<li>Procedure or assessment steps.</li>
+<li>Expected results and objective pass/fail criteria, or a defined judgement rubric and qualified reviewer where appropriate.</li>
+<li>Evidence to retain and the role responsible for evaluating it.</li>
+</ul>
+<p>At specification review, these are planned verification cases, not claims of successful execution. After implementation, the result, tested versions, date, evidence and assessor shall be added to a separate execution record.</p>
+<p><strong>QS-23 — System-level coverage.</strong> The suite shall specify end-to-end cases for interactions that component tests cannot establish, including conflicting signals, uncertain evidence, withdrawn authority/consent, mandatory escalation, partial failure and recovery. Safety, privacy and authority controls shall include negative and attempted-bypass cases. Longitudinal human governance assessments shall remain distinct from software pass/fail results.</p>
+<h2 id="8-review-readiness-and-change">8. Review, readiness and change</h2>
+<p><strong>QS-24 — Separate recorded assessments.</strong> Every review shall record specification quality and design adequacy separately, with scope, exact document versions, reviewer identity, method, evidence and findings. Automated checks may assist either review but shall not be described as independent human assurance. An author self-review shall be labelled as such; it does not count as the separate reviewer check at Gate 3.</p>
+<h3 id="review-gates">Review gates</h3>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Minimum evidence</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>G1 — Draft organised</strong></td>
+<td>Identifier, owner or explicit vacancy, scope, source baseline, template coverage and visible unknowns.</td>
+<td>Suitable for collaborative drafting.</td>
+</tr>
+<tr>
+<td><strong>G2 — Reviewable</strong></td>
+<td>Proposed requirements have complete records or linked blocking issues; interfaces, verification cases and source conflicts are visible; author checklist completed.</td>
+<td>Sufficiently explicit for substantive review.</td>
+</tr>
+<tr>
+<td><strong>G3 — Ready for authorised build</strong></td>
+<td>Separate quality and design assessments completed by identified people with the relevant competence/authority; no unresolved blocking findings in build scope; dependencies and contract versions fixed; approval and bounded build scope recorded.</td>
+<td>A coding agent may implement the specified scope under the project&#39;s authorisation. Not operational deployment approval.</td>
+</tr>
+<tr>
+<td><strong>G4 — Implementation verified</strong></td>
+<td>Execution evidence against the approved baseline, resolved failures, integration results and recorded residual limitations.</td>
+<td>Evidence that the implementation meets its specified requirements. Not proof of organisational effectiveness or permission to go live.</td>
+</tr>
+</tbody></table>
+<p><strong>QS-25 — Readiness determination.</strong> A document shall not claim a gate it has not evidenced. Gate 3 shall require every applicable QS rule to pass, subject only to recorded permitted tailoring under QS-27, and a separate positive design-adequacy determination for the build scope. Unresolved decisions may remain outside that scope only where the excluded behaviour and dependency effects are explicitly bounded and reviewed. Missing operational deployment approvals need not prevent a properly bounded build; missing decisions that determine what must be built do prevent readiness for that scope.</p>
+<h3 id="finding-classifications">Finding classifications</h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Interpretation</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Critical</strong></td>
+<td>A defect could conceal or permit a material breach of authority, safety, privacy or the permanent human decision boundary.</td>
+<td>Blocks Gate 3 for affected scope and dependencies.</td>
+</tr>
+<tr>
+<td><strong>Major</strong></td>
+<td>Missing or inconsistent information requires the builder to invent material behaviour, or prevents verification.</td>
+<td>Blocks Gate 3 for affected scope and dependencies.</td>
+</tr>
+<tr>
+<td><strong>Minor</strong></td>
+<td>A defect that does not change required behaviour or prevent reliable implementation/verification.</td>
+<td>Must be corrected, or receive a documented exception with owner and disposition before Gate 3.</td>
+</tr>
+<tr>
+<td><strong>Observation</strong></td>
+<td>Improvement suggestion without a current rule failure.</td>
+<td>Does not block; retain for consideration.</td>
+</tr>
+</tbody></table>
+<p>An average score shall not override a blocking finding. Findings shall identify the QS rule or substantive source concerned, evidence, affected requirements, severity rationale, owner, resolution and closure verification. The reviewer shall distinguish format defects from content concerns; both may block readiness.</p>
+<p><strong>QS-26 — Change impact.</strong> Material changes after approval shall identify affected requirements, interfaces, source mappings, tests and downstream documents, and reopen the relevant review and approval. A changed specification shall not inherit its predecessor&#39;s readiness claim automatically. A release manifest shall identify the compatible document, contract and parameter versions supplied to the builder.</p>
+<p><strong>QS-27 — Proportionate tailoring.</strong> A combined document, external controlled register or reasoned non-applicability decision may replace template duplication if the required information remains accessible. Tailoring shall identify the rule, reason, evidence, affected scope, reviewer and approver. It shall not waive necessary authority, conceal uncertainty, remove traceability or permit an unverifiable mandatory requirement. Critical or major defects shall not be relabelled as tailoring to achieve readiness.</p>
+<p><strong>QS-28 — Builder handover check.</strong> Before Gate 3, a reviewer other than the specification author shall walk through a normal case, a relevant exception and an authority-boundary case using only the controlled handover package. The reviewer shall record any point requiring an unstated material decision. The package shall state what may be built, what is excluded, which implementation choices remain discretionary and when the builder must stop and report a gap. An AI walkthrough may supplement but not replace this reviewer check.</p>
+<h2 id="9-audit-method-and-evidence-pack">9. Audit method and evidence pack</h2>
+<p>A reviewer applying this standard first agrees the scope: a template, one component, a release subset or the whole suite. Passing a template review does not establish that populated specifications meet the same standard.</p>
+<p>The review pack contains the baseline manifest, source register, specifications and annexes, requirement/traceability registers, interface catalogue, open decisions, planned verification cases, review findings and approval records. Executed verification evidence is added when assessing Gate 4.</p>
+<p>For Gate 3, identifier integrity, required fields, links and unresolved-status checks cover all in-scope requirements. Human review covers all consequential safety, privacy, authority and constitutional requirements and all shared interfaces. Any sampling of remaining requirements must identify the population, selection, exclusions and limitations; the resulting conclusion must not imply exhaustive human review. This is the project&#39;s proposed review policy, not an ISO-mandated sampling rule.</p>
+<p>An audit report should give separate conclusions for document control, requirement expression, traceability, interface consistency and verification readiness, followed by the separate design-adequacy conclusion. Use <strong>pass</strong>, <strong>fail</strong>, <strong>not assessed</strong>, or <strong>not applicable with rationale</strong>. Include counts and specific findings rather than a single quality percentage.</p>
+<p>No assessment has yet been conducted against this first version. Initial adoption requires project review of the rules, review roles and gates; it does not require pausing ordinary drafting.</p>
+<h2 id="appendix-a-reusable-specification-template">Appendix A — Reusable specification template</h2>
+<p>Copy this structure for each mapped specification. Bracketed entries are placeholders, never default decisions.</p>
+<table>
+<thead>
+<tr>
+<th>Control field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID / title / version / date</td>
+<td>[Specify]</td>
+</tr>
+<tr>
+<td>Status / gate achieved</td>
+<td>[Draft; none until evidenced]</td>
+</tr>
+<tr>
+<td>Owner / author / reviewer</td>
+<td>[Name or explicit vacancy]</td>
+</tr>
+<tr>
+<td>Approver and approval record</td>
+<td>[Reference or not approved]</td>
+</tr>
+<tr>
+<td>AOS-QS version / source baseline</td>
+<td>[Specify]</td>
+</tr>
+<tr>
+<td>Release scope / dependency manifest</td>
+<td>[Specify]</td>
+</tr>
+<tr>
+<td>Change history</td>
+<td>[Version, change, reason, affected IDs]</td>
+</tr>
+</tbody></table>
+<ol>
+<li><strong>Purpose and scope:</strong> intended outcome, stakeholders, responsibilities, exclusions and deployment assumptions.</li>
+<li><strong>Authority and sources:</strong> precise references, source applicability, interpretations, decisions and unresolved conflicts.</li>
+<li><strong>Context and architecture:</strong> component relationships, relevant views, trust boundaries and human responsibilities.</li>
+<li><strong>Requirements:</strong> stable requirement records using the QS-08 attributes; distinguish mandatory behaviour from supporting explanation.</li>
+<li><strong>Data and interfaces:</strong> controlled contract references, data lifecycle and field/schema definitions.</li>
+<li><strong>Behaviour and authority:</strong> workflows, states, permissions, prohibitions, human decisions, escalation and feedback.</li>
+<li><strong>Operating qualities:</strong> uncertainty, security, privacy, accessibility, capacity, performance and observability.</li>
+<li><strong>Failure and recovery:</strong> abnormal cases, fallback, partial execution, interruption and restoration.</li>
+<li><strong>Verification and acceptance:</strong> case records under QS-22; component and integration coverage; human assessment boundaries.</li>
+<li><strong>Dependencies and open decisions:</strong> owner, affected IDs, resolution gate/date, consequences and excluded scope.</li>
+<li><strong>Build and handover:</strong> approved scope, build dependencies, bounded discretion, stop conditions, configuration and migration requirements.</li>
+<li><strong>Review and control:</strong> checklist, findings, tailoring, separate quality/design conclusions, approvals and change impact.</li>
+</ol>
+<h3 id="reusable-decision-record">Reusable decision record</h3>
+<p><code>ID | question | alternatives | affected requirement/interface IDs | decision owner | required authority | evidence/source | due gate/date | status | resolution and rationale | approval/date | superseded decision</code></p>
+<h3 id="reusable-review-finding">Reusable review finding</h3>
+<p><code>ID | baseline | quality/content classification | rule/source | evidence and location | affected IDs | severity and rationale | owner | required correction | resolution evidence | closure reviewer/date</code></p>
+<h2 id="appendix-b-review-checklist">Appendix B — Review checklist</h2>
+<p>For each row record pass/fail/not assessed/not applicable, evidence location, reviewer and finding IDs. A tick without evidence is insufficient.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>QS rules</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Identity, ownership, status, versions and approval records are explicit.</td>
+<td>01, 03</td>
+</tr>
+<tr>
+<td>Template coverage and any tailoring are visible and justified.</td>
+<td>02, 27</td>
+</tr>
+<tr>
+<td>Requirements, rationale, examples and proposals are distinguishable.</td>
+<td>04</td>
+</tr>
+<tr>
+<td>Requirements are singular, precise and expressed at the correct level.</td>
+<td>05–07</td>
+</tr>
+<tr>
+<td>Each requirement has all mandatory attributes.</td>
+<td>08</td>
+</tr>
+<tr>
+<td>No illustrative or unresolved value masquerades as an approved default.</td>
+<td>09</td>
+</tr>
+<tr>
+<td>Sources, derivations and conflicts are precisely recorded.</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Architecture views and component responsibilities agree.</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Producer and consumer use complete, compatible interface contracts.</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Data purposes, provenance, access and lifecycle are explicit.</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Exceptions, handoffs, failure and recovery are specified.</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Operating qualities have assessable criteria and stated assumptions.</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Human/agent authority and AOS principle applicability are explicit.</td>
+<td>16–17</td>
+</tr>
+<tr>
+<td>Probabilistic behaviour has an evaluation and failure specification.</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Audit evidence is distinguished from generated explanations.</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Learning, interpretation and amendment have distinct controls.</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Source-to-requirement-to-verification links work in both directions.</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Verification plans specify pass conditions; execution is not falsely claimed.</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Cross-domain, negative and attempted-bypass cases are covered.</td>
+<td>23</td>
+</tr>
+<tr>
+<td>Quality and design reviews are separately evidenced; independence is accurately described.</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Gate claims match evidence, findings and authorised scope.</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Changes and dependent baselines are controlled.</td>
+<td>26</td>
+</tr>
+<tr>
+<td>A separate reviewer completed the builder handover walkthrough.</td>
+<td>28</td>
+</tr>
+</tbody></table>
+<p><strong>Review conclusion fields:</strong> baseline and scope; method and coverage; quality conclusion; design-adequacy conclusion; outstanding findings; permitted tailoring; excluded capabilities; gate achieved; reviewer; approver; date.</p>
+</main></body></html>

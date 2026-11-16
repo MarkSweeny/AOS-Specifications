@@ -1,0 +1,1783 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AOS-10 — Asset Intelligence · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-10-asset-intelligence.pdf">PDF</a> &nbsp; <a href="aos-10-asset-intelligence.md">Markdown</a></nav><main><h1 id="aos-10-asset-intelligence">AOS-10 — Asset Intelligence</h1>
+<p>Document: aos-10-asset-intelligence · Source revision or record: v0.5 functional baseline, editorial edition 29 October 2026</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p><strong>Editorial edition — 29 October 2026:</strong> Mark authorised documentary corrections D-01–09. This edition reconciles navigation, count/revision pointers, conformance links and historical scope labels; existing technical meanings, requirement/IF/decision identities and proposed/planned status are retained. The internal version below identifies the retained functional baseline; this dated editorial edition identifies the corrected document. See the <a href="../Supporting-Specifications/aos-current-document-inventory-2026-10-29.html">current document inventory</a> and <a href="../Supporting-Specifications/aos-documentary-corrections-2026-10-29.html">correction record</a>. Earlier dated adoption baselines are historical snapshots; exact logical family/view revisions are in Exchange Register §4.</p>
+<table>
+<thead>
+<tr>
+<th>Document control</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Identifier / version / date</td>
+<td>AOS-10 / 0.5 / 9 October 2026</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Functional specification review draft; proposed requirements; verification planned, not executed</td>
+</tr>
+<tr>
+<td>Architecture baseline</td>
+<td>AOS-00/Map v0.44; DEC-001–097; AOS-10v0.5/20v0.6/22v0.5/24v0.4/25v0.3/40v0.8; other components unchanged; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; acceptance annexv0.2; reviewv0.3.</td>
+</tr>
+<tr>
+<td>Current component baseline</td>
+<td>AOS-00/Map v0.44; DEC-001–097; AOS-10v0.5/20v0.6/22v0.5/24v0.4/25v0.3/40v0.8; other components unchanged; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; acceptance annexv0.2; reviewv0.3.</td>
+</tr>
+<tr>
+<td>Common baseline</td>
+<td>AOS-00/Map v0.44; DEC-001–097; AOS-10v0.5/20v0.6/22v0.5/24v0.4/25v0.3/40v0.8; other components unchanged; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; acceptance annexv0.2; reviewv0.3.</td>
+</tr>
+<tr>
+<td>Governing source / quality baseline</td>
+<td>Preserved source manifest; FP v4; RP v6; Governance Intelligence Tests; AOS-QS v0.1; component template v0.4</td>
+</tr>
+<tr>
+<td>Project owner / specification custodian</td>
+<td>Mark Sweeny</td>
+</tr>
+<tr>
+<td>Accountable operating owner</td>
+<td>Asset service owner; organisational appointment pending; competent inspection/building-safety and statutory dutyholders are separate roles</td>
+</tr>
+<tr>
+<td>Author / reviewers</td>
+<td>Codex at Mark&#39;s request; author structural and consistency checks; Mark functional review pending; independent project review deferred</td>
+</tr>
+<tr>
+<td>Approval / readiness</td>
+<td>Existing approved directions guide drafting; exact requirements proposed; no whole-document approval, G3/G4, operating activation or conformance claimed</td>
+</tr>
+<tr>
+<td>Release scope</td>
+<td>Asset functional architecture; repair demonstration allocation; exact executable release/profile scope not yet authorised</td>
+</tr>
+<tr>
+<td>Change history</td>
+<td>0.3 — reciprocal AOS-13 v0.1 references and current architecture baseline only; original REQ/VER text, IDs and status retained.  0.2 supplier participation redraft at Mark&#39;s request, 8 October 2026; REQ-049 / VER-034 added; original IDs retained; 0.1 initial functional draft; no new constitutional decision, approved IF family, technology selection or numerical default</td>
+</tr>
+</tbody></table>
+<h2 id="1-purpose-and-scope">1. Purpose and scope</h2>
+<p>Asset Intelligence provides an evidence-grounded account of the physical homes, buildings and components for which the organisation has responsibilities. It makes condition, missing knowledge, developing physical risks and the effects of maintenance legible to service teams and governance. Without it the organisation cannot distinguish a known physical condition from an incomplete record, inferential forecast or administrative work status.</p>
+<p>Its intended outcome is a Living Asset Register that links attributable observation to interpreted condition, proposed intervention, human-authorised action and actual outcome. A safe or completed label must have the evidence required for that exact claim. Missing telemetry must remain visible while inspection, resident reporting and manual service continue through permitted routes.</p>
+<p>Scope covers property/component identities and relationships; physical inspections, reports and telemetry; coverage/freshness; uncertain condition and maintenance analysis; physical-risk referrals; repair promise/completion evidence; investment-planning inputs; governed building-safety information; actual consequence feedback; and its own external adaptation research. Continuous sensing is an optional implementation capability, not a universal requirement to install sensors in every home.</p>
+<p>AOS-10 is one of five sensing domains. It does not own resident profiling/contact delivery (11), staff matters (12), work orchestration/overdue detection and duty tracking (13), external retrieval/exchange (14), cross-domain synthesis (22) or human decisions (30). It cannot replace competent physical assessment, determine statutory liability, automatically allocate capital or treat physical signals as implicit permission to infer residents&#39; conduct. Digital-twin modelling is optional; a 3D model is not necessary to satisfy this functional specification.</p>
+<h2 id="2-authority-and-sources">2. Authority and sources</h2>
+<p>FP v4 and RP v6 govern; approved architecture decisions constrain interpretation. Books explain intent. Requirements below are proposed engineering obligations, not new approved decisions. External sources provide dated research evidence and require competent applicability mapping; a guidance page is not itself an organisational authority grant.</p>
+<table>
+<thead>
+<tr>
+<th>Source key</th>
+<th>Exact source / derivation and use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ARCH</td>
+<td>AOS-00 v0.33 §§3.1/4.2/6/9, REQ-041–044 and VER-019; Specification Map §4 AOS-10; v0.34 adds this allocation only</td>
+</tr>
+<tr>
+<td>FP / RP / GT</td>
+<td>FP v4 principles 1–10; RP v6 domains 1–9, especially domain 3 Golden Thread and 9 Sensing; all 29 GT tests allocated in Appendix A</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>Book 4, Asset Intelligence chapter: physical condition, Living Asset Register, telemetry/manual evidence, early warning, investment and building safety; explanatory, not current legal/product authority</td>
+</tr>
+<tr>
+<td>QS</td>
+<td>AOS-QS v0.1, QS-04–28; component template v0.4 including required §4.4</td>
+</tr>
+<tr>
+<td>DATA</td>
+<td>AOS-02 v0.8 §§5/6/10; Core v0.6 REC-E/Q/A/D/X; Shared v0.15; Register v0.14; DEC-045–048</td>
+</tr>
+<tr>
+<td>CONTROL</td>
+<td>AOS-01/03/04/05 v0.8; Control Coordination v0.2; Protected Reporting and Recovery v0.1; DEC-028–030/042–044/049–061/067–078</td>
+</tr>
+<tr>
+<td>REPAIR</td>
+<td>DEC-036–041; Operational Profiles v0.1 §§4/5; 30 v0.5 repair duties; 40 v0.2 VER-007–010</td>
+</tr>
+<tr>
+<td>RESEARCH</td>
+<td>DEC-086; 04 CON-009; 02 CON-007 / RSVIEW-0.1; 01 §10.8; 14 retrieval; 13 coordination; 30 human disposition</td>
+</tr>
+<tr>
+<td>GI</td>
+<td>20–25 current versions above; source-assured inputs, canonical analysis, presentation and oversight; DEC-088–091</td>
+</tr>
+</tbody></table>
+<h3 id="21-external-research-used-in-this-draft">2.1 External research used in this draft</h3>
+<p>Access/verification date: 8 October 2026. Brief summaries record the architectural implication only; full source text and legal mapping remain separate. No numeric statutory deadline, blanket compliance claim or vendor commitment is imported.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Primary source / status / bounded implication</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EXT-01</td>
+<td><a href="https://www.gov.uk/government/publications/safety-and-quality-standard">Regulator of Social Housing: Safety and Quality Standard</a>, England, published standard; §2.1.1 individual-property physical assessment and §2.3 repair communication support attributable physical evidence and clear repair records. Operational applicability/assurance requires competent human mapping.</td>
+</tr>
+<tr>
+<td>EXT-02</td>
+<td><a href="https://www.gov.uk/guidance/keeping-information-about-a-higher-risk-building-the-golden-thread">Building Safety Regulator: keeping higher-risk building information — golden thread</a>, guidance, stage/dutyholder-specific; informs current, secure, usable information and evidenced handover. A generic asset register cannot establish fulfilment of every statutory information duty.</td>
+</tr>
+<tr>
+<td>EXT-03</td>
+<td><a href="https://www.gov.uk/government/publications/awaabs-law-guidance-for-social-landlords">Awaab&#39;s Law guidance for social landlords</a>, England, current Phase 1 guidance collection, accessed 8 October; relevant hazard awareness, investigation and work evidence must be distinguishable from resident-promised dates. Actual regulations and applicability control legal conclusions.</td>
+</tr>
+<tr>
+<td>EXT-04</td>
+<td><a href="https://www.gov.uk/government/publications/awaabs-law-phase-2-guidance-for-social-housing-landlords/awaabs-law-phase-2-guidance-for-social-landlords">Awaab&#39;s Law Phase 2 guidance</a>, non-statutory guidance; expanded requirements take effect 30 November 2026, future at this draft date. Research must preserve effective-date standing rather than activate future rules early.</td>
+</tr>
+<tr>
+<td>EXT-05</td>
+<td><a href="https://mhclgdigital.blog.gov.uk/2025/08/20/delivering-a-data-standard-to-support-awaabs-law-in-social-housing/">MHCLG: delivering a data standard to support Awaab&#39;s Law</a>, government development account, 20 August 2025; property/investigation/work-order/appointment relationships are mapping candidates. DEC-048 retains HACT as preferred reference for assessment; exact released version, licence, mappings and conformance remain unapproved. Direct HACT page retrieval was unavailable; this is not evidence of latest HACT definitions.</td>
+</tr>
+</tbody></table>
+<p>England-specific sources are not silently generalised across jurisdictions or tenures. The source manifest remains unchanged. Book forecasts, supplier examples and market claims do not become guarantees of predictive accuracy, legal compliance or investment return.</p>
+<h2 id="3-responsibilities-and-context">3. Responsibilities and context</h2>
+<table>
+<thead>
+<tr>
+<th>Responsibility</th>
+<th>AOS-10 contribution / authoritative counterpart</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Physical evidence and condition</td>
+<td>Asset owner/competent inspectors steward domain meaning; 02 owns shared record semantics; 14 owns supplier/external intake; 03 controls permitted use</td>
+</tr>
+<tr>
+<td>Coverage and risk</td>
+<td>10 exposes observed/unobserved physical scope and bounded risks; 13 routes duty; 30 supports empowered human response; 22 synthesises across domains</td>
+</tr>
+<tr>
+<td>Repairs</td>
+<td>10 supplies promise/completion/condition evidence; 13 compares dates and orchestrates accepted duties; 11 governs resident participation/agreed channels and delivery; 30 records authorised human decisions</td>
+</tr>
+<tr>
+<td>Investment</td>
+<td>10 supplies condition/scenario inputs; 22 prepares alternatives; 30 supports human approval; expenditure authority comes from 01 and the organisation&#39;s approved instruments</td>
+</tr>
+<tr>
+<td>Building-safety information</td>
+<td>10 supports evidence custody and gap reporting with 02/03/14; statutory dutyholders retain legal duties; board governance accountability is separate</td>
+</tr>
+<tr>
+<td>Research</td>
+<td>Assigned agent/shared service researches this specialist remit through 14; 10 owns relevance; 13 tracks handoff; 30/01 retain disposition/amendment powers</td>
+</tr>
+</tbody></table>
+<p>Trust boundaries include resident/home to device or inspector, supplier to admitted evidence, raw evidence to probabilistic interpretation, component to shared controls, internal to external disclosure, and software support to human judgement. Housing-management/asset systems, contractor feeds and sensors are candidate sources; none is authoritative for every fact merely by being connected.</p>
+<h3 id="31-supplier-participation-and-functional-realisation">3.1 Supplier participation and functional realisation</h3>
+<p><strong>AOS responsibilities are logical functions, not mandatory separate products.</strong> Existing supplier sensors, connectivity, cloud services, analytics, case management, portals and apps can implement relevant parts of the architecture. A supplier can provide observations only, observations plus interpreted findings, or a combined service that realises several component functions. The organisation need not duplicate capable supplier software merely to give every AOS component its own application.</p>
+<p>The integration question is: which exact obligations does each supplier service fulfil, what evidence and governed records does it provide, where are controls enforced, and what remains with other systems or humans? A supplier&#39;s risk interpretation can be admitted as an attributed analytical finding with method/version/limitations; AOS does not require it to be re-created internally. Where evidence cannot be exported, an accessible controlled reference and permitted review path must still support the declared obligation; an inaccessible dashboard label cannot alone prove conformance.</p>
+<table>
+<thead>
+<tr>
+<th>Supplier offering</th>
+<th>Candidate AOS function / view</th>
+<th>Evidence and boundary to demonstrate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Environmental/asset sensors and device status</td>
+<td>10 FUN-001/002; CON-001/002</td>
+<td>Physical quantity/unit, device/property/component identity, observed time, provenance, quality and lost coverage; no implicit resident behaviour inference</td>
+</tr>
+<tr>
+<td>Gateway, cloud collection and connectors</td>
+<td>14 intake/exchange; 02 admission; 05 runtime/security</td>
+<td>Authenticated source, delivery/ordering/duplicate semantics, integrity, outage visibility and governed purpose/access</td>
+</tr>
+<tr>
+<td>Supplier condition/risk analytics</td>
+<td>10 FUN-003; CON-002/003</td>
+<td>Observation versus derived finding, supporting evidence, exact analytical version, uncertainty, evaluated scope and referral meaning</td>
+</tr>
+<tr>
+<td>Asset portal/register/reporting</td>
+<td>10 FUN-002; CON-002/005; relevant GI rendering interfaces</td>
+<td>Coverage/currentness/lineage and permitted readable views; no complete safety or institution-wide governance claim from dashboard colour</td>
+</tr>
+<tr>
+<td>Maintenance/case-management platform</td>
+<td>13 workflow plus 10 CON-003/004 and 30 human decision support</td>
+<td>Accepted owner, original promise, work scope, actual completion evidence, exceptions, duplicate/retry reconciliation and human approvals</td>
+</tr>
+<tr>
+<td>Resident application/communications</td>
+<td>11 participation/delivery with 10 evidence and 13 tracking</td>
+<td>Agreed channels, accessible alternatives, purpose/use checks, challenge/correction and distinct delivery/acceptance/service outcomes</td>
+</tr>
+<tr>
+<td>Building-information repository</td>
+<td>10 FUN-006; CON-006; 02/03/14 custody/access/transfer</td>
+<td>Current category inventory, exact versions/gaps, dutyholder scope, secure access and separate usable handover confirmation</td>
+</tr>
+</tbody></table>
+<p>Participation arrangements may include a standalone operational portal with governed manual/reference exchange, API/event integration with existing systems, or a combined supplier platform spanning functions. Each is assessed against its declared scope: a manual exchange does not meet an automated-service claim, and an API&#39;s existence does not prove its fields, permissions or reliability satisfy the AOS contracts. The same named source of truth and authority rules apply whichever arrangement is used. Avoid competing case masters: declare the authoritative record for each meaning and the correction/reconciliation route.</p>
+<p>Suppliers may meet some obligations directly, others through configuration or integration, and leave some outside their scope. Compliance is evaluated per exact requirement and assembled release, not awarded to an entire product from broad capability resemblance. The organisation and humans retain their accountable and reserved duties regardless of hosting or supplier branding. §18 provides an illustrative mapping; §20 provides the response matrix.</p>
+<h2 id="4-capabilities-and-functions">4. Capabilities and functions</h2>
+<h3 id="41-capabilities">4.1 Capabilities</h3>
+<table>
+<thead>
+<tr>
+<th>CAP</th>
+<th>Outcome / requirement range</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-CAP-001</td>
+<td>Attributable physical asset evidence and Living Asset Register; REQ-001–010/048</td>
+</tr>
+<tr>
+<td>AOS-10-CAP-002</td>
+<td>Bounded early warning and accepted physical-risk/service handoff; 011–012/020–022</td>
+</tr>
+<tr>
+<td>AOS-10-CAP-003</td>
+<td>Resident-promise and actual repair evidence; 013–019/032</td>
+</tr>
+<tr>
+<td>AOS-10-CAP-004</td>
+<td>Investment and governance inputs with uncertainty and human judgement preserved; 023/044</td>
+</tr>
+<tr>
+<td>AOS-10-CAP-005</td>
+<td>Governed building-safety information and usable transfer; 024–027/047</td>
+</tr>
+<tr>
+<td>AOS-10-CAP-006</td>
+<td>Permitted, secure, correctable and recoverable operation; 028–038/045–046</td>
+</tr>
+<tr>
+<td>AOS-10-CAP-007</td>
+<td>Specialist external research and human-governed adaptation; 039–043</td>
+</tr>
+<tr>
+<td>AOS-10-CAP-008</td>
+<td>Attributable supplier participation and implementation coverage; 049</td>
+</tr>
+</tbody></table>
+<h3 id="42-functions">4.2 Functions</h3>
+<table>
+<thead>
+<tr>
+<th>FUN</th>
+<th>Trigger → inputs → behaviour/output / authority and failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-FUN-001 Admit observation</td>
+<td>Permitted source event → scope/provenance/use checks → admitted evidence or explicit rejection/quarantine; never convert unknown identity into certainty; CAP-001/006, CON-001</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-002 Maintain register</td>
+<td>Evidence/correction/freshness change → source-assured observations and coverage → versioned condition view; conflicts/gaps preserved; CAP-001, CON-002</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-003 Analyse and refer</td>
+<td>Approved analytical trigger → bounded evidence/rule → inference, forecast or physical-risk referral; uncertainty and human route explicit; CAP-002/004, CON-003/005</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-004 Supply repair evidence</td>
+<td>Repair/promise/work evidence change → original promise and completion rule → controlled classifications supplied to Process; unknown/partial/disputed paths distinct; CAP-003, CON-004</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-005 Prepare scenarios</td>
+<td>Authorised planning request → condition/resource/assumption inputs → non-binding alternatives and distributional consequences; no capital commitment; CAP-004, CON-005</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-006 Steward building information</td>
+<td>Applicable profile/update/handover → exact inventory/currentness/use → governed view/transfer evidence and owned gaps; legal dutyholder remains human; CAP-005, CON-006</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-007 Correct and recover</td>
+<td>Changed evidence/use, outage or restoration → impact/current restrictions/prior effects → selective reassessment and approved fallback/continuation; no blind retry; CAP-006, CON-001–006</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-008 Research adaptation</td>
+<td>Approved profile trigger → permitted external sources → common run/finding/reviewer/disposition records; gaps and urgency visible; change/activation separate; CAP-007, CON-007</td>
+</tr>
+<tr>
+<td>AOS-10-FUN-009 Assess supplier realisation</td>
+<td>Proposed supplier/configuration change → exact capability/requirement/contract declaration → scoped fit, evidence and owned gap assessment; no selection or activation by mapping alone; CAP-008, existing CON-001–007 and common manifest</td>
+</tr>
+</tbody></table>
+<h3 id="43-requirements-and-record-metadata">4.3 Requirements and record metadata</h3>
+<p>Each row below is one proposed component-level obligation. Category and source are explicit. Rationale is the corresponding function&#39;s prevention of false knowledge, unowned duty or unauthorised effect. Owner is the asset service owner, with domain-specific competent stewards in §3; approver is Mark for specification disposition and the empowered organisational authority for its commissioned application. All rows have status <strong>proposed</strong>, scope <strong>functional draft</strong>, history <strong>0.1 initial allocation, 8 October 2026; REQ-049 added at 0.2 under Mark&#39;s supplier-participation direction</strong>. Dependencies are the cited component/contracts plus §§6/16/17; linked CAP/FUN follow the ranges above and each VER&#39;s CON allocation. Exact source locators use this document&#39;s §2 register. No open setup value becomes a build default.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Independently verifiable obligation</th>
+<th>Source / derivation</th>
+<th>Planned VER</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-REQ-001</td>
+<td><strong>Scope:</strong> For every asset observation or analysis, AOS-10 shall identify the physical asset purpose and applicable organisation, property/building/component and observation scope.</td>
+<td>ARCH §3.1; RP9</td>
+<td>AOS-10-VER-001</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-002</td>
+<td><strong>Identity:</strong> AOS-10 shall admit asset relationships only with governed identity, effective dates and explicit unresolved reconciliation status.</td>
+<td>02 §§5/6/10; DEC-045</td>
+<td>AOS-10-VER-001</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-003</td>
+<td><strong>Evidence:</strong> AOS-10 shall preserve each observation&#39;s source, method, observed time, admission time, units, assurance, uncertainty and correction lineage through the governed evidence contract.</td>
+<td>02 CON-001; Core REC-E; DEC-046</td>
+<td>AOS-10-VER-002</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-004</td>
+<td><strong>Coverage:</strong> Each condition view shall expose its covered property/component/hazard/time scope and material missing, inaccessible, stale, failed or unperformed observations.</td>
+<td>B4 Asset; RP5/7/9</td>
+<td>AOS-10-VER-003</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-005</td>
+<td><strong>Register:</strong> The Living Asset Register shall distinguish physical observation, interpreted condition, forecast, human decision, action and verified outcome as separate linked meanings.</td>
+<td>B4 Asset; RP1/7; 02 REC-E/Q</td>
+<td>AOS-10-VER-004</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-006</td>
+<td><strong>Condition:</strong> AOS-10 shall retain unresolved contradictory condition evidence rather than silently replacing it with the newest arrival or an aggregate score.</td>
+<td>02 §10; DEC-046; FP5/6</td>
+<td>AOS-10-VER-005</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-007</td>
+<td><strong>Manual assessment:</strong> AOS-10 shall support identifiable physical inspection and resident-reported condition evidence when sensors are absent or unavailable.</td>
+<td>EXT-01; B4 Asset; RP9</td>
+<td>AOS-10-VER-006</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-008</td>
+<td><strong>No substitution:</strong> AOS-10 shall not represent telemetry or model interpretation as a completed physical assessment without evidence of that assessment.</td>
+<td>EXT-01; FP3/4/6</td>
+<td>AOS-10-VER-006</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-009</td>
+<td><strong>Analysis:</strong> Every condition inference shall identify supporting evidence, applicable analytical version, assumptions and limitations separately from observed facts.</td>
+<td>04 §§4/13; RP7</td>
+<td>AOS-10-VER-007</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-010</td>
+<td><strong>Prediction:</strong> Each maintenance forecast shall expose its scenario, horizon, uncertainty, evaluation basis and conditions under which it cannot support a conclusion.</td>
+<td>B4 Asset; FP5/6; QS-18</td>
+<td>AOS-10-VER-007</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-011</td>
+<td><strong>Urgent concerns:</strong> AOS-10 shall refer a suspected acute physical safety concern through the separately approved human safety protocol without waiting for ordinary analytical or governance review.</td>
+<td>DEC-051; RP3; 30 §10</td>
+<td>AOS-10-VER-008</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-012</td>
+<td><strong>Action boundary:</strong> Before any consequential asset action, AOS-10 shall obtain current authority and permitted-use checks for that exact proposed operation.</td>
+<td>01/03/04; DEC-028–030/042–044; COORD CHECK/ACT</td>
+<td>AOS-10-VER-009</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-013</td>
+<td><strong>Promise source:</strong> AOS-10 shall supply the resident-communicated repair completion commitment and its provenance separately from internal scheduling targets.</td>
+<td>DEC-036/037; ARCH REQ-041–044; Profiles §§4/5</td>
+<td>AOS-10-VER-010</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-014</td>
+<td><strong>Comparison meaning:</strong> AOS-10 shall supply the promised-date precision and approved calendar/timezone comparison meaning without introducing a grace period.</td>
+<td>DEC-036</td>
+<td>AOS-10-VER-011</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-015</td>
+<td><strong>Promise revision:</strong> AOS-10 shall recognise a revised resident commitment only with authorised human revision and evidence of communication, preserving the original commitment and breach history.</td>
+<td>DEC-037</td>
+<td>AOS-10-VER-012</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-016</td>
+<td><strong>Completion:</strong> AOS-10 shall label repair completion established only when the repair-specific completion rule is satisfied by an identifiable completion record and required work or inspection evidence.</td>
+<td>DEC-038; Profiles §§4/5</td>
+<td>AOS-10-VER-013</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-017</td>
+<td><strong>Unknown completion:</strong> Where completion cannot be established after the promised boundary, AOS-10 shall supply “completion unverified after promised date” for an owned verification escalation.</td>
+<td>DEC-039</td>
+<td>AOS-10-VER-014</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-018</td>
+<td><strong>Incomplete scope:</strong> Where part of the promised scope remains outstanding, AOS-10 shall preserve the original repair as incomplete and identify completed and outstanding work separately.</td>
+<td>DEC-040</td>
+<td>AOS-10-VER-015</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-019</td>
+<td><strong>Dispute:</strong> AOS-10 shall preserve contested completion as disputed evidence for human resolution rather than treating resident silence or a contractor status as resolution.</td>
+<td>DEC-038; FP7; 30 REQ-021–033</td>
+<td>AOS-10-VER-016</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-020</td>
+<td><strong>Workflow handoff:</strong> AOS-10 shall transfer condition or repair findings with evidence and explicit uncertainty to AOS-13&#39;s governed lifecycle without treating receipt as acceptance of responsibility.</td>
+<td>RP1/3/8; 13 boundary; COORD ACC</td>
+<td>AOS-10-VER-017</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-021</td>
+<td><strong>Outcome:</strong> AOS-10 shall link actual work and inspection outcomes to originating evidence and decisions, retaining the distinction between an action attempted and condition improved.</td>
+<td>RP1/4; Core REC-X/E/Q</td>
+<td>AOS-10-VER-018</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-022</td>
+<td><strong>Risk inputs:</strong> Each asset-risk contribution shall identify physical concern, potential consequences, exposure scope, evidence limits and accountable human route.</td>
+<td>RP3/5; B4 Asset; general architectural risk inputs (CAP-02 use-case assessment deferred)</td>
+<td>AOS-10-VER-008</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-023</td>
+<td><strong>Investment:</strong> Each investment-planning input shall expose condition evidence, assumptions, resource constraints, alternative scenarios and uncertain consequences without claiming a human capital-allocation decision.</td>
+<td>B4 Asset; FP1/2; 22 §§4/10</td>
+<td>AOS-10-VER-019</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-024</td>
+<td><strong>Golden Thread scope:</strong> Each building-safety information view shall identify the building, applicable lifecycle/dutyholder scope, required information categories and unresolved applicability gaps under a competent human-approved profile.</td>
+<td>EXT-02; RP3 Golden Thread; ARCH §4.2</td>
+<td>AOS-10-VER-020</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-025</td>
+<td><strong>Golden Thread custody:</strong> AOS-10 shall preserve identifiable current versions and revision history of governed building-safety information with authorised secure access and disclosed completeness gaps.</td>
+<td>EXT-02; 02/03; FP4</td>
+<td>AOS-10-VER-021</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-026</td>
+<td><strong>Golden Thread transfer:</strong> An authorised building-safety transfer shall record exact information versions, recipient scope, delivery and separate confirmation that information is usable, with failed or unconfirmed transfers left owned.</td>
+<td>EXT-02; 14 §10; COORD ACC</td>
+<td>AOS-10-VER-022</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-027</td>
+<td><strong>Regulatory applicability:</strong> AOS-10 shall distinguish the source&#39;s publication and effective dates, jurisdiction and legal standing from the organisation&#39;s approved operational rule and actual evidence of compliance.</td>
+<td>EXT-01–04; DEC-086; FP9</td>
+<td>AOS-10-VER-023</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-028</td>
+<td><strong>Data minimisation:</strong> AOS-10 shall use and disclose asset evidence only for the checked purpose, audience and permitted data/inference scope under AOS-03.</td>
+<td>03 §§7/9; RP9; DEC-049–053</td>
+<td>AOS-10-VER-024</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-029</td>
+<td><strong>Behaviour prohibition:</strong> AOS-10 shall not infer individual occupancy, habits, emotions, personal conduct or preferences from physical asset signals as part of Asset Intelligence; any separately proposed person-related purpose requires its own governed component scope and approval.</td>
+<td>RP9; DEC-088; 03 boundary</td>
+<td>AOS-10-VER-024</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-030</td>
+<td><strong>Optional sensing:</strong> AOS-10 shall preserve core-service access and a permitted manual evidence route when a resident declines optional sensing or optional data use.</td>
+<td>DEC-052; FP7; RP6/9</td>
+<td>AOS-10-VER-025</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-031</td>
+<td><strong>Correction:</strong> When evidence or permitted use changes, AOS-10 shall identify affected dependent views and pending work for selective reassessment without erasing original evidence standing.</td>
+<td>DEC-047/089; COORD CHG; 02 §10</td>
+<td>AOS-10-VER-026</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-032</td>
+<td><strong>Resident challenge:</strong> AOS-10 shall provide permitted condition/repair evidence and a tracked correction or challenge referral through AOS-11/13 rather than equating silence or message delivery with acceptance.</td>
+<td>DEC-041; FP7; 11/13/30 boundaries</td>
+<td>AOS-10-VER-016</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-033</td>
+<td><strong>Security:</strong> AOS-10 shall admit telemetry only through approved source identity, integrity and runtime controls, quarantining unauthenticated, malicious or semantically invalid data.</td>
+<td>05/14; 02 admission; RP9</td>
+<td>AOS-10-VER-027</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-034</td>
+<td><strong>Quality:</strong> AOS-10 shall evaluate probabilistic asset analysis against a human-approved task/population/error rubric before a dependent performance claim.</td>
+<td>QS-18; 04 §13; FP5/6</td>
+<td>AOS-10-VER-028</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-035</td>
+<td><strong>Degraded operation:</strong> When asset evidence or a dependency fails, AOS-10 shall disclose the affected coverage and support the approved manual/human fallback without inventing safe condition or closure.</td>
+<td>B4 Asset; 05/COORD/KPR; FP5</td>
+<td>AOS-10-VER-029</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-036</td>
+<td><strong>Recovery:</strong> Recovered asset processing shall reconcile current authority, data-use restrictions and previously attempted effects before repeating a consequential operation.</td>
+<td>DEC-028–030; KPR §§4–6; 05 §10</td>
+<td>AOS-10-VER-029</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-037</td>
+<td><strong>Audit:</strong> AOS-10 shall retain permitted evidence sufficient to reconstruct a consequential finding&#39;s trigger, inputs, actor, applied rule, authority, action, human intervention and observed outcome.</td>
+<td>RP7; QS-19; 02 REC-E/Q/A/D/X</td>
+<td>AOS-10-VER-018</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-038</td>
+<td><strong>Common contracts:</strong> AOS-10 producers and consumers shall declare exact common contract/view revisions and reject unsupported or ambiguous semantics rather than silently coercing them.</td>
+<td>02; Shared v0.15; Register v0.14; QS-12</td>
+<td>AOS-10-VER-030</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-039</td>
+<td><strong>Research profile:</strong> AOS-10 shall perform external adaptation research only within an approved component-owned profile using the common research meanings and permitted retrieval route.</td>
+<td>DEC-086; 04 CON-009; 02 CON-007</td>
+<td>AOS-10-VER-031</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-040</td>
+<td><strong>Research findings:</strong> Every asset research finding shall separate verified source content, component interpretation, affected specification elements and proposed operational or amendment implications.</td>
+<td>DEC-086; RSVIEW-0.1; 14 §10</td>
+<td>AOS-10-VER-031</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-041</td>
+<td><strong>Research coverage:</strong> Each asset research run shall disclose complete, partial, failed or unperformed coverage and limit a no-material-finding claim to its actual searched scope.</td>
+<td>DEC-086; 04 §6.6; 02 §6.6</td>
+<td>AOS-10-VER-032</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-042</td>
+<td><strong>Research disposition:</strong> AOS-10 shall track each material research finding to an accepted human reviewer or an owned unresolved handoff with approved cover/escalation.</td>
+<td>DEC-086; 13/30; COORD ACC</td>
+<td>AOS-10-VER-033</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-043</td>
+<td><strong>Research amendment:</strong> AOS-10 shall not treat source publication, research acceptance or a proposal as authority to amend a specification, expand sensing or activate a changed operation.</td>
+<td>DEC-086/018; 01 §10.8; 04 CON-009</td>
+<td>AOS-10-VER-033</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-044</td>
+<td><strong>Governance contribution:</strong> Asset governance submissions shall expose omissions, conflicting evidence and distributional effects separately from institution-wide judgements or a certificate of safety.</td>
+<td>FP1–10; RP3/5/6/7; GT M1.2/3/14</td>
+<td>AOS-10-VER-019</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-045</td>
+<td><strong>Scoped standing:</strong> AOS-10 shall label demonstration fixtures, draft proposals, implemented controls and observed operating outcomes with their actual distinct standing.</td>
+<td>QS-09/24–28; 40 §§5/15</td>
+<td>AOS-10-VER-030</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-046</td>
+<td><strong>Retention:</strong> Asset evidence lifecycle shall apply governed retention, correction and deletion to originals and derived views without claiming an audit label creates indefinite retention rights.</td>
+<td>DEC-047; 02/03; KPR</td>
+<td>AOS-10-VER-026</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-047</td>
+<td><strong>Accountability:</strong> AOS-10 shall distinguish the organisation&#39;s governance accountability and operational repair responsibility from statutory building-safety dutyholder appointments.</td>
+<td>EXT-02; RP3; 30 §§3/7</td>
+<td>AOS-10-VER-020</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-048</td>
+<td><strong>Observation freshness:</strong> AOS-10 shall assess evidence freshness against the approved observation-purpose profile, recording the material period of lost coverage rather than using one universal freshness interval.</td>
+<td>B4 Asset; RP5/9; QS-18</td>
+<td>AOS-10-VER-003</td>
+</tr>
+<tr>
+<td>AOS-10-REQ-049</td>
+<td><strong>Supplier realisation:</strong> Each declared supplier implementation scope shall maintain a versioned allocation of its capabilities/configuration to applicable AOS-10 requirements and contracts, including conformance evidence or owned gaps and dependencies.</td>
+<td>Mark&#39;s 8 October supplier-participation drafting direction; ARCH logical responsibility catalogue; QS-11/12/21/26</td>
+<td>AOS-10-VER-034</td>
+</tr>
+</tbody></table>
+<h3 id="44-external-research-and-specification-adaptation">4.4 External research and specification adaptation</h3>
+<p>Inherit the common rules of 04 CON-009 and 02 CON-007 / RSVIEW-0.1 without a competing field dictionary. Operational physical sensing and external research are different functions.</p>
+<table>
+<thead>
+<tr>
+<th>Profile element</th>
+<th>Component-owned allocation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Remit/baseline</td>
+<td>AOS-10 exact revision, including supplier participation; condition evidence, inspection practice, physical hazards, repair/maintenance analysis, sensing boundaries, investment assumptions and building-safety information; affected CAP/FUN/REQ/CON identified</td>
+</tr>
+<tr>
+<td>Developments/sources</td>
+<td>Applicable law/regulator/standards changes; competent inspection research; sensor reliability/security; asset-data practice; incidents and maintenance evidence; prefer original regulator/government/standards issuer/research sources; jurisdiction, tenure, lifecycle and source standing explicit</td>
+</tr>
+<tr>
+<td>Assignment/triggers</td>
+<td>Asset owner appoints bounded agent/shared service and approves cadence, event triggers and coverage expectations. No schedule or always-on scanning activated by this draft; unknown setup is ISS-006</td>
+</tr>
+<tr>
+<td>Controls</td>
+<td>External retrieval through 14; tools/rights/purpose under 01/03/04/05; licence/access/privacy limits; no optional resident sensing expansion, hostile instructions, vendor endorsement or self-calibration</td>
+</tr>
+<tr>
+<td>Evidence/assessment</td>
+<td>Publication/event/access/effective dates, verified content versus interpretation, exact affected elements, alternatives, uncertainty, materiality/urgency and impacts on 11/13/14/22/30/40</td>
+</tr>
+<tr>
+<td>Coverage/quality</td>
+<td>Complete/partial/failed/unperformed and bounded no-material-finding; source fidelity/relevance and false/missed finding rubric approved by competent humans; actual search perimeter and limitations retained</td>
+</tr>
+<tr>
+<td>Human review/change</td>
+<td>Accepted reviewer, response window, cover and escalation from approved profile; accepted/rejected/deferred/unresolved findings with rationale; separate 01 amendment, verification, activation and outcome records</td>
+</tr>
+<tr>
+<td>Records/adoption</td>
+<td>Common profile/run/finding/disposition views and exact revisions; 02 admission, 14 retrieval, 13 duty tracking, 30 disposition, 01 amendment; corrections/deduplication/selective reassessment per common definitions; no new IF family</td>
+</tr>
+</tbody></table>
+<p>Normal: trigger → permitted retrieval → source verification → specialist assessment → material finding or bounded no-finding → accepted review/disposition → separately approved amendment → verification/activation/outcome. Degraded: denied/stale/conflicting/partial retrieval preserves actual coverage and owned uncertainty; unresponsive reviewers invoke approved cover. A suspected live safety concern uses the already permitted human protocol while research/amendment remains pending. VER-023/031–033 cover all eight required research dimensions. Research remains inactive until the commissioned profile exists.</p>
+<h2 id="5-state-model">5. State model</h2>
+<p>Persistent states are governed object meanings, not powers acquired by transition. Each change identifies actor, current authority, source revision, event/effective time, evidence and resulting scope. Approved profile timeouts cause explicit stale/expired/unacknowledged status and owned follow-up; they never mean success.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>States / entry, transition and closure rules</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Observation</td>
+<td>Received → admitted or rejected/quarantined; admitted may become contested/corrected/superseded/restricted/deleted under 02/03. Source admission is not assurance that its claim is true.</td>
+</tr>
+<tr>
+<td>Condition/coverage view</td>
+<td>Known within stated scope, uncertain/conflicting, partial, stale or unavailable. New evidence creates a new revision; a human inspection can establish only its evidenced scope/time, not permanent safety.</td>
+</tr>
+<tr>
+<td>Repair evidence</td>
+<td>Promise unresolved or established; completion unverified, evidenced incomplete, partial, disputed or established under the repair-specific rule. After B, unverified completion retains DEC-039 classification. Process owns overdue/duty state; human-authorised communicated revision preserves original/breach history.</td>
+</tr>
+<tr>
+<td>Finding/duty</td>
+<td>Prepared → submitted → received → accepted by empowered human → in progress → evidenced disposition/outcome. Receipt is not acceptance; 13 owns tracking, cover and escalation; 10 retains its evidence contribution.</td>
+</tr>
+<tr>
+<td>Building information</td>
+<td>Applicability unresolved/profiled; category missing/present/current/contested/superseded; transfer prepared/delivered/usable-confirmed or failed/unconfirmed. Handover closure needs required confirmations and owned residual gaps.</td>
+</tr>
+<tr>
+<td>Research</td>
+<td>Common profile/run/finding/disposition states from 02 §6.6; no local replacement. Accepted finding does not mean approved amendment or activation.</td>
+</tr>
+</tbody></table>
+<h2 id="6-semantic-contracts-and-interfaces">6. Semantic contracts and interfaces</h2>
+<p>These are logical domain views of shared meanings, not newly approved wire schemas or IF identifiers. Preserve AOS-02-IF-001, AOS-01-IF-001, proposed AOS-03-IF-001/AOS-04-IF-001 and existing AOS-13-IF-001 where consumed. Common semantic owners remain authoritative.</p>
+<table>
+<thead>
+<tr>
+<th>CON</th>
+<th>Producer → consumer / minimum meaning / authority and failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-CON-001 Asset observation</td>
+<td>Human/source adapter via14 → 02/10: organisation, building/property/component and relationship revision; source/method; physical quantity/unit/calibration basis where applicable; observed/admitted times; purpose, assurance, uncertainty, correction/access/lifecycle. 02 REC-E/Q owns common evidence; invalid or ambiguous scope stays rejected/unresolved.</td>
+</tr>
+<tr>
+<td>AOS-10-CON-002 Living Asset Register</td>
+<td>10 through02 → permitted service/22/24/30: exact object/view revision, observations versus inference, condition/time/coverage cells, conflicts/freshness/gaps, model/rule, limitations and lineage. Unsafe aggregation prohibited; no claim beyond evidenced scope.</td>
+</tr>
+<tr>
+<td>AOS-10-CON-003 Physical finding/action/outcome</td>
+<td>10/competent humans → 13/30/02; returned work evidence →10: concern, physical consequence/exposure, urgency basis, tracker/owner/cover, acceptance, authorised action, attempted/partial/actual effect and resulting observation. Common REC-Q/A/D/X and ACC; receipt is not accepted responsibility.</td>
+</tr>
+<tr>
+<td>AOS-10-CON-004 Repair evidence</td>
+<td>Controlled records/human/contractor via14/02 →10→13/11/30: repair and promised scope, original communicated commitment, precision/timezone and communication proof, authorised revisions, internal targets separate, completion rule/work/inspection evidence, completion time, incomplete/partial/unverified/disputed classification and provenance. 02/Profiles and DEC-036–041 own shared semantics; 13 detects/tracks, 11 delivers contact, 30 supports human decisions.</td>
+</tr>
+<tr>
+<td>AOS-10-CON-005 Planning/governance input</td>
+<td>10 with permitted02/14 inputs →22/24/30/25: physical condition, scenario/horizon, costs/resource constraints, alternatives, distributional consequences, uncertainty/coverage, actual outcome and precise standing. REC-E/Q; no approved capital decision or institution-wide pass inferred.</td>
+</tr>
+<tr>
+<td>AOS-10-CON-006 Building-safety view/transfer</td>
+<td>Competent stewards/02/10 → permitted dutyholders/humans/external recipients through14: exact building/lifecycle/applicability profile, category inventory, current versions/history, gaps, authorised audience, delivery/usability confirmation and owned residual duties. Shared custody/access/exchange definitions; no statutory completeness inferred from transfer alone.</td>
+</tr>
+<tr>
+<td>AOS-10-CON-007 Own research</td>
+<td>Assigned research service/14/10 →02/13/30/01/affected owners: common profile/run/finding/disposition meanings, exact affected elements and asset-specific implications under RSVIEW-0.1; failed/partial retrieval and unaccepted reviewer remain explicit.</td>
+</tr>
+</tbody></table>
+<p>Every exchange includes stable IDs/revisions, organisation/entity, producer/consumer, exact contract/view, purpose/use/authority references, event/effective/admission time and standing. Physical units and comparison precision must be explicit; invalid values/unknown applicability cannot support a favourable result. Arrival order is distinct from effective time; duplicates retain identity and do not add independent evidence. Acknowledgement distinguishes transport receipt, duty acceptance, usable handover and factual assurance. Retries reconcile prior effects and current permissions; correction/revocation reopens materially affected views/work. Wire types, enumerations, conversion/calibration rules, ordering/deduplication keys, transport timeouts/retry bounds and exact endpoint compatibility require approved profiles before build; no implicit values are supplied here. Asset service owner with 02/13/14 controls those gates, ISS-001/002.</p>
+<h3 id="61-supplier-interface-detail-and-ownership">6.1 Supplier interface detail and ownership</h3>
+<p>The CON views specify the meaning to preserve; they are not an API implementation specification. For each proposed integration, supplier and organisation must agree exact field/schema/view versions, identity mapping, physical units, event/effective times, analytical labels and evidence references, access/authority enforcement, transport and authentication, acknowledgement, ordering/deduplication, retry/replay/revocation, service limits, outage handling, retention/correction/deletion and reconciliation. Declare read versus write/command rights explicitly. Existing APIs/events/manual exports are candidates to map, not selected transport defaults.</p>
+<p>The supplier declaration identifies the authoritative source for each observation, inference, promise, work status and outcome, and which party maintains each mapping/control. A supplier platform spanning 10/11/13/14 must demonstrate each responsibility and cross-function boundary even if the exchange is internal to one product. Outsourcing cannot make evidence, permissions or human acceptance unobservable. Exact executable agreements and observed compatibility remain ISS-001/003/005, linked to REQ-038/049 and VER-030/034.</p>
+<h2 id="7-authority-and-decision-boundaries">7. Authority and decision boundaries</h2>
+<p>Permitted Mode 1 work can admit evidence, apply approved deterministic rules, produce bounded analysis and send an expressly delegated internal finding. A request to issue work, purchase materials, change a resident promise, operate a device or disclose externally is a separate consequential operation requiring current controls. No physical actuator authority is granted by connection or by this draft; any later actuator scope must be commissioned under the same exact delegation/data-use/runtime controls.</p>
+<p>Human decisions include applicability/dutyholder appointments, disputed closure, promise/scope revision, repair-specific completion-rule approval, safety response under the approved protocol, capital allocation and incommensurable judgement. Board governance and statutory human duties remain distinct. Technical condition scores cannot adjudicate residents&#39; legitimacy, consent or moral priority. Model-provider substitution cannot inherit an untested asset quality claim.</p>
+<p>Revocation or changed evidence affects the last enforceable point and dependent pending work under current common controls. Explain constraint meaning, authority basis and referral by default under DEC-027; any reviewed privacy/security/feasibility explanation exception limits disclosure, not enforcement. Human sign-off cannot waive a non-waivable prohibition.</p>
+<h2 id="8-reasoning-principles-applied">8. Reasoning principles applied</h2>
+<p>FP1 ties evidence to conferred purpose; FP2 reserves incommensurable trade-offs; FP3 requires enforced integrity; FP4 makes evidence/limits legible; FP5/6 require fault/uncertainty handling; FP7 protects residents with limited exit; FP8 preserves human constitutional authority; FP9 distinguishes purpose-led design from legal validation; FP10 requires interactions and cumulative consequence review. These are technical contributions, not full-principle conformance claims.</p>
+<table>
+<thead>
+<tr>
+<th>RP v6 domain / thematic locator</th>
+<th>Application / planned evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 Architecture/completeness, sequenced human layers, feedback</td>
+<td>CON-003/004; VER-008/017/018/029; unaccepted duty never vanishes</td>
+</tr>
+<tr>
+<td>2 Modes, protected human space, standing boundaries</td>
+<td>§§7/9; VER-009/019/024/033; no AI capture of protected board deliberation</td>
+</tr>
+<tr>
+<td>3 1+5, intrinsic risk, safety, Golden Thread</td>
+<td>VER-008/020–022; asset contributes without replacing dutyholders or governance</td>
+</tr>
+<tr>
+<td>4 Options/decisions, actual state/consequence feedback</td>
+<td>VER-018/019; observations, forecasts and actual effects distinct</td>
+</tr>
+<tr>
+<td>5 Blind spots/perimeter/emergence</td>
+<td>VER-003/005/019/028/029; aggregate indicators expose gaps and distribution</td>
+</tr>
+<tr>
+<td>6 Ethics/telos/no-exit/purpose drift</td>
+<td>VER-019/024/025; no optional-sensing penalty or automatic moral/capital choice</td>
+</tr>
+<tr>
+<td>7 Radical transparency/uncertainty</td>
+<td>VER-002–007/018/021; source and inference separately reconstructable</td>
+</tr>
+<tr>
+<td>8 Delegation, internal/external duty</td>
+<td>VER-009/017/022/033; exact authority, accepted owner and failed handoff visible</td>
+</tr>
+<tr>
+<td>9 Sensing, asset/behaviour boundary, permitted purpose</td>
+<td>VER-001/024/025/027; physical evidence is not individual conduct inference</td>
+</tr>
+</tbody></table>
+<p>Appendix A supplies all 29 GT tests, including bounded non-software contributions. None is marked passed from drafting. Apparent conflict remains evidenced and referred to the empowered human authority.</p>
+<h2 id="9-data-privacy-and-disclosure">9. Data, privacy and disclosure</h2>
+<p>Physical evidence can still expose personal information: dwelling linkage, photographs, report text and patterns of sensor readings require purpose/access/inference controls. Minimise person-linked content; keep detailed source evidence separately controlled where an aggregate view is sufficient. A resident report is attributed evidence about physical condition, not automatic permission to construct a personal profile. Emotional/preferences context is human-provided or confirmed under DEC-088; asset signals cannot silently supply it.</p>
+<p>Optional sensing refusal/withdrawal cannot reduce access to core services. Accessible manual reporting/inspection arrangements remain permitted, with any practical gaps exposed rather than blamed on residents. Distinguish consent from other lawful bases and organisation authorisation; no blanket consent assumption is introduced. A refusal of access to a particular visit is neither proof of safe condition nor a licence for alternative surveillance; refer service/access needs to humans through 11/13.</p>
+<p>Apply 02/03 retention, correction, deletion and restrictions to source records, summaries, models/indices and restored copies. Corrections preserve standing without granting indefinite retention of deleted content. Confidentiality uses audience/purpose-specific restrictions and necessary accountable review, not suppression of material uncertainty. Building-safety access obligations require competent profile mapping; “golden thread” is not unlimited disclosure rights. AI must not observe protected board deliberation; subsequent authorised human accounts are distinct.</p>
+<h2 id="10-behaviour-and-workflows">10. Behaviour and workflows</h2>
+<h3 id="101-condition-and-maintenance">10.1 Condition and maintenance</h3>
+<p>Trigger → admitted physical evidence/provenance → scoped condition/coverage assessment → current use/authority → bounded finding/forecast → 13 accepted human route or approved intervention → actual work/inspection evidence → revised condition and learning. Missing sources create explicit coverage loss with manual fallback. Conflicting observations preserve both accounts and referral. A suspicion of acute risk uses the separately approved human safety protocol; neither sensors nor ordinary meetings are prerequisites to that referral. No prediction closes the underlying concern.</p>
+<h3 id="102-repair-promise-and-completion">10.2 Repair promise and completion</h3>
+<p>Source original resident-communicated promise, scope and precision through controlled records. Date-only commitments end at the end of the promised calendar date in the approved organisation timezone; exact-time commitments use their time. B is the symbolic approved boundary, not a new configurable grace period. AOS-13 performs comparison and tracking using evidence supplied by10.</p>
+<p>Before or at B, do not falsely assert overdue status. After B, evidenced outstanding promised work supports overdue-incomplete; unknown completion is <strong>completion unverified after promised date</strong>, requiring owned verification under DEC-039. A missing/conflicting promise is a different owned evidence exception. Established on-time completion supports no overdue-repair alert; completion after B preserves historical lateness even if work is now complete. Contractor closed status alone and resident silence do not establish completion.</p>
+<p>Partial work retains original incomplete standing; human-authorised scope changes and communicated revisions preserve promise/breach history. A new promise does not automatically close an escalation. Dispute preserves opposing evidence and human review. 13/30 track explicit human acceptance and actual service action; 11 delivers current named-owner and accountable-team contact details through resident-agreed channels. Sending contact details, accepting duty and repairing the home are distinct outcomes. Failed communication and absent acceptance remain owned.</p>
+<h3 id="103-investment-and-building-information">10.3 Investment and building information</h3>
+<p>Planning request → current scoped condition/coverage → alternative resource/scenario assumptions → unranked evidence and consequence inputs to22 → human consideration/decision through30 → authorised implementation → actual physical/financial outcomes. No composite condition score dictates value trade-offs.</p>
+<p>Building profile/update/handover → competent applicability/category inventory → current, versioned, audience-checked information → permitted transfer → separate receipt and usable confirmation → outstanding categories/duties → actual follow-up. Statutory records and governance evidence remain distinct; software supports custody, not a legal certificate. Phase-effective/source changes trigger research and human mapping, not silent activation.</p>
+<h2 id="11-failure-escalation-and-recovery">11. Failure, escalation and recovery</h2>
+<p>Lost telemetry, inaccessible inspection, corrupt units or missing provenance produce disclosed coverage limits and owned evidence/service follow-up. Human-approved manual routes remain available; a quiet feed is not proof of safety. A suspected acute concern is not delayed merely because analytical confidence is low; communicate uncertainty through the approved human protocol.</p>
+<p>Unknown prior work/device effect requires reconciliation before retry. A lost handoff remains with its tracker until empowered acceptance; approved cover applies when the primary human is absent. If both normal and fallback reporting fail, preserve an owned exception and approved human fallback without creating new contact powers. Failed or partial work cannot become completion through a restored status snapshot.</p>
+<p>Restore isolated state, apply current authority/use/lifecycle restrictions, reconcile original and subsequent effects and prove current evidence/version scope before approved continuation under05/KPR. Recovery does not retroactively validate missing inspections or resolve an outstanding safety duty. Maintain human service continuity without requiring a successful model output.</p>
+<h2 id="12-evidence-provenance-and-audit">12. Evidence, provenance and audit</h2>
+<p>Consequential records link trigger → exact source/scope/assurance → actor and analytical/rule revision → authority/use checks → finding/human rationale → attempted/performed/prevented action → consequence → challenge/intervention → outcome. Include observed/admission/effective times, units, uncertainty, omitted scope, tracker/owner/cover and version/retention/access references. Evidence owner is the asset steward for domain meaning and02 for shared records; human dutyholder and workflow records retain their separate owners.</p>
+<p>Capture applied rules, input references, outputs, transitions and approved human rationale; private model chain-of-thought is not required. Retrospective generated explanations do not prove a prior check or inspection occurred. Integrity hashes cannot prove factual truth or completeness. Synthetic fixture truth is explicitly different from live observations. Review actual misses, near-misses and distributional consequences through permitted25/30 processes without automatic self-calibration.</p>
+<h2 id="13-security-and-operation">13. Security and operation</h2>
+<p>05 governs runtime/security/resilience;14 governs external trust. Asset-specific source profiles specify device identity, permitted physical quantities/purposes, calibration/quality provenance, transport integrity, segmentation/isolation and revocation where relevant. Supplier credentials, telemetry and retrieved text must not bypass action authority. Quarantine malicious/unauthenticated/replayed or impossible data; expose lost coverage and preserve allowed human service.</p>
+<p>Performance/availability/recovery/freshness/inspection coverage and human response capacity are scope-specific approved parameters, not invented universal thresholds. Analytical evaluation distinguishes deterministic controls from probabilistic fidelity, missed/false hazards, forecast calibration, excluded conditions and population/distributional error. Competent human owners approve task, fixtures, rubric, thresholds, uncertainty communication, change triggers and representative assessment before claims. Longitudinal review compares predicted versus actual effects without automatically changing models or rules. Critical control failures cannot be averaged away by a favourable model score.</p>
+<h2 id="14-invariants">14. Invariants</h2>
+<table>
+<thead>
+<tr>
+<th>INV</th>
+<th>Invariant / linked REQ / VER</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-INV-001</td>
+<td>Missing observation never establishes safe condition; 004/008/035/048 → 003/006/029</td>
+</tr>
+<tr>
+<td>AOS-10-INV-002</td>
+<td>Source content, admission and prediction create no action authority; 009/012/043 → 007/009/033</td>
+</tr>
+<tr>
+<td>AOS-10-INV-003</td>
+<td>Internal targets cannot silently reset resident promises; 013–015 → 010–012</td>
+</tr>
+<tr>
+<td>AOS-10-INV-004</td>
+<td>Unknown completion after B remains unverified; contractor status/silence alone is insufficient; 016/017/019 → 013/014/016</td>
+</tr>
+<tr>
+<td>AOS-10-INV-005</td>
+<td>Physical signals do not imply permission for individual behaviour inference; 028/029 → 024</td>
+</tr>
+<tr>
+<td>AOS-10-INV-006</td>
+<td>Declining optional sensing does not remove core service; 030 → 025</td>
+</tr>
+<tr>
+<td>AOS-10-INV-007</td>
+<td>Golden-thread custody/transfer does not confer legal completeness or replace statutory duties; 024–027/047 → 020–023</td>
+</tr>
+<tr>
+<td>AOS-10-INV-008</td>
+<td>Accepted research cannot activate its own amendment; 039–043 → 031–033</td>
+</tr>
+</tbody></table>
+<h2 id="15-conformance-and-acceptance">15. Conformance and acceptance</h2>
+<p>All claims below are <strong>unsubstantiated planned claims</strong>; no cases have been executed. Test records later require exact versions, date, assessor, environment, method, observed evidence and limitations. Demonstration/document review does not prove live operation, legal compliance or institutional judgement.</p>
+<table>
+<thead>
+<tr>
+<th>CR</th>
+<th>Proposed bounded claim / linked requirements and evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-CR-001</td>
+<td>Evidence/register/coverage semantics; 001–010/048; VER-001–007</td>
+</tr>
+<tr>
+<td>AOS-10-CR-002</td>
+<td>Risk/repair/outcome boundaries; 011–022/032/037; VER-008–018</td>
+</tr>
+<tr>
+<td>AOS-10-CR-003</td>
+<td>Planning and building-safety information contribution; 023–027/044/047; VER-019–023</td>
+</tr>
+<tr>
+<td>AOS-10-CR-004</td>
+<td>Permitted secure correctable/recoverable operation; 028–038/045–046; VER-024–030 and 018</td>
+</tr>
+<tr>
+<td>AOS-10-CR-005</td>
+<td>Own research/profile/review/change boundaries; 039–043; VER-031–033 and 023</td>
+</tr>
+<tr>
+<td>AOS-10-CR-006</td>
+<td>Declared supplier scope is attributable and evidence-limited; 049; VER-034 plus the allocated functional cases</td>
+</tr>
+</tbody></table>
+<p>Common case preconditions: fixed exact component/common-contract/source manifest; approved isolated synthetic fixtures and destinations or explicitly labelled document walkthrough; competent appointed assessors; approved identity/purpose/authority/current restriction profiles, clocks/units and expected-result rubric where applicable. Missing approval/fixture produces blocked/not-performed, not pass. Planned methods are component/integration boundary tests with human review; a document walkthrough may assess logic but not implementation enforcement. Evidence for each case includes input/expected fixtures, actual ordered admission/check/output/effect, versions, human judgement where required, uncertainty, findings/remedy/accepted owner and rerun links. Assessors below own comparison against the stated expectation; no model certifies itself.</p>
+<h3 id="aos-10-ver-001-scope-and-identity">AOS-10-VER-001 — Scope and identity</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-001, AOS-10-REQ-002. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Two organisations, a building, communal component and dwelling; an unresolved duplicate property identifier and a changed ownership relationship.</p>
+<p><strong>Procedure:</strong> Admit each record; change the effective relationship; attempt to merge unresolved identifiers and cross the organisation scope.</p>
+<p><strong>Expected result:</strong> Exact entity and effective relationship remain visible; ambiguous identity is unresolved and cross-scope use is denied.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Property/organisation identity steward; CON-001. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-002-observation-semantics">AOS-10-VER-002 — Observation semantics</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-003. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Physical inspection, resident report and sensor reading with distinct event/admission times; valid and invalid units.</p>
+<p><strong>Procedure:</strong> Admit, render, reorder and correct records; attempt a unit-free numerical comparison.</p>
+<p><strong>Expected result:</strong> Source/method/units/time/assurance/lineage survive; invalid meaning cannot support a condition conclusion.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Data and asset assessors; CON-001/002. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-003-coverage-and-freshness">AOS-10-VER-003 — Coverage and freshness</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-004, AOS-10-REQ-048. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Coverage cells containing fresh, stale, absent, inaccessible and failed data; approved symbolic freshness profile F.</p>
+<p><strong>Procedure:</strong> Render individual and aggregate views across the observation boundary; remove a feed and attempt to display a uniformly safe portfolio.</p>
+<p><strong>Expected result:</strong> Gaps and lost-coverage periods remain visible per scope; no average conceals an unobserved hazard/property.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Asset/assurance assessors; CON-002. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-004-register-meanings">AOS-10-VER-004 — Register meanings</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-005. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Observation, model condition, forecast, authorised work and subsequent inspection for one component.</p>
+<p><strong>Procedure:</strong> Build the view and follow every lineage link; attempt to present a forecast as an inspection or planned work as actual improvement.</p>
+<p><strong>Expected result:</strong> Distinct meanings and exact evidence standing are preserved; unsupported favourable status is rejected.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Asset/data assessors; CON-002/003. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-005-conflict">AOS-10-VER-005 — Conflict</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-006. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Contradictory inspection and sensor evidence, delivered in both orders.</p>
+<p><strong>Procedure:</strong> Admit both; calculate a view; request clarification and apply an authorised correction.</p>
+<p><strong>Expected result:</strong> Arrival order does not resolve fact assurance; contradiction and owned review persist until evidenced disposition.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Asset inspector/data assessor; CON-001/002. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-006-physical-and-manual-evidence">AOS-10-VER-006 — Physical and manual evidence</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-007, AOS-10-REQ-008. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus A home without sensors, a failed feed, an identifiable physical assessment and an unsupported claim that telemetry proves that assessment.</p>
+<p><strong>Procedure:</strong> Admit manual evidence, retain its scope/limitations, and attempt to mark physical assessment complete using telemetry alone.</p>
+<p><strong>Expected result:</strong> Manual assessment remains supported; physical-assessment standing requires actual evidence; unobserved scope remains explicit.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Competent inspection/service assessors; CON-001/002. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-007-inference-and-forecast">AOS-10-VER-007 — Inference and forecast</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-009, AOS-10-REQ-010. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Known fixture conditions, out-of-distribution cases, forecast assumptions/horizon and absent evaluation basis.</p>
+<p><strong>Procedure:</strong> Produce outputs; vary assumptions; compare observation and interpretation; request certainty outside evaluated scope.</p>
+<p><strong>Expected result:</strong> Inference/forecast carry versions, assumptions and uncertainty; unsupported certainty/accuracy claims do not pass.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Asset/model evaluation assessors; CON-002/005. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-008-acute-concern-and-risk">AOS-10-VER-008 — Acute concern and risk</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-011, AOS-10-REQ-022. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Suspected urgent physical hazard, uncertain cause, approved human safety protocol, unavailable primary owner.</p>
+<p><strong>Procedure:</strong> Detect concern, send bounded permitted referral, activate approved cover, and delay normal governance review.</p>
+<p><strong>Expected result:</strong> Concern reaches an empowered human route without waiting for ordinary review; uncertainty is retained; no novel emergency agent power appears.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Safety/workflow assessors; CON-003; 30 safety boundary. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-009-action-and-authority">AOS-10-VER-009 — Action and authority</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-012. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Permitted evidence-read operation, proposed work order or physical-device command, expired/revoked permission.</p>
+<p><strong>Procedure:</strong> Exercise current checks at the last enforceable point; attempt denied and revoked operations.</p>
+<p><strong>Expected result:</strong> Only exactly permitted effects occur; prevention is observable; analytical capability cannot create work/actuator authority.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Authority/security assessors; common REC-A/D/X, CHECK/ACT. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-010-promise-versus-target">AOS-10-VER-010 — Promise versus target</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-013. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Communicated promise P, later internal target T, provenance, missing/contradictory communicated date.</p>
+<p><strong>Procedure:</strong> Supply each evidence variant to Process; attempt to replace P using T.</p>
+<p><strong>Expected result:</strong> P remains authoritative for the resident-promise comparison; unavailable P creates an owned evidence exception, not a fabricated date.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Repairs/data assessors; CON-004; 40 VER-008. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-011-promised-boundary">AOS-10-VER-011 — Promised boundary</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-014. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Approved date-only organisation timezone and precise-timestamp commitments; immediately before/at/after boundary B.</p>
+<p><strong>Procedure:</strong> Compare the fixtures using approved profile meaning, including a calendar transition; try an added grace interval.</p>
+<p><strong>Expected result:</strong> Date-only boundary is end of that date; exact timestamps retain precision; no overdue status at/before B; no default grace period.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Repairs/time-profile assessors; CON-004; 40 VER-008. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-012-promise-revision">AOS-10-VER-012 — Promise revision</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-015. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus P, authorised communicated revision P2, internal reschedule, unauthorised revision and outstanding escalation.</p>
+<p><strong>Procedure:</strong> Attempt all revisions and inspect preserved history and workflow status.</p>
+<p><strong>Expected result:</strong> Only authorised communicated revision acquires new-promise standing; original/breach history survives and existing escalation is not automatically closed.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Repairs/human workflow assessors; CON-004; 40 VER-008. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-013-completion-rule">AOS-10-VER-013 — Completion rule</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-016. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Repair-specific approved rule, identified work and inspection records, contractor closed flag alone and resident silence.</p>
+<p><strong>Procedure:</strong> Evaluate each variant; seed complete evidence both before and after B.</p>
+<p><strong>Expected result:</strong> Completion standing follows the rule and evidence; contractor flag/silence alone cannot establish completion; actual completion time is preserved.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Repairs/inspection assessors; CON-004; 40 VER-007/008. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-014-unknown-completion">AOS-10-VER-014 — Unknown completion</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-017. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus t&gt;B and unavailable or conflicting completion evidence; separate evidenced outstanding-work case.</p>
+<p><strong>Procedure:</strong> Supply classifications to Process; request definitive overdue-incomplete and definitive complete statuses.</p>
+<p><strong>Expected result:</strong> Unknown variant is “completion unverified after promised date” and gets owned verification; evidenced incomplete variant may support overdue-incomplete; neither is silently conflated.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Repairs/workflow assessors; CON-004; 40 VER-008. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-015-partial-scope">AOS-10-VER-015 — Partial scope</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-018. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Two promised tasks, one complete; proposed split or scope revision without human/resident evidence.</p>
+<p><strong>Procedure:</strong> Render completed/outstanding tasks; attempt to close original or erase its promise by splitting.</p>
+<p><strong>Expected result:</strong> Original remains incomplete; each scope part is visible; changed scope requires authorised human and resident communication evidence.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Repairs/service assessors; CON-004. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-016-contested-completion-and-challenge">AOS-10-VER-016 — Contested completion and challenge</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-019, AOS-10-REQ-032. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Resident contests closure, contact channel is agreed, contractor evidence conflicts; silence alternative.</p>
+<p><strong>Procedure:</strong> Preserve evidence, refer through 11/13, test failed delivery and absent human acceptance, then authorised dispute disposition.</p>
+<p><strong>Expected result:</strong> Dispute is owned and contestable; silence/delivery do not resolve it; permitted resident evidence and actual disposition remain linked.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Resident/repairs/workflow assessors; CON-004; 40 VER-010. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-017-handoff-and-duplicates">AOS-10-VER-017 — Handoff and duplicates</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-020. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Condition finding, duplicate event, unavailable owner and unacknowledged workflow transfer.</p>
+<p><strong>Procedure:</strong> Send/retry with stable identities, separate receipt from acceptance, invoke approved cover and inspect pending status.</p>
+<p><strong>Expected result:</strong> No duplicate consequential action; duty remains owned until empowered acceptance; failed cover remains an exception.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Workflow/asset assessors; CON-003; 40 VER-009. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-018-outcome-and-audit">AOS-10-VER-018 — Outcome and audit</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-021, AOS-10-REQ-037. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Inspection finding, human-authorised action, partial execution, subsequent outcome and failed intervention.</p>
+<p><strong>Procedure:</strong> Follow trigger-to-outcome links; request reconstruction using captured evidence; attempt to use a later generated explanation as proof.</p>
+<p><strong>Expected result:</strong> Attempt/action/improvement are distinct; authority/rationale/consequence reconstructable; missing contemporaneous evidence stays a gap.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Asset/audit assessors; CON-001/003. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-019-investment-and-governance">AOS-10-VER-019 — Investment and governance</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-023, AOS-10-REQ-044. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Contrasting physical condition, costs/resources and unequal impacts; an infeasible option and competing incommensurable objectives.</p>
+<p><strong>Procedure:</strong> Prepare scenarios with 22; vary assumptions; request an automatic capital commitment or a scalar institutional pass.</p>
+<p><strong>Expected result:</strong> Actual constraints/uncertainty/distribution remain legible; alternatives preserved; human allocation and moral judgement remain reserved.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Asset/finance/governance human assessors; CON-005; 40 VER-013/027. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-020-building-applicability-and-accountability">AOS-10-VER-020 — Building applicability and accountability</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-024, AOS-10-REQ-047. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Two buildings with different human-approved lifecycle/applicability profiles and dutyholders; incomplete category inventory.</p>
+<p><strong>Procedure:</strong> Construct views; attempt to infer full legal applicability from a height field or replace statutory appointment with board approval.</p>
+<p><strong>Expected result:</strong> Profile/category gaps remain owned; statutory dutyholder and governance responsibility stay distinct; no autonomous legal determination.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Competent building-safety/legal and governance assessors; CON-006. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-021-building-information-custody">AOS-10-VER-021 — Building information custody</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-025. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Current, superseded, missing and contradictory safety records plus authorised/unauthorised audiences.</p>
+<p><strong>Procedure:</strong> Update current view with history preserved; request access, corrections and plain-language usability review.</p>
+<p><strong>Expected result:</strong> Exact current versions and gaps visible; secure audience checks enforced; usability requires human evidence, not digitisation alone.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Building-safety/data/access assessors; CON-006; 40 VER-036. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-022-building-information-transfer">AOS-10-VER-022 — Building information transfer</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-026. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Authorised handover recipient, exact inventory, delivery failure and delivered-but-unusable package.</p>
+<p><strong>Procedure:</strong> Transfer through 14; reconcile retry; obtain separate receipt/usability confirmation and maintain unresolved duties.</p>
+<p><strong>Expected result:</strong> Delivery is not usable acceptance; failed/missing items remain owned; exact versions and permissions survive transfer.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Building-safety/boundary assessors; CON-006; 40 VER-036. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-023-current-versus-future-regulation">AOS-10-VER-023 — Current versus future regulation</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-027. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Current England Phase 1 source, future-effective Phase 2 source, draft and wrong-jurisdiction source; approved operational mapping.</p>
+<p><strong>Procedure:</strong> Record source standing/dates; propose adaptation; attempt premature rule activation and confuse a resident promise with a statutory timing rule.</p>
+<p><strong>Expected result:</strong> Future/draft content does not silently become current law or activation; different timing obligations remain distinct; competent human mapping is required.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Legal/research/service assessors; CON-004/006/007. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-024-use-and-prohibited-inference">AOS-10-VER-024 — Use and prohibited inference</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-028, AOS-10-REQ-029. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Permitted damp/temperature signal, proposed occupancy/habit/emotion inference, unauthorised cross-entity disclosure and hostile source instructions.</p>
+<p><strong>Procedure:</strong> Attempt each operation at enforcement surface; admit permitted physical evidence without unnecessary person profile.</p>
+<p><strong>Expected result:</strong> Only checked physical-purpose operations occur; prohibited inference/disclosure/instructions are blocked and evidenced.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Privacy/security/asset assessors; CON-001; 40 VER-015/017. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-025-optional-sensing">AOS-10-VER-025 — Optional sensing</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-030. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Resident declines optional sensors/data use, with core repair need and accessible manual alternatives.</p>
+<p><strong>Procedure:</strong> Exercise decline and withdrawal; inspect service eligibility, manual route and burden under human review.</p>
+<p><strong>Expected result:</strong> Core service remains available; no adverse automated eligibility inference; manual alternative and remaining observation gaps visible.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Resident/privacy/service assessors; CON-001/003; 40 VER-010/015. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-026-correction-and-lifecycle">AOS-10-VER-026 — Correction and lifecycle</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-031, AOS-10-REQ-046. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Corrected observation, revoked use, dependent forecast/workflow, governed retention/deletion and restored derived copy.</p>
+<p><strong>Procedure:</strong> Map impacts, selectively reassess/restrict affected work, apply lifecycle across copies and inspect historical standing.</p>
+<p><strong>Expected result:</strong> Affected outputs/work are corrected or restricted with lineage; unrelated valid work is not blanket frozen; deletion obligations survive restoration.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Data/privacy/workflow assessors; CON-001/002; 40 VER-025. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-027-hostile-telemetry">AOS-10-VER-027 — Hostile telemetry</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-033. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Unauthenticated device, altered packet, impossible units, replay, compromised vendor connector and malicious payload.</p>
+<p><strong>Procedure:</strong> Attempt admission and downstream action; revoke source permission and inspect quarantine/fallback.</p>
+<p><strong>Expected result:</strong> Invalid/hostile material cannot alter authoritative condition or confer action authority; affected coverage and owned response exposed.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Security/boundary/data assessors; CON-001; 40 VER-020. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-028-analytical-quality">AOS-10-VER-028 — Analytical quality</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-034. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Approved task/population/rubric/error thresholds, representative and excluded cases, changed model and subgroup gaps.</p>
+<p><strong>Procedure:</strong> Run repeatable evaluation, assess false/missed concerns and fidelity, change model and compare accepted scope.</p>
+<p><strong>Expected result:</strong> Claim is bounded to accepted evidence and scope; critical control failures cannot average away; unapproved model change cannot inherit quality claims.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Independent competent asset/model assessors; CON-002/005; 40 VER-026. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-029-outage-and-recovery">AOS-10-VER-029 — Outage and recovery</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-035, AOS-10-REQ-036. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Lost feed/dependency, manual service route, unknown earlier work effect and restored stale permission.</p>
+<p><strong>Procedure:</strong> Degrade, operate permitted fallback, restore isolated state, apply current restrictions and reconcile before retry.</p>
+<p><strong>Expected result:</strong> No false safe/complete state; work and coverage stay owned; no duplicated effect or revived permission; scoped continuation needs approved release.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Operations/service/control assessors; CON-001/003; 40 VER-021/022. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-030-contract-compatibility-and-standing">AOS-10-VER-030 — Contract compatibility and standing</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-038, AOS-10-REQ-045. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Common exact-version manifest, unsupported unit/view, synthetic data and operating evidence.</p>
+<p><strong>Procedure:</strong> Round-trip each view; reject incompatible semantics; render outputs in all standing categories.</p>
+<p><strong>Expected result:</strong> One authoritative common meaning; unsupported payload unresolved; no synthetic/draft output acquires operational evidence standing.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Data/assurance assessors; all CON views; 40 VER-001/025. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-031-research-relevance-and-shared-duties">AOS-10-VER-031 — Research relevance and shared duties</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-039, AOS-10-REQ-040. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Approved asset research profile and relevant verified inspection/sensor development; one shared finding relevant to 10 and 14.</p>
+<p><strong>Procedure:</strong> Retrieve through 14, preserve source dates, analyse exact affected sections and route distinct component implications.</p>
+<p><strong>Expected result:</strong> Source versus inference and separate duties visible; source collection does not discharge specialist review.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Asset/research assessors; CON-007; 40 VER-031/033. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-032-research-coverage-and-hostile-retrieval">AOS-10-VER-032 — Research coverage and hostile retrieval</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-041. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Stale baseline/conflicting source, partial/denied retrieval, no finding in limited scope, hostile instructions and failed run.</p>
+<p><strong>Procedure:</strong> Exercise each run, challenge bounded no-finding claim and source fidelity, prevent instruction/tool expansion.</p>
+<p><strong>Expected result:</strong> Actual coverage/uncertainty exposed; denied/failed run is not reassurance; hostile text creates no authority.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Research/security assessors; CON-007; 40 VER-032/034. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-033-research-review-and-amendment">AOS-10-VER-033 — Research review and amendment</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-042, AOS-10-REQ-043. <strong>Method:</strong> component/integration boundary test and competent human review; document walkthrough only until executable fixtures exist.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites plus Material/urgent finding, unavailable reviewer, approved cover and proposed specification/operational change without approval.</p>
+<p><strong>Procedure:</strong> Track handoff/escalation, support separately permitted urgent human response, seek authorised amendment and attempt premature activation.</p>
+<p><strong>Expected result:</strong> Unaccepted duty remains owned; operational response and amendment distinct; approval, verification and activation require their own records.</p>
+<p><strong>Evidence / assessor / counterpart:</strong> Common run evidence plus case-specific source/classification/transition and actual effect records; Research/authority/workflow assessors; CON-007; 40 VER-033/035. Explicit enforcement observations required for any control claim.</p>
+<h3 id="aos-10-ver-034-supplier-realisation-and-coverage-declaration">AOS-10-VER-034 — Supplier realisation and coverage declaration</h3>
+<p><strong>Requirements:</strong> AOS-10-REQ-049. <strong>Method:</strong> structured supplier-scope inspection and integration walkthrough, followed by actual functional/control tests for any conformance claim. <strong>Assessor:</strong> asset/data/exchange/service owners with competent procurement/security/privacy and relevant human reviewers.</p>
+<p><strong>Preconditions / inputs:</strong> Common §15 prerequisites; a versioned hypothetical supplier offer containing sensors, analytics, portal, case management and resident app; alternatives for portal/manual exchange and API integration; exact requirements/common manifest, supplier capability/configuration evidence and deliberately unsupported claims. No actual supplier is presumed conformant.</p>
+<p><strong>Procedure:</strong> Map hardware/software/functions to exact REQs/CONs and source ownership. Identify direct, configured, integrated and outside-scope contributions. Trace a physical finding through analytical evidence, accepted service duty and actual outcome; inspect missing fields/versions, unavailable method evidence, duplicate case-master conflict and hidden internal handoff. Attempt to declare full AOS-10 conformance from raw readings or the existence of an API. Compare the standalone and combined-platform arrangements against their declared automated/manual scope.</p>
+<p><strong>Expected result:</strong> Every declared in-scope obligation has a responsible implementation party and actual evidence or an explicit owned gap/dependency; existing supplier analytics/workflows may be reused without erasing their provenance or controls; product boundaries do not replace logical responsibilities. Missing evidence/compatibility prevents the dependent claim. Manual exchange is not labelled automated, receipt is not duty acceptance, and no supplier mapping selects a product, grants powers or proves the remaining functional cases.</p>
+<p><strong>Evidence:</strong> Exact supplier/configuration/manifest revisions, requirement-response matrix, contract/source ownership mappings, worked sequence and observed enforcement where executed, evidence references, gaps/owners/remedy gates and human review disposition. Counterparts: 40 REQ-001–003/014/026 and VER-001/025 for assembled scope/compatibility; item12a supplier alignment briefing.</p>
+<h2 id="16-dependencies-and-staged-handover">16. Dependencies and staged handover</h2>
+<p>Drafting uses approved source directions and existing logical contracts; 11v0.3/12v0.3/13v0.2 now provide functional counterparts; exact executable mapping and observed end-to-end compatibility remain dependencies. Build requires exact domain view/schema mappings with02/14, completion/date/inspection/coverage profiles, fixtures, sensor/source admission rules, model evaluation and action-check enforcement. Activation additionally requires appointed asset/inspection/safety/service owners, competent applicability/dutyholder inventory, accepted human cover/capacity, permitted resident channels, actual privacy/lifecycle and manual continuity arrangements, scoped commissioning evidence and human release authority. Operations require evidence currentness, inspections, accepted duties, outcome feedback, lifecycle/revocation/recovery and research/profile upkeep.</p>
+<p>02 owns shared source/record definitions;01 authority;03 permitted use/identity;04 agent lifecycle;05 runtime;11 resident assistance;13 orchestration;14 exchange;20–25 GI;30 human workflow support;40 assembled assurance. Supplier products, sensor deployments, HACT wire mappings, models and statutory profiles are unselected, not assumed. Exact-version endpoint compatibility must be demonstrated before affected activation.</p>
+<h2 id="17-issues-and-controlled-unknowns">17. Issues and controlled unknowns</h2>
+<p>All issues are open implementation/detail dependencies rather than requests to infer new general design policy. Confidence is high that the dependencies exist; their organisation-specific values are unassessed. Resolution requires evidence and explicit disposition, not an issue being mentioned in a draft.</p>
+<table>
+<thead>
+<tr>
+<th>ISS / type</th>
+<th>Description / source / affected capability</th>
+<th>Owner / evidence / gate / disposition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-ISS-001 dependency</td>
+<td>Exact domain/common mappings, HACT version/licence, identities/units/enumerations and endpoint compatibility; §6/DEC-048, all CON</td>
+<td>Asset/data/exchange stewards; versioned mappings and round-trip evidence before affected build; open, no defaults</td>
+</tr>
+<tr>
+<td>AOS-10-ISS-002 dependency</td>
+<td>Source/inspection/freshness/coverage/calibration profiles, approved clocks/precision and repair completion rules; CAP-001/003</td>
+<td>Asset/inspection/repairs owners; approved profiles and fixtures before dependent build/test; open</td>
+</tr>
+<tr>
+<td>AOS-10-ISS-003 dependency</td>
+<td>11v0.3/13v0.2 executable resident-channel/duty lifecycle integration; CAP-002/003</td>
+<td>Domain/service/30/40 owners; exact REQ/VER adoption and synthetic end-to-end execution before repair activation; open</td>
+</tr>
+<tr>
+<td>AOS-10-ISS-004 dependency</td>
+<td>Building lifecycle/applicability, category inventory, legal timing and statutory dutyholder profiles; CAP-005</td>
+<td>Competent safety/legal/dutyholder humans; approved current-source mapping and actual custody/usability evidence before compliance/activation claim; open</td>
+</tr>
+<tr>
+<td>AOS-10-ISS-005 dependency</td>
+<td>Analytical tasks/model/supplier choices, evaluations, human safety cover, capacity and manual continuity; CAP-001/002/004/006</td>
+<td>Asset/model/security/service owners; approved rubric/control/fallback evidence before dependent operation; open</td>
+</tr>
+<tr>
+<td>AOS-10-ISS-006 dependency</td>
+<td>Own research assignment/triggers/coverage/rubric/reviewer windows/cover; CAP-007</td>
+<td>Asset/research/14/13/30 owners; approved common profile and VER-023/031–033 evidence before research activation; open</td>
+</tr>
+<tr>
+<td>AOS-10-ISS-007 dependency</td>
+<td>Review, source sufficiency and actual evidence after current row allocation and release/assurance evidence; all CAP</td>
+<td>Mark/source/40/qualified reviewers; disposition, exact manifest and executed scoped cases before readiness/conformance; independent project review deferred; open</td>
+</tr>
+</tbody></table>
+<h2 id="18-implementation-guidance-non-normative">18. Implementation guidance — non-normative</h2>
+<p>An evidence graph or versioned register can link dwellings, components, inspections, reports, work and outcomes. A coverage matrix by property, concern and period is useful because a portfolio average can conceal an unobserved hazard. Source adapters can normalise units while retaining originals and conversion provenance. A digital twin may support this, but neither 3D geometry nor a named platform is required.</p>
+<p>Treat building-safety information as a governed category inventory with controlled current views and transfer receipts, not a folder whose existence proves completeness. Keep promise and internal schedule as separate fields. Use symbolic fixture B/F during functional review; builders must receive approved concrete comparison/freshness profiles. None of these patterns selects a technology, approves sensing or licenses a vendor.</p>
+<h3 id="181-worked-supplier-example-illustrative-not-a-conformance-assessment">18.1 Worked supplier example — illustrative, not a conformance assessment</h3>
+<p>Aico/HomeLINK is an illustrative candidate because its published offer includes environmental sensors/gateway, analytical portal, case management and resident app. Public pages consulted 8 October 2026: <a href="https://www.aico.co.uk/homelink/">HomeLINK products and capabilities</a> and <a href="https://www.aico.co.uk/blog/not-another-dashboard/">standalone dashboard and integration discussion</a>. These establish an architectural discussion basis, not exact API availability, contract compatibility or tested conformance. No product has been selected.</p>
+<p>For example, a humidity/temperature observation from an installed sensor is supplied with device/property identity and event time. A supplier analytics service interprets a possible damp/mould risk. The observation and attributed analytical finding enter governed02 records through14 and populate10&#39;s condition/coverage view; a finding can reference the supplier&#39;s analysis rather than duplicate it.</p>
+<p>The approved response route passes the finding to13. This could be realised by the supplier&#39;s case-management software or an existing repairs platform: the declared case master records accountable ownership, explicit human acceptance and permitted inspection/work. A resident app could realise relevant11 interactions only within the agreed channel/use/access arrangements, with an accessible alternative. A competent inspection and subsequent work supply actual evidence;10 updates condition, preserving original finding, uncertainty and outcome.22/30 can receive permitted governance inputs, with original and residual gaps visible.</p>
+<p>This example is a possible implementation pattern. It does not assert that the named supplier exports every required item or satisfies the AOS completion, privacy, handoff or authority rules. Those are questions for the response matrix and tests. An unavailable sensor produces explicit lost coverage and permitted manual assessment; an alert alone proves neither damp&#39;s cause nor repair completion. An operational supplier UI may remain in use alongside AOS governance presentation; no forced replacement dashboard is implied.</p>
+<h2 id="19-traceability-and-change">19. Traceability and change</h2>
+<p>§2 source/approved decision → §4 CAP/FUN/REQ → §5 state and §6 CON → §14 INV → §15 VER → future exact executed evidence. Each requirement row links its planned case and each case names its requirements; sources/status/owner/history are inherited only from explicit §4.3 metadata. AOS-00 REQ-041–044/VER-019 and DEC-036–041 allocate to 10 REQ-013–020/032, VER-010–017 and CON-004. AOS-40 REQ-015/016, VER-007–010 consume this evidence; new 40 VER-036 links building-information cases020–022. Evidence contributions to all29 GT tests appear in Appendix A.</p>
+<p>0.1 creates initial asset requirements, views and planned cases. AOS-00/Map v0.34 records allocation; 40 v0.2 corrects the unknown-completion contrast to DEC-039 and adds explicit asset/building-information counterparts. No DEC, original source record, approved IF or common meaning is renumbered. Changes require impact analysis and permitted human amendment, preserving exact prior standing and selectively reassessing dependent work under DEC-089.</p>
+<p>Version0.2 adds supplier participation (§3.1), integration ownership (§6.1), worked example (§18.1) and response matrix (§20.1). Mark&#39;s recorded drafting direction → CAP-008/FUN-009/REQ-049 → existing CON-001–007/common manifest → VER-034 → future exact supplier/implementation evidence. Original REQ-001–048/VER-001–033 remain unchanged; exact supplier obligation allocation is an addition, not a product approval. Architecture/Map v0.35 records this standing direction for all five sensing domains; common/source/DEC statuses remain unchanged.</p>
+<h2 id="20-build-and-operational-handover">20. Build and operational handover</h2>
+<p>The functional handover comprises this draft, cited common/source versions, stable requirement/view/case IDs, unresolved dependency owners and the explicit reserved-human boundaries. It is not a build-ready implementation contract. Before an authorised slice, deliver its exact machine-readable/domain mappings, controls, source and analytical profiles, accepted fixture/rubric/case evidence, environment/destinations, role/cover and capacity assignments, manual continuity/recovery arrangements, release/rollback/stop authority and permitted evidence lifecycle.</p>
+<p>The selected repair demonstration can stage these dependencies without claiming complete asset coverage. Sensors, investment analytics and golden-thread statutory claims may be excluded from an exact initial slice only with explicit scope/exclusions/owners; no exclusion can erase required safety handling or the approved resident-promise rules. Full functional suite development continues alongside bounded implementation.</p>
+<h3 id="201-supplier-response-matrix-and-integration-handover">20.1 Supplier response matrix and integration handover</h3>
+<p>Use one response row for each exact applicable requirement, referencing its precise revision. The grouped rows below help suppliers organise the initial response; they do not replace requirement-level coverage or let a partial capability count as full fulfilment. Supplier evidence may include existing technical documentation, controlled source references, configuration, demonstrations and actual test results with declared standing.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement group / exact references</th>
+<th>Supplier capability/configuration and extent</th>
+<th>Evidence to request</th>
+<th>Gaps, integration and accountable party</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Observation/identity/coverage: 001–008/048, CON-001/002</td>
+<td>State hardware/feed/manual sources, quantities, metadata and coverage supported</td>
+<td>Sample records, identity/unit/time mappings, quality/provenance, outage/conflict demonstrations</td>
+<td>Missing fields/calibration/history, source mapping and inspection responsibilities</td>
+</tr>
+<tr>
+<td>Analysis/risk: 009–012/022/034, CON-002/003</td>
+<td>State supplier analytics, versions, evaluated scope and proposed referral/control configuration</td>
+<td>Method/limitations, validation evidence, false/missed-concern evaluation and enforcement tests</td>
+<td>Unavailable evaluation, excluded conditions and human safety route</td>
+</tr>
+<tr>
+<td>Repair/workflow/outcome: 013–021/032/037, CON-003/004</td>
+<td>State case-management contribution and authoritative promise/work/completion records</td>
+<td>Promise/communication/completion examples, accepted owner, partial/disputed/unknown cases and outcome lineage</td>
+<td>Other repairs/contact systems, human approval, case-master and reconciliation gaps</td>
+</tr>
+<tr>
+<td>Planning/governance/building information: 023–027/044/047, CON-005/006</td>
+<td>State scenario/report/repository contribution; identify unsupported scope explicitly</td>
+<td>Assumptions/currentness/inventory, audience checks, transfer/usability and applicability evidence</td>
+<td>Finance/governance/dutyholder functions and statutory mapping retained elsewhere</td>
+</tr>
+<tr>
+<td>Permitted secure lifecycle/operation: 028–031/033/035–036/038/045–046</td>
+<td>State security/access/use/correction/deletion/recovery controls and enforcement location</td>
+<td>Control/lifecycle evidence, degraded/manual routes, exact compatibility and recovery tests</td>
+<td>Shared-control ownership, contract/API versions, service parameters and supplier exit/data portability arrangements</td>
+</tr>
+<tr>
+<td>Own research: 039–043, CON-007</td>
+<td>State any contracted specialist research contribution or mark outside scope</td>
+<td>Bounded profile/run/finding evidence and accepted human review/change links</td>
+<td>External source access, common records and retained component owner duties</td>
+</tr>
+<tr>
+<td>Supplier realisation: 049</td>
+<td>Declare exact product/service/configuration/release scope and requirement allocation</td>
+<td>Versioned requirement-by-requirement response and linked actual evidence/owned gaps</td>
+<td>Named responsible implementation parties and build/activation/remedy gates</td>
+</tr>
+</tbody></table>
+<p>Each completed row records <strong>exact REQ/version; supplier product/service/configuration; direct/configured/integrated/outside-scope status; met/partial/not-met/not-assessed conclusion with evidence; contract/profile/source ownership; gap and responsible party; required integration/remedy and decision gate</strong>. “Met” requires scoped accepted evidence, not marketing similarity. Outside-supplier-scope does not waive a requirement from an organisational release: another named party must fulfil it or the release must explicitly exclude the capability without waiving governing safety/authority duties.</p>
+<p>Use this declaration to agree the integration specification, responsibilities and commissioning evidence. It supports procurement discussions but is not a price request or supplier certification. API/schema/authentication/service details are completed for the selected scope before dependent build/activation; named examples remain explanatory.</p>
+<h2 id="21-review-and-findings">21. Review and findings</h2>
+<p>Author checks cover all21 template sections, supplier-facing realisation and 49 proposed requirements/34 planned cases, distinct stable IDs, requirement-to-case reciprocity, complete29-test applicability, explicit missing profiles and preserved source/common/decision meanings. They do not execute any test or provide independent assessment. Specification-quality conclusion: organised functional draft with controlled unknowns and planned verification. Design-adequacy conclusion: author review finds the proposed functional scope consistent with approved physical-sensing, human-authority and repair directions; Mark&#39;s judgement and commissioned/executed evidence remain outstanding. No G3/G4, implementation safety, institutional effectiveness or legal-conformance claim is made.</p>
+<p>Next functional work is AOS-11 Resident Intelligence and AOS-13 Process Intelligence, each applying Mark&#39;s standing supplier-participation consideration, maintaining reciprocal repair/contact/accepted-duty boundaries. Existing pilot, common implementation and independent-review dependencies retain their separate open status.</p>
+<h2 id="component-summary">Component summary</h2>
+<p>AOS-10 supplies physical asset evidence, scoped condition/coverage, bounded risk and repair evidence, planning inputs and governed building-safety information. It distinguishes uncertainty from safety, administrative status from completed work, and technical custody from human/statutory accountability. Own research can propose adaptation; humans and common controls retain amendment and operating powers.</p>
+<h2 id="appendix-a-all-29-governance-intelligence-tests">Appendix A — All 29 Governance Intelligence Tests</h2>
+<p>All institutional test statuses are <strong>not assessed</strong>. The board with competent independent human assessment owns institutional conclusions; asset/service stewards own only the evidence contributions below. Protected board deliberation stays unobserved by AI. Missing evidence is a gap, not a favourable institutional answer.</p>
+<table>
+<thead>
+<tr>
+<th>Test / controlled title</th>
+<th>Asset contribution / planned cases</th>
+<th>Human or cross-domain assessment boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M1.1 Strategic Coherence</td>
+<td>Condition/investment scenarios; 019</td>
+<td>Board strategy-purpose coherence and actual outcomes</td>
+</tr>
+<tr>
+<td>M1.2 Sensing Architecture</td>
+<td>Observation scope/coverage/failure; 001–007/029</td>
+<td>Whole sensing perimeter across all five domains</td>
+</tr>
+<tr>
+<td>M1.3 Risk Intelligence</td>
+<td>Physical concern and owned referral; 008/017/019</td>
+<td>Board foresight and cross-domain consequence evidence; CAP-02 use case deferred to Phase 2, not a core dependency</td>
+</tr>
+<tr>
+<td>M1.4 Composition and Capability</td>
+<td>Competent inspection/assessor role dependencies; 006/020/028</td>
+<td>Board composition, expertise and diversity</td>
+</tr>
+<tr>
+<td>M1.5 Performance Legibility</td>
+<td>Condition/work/outcome distinction; 004/018/019</td>
+<td>Complete operating/financial futures and performance</td>
+</tr>
+<tr>
+<td>M1.6 Compliance Assurance</td>
+<td>Applicable source/category/standing; 020–023</td>
+<td>Competent legal mapping and actual statutory fulfilment</td>
+</tr>
+<tr>
+<td>M1.7 Governance Documentation</td>
+<td>Current version and lineage; 002/021/026</td>
+<td>Accuracy of actual instruments and policy-practice coherence</td>
+</tr>
+<tr>
+<td>M1.8 Accountability Architecture</td>
+<td>Accepted duties and challenge; 016/017/022</td>
+<td>Actual responsiveness and influence beyond delivery</td>
+</tr>
+<tr>
+<td>M1.9 Value for Money</td>
+<td>Condition/resource alternatives; 019</td>
+<td>Human value objectives, finance and moral trade-offs</td>
+</tr>
+<tr>
+<td>M1.10 Human-AI Interaction Norms</td>
+<td>Action/human boundaries; 009/019/024/033</td>
+<td>Practice under real pressure, not merely controls on paper</td>
+</tr>
+<tr>
+<td>M1.11 Learning Metabolism</td>
+<td>Actual outcome versus forecast; 007/018/028</td>
+<td>Actual understanding/change over time without self-calibration</td>
+</tr>
+<tr>
+<td>M1.12 Continuous Self-Assessment</td>
+<td>Coverage and research; 003/031–033</td>
+<td>Board development/culture and whole-system review</td>
+</tr>
+<tr>
+<td>M1.13 Emergent System Behaviour</td>
+<td>Aggregate gaps/distribution/compound failure; 003/019/029</td>
+<td>Cross-domain/system effects and governed response</td>
+</tr>
+<tr>
+<td>M1.14 Golden Thread Integrity</td>
+<td>Inventory/currency/usable transfer; 020–022</td>
+<td>Statutory dutyholder fulfilment and board accountability</td>
+</tr>
+<tr>
+<td>M2.1 Values Architecture</td>
+<td>Purpose/use/no-exit boundaries; 009/024/025</td>
+<td>Actual structural values and organisational practice</td>
+</tr>
+<tr>
+<td>M2.2 Coherence Under Pressure</td>
+<td>Safety uncertainty and competing constraints; 008/019</td>
+<td>Human account of difficult decisions and reasons</td>
+</tr>
+<tr>
+<td>M2.3 Incommensurable Trade-off Capacity</td>
+<td>Preserved alternatives; 019</td>
+<td>Empowered human adjudication and dissent</td>
+</tr>
+<tr>
+<td>M2.4 Epistemic Brake Function</td>
+<td>Gaps/conflict/unknown completion; 003/005/007/014</td>
+<td>Human unease and actual investigation</td>
+</tr>
+<tr>
+<td>M2.5 Directorial Independence</td>
+<td>Unfiltered uncertain asset evidence; 019/021</td>
+<td>Independent dissent and resistance to framing</td>
+</tr>
+<tr>
+<td>M2.6 Social Legitimacy</td>
+<td>Resident challenge/manual route; 016/025</td>
+<td>Actual resident legitimacy and influence</td>
+</tr>
+<tr>
+<td>M2.7 No-Exit Obligation</td>
+<td>No optional-sensing penalty; 024/025</td>
+<td>Service burden/accessibility and lived resident evidence</td>
+</tr>
+<tr>
+<td>M2.8 Radical Transparency</td>
+<td>Evidence/inference/limitations; 002–007/018/021</td>
+<td>Affected people can interrogate significant reasons</td>
+</tr>
+<tr>
+<td>M2.9 Moral Drift Detection</td>
+<td>Distribution/outcomes and research; 018/019/028/031</td>
+<td>25/30 longitudinal founding-purpose comparison and response</td>
+</tr>
+<tr>
+<td>M2.10 Purpose Stability</td>
+<td>Purpose-bound physical evidence; 001/024/033</td>
+<td>Board articulation and actual purpose-consistent choices</td>
+</tr>
+<tr>
+<td>M2.11 Murmuration Capacity</td>
+<td>Permitted evidence to independent human review; 019</td>
+<td>Collective sense-making remains human; no boardroom capture</td>
+</tr>
+<tr>
+<td>M2.12 Constitutional Authority</td>
+<td>No authority by inference; 009/019/033</td>
+<td>Board constitutional mediation and substantive judgement</td>
+</tr>
+<tr>
+<td>M2.13 AI Constitutional Framework Governance</td>
+<td>Model-change and permitted-inference evidence; 024/028</td>
+<td>Board framework assessment and ongoing25 oversight</td>
+</tr>
+<tr>
+<td>M2.14 Purpose-Led Design</td>
+<td>Source/purpose derivation and limitations; 001/019/030</td>
+<td>Human account of purpose-led design and explicit exceptions</td>
+</tr>
+<tr>
+<td>M2.15 Telos / Function Distinction</td>
+<td>Physical optimisation versus human allocation; 019</td>
+<td>Alignment through actual human governance and outcomes</td>
+</tr>
+</tbody></table>
+<h2 id="8-october-process-counterpart-adoption-version-03">8 October Process counterpart adoption — version 0.3</h2>
+<p>Current counterpart: <a href="aos-13-process-intelligence-and-operational-coordination.html">AOS-13 v0.1</a>, Architecture/Map v0.38 and AOS-40 v0.5 planned VER-038. Asset REQ-013–020/032 and CON-004 supply resident-communicated promise, completion/inspection, uncertainty, partial/disputed scope and closure feedback. Process REQ-030–038, VER-022–026 and CON-005 consume those meanings; REQ-003/004/014/015/043/049 preserve exact source, change and lifecycle standing. Process does not become the asset inspection, statutory dutyholder or completion-evidence authority.</p>
+<p>Process functional allocation now exists. Earlier statements that AOS-13 is undrafted or awaits functional detail record the previous baseline. Exact executable schemas/profiles, compatible applied-state evidence, appointed human capacity/cover and actual accepted handoff/control/outcome evidence remain open. This revision changes references only; all original AOS-10 requirements and planned cases, source/common/DEC standings, private boundaries and human decision responsibilities remain unchanged. No case execution, independent review, conformance or operating approval is inferred.</p>
+<h2 id="current-reciprocal-adoption-and-precise-source-allocation-9-october2026">Current reciprocal adoption and precise source allocation — 9 October2026</h2>
+<p>This revision corrects current control/status and adoption/traceability references only. Every original normative requirement statement, case acceptance condition, invariant and identity retains its prior meaning. Existing source versions, approved architectural directions and human/private boundaries are unchanged. Local§6 is the authoritative domain view; Registerv0.17 SENSING-ADOPTION-2026-10-09 supplies the current reciprocal common mapping; Matrixv0.18 SENSING-SOURCES-2026-10-09 supplies every FP/RP/GT source locator, exact contribution chain and owned residual/gate. The following reverse view rows are projections of that single adoption manifest, not new dictionaries or wire schemas.</p>
+<table>
+<thead>
+<tr>
+<th>Exact component/view revision</th>
+<th>Authoritative common master</th>
+<th>Retained producer → consumer / domain meaning</th>
+<th>Local requirement → planned case</th>
+<th>Exact40 supporting cases / residual gate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-CON-001 / documentv0.4</td>
+<td>KX-01/08/09/11/23; REC-E/Q</td>
+<td>Human/source adapter via14 → 02/10: organisation, building/property/component and relationship revision; source/method; physical quantity/unit/calibration basis where applicable; observed/admitted times; purpose, assurance, uncertainty, correction/access/lifecycle. 02 REC-E/Q owns common evidence; invalid or ambiguous scope stays rejected/unresolved.</td>
+<td>AOS-10-REQ-001, AOS-10-REQ-002, AOS-10-REQ-003, AOS-10-REQ-004, AOS-10-REQ-006, AOS-10-REQ-007, AOS-10-REQ-008, AOS-10-REQ-033, AOS-10-REQ-038 → AOS-10-VER-001, AOS-10-VER-002, AOS-10-VER-003, AOS-10-VER-005, AOS-10-VER-006, AOS-10-VER-027, AOS-10-VER-030</td>
+<td>AOS-40-VER-024, AOS-40-VER-025; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-002 / documentv0.4</td>
+<td>KX-01/08/09/10; REC-E/Q</td>
+<td>10 through02 → permitted service/22/24/30: exact object/view revision, observations versus inference, condition/time/coverage cells, conflicts/freshness/gaps, model/rule, limitations and lineage. Unsafe aggregation prohibited; no claim beyond evidenced scope.</td>
+<td>AOS-10-REQ-005, AOS-10-REQ-006, AOS-10-REQ-009, AOS-10-REQ-010, AOS-10-REQ-044, AOS-10-REQ-048 → AOS-10-VER-003, AOS-10-VER-004, AOS-10-VER-005, AOS-10-VER-007, AOS-10-VER-019</td>
+<td>AOS-40-VER-011, AOS-40-VER-025; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-003 / documentv0.4</td>
+<td>KX-01/02/03/04/07/08/21/26; REC-E/Q/A/D/X; COORD ACC</td>
+<td>10/competent humans → 13/30/02; returned work evidence →10: concern, physical consequence/exposure, urgency basis, tracker/owner/cover, acceptance, authorised action, attempted/partial/actual effect and resulting observation. Common REC-Q/A/D/X and ACC; receipt is not accepted responsibility.</td>
+<td>AOS-10-REQ-011, AOS-10-REQ-012, AOS-10-REQ-020, AOS-10-REQ-021, AOS-10-REQ-022, AOS-10-REQ-032, AOS-10-REQ-037 → AOS-10-VER-008, AOS-10-VER-009, AOS-10-VER-016, AOS-10-VER-017, AOS-10-VER-018</td>
+<td>AOS-40-VER-009, AOS-40-VER-014, AOS-40-VER-020, AOS-40-VER-022, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-004 / documentv0.4</td>
+<td>KX-01/08/09/21/23; REC-E/Q; Operational Profiles§§4/5</td>
+<td>Controlled records/human/contractor via14/02 →10→13/11/30: repair and promised scope, original communicated commitment, precision/timezone and communication proof, authorised revisions, internal targets separate, completion rule/work/inspection evidence, completion time, incomplete/partial/unverified/disputed classification and provenance. 02/Profiles and DEC-036–041 own shared semantics; 13 detects/tracks, 11 delivers contact, 30 supports human decisions.</td>
+<td>AOS-10-REQ-013, AOS-10-REQ-014, AOS-10-REQ-015, AOS-10-REQ-016, AOS-10-REQ-017, AOS-10-REQ-018, AOS-10-REQ-019, AOS-10-REQ-020, AOS-10-REQ-032 → AOS-10-VER-010, AOS-10-VER-011, AOS-10-VER-012, AOS-10-VER-013, AOS-10-VER-014, AOS-10-VER-015, AOS-10-VER-016, AOS-10-VER-017</td>
+<td>AOS-40-VER-007, AOS-40-VER-008, AOS-40-VER-009, AOS-40-VER-010, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-005 / documentv0.4</td>
+<td>KX-01/08; REC-E/Q; KX-22 only after20 canonical admission</td>
+<td>10 with permitted02/14 inputs →22/24/30/25: physical condition, scenario/horizon, costs/resource constraints, alternatives, distributional consequences, uncertainty/coverage, actual outcome and precise standing. REC-E/Q; no approved capital decision or institution-wide pass inferred.</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-019</td>
+<td>AOS-40-VER-013, AOS-40-VER-027; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-006 / documentv0.4</td>
+<td>KX-01/03/08/14/15/21/23; REC-E/Q/D; COORD ACC</td>
+<td>Competent stewards/02/10 → permitted dutyholders/humans/external recipients through14: exact building/lifecycle/applicability profile, category inventory, current versions/history, gaps, authorised audience, delivery/usability confirmation and owned residual duties. Shared custody/access/exchange definitions; no statutory completeness inferred from transfer alone.</td>
+<td>AOS-10-REQ-024, AOS-10-REQ-025, AOS-10-REQ-026, AOS-10-REQ-027, AOS-10-REQ-047 → AOS-10-VER-020, AOS-10-VER-021, AOS-10-VER-022, AOS-10-VER-023</td>
+<td>AOS-40-VER-025, AOS-40-VER-036; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-007 / documentv0.4</td>
+<td>RSVIEW-0.1;02§6.6/04-CON-009; KX-23/07/06/05/13/17/21</td>
+<td>Assigned research service/14/10 →02/13/30/01/affected owners: common profile/run/finding/disposition meanings, exact affected elements and asset-specific implications under RSVIEW-0.1; failed/partial retrieval and unaccepted reviewer remain explicit.</td>
+<td>AOS-10-REQ-039, AOS-10-REQ-040, AOS-10-REQ-041, AOS-10-REQ-042, AOS-10-REQ-043, AOS-10-REQ-045, AOS-10-REQ-046 → AOS-10-VER-026, AOS-10-VER-030, AOS-10-VER-031, AOS-10-VER-032, AOS-10-VER-033</td>
+<td>AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+</tbody></table>
+<h3 id="individual-source-reverse-navigation">Individual-source reverse navigation</h3>
+<p>Rows below identify the exact controlled source locator and this component’s selected contribution or owned residual. Full source propositions and all other counterparts remain in the Matrix addendum; row numbers do not invent source IDs. This record completes source disposition, not source sufficiency or institutional assessment.</p>
+<table>
+<thead>
+<tr>
+<th>Source locator</th>
+<th>Selected component chain / residual disposition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FP 1 Telos/conferred purpose/function</td>
+<td>AOS-10-REQ-001 → AOS-10-VER-001; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 2 Permanently human Mode 2</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 3 Architectural integrity</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 4 Radical transparency</td>
+<td>AOS-10-REQ-003 → AOS-10-VER-002; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 5 Bounded rationality/imperfection</td>
+<td>AOS-10-REQ-004, AOS-10-REQ-035 → AOS-10-VER-003, AOS-10-VER-029; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 6 Epistemic humility</td>
+<td>AOS-10-REQ-006, AOS-10-REQ-009 → AOS-10-VER-005, AOS-10-VER-007; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 7 No-exit obligation</td>
+<td>AOS-10-REQ-030 → AOS-10-VER-025; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 8 Constitutional mediator</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 9 Compliance as consequence</td>
+<td>AOS-10-REQ-027 → AOS-10-VER-023; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>FP 10 Complexity/emergence</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 1: Architecture and Completeness: Every governance process must close its feedback loop.</td>
+<td>AOS-10-REQ-021 → AOS-10-VER-018; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 2: Architecture and Completeness: Every human accountability layer must be explicitly named, sequenced, and time - bounded before any process is consid...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 3: Architecture and Completeness: Every option set must include the option that cannot be made to work.</td>
+<td>AOS-10-REQ-023 → AOS-10-VER-019; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 4: Architecture and Completeness: The ‘AI said so’ test must be passable at every decision point.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 5: The Mode 1 / Mode 2 Boundary: Mode 2 is permanently human.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 6: The Mode 1 / Mode 2 Boundary: Every Mode 1 boundary is a governance instrument, not a technical setting.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 7: The Mode 1 / Mode 2 Boundary: The boardroom is a Mode 2 deliberative space.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 8: The Mode 1 / Mode 2 Boundary: The Mode 1/Mode 2 boundary is under continuous pressure from AI capability growth.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 9: The 1+5 Architecture: Every proposed governance mechanism must be tested against the 1+5 structure to confirm which layer it belongs to and...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 10: The 1+5 Architecture: Risk is intrinsic to each intelligence layer, not a separate domain.</td>
+<td>AOS-10-REQ-022 → AOS-10-VER-008; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 11: The 1+5 Architecture: Every intelligence layer boundary where welfare - adjacent or safety - adjacent signals may arise must have an explic...</td>
+<td>AOS-10-REQ-011, AOS-10-REQ-020 → AOS-10-VER-008, AOS-10-VER-017; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 12: The 1+5 Architecture: The Golden Thread obligation under the Building Safety Act 2022 is not a technical data management requirement.</td>
+<td>AOS-10-REQ-024, AOS-10-REQ-025, AOS-10-REQ-026, AOS-10-REQ-047 → AOS-10-VER-020, AOS-10-VER-021, AOS-10-VER-022; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 13: Options and Decisions: Options generated by the architecture must be grounded in the organisation’s actual state — actual covenant condition...</td>
+<td>AOS-10-REQ-023 → AOS-10-VER-019; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 14: Options and Decisions: Every consequential decision must feed back into the Unified Data Layer as a structured record — not only the decisio...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 15: Options and Decisions: Revealed preferences from real decisions take precedence over stated preferences in policy documents when the archite...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 16: Blind Spots and Honesty: The architecture must name what it cannot see.</td>
+<td>AOS-10-REQ-004, AOS-10-REQ-048 → AOS-10-VER-003; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 17: Blind Spots and Honesty: The dynamic risk perimeter question must be asked at board level as a standing agenda item: not only ‘what are our ri...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 18: Blind Spots and Honesty: The interaction of intelligence layers produces system - level behaviours that no individual layer would produce alone.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 19: Ethics and Telos: Every process must demonstrate a traceable relationship to the organisation’s ethical commitments and social purpose.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 20: Ethics and Telos: The architecture must be capable of detecting purpose drift — the condition where operational processes have graduall...</td>
+<td>AOS-10-REQ-021 → AOS-10-VER-018; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 21: Ethics and Telos: Diversity, inclusion, and equitable outcomes are not separate compliance obligations.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 22: Ethics and Telos: Where the organisation’s welfare obligation to residents and its consent architecture pull in opposing directions, th...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 23: Ethics and Telos: AI systems have function, not telos.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 24: Ethics and Telos: Where the organisation&#39;s purpose is interpreted through an accumulating body of AI-mediated rulings rather than appli...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 25: Ethics and Telos: Every AI system deployed by the organisation carries an embedded constitutional framework established by its developer.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 26: Ethics and Telos: The no - exit condition is a constitutive feature of the organisation’s moral architecture, not background context.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 27: Ethics and Telos: Compliance is the output of sound governance design, not its objective.</td>
+<td>AOS-10-REQ-027 → AOS-10-VER-023; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 28: Radical Transparency: If you cannot audit it and be held accountable for it, it cannot be done.</td>
+<td>AOS-10-REQ-037 → AOS-10-VER-018; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 29: Radical Transparency: The architecture must be more transparent than the document - based governance it replaces, not less.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 30: Radical Transparency: Transparency obligations extend to the architecture’s uncertainty.</td>
+<td>AOS-10-REQ-009, AOS-10-REQ-010 → AOS-10-VER-007; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 31: Agentic Delegation: Agents operate under explicitly delegated authority, not implied authority.</td>
+<td>AOS-10-REQ-012 → AOS-10-VER-009; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 32: Agentic Delegation: Agent authority is domain - specific, context - specific, and condition - specific simultaneously.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 33: Agentic Delegation: Agents cannot commit the organisation to external obligations, initiate unsolicited contact with external parties, or...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 34: Agentic Delegation: Internal escalation — routing a signal within the architecture to a human reviewer or to a receiving intelligence lay...</td>
+<td>AOS-10-REQ-020 → AOS-10-VER-017; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 35: Agentic Delegation: The agentic delegation framework is a governance document reviewed by the board, not a technical configuration manage...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 36: Agentic Delegation: Every agent action must satisfy the ethics and telos test and the radical transparency test independently of the proc...</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 37: Agentic Delegation: Certain classes of finding must reach their required audience regardless of any instruction to suppress or delay them.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 38: Data and Sensing Boundaries: Sensing must not exceed its declared purpose.</td>
+<td>AOS-10-REQ-028, AOS-10-REQ-029 → AOS-10-VER-024; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 39: Data and Sensing Boundaries: The boundary between observing an asset and monitoring a behaviour is an absolute architectural boundary, not a matte...</td>
+<td>AOS-10-REQ-028, AOS-10-REQ-029 → AOS-10-VER-024; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 40: Data and Sensing Boundaries: Where behavioural inference from sensing data is genuinely necessary to serve the resident’s interests — energy pover...</td>
+<td>AOS-10-REQ-029 → AOS-10-VER-024; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>RP 41: Data and Sensing Boundaries: The purpose limitation principle applies across all intelligence layers, not only to resident - facing sensing.</td>
+<td>No direct local requirement chain selected; preserve relevant shared/GI/human/domain owner and exact residual in Matrix row; source-sufficiency before affectedG3 and actual practice/longitudinal evidence before institutional claim.; Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.1 Strategic Coherence</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-019 (supporting case selection 019); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.2 Sensing Architecture</td>
+<td>AOS-10-REQ-001, AOS-10-REQ-002, AOS-10-REQ-003, AOS-10-REQ-004, AOS-10-REQ-005, AOS-10-REQ-006, AOS-10-REQ-007, AOS-10-REQ-008, AOS-10-REQ-009, AOS-10-REQ-010, AOS-10-REQ-035, AOS-10-REQ-036, AOS-10-REQ-048 → AOS-10-VER-001, AOS-10-VER-002, AOS-10-VER-003, AOS-10-VER-004, AOS-10-VER-005, AOS-10-VER-006, AOS-10-VER-007, AOS-10-VER-029 (supporting case selection 001/002/003/004/005/006/007/029); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.3 Risk Intelligence</td>
+<td>AOS-10-REQ-011, AOS-10-REQ-020, AOS-10-REQ-022, AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-008, AOS-10-VER-017, AOS-10-VER-019 (supporting case selection 008/017/019); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.4 Composition and Capability</td>
+<td>AOS-10-REQ-007, AOS-10-REQ-008, AOS-10-REQ-024, AOS-10-REQ-034, AOS-10-REQ-047 → AOS-10-VER-006, AOS-10-VER-020, AOS-10-VER-028 (supporting case selection 006/020/028); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.5 Performance Legibility</td>
+<td>AOS-10-REQ-005, AOS-10-REQ-021, AOS-10-REQ-023, AOS-10-REQ-037, AOS-10-REQ-044 → AOS-10-VER-004, AOS-10-VER-018, AOS-10-VER-019 (supporting case selection 004/018/019); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.6 Compliance Assurance</td>
+<td>AOS-10-REQ-024, AOS-10-REQ-025, AOS-10-REQ-026, AOS-10-REQ-027, AOS-10-REQ-047 → AOS-10-VER-020, AOS-10-VER-021, AOS-10-VER-022, AOS-10-VER-023 (supporting case selection 020/021/022/023); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.7 Governance Documentation</td>
+<td>AOS-10-REQ-003, AOS-10-REQ-025, AOS-10-REQ-031, AOS-10-REQ-046 → AOS-10-VER-002, AOS-10-VER-021, AOS-10-VER-026 (supporting case selection 002/021/026); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.8 Accountability Architecture</td>
+<td>AOS-10-REQ-019, AOS-10-REQ-020, AOS-10-REQ-026, AOS-10-REQ-032 → AOS-10-VER-016, AOS-10-VER-017, AOS-10-VER-022 (supporting case selection 016/017/022); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.9 Value for Money</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-019 (supporting case selection 019); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.10 Human-AI Interaction Norms</td>
+<td>AOS-10-REQ-012, AOS-10-REQ-023, AOS-10-REQ-028, AOS-10-REQ-029, AOS-10-REQ-042, AOS-10-REQ-043, AOS-10-REQ-044 → AOS-10-VER-009, AOS-10-VER-019, AOS-10-VER-024, AOS-10-VER-033 (supporting case selection 009/019/024/033); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.11 Learning Metabolism</td>
+<td>AOS-10-REQ-009, AOS-10-REQ-010, AOS-10-REQ-021, AOS-10-REQ-034, AOS-10-REQ-037 → AOS-10-VER-007, AOS-10-VER-018, AOS-10-VER-028 (supporting case selection 007/018/028); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.12 Continuous Self-Assessment</td>
+<td>AOS-10-REQ-004, AOS-10-REQ-039, AOS-10-REQ-040, AOS-10-REQ-041, AOS-10-REQ-042, AOS-10-REQ-043, AOS-10-REQ-048 → AOS-10-VER-003, AOS-10-VER-031, AOS-10-VER-032, AOS-10-VER-033 (supporting case selection 003/031/032/033); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.13 Emergent System Behaviour</td>
+<td>AOS-10-REQ-004, AOS-10-REQ-023, AOS-10-REQ-035, AOS-10-REQ-036, AOS-10-REQ-044, AOS-10-REQ-048 → AOS-10-VER-003, AOS-10-VER-019, AOS-10-VER-029 (supporting case selection 003/019/029); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M1.14 Golden Thread Integrity</td>
+<td>AOS-10-REQ-024, AOS-10-REQ-025, AOS-10-REQ-026, AOS-10-REQ-047 → AOS-10-VER-020, AOS-10-VER-021, AOS-10-VER-022 (supporting case selection 020/021/022); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.1 Values Architecture</td>
+<td>AOS-10-REQ-012, AOS-10-REQ-028, AOS-10-REQ-029, AOS-10-REQ-030 → AOS-10-VER-009, AOS-10-VER-024, AOS-10-VER-025 (supporting case selection 009/024/025); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.2 Coherence Under Pressure</td>
+<td>AOS-10-REQ-011, AOS-10-REQ-022, AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-008, AOS-10-VER-019 (supporting case selection 008/019); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.3 Incommensurable Trade-off Capacity</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-019 (supporting case selection 019); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.4 Epistemic Brake Function</td>
+<td>AOS-10-REQ-004, AOS-10-REQ-006, AOS-10-REQ-009, AOS-10-REQ-010, AOS-10-REQ-017, AOS-10-REQ-048 → AOS-10-VER-003, AOS-10-VER-005, AOS-10-VER-007, AOS-10-VER-014 (supporting case selection 003/005/007/014); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.5 Directorial Independence</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-025, AOS-10-REQ-044 → AOS-10-VER-019, AOS-10-VER-021 (supporting case selection 019/021); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.6 Social Legitimacy</td>
+<td>AOS-10-REQ-019, AOS-10-REQ-030, AOS-10-REQ-032 → AOS-10-VER-016, AOS-10-VER-025 (supporting case selection 016/025); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.7 No-Exit Obligation</td>
+<td>AOS-10-REQ-028, AOS-10-REQ-029, AOS-10-REQ-030 → AOS-10-VER-024, AOS-10-VER-025 (supporting case selection 024/025); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.8 Radical Transparency</td>
+<td>AOS-10-REQ-003, AOS-10-REQ-004, AOS-10-REQ-005, AOS-10-REQ-006, AOS-10-REQ-007, AOS-10-REQ-008, AOS-10-REQ-009, AOS-10-REQ-010, AOS-10-REQ-021, AOS-10-REQ-025, AOS-10-REQ-037, AOS-10-REQ-048 → AOS-10-VER-002, AOS-10-VER-003, AOS-10-VER-004, AOS-10-VER-005, AOS-10-VER-006, AOS-10-VER-007, AOS-10-VER-018, AOS-10-VER-021 (supporting case selection 002/003/004/005/006/007/018/021); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.9 Moral Drift Detection</td>
+<td>AOS-10-REQ-021, AOS-10-REQ-023, AOS-10-REQ-034, AOS-10-REQ-037, AOS-10-REQ-039, AOS-10-REQ-040, AOS-10-REQ-044 → AOS-10-VER-018, AOS-10-VER-019, AOS-10-VER-028, AOS-10-VER-031 (supporting case selection 018/019/028/031); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.10 Purpose Stability</td>
+<td>AOS-10-REQ-001, AOS-10-REQ-002, AOS-10-REQ-028, AOS-10-REQ-029, AOS-10-REQ-042, AOS-10-REQ-043 → AOS-10-VER-001, AOS-10-VER-024, AOS-10-VER-033 (supporting case selection 001/024/033); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.11 Murmuration Capacity</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-019 (supporting case selection 019); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.12 Constitutional Authority</td>
+<td>AOS-10-REQ-012, AOS-10-REQ-023, AOS-10-REQ-042, AOS-10-REQ-043, AOS-10-REQ-044 → AOS-10-VER-009, AOS-10-VER-019, AOS-10-VER-033 (supporting case selection 009/019/033); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.13 AI Constitutional Framework Governance</td>
+<td>AOS-10-REQ-028, AOS-10-REQ-029, AOS-10-REQ-034 → AOS-10-VER-024, AOS-10-VER-028 (supporting case selection 024/028); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.14 Purpose-Led Design</td>
+<td>AOS-10-REQ-001, AOS-10-REQ-002, AOS-10-REQ-023, AOS-10-REQ-038, AOS-10-REQ-044, AOS-10-REQ-045 → AOS-10-VER-001, AOS-10-VER-019, AOS-10-VER-030 (supporting case selection 001/019/030); Matrix source row retains owned residual and gate</td>
+</tr>
+<tr>
+<td>GT M2.15 Telos / Function Distinction</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-019 (supporting case selection 019); Matrix source row retains owned residual and gate</td>
+</tr>
+</tbody></table>
+<p>Author consistency conclusion: functional roles and repair/private/workforce/external/research/control/failure boundaries agree with the current shared infrastructure. SENS-CR-01–05 closed as author document corrections; wire profiles, operating roles/capacity, domain/annex/legal sufficiency and observed evidence remain open per§17 and40. No independent/executed conformance or operating readiness claim. Earlier dated text/addenda describe history; this current control takes precedence.</p>
+<h2 id="phase-2-scope-disposition-9-october-2026">Phase 2 scope disposition — 9 October 2026</h2>
+<p>DEC-097 controls over prior inclusion/annex statements. CAP-01/02-specific legacy requirements/cases are deferred and supply no current-core completion/acceptance obligation. General human judgement, independent challenge, evidence fidelity, cumulative risk/drift and protected reporting remain current. Existing closure of AT-CR-01–05 and pilot5b is retained; neither is reopened by this scope change. No case executed or operating approval granted.</p>
+<p><strong>Allocation and source status:</strong> Any older source/adoption row relying on deferred CAP-only IDs is a historical use-case contribution, not current-core coverage. Core source sufficiency must use the surviving general obligations and accepted evidence; no source is promoted by this deferral. Retained numbered totals count catalogue/trace entries, including deferred IDs, and must not be read as active-core requirement/test totals.</p>
+<h2 id="historical-opening-status-notices-retained-provenance">Historical opening status notices — retained provenance</h2>
+<p>These are dated drafting snapshots, including their then-current versions, totals, completion statements and next tasks. They do not define today&#39;s baseline or work queue. The present document retains its proposed/planned status; approved directions retain their recorded scope. Use the current inventory, adopted README and live to-do list for orientation; authoritative requirement and decision text remains in its named sections.</p>
+<p><strong>Historical status notice — revision set:</strong> AOS-00/Map v0.44; DEC-001–097; AOS-10v0.5/20v0.6/22v0.5/24v0.4/25v0.3/40v0.8; other components unchanged; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; acceptance annexv0.2; reviewv0.3.</p>
+<p><strong>Historical status notice — scope decision — 9 October 2026, DEC-097:</strong> Mark has moved CAP-01 Trade-Off Divergence and CAP-02 Risk Register Assessment into Phase 2 as specific use cases built on AOS. They are outside the current architecture/specification completion scope and are not current build, acceptance or publication prerequisites. No use-case design, configuration, implementation or testing is scheduled now. DEC-017&#39;s architectural inclusion is superseded on this point; its original record remains history. General human judgement, evidence, data-use/authority, independent challenge and protected reporting controls remain in the architecture. Dedicated legacy use-case IDs are retained only as deferred trace references, with original wording parked in Phase 2 (deferred under DEC-097); mixed rows retain only their general architectural obligations in current scope. Earlier inclusion/next-task/annex-dependency statements are superseded.</p>
+<p><strong>Historical status notice — sensing consistency closure — 9 October 2026:</strong> Mark authorised the remaining consistency work. SENS-CR-01–05 are closed at the functional-document/author-review level: all40 logical CON views across10–14 and40 have exact central adoption, producer/consumer/shared-owner and REQ/VER links; all80 controlled FP/RP/GT sources have precise current contributions and owned residual/gate dispositions; current body/control statements are reconciled. Versions10v0.4/11v0.3/12v0.3/13v0.2/14v0.8/40v0.6; Architecture/Mapv0.42; Sharedv0.18/Corev0.6/ExchangeRegisterv0.17/SourceMatrixv0.18; reviewv0.4. DEC001–096 unchanged. Sensing269 proposed REQs/176 planned VERs;40 retains40/38. No new requirement/case/interface, source promotion or execution. Exact compatible wire schemas/profiles, organisation appointments/capacity, independent review, legal/institutional/practice evidence and scoped build/activation remain separate; independent project review remains deferred. Earlier dated notices/addenda are historical. Current controlling allocation is the9October manifest and source addendum below.</p>
+</main></body></html>

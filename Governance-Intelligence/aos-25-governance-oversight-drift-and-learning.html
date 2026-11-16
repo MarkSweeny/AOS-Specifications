@@ -1,0 +1,1340 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AOS-25 — Governance oversight, drift and learning · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-25-governance-oversight-drift-and-learning.pdf">PDF</a> &nbsp; <a href="aos-25-governance-oversight-drift-and-learning.md">Markdown</a></nav><main><h1 id="aos-25-governance-oversight-drift-and-learning">AOS-25 — Governance oversight, drift and learning</h1>
+<p>Document: aos-25-governance-oversight-drift-and-learning · Source revision or record: v0.5</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p><strong>DEC-104 adopted — 29 October 2026:</strong> Current revision 0.5. Each mandatory protected-finding category requires assessed technical-failure and implicated-person interference arrangements with an appropriately independent authorised alternative and no implicated sole release gatekeeper. <a href="../Supporting-Specifications/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29.html">Decision/amendment record</a>. External reporting is conditional on justified lawful authority, not a default. Exact profiles/permissions, protected_finding v0.3 compatibility and actual evidence remain gates; amended wording retains ordinary separate review and cases are planned/unexecuted. Earlier contrary or narrower baselines are history for this scope.</p>
+<p><strong>DEC-103 adopted — 29 October 2026:</strong> Current revision 0.4. Decision validity/effective time, attributable evidence/authentication, minutes approval and permission to execute are separate. DEC-087 is partly superseded; <a href="../Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.html">decision/amendment and legal-source record</a>. No universal later-minutes or second decision-record approval gate. Exact instruments/evidence policy, KX-06 v0.3 compatibility and ordinary separate review/readiness gates remain required; cases unexecuted. Earlier contrary wording is historical only where explicitly identified.</p>
+<p><strong>Editorial edition — 29 October 2026:</strong> Mark authorised documentary corrections D-01–09. This edition reconciles navigation, count/revision pointers, conformance links and historical scope labels; existing technical meanings, requirement/IF/decision identities and proposed/planned status are retained. The internal version below identifies the retained functional baseline; this dated editorial edition identifies the corrected document. See the <a href="../Supporting-Specifications/aos-current-document-inventory-2026-10-29.html">current document inventory</a> and <a href="../Supporting-Specifications/aos-documentary-corrections-2026-10-29.html">correction record</a>. Earlier dated adoption baselines are historical snapshots; exact logical family/view revisions are in Exchange Register §4.</p>
+<table>
+<thead>
+<tr>
+<th>Document control</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Component / version / date</td>
+<td>AOS-25 / 0.5 / 29 October 2026</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Functional specification review draft; proposed requirement wording</td>
+</tr>
+<tr>
+<td>Architecture baseline consulted</td>
+<td>AOS-00/Map v0.44; DEC-001–097; AOS-10v0.5/20v0.6/22v0.5/24v0.4/25v0.3/40v0.8; other components unchanged; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; acceptance annexv0.2; reviewv0.3.</td>
+</tr>
+<tr>
+<td>Governing sources</td>
+<td>Foundational Principles v4; AOS Reasoning Principles v6; Governance Intelligence Tests; preserved source manifest</td>
+</tr>
+<tr>
+<td>Dependencies consulted</td>
+<td>AOS-01–05 v0.8; AOS-14 v0.4; AOS-20 v0.3; AOS-21 v0.4; AOS-22 v0.2; AOS-23 v0.3; AOS-24 v0.1; AOS-30 v0.3; Shared v0.13/Core v0.6/Register v0.12; source matrix v0.13; Control Coordination v0.2; Protected Reporting and Recovery v0.1</td>
+</tr>
+<tr>
+<td>Allocation supplements</td>
+<td>AOS-00/Map v0.31; Shared v0.14/Register v0.13/source matrix v0.14; 20 v0.4/21 v0.5/22 v0.3/23 v0.4/24 v0.2/30 v0.4 counterpart-reference alignment only; common meanings unchanged</td>
+</tr>
+<tr>
+<td>Quality / template</td>
+<td>AOS-QS v0.1; component template v0.4</td>
+</tr>
+<tr>
+<td>Project owner / custodian</td>
+<td>Mark Sweeny</td>
+</tr>
+<tr>
+<td>Operational owner</td>
+<td>Accountable GI oversight owner; independent human reviewer, empowered committee/board, corrective-duty and cover roles require organisation appointment</td>
+</tr>
+<tr>
+<td>Author / reviewers</td>
+<td>Codex at Mark&#39;s request; author document checks only; Mark wording/whole-document review pending; independent project reviewer unassigned/deferred</td>
+</tr>
+<tr>
+<td>Approval / readiness</td>
+<td>Existing design directions apply; no whole-document, build, activation or achieved readiness approval</td>
+</tr>
+<tr>
+<td>Change history</td>
+<td>0.2 — GI-CR-01–04 author consistency correction/closure under Mark’s instruction; existing identifiers and proposed/planned status preserved. 0.1 initial functional draft; no new DEC, IF, schema, deployment or schedule</td>
+</tr>
+</tbody></table>
+<h2 id="1-purpose-and-scope">1. Purpose and scope</h2>
+<p>AOS-25 examines whether the organisation and its AI-mediated governance remain coherent with conferred purpose over time. It connects individually plausible assessments, decisions, exceptions and outcomes into an account of accumulated drift, blind spots and learning. Without it, each paper can pass review while precedents progressively relocate founding meaning, burdens repeatedly fall on the same people, or the system optimises successfully for the wrong thing.</p>
+<p>It owns GI oversight analysis: purpose/precedent and Mode 1/Mode 2 boundary drift, override patterns, cumulative distribution of trade-offs, developer-framework divergence, cross-component effects, evidence blind spots, ordinary agent performance inputs, independent review support, response tracking and research into its own adequacy. It coordinates oversight of the GI research portfolio while specialist components retain their own remits. It does not become a new intelligence, an all-powerful controller, an independent human reviewer or a governance certificate.</p>
+<p>AOS-21 owns corpus and approved precedent; 22 owns synthesis/interpretation/options; 23 owns artefact assessment and currency monitoring; 24 renders canonical positions; 30 records empowered human decisions, approval, duties and outcomes. AOS-01–05 own powers, records, use, agents and runtime; 13 coordinates operations; 14 governs external exchange; 40 will organise assurance/test evidence. AOS-25 can identify patterns and propose review, not change telos, amend governing meaning, auto-prune precedent, rank incommensurable goods, infer personal feelings/preferences or activate exploratory self-calibration.</p>
+<p>Stakeholders include boards/committees, independent directors/reviewers, executives, residents, staff, governance/corpus stewards, domain/agent owners and operators. Their legitimate interests, especially the no-exit condition, inform purposeful evidence and explanation. Parent/subsidiary profiles, powers and applicability remain distinct under DEC-090. Permitted group analysis is possible; common membership is not permission to combine data or copy constitutional authority.</p>
+<h2 id="2-authority-and-sources">2. Authority and sources</h2>
+<p>FP v4/RP v6 govern; recorded directions constrain proposed wording. Working sources are reconciled, not adopted wholesale. Requirement source keys below identify their exact baseline and functional locators. The source manifest remains unchanged.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Exact source / locator and standing</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FP / RP</td>
+<td>Foundational_Principles_v4.docx principles 1–10; AOS_Reasoning_Principles_v6.docx domains 1–9, especially RP2 standing review, RP4 decision feedback, RP5 emergent behaviour and RP6 purpose/precedent/developer-framework paragraphs</td>
+</tr>
+<tr>
+<td>GT</td>
+<td>Governance_Intelligence_Tests.docx all M1.1–14/M2.1–15; §8 technical contributions and permanent human limits</td>
+</tr>
+<tr>
+<td>WP</td>
+<td>Governance Intelligence: Internal Architecture — Working Paper, How the corpus holds meaning, Governance of drift — annual report, Cross-cutting drift self-flagging, Validation regime and Charter; originally RP v5, reconciled to v6/DEC-079–085</td>
+</tr>
+<tr>
+<td>TD</td>
+<td>Trade-Off Divergence Tool — Product Specification (Working Draft).md §3 Stage Three, §§4–6 independent configuration, decision mapping and charter prohibition; adopted scope DEC-017, routing constrained by DEC-085</td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>GIL v2 comparison filename v0.1/content v0.2, GIL-C03/04/10/19/22/24/25/27/32/34; retained/changed/retired/deferred standing remains</td>
+</tr>
+<tr>
+<td>GI / S / AS / H</td>
+<td>AOS-20 v0.3 §§3–7/10–17, especially REQ-034–046; AOS-22 v0.2 §§3–7/10/19; AOS-23 v0.3 §§3–7/10/19; AOS-30 v0.3 §§5–7/9–12</td>
+</tr>
+<tr>
+<td>C / P</td>
+<td>AOS-21 v0.4 §§3–7/10/19 corpus/precedent; AOS-24 v0.1 §§3–7/10/19 faithful presentation and correction</td>
+</tr>
+<tr>
+<td>SC / REC / KX</td>
+<td>Shared v0.13 §4.4; Core v0.6 REC-E/Q/A/D/X; Register v0.12 KX-01/06 v0.2/08/13/15–22/26; common meanings stay authoritative</td>
+</tr>
+<tr>
+<td>D / R</td>
+<td>AOS-00 v0.30 DEC-001–091; DEC-086/template v0.4 §4.4; AOS-04 v0.8 §§3.1/5.1/6.6/10.8 CON-009, AOS-02 v0.8 §6.6 CON-007, AOS-01 v0.8 §§6.6/10.8; RSVIEW-0.1</td>
+</tr>
+</tbody></table>
+<p>WP&#39;s conversational ratification-to-precedent assumption is superseded by DEC-080/081: confirmation is not empowered adoption. Its historical 2015 standard reference supplies no claim about current regulatory clauses. Dual authorship is implemented as independently prepared human and GI accounts; a particular committee name, special-resolution mechanism or appointment cannot be invented for every organisation. Actual governing instruments supply powers. TD decision mapping remains mixed/uncertain where appropriate and human-confirmed under DEC-088; neither a persona count nor an oversight finding establishes moral error. No new external legal/standard currentness claim is introduced.</p>
+<h3 id="dec-104-protected-reporting-under-failure-and-implicated-person-interference">DEC-104 — protected reporting under failure and implicated-person interference</h3>
+<p>Each mandatory protected-finding category shall have an approved reporting arrangement assessed against both technical failure and interference by implicated people. The profile shall identify the intended recipient, possible conflicts and an appropriately independent authorised alternative; an implicated person shall not be the sole gatekeeper deciding whether the required finding reaches its authorised audience.</p>
+<p>Authority/use permissions, minimum report content, recipient verification, custody, route/change dependencies, tracking ownership, acceptance, cover and escalation are established in advance. An external route is included where justified and lawfully authorised; external reporting is not a universal default and a finding creates no extra disclosure power. Planned exercises address failed infrastructure, unavailable/implicated recipients, apparent alternatives controlled by the same implicated gatekeeper and attempted suppression. Missing adequate arrangements remain an explicit owned gap, prevent claims of operational protected-reporting assurance and withhold affected dependent reliance under existing gates; they do not create false delivery, ownership transfer or blanket shutdown of separately authorised service. Original tracking duty persists until actual scoped acceptance.</p>
+<p>The organisation’s profile binds each required finding class to normal/alternate authorised audiences, conflict criteria/evidence and accountable assessment, disclosure basis/minimal payload, independently verifiable recipients/permissions, credentials/custody and route/reconfiguration controls, failure/compromise assumptions, tracking/cover/escalation, human fallback, evidence and review triggers. Test both infrastructure/common-dependency independence and organisational release/recipient/custody control; neither implies the other. No administrator, executive sign-off or report-validation step may silently remove a required duty. The declared threat/governance scope and residual limitations must be visible: this is not an unlimited guarantee against every holder of legal/constitutional change powers. Inadequacy returns to an empowered accountable reviewer; the reporting agent cannot invent a recipient or grant itself onward-disclosure authority.</p>
+<h2 id="3-responsibilities">3. Responsibilities</h2>
+<table>
+<thead>
+<tr>
+<th>Responsibility</th>
+<th>AOS-25 owns</th>
+<th>Reserved / shared owner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Longitudinal oversight</td>
+<td>Evidence-qualified purpose, precedent, boundary, override and distributional patterns</td>
+<td>21 maintains meaning/history; 01/30 humans amend/adjudicate</td>
+</tr>
+<tr>
+<td>System effects</td>
+<td>Cross-component blind spots, model-framework divergence and cumulative effects</td>
+<td>Domains supply evidence; 04/05 evaluation/runtime; 40 assurance scope</td>
+</tr>
+<tr>
+<td>Independent review support</td>
+<td>GI account, permitted evidence basis, differences and tracked responses</td>
+<td>Independent human authors prepare their own account; empowered institution determines disposition</td>
+</tr>
+<tr>
+<td>Learning</td>
+<td>Actual consequence links, misunderstanding/corrections and effectiveness questions</td>
+<td>30 duty/decision records; 22 analytical revisions; no automatic calibration</td>
+</tr>
+<tr>
+<td>GI research oversight</td>
+<td>Portfolio coverage, shared omissions, unresolved findings and response quality</td>
+<td>20–24/25 specialist remits; 14 retrieval; 04 shared agent infrastructure</td>
+</tr>
+<tr>
+<td>Own research</td>
+<td>Specialist external relevance and adaptation proposals for oversight</td>
+<td>01/30 human change; no autonomous amendment</td>
+</tr>
+</tbody></table>
+<p>Logical flow: scoped permitted histories/current instruments → GI oversight account and separately prepared human account → empowered comparison/disposition → accepted corrective duties → evidenced consequences/reassessment. Both reports remain distinct and can disagree. This mandates functional independence and accountability, not a second model, dedicated deployment or unrestricted evidence access.</p>
+<h2 id="4-capabilities-functions-and-requirements">4. Capabilities, functions and requirements</h2>
+<h3 id="41-capabilities">4.1 Capabilities</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Observable capability / REQs</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-CAP-001</td>
+<td>Produce bounded, comparable and contestable oversight evidence; 001–005/019/028/045/048</td>
+</tr>
+<tr>
+<td>AOS-25-CAP-002</td>
+<td>Detect possible purpose, precedent, boundary and developer-framework drift; 006–010</td>
+</tr>
+<tr>
+<td>AOS-25-CAP-003</td>
+<td>Expose emergent effects, blind spots and cumulative trade-offs; 011–016</td>
+</tr>
+<tr>
+<td>AOS-25-CAP-004</td>
+<td>Support actual-outcome learning and independently prepared review with owned dispositions; 017–018/020–027</td>
+</tr>
+<tr>
+<td>AOS-25-CAP-005</td>
+<td>Preserve permitted human boundaries, correction, handoff and governed histories; 029–036/046–047</td>
+</tr>
+<tr>
+<td>AOS-25-CAP-006</td>
+<td>Conduct own controlled external research and GI research-portfolio oversight; 037–042</td>
+</tr>
+<tr>
+<td>AOS-25-CAP-007</td>
+<td>Support ordinary performance monitoring and longitudinal evaluation without self-calibration; 043–044</td>
+</tr>
+</tbody></table>
+<h3 id="42-functions">4.2 Functions</h3>
+<p>Each function records exact input/control revisions and uncertainty; failed preconditions yield an owned limitation, not a completed-clear result. Behaviour is functional rather than a wire/API prescription.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Trigger / input → behaviour → output and failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-FUN-001</td>
+<td>Approved cycle/material event → scope and check evidence/controls/coverage/comparability → bounded basis or owned gap; 001–004/028/031/045–047</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-002</td>
+<td>Scoped instruments/interpretation/precedent/overrides/frameworks → contrast meaning and effects against founding/authorised baseline → possible drift and referral, never amendment; 005–010/019</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-003</td>
+<td>Permitted multi-case/cross-component history → examine cumulative effects/distribution/quiet gaps → qualified patterns and telos concern response gaps, no persona winner; 011–016</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-004</td>
+<td>Decision/action/outcome records → connect consequences, limits and alternative explanations → learning questions and accountable feedback; 017–018/032</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-005</td>
+<td>Annual or material-drift review trigger → GI account, independent human evidence support and report comparison → differences and empowered disposition; 020–023/026/030/048</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-006</td>
+<td>Review disposition/protected concern → current powers/use and owned handoff → accepted duties/cover/escalation, selective containment or human referral; 024–029/035–036</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-007</td>
+<td>Corrected evidence/control or material oversight method change → affected revision/evaluation/impact checks → reassessment, notification and controlled release; 033–034/043–044</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-008</td>
+<td>Approved specialist research trigger → controlled retrieval and assessment → coverage/finding/human disposition or owned degraded recovery; 037–041</td>
+</tr>
+<tr>
+<td>AOS-25-FUN-009</td>
+<td>GI research portfolio review trigger → compare remits/coverage/shared gaps and actual responses → owned adequacy questions and proposal, not central takeover; 042</td>
+</tr>
+</tbody></table>
+<h3 id="43-proposed-requirements">4.3 Proposed requirements</h3>
+<p>All rows are <strong>proposed component-level functional requirements</strong>, initial history <strong>0.1</strong>, release scope <strong>functional review only</strong>. Sources distinguish approved directions from their functional derivation; inclusion does not approve exact wording. Accountable owner is the GI oversight owner; Mark is proposed wording approver/custodian. Independent review, disclosure, constitutional/change and human-duty decisions require the separately empowered roles in §§3/7. Common dependencies are 01–05/14/20 and §6; case histories additionally use 21–24/30 and pending 13/40 where applicable. Research rows use §4.4/CON-009. Each row completes the record with source, rationale and primary planned VER in §15; no case is executed.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Category / proposed obligation</th>
+<th>Exact source / derivation</th>
+<th>Rationale</th>
+<th>Planned VER</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-REQ-001</td>
+<td><strong>Scoped oversight:</strong> Bind each oversight assessment to its exact entity, period, question, source/analysis/control revisions and approved review remit.</td>
+<td>GI §§3/6/10; DEC-090; KX-22</td>
+<td>Makes the assessment reproducible.</td>
+<td>001</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-002</td>
+<td><strong>Evidence:</strong> Preserve supporting and conflicting evidence, assurance, provenance, observed/effective dates and evidence-versus-inference distinctions for material findings.</td>
+<td>RP5/7; REC-E/Q; DEC-045–048/062–066</td>
+<td>A pattern is contestable evidence, not a verdict.</td>
+<td>001</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-003</td>
+<td><strong>Coverage:</strong> Show the assessed population and material coverage limits, distinguishing justified non-applicability, exclusion, missing/unseeded/unassessed evidence and failed checking.</td>
+<td>CMP GIL-C04/19; FP5/6; GT M1.2/12</td>
+<td>A green result must not conceal unseen scope.</td>
+<td>002</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-004</td>
+<td><strong>Comparability:</strong> Qualify comparisons for changed definitions, criteria, entity, period, exposure and population; do not treat incompatible or missing observations as equivalent values.</td>
+<td>REQ-001–003 derivation; RP5; REC-E/Q</td>
+<td>Trend changes may reflect changed measurement.</td>
+<td>002</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-005</td>
+<td><strong>Two-layer review:</strong> Distinguish compliance evidence from coherence with conferred purpose and values, retaining conflicts rather than treating compliance as proof of coherence.</td>
+<td>WP Governance of drift; FP9; RP6</td>
+<td>Technical compliance can coexist with purpose drift.</td>
+<td>003</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-006</td>
+<td><strong>Purpose drift:</strong> Assess evidenced operational outcomes and optimisation behaviour against the exact founding purpose/values and approved changes, identifying possible telos/function substitution.</td>
+<td>RP6 purpose drift/telos-function; FP1; GT M2.9/10/15</td>
+<td>Optimisation success may displace purpose.</td>
+<td>004</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-007</td>
+<td><strong>Precedent drift:</strong> Compare accumulated interpretation and approved precedent with the founding statement and authorised changes, not only with the most recent rulings.</td>
+<td>RP6 precedent paragraph; DEC-010–012/080/081; WP drift</td>
+<td>Individually reasonable rulings can drift cumulatively.</td>
+<td>004</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-008</td>
+<td><strong>Mode boundary:</strong> Review patterns of Mode 1/Mode 2 classification, delegation and boundary changes against their actual empowered instruments; refer ambiguity or bypass without reclassifying reserved human judgement autonomously.</td>
+<td>RP2; DEC-005/024/025; GI §§7/10</td>
+<td>Capability cannot silently redraw a governance boundary.</td>
+<td>005</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-009</td>
+<td><strong>Overrides:</strong> Examine override, refusal, exception and reversal patterns with their reasons, powers, scope and actual effects; a frequent or rare override alone is not misconduct or safety evidence.</td>
+<td>GI REQ-036; RP2/5/7; KX-06/08/17</td>
+<td>Context distinguishes legitimate judgement from control erosion.</td>
+<td>006</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-010</td>
+<td><strong>Developer divergence:</strong> Review material deployed/proposed model-framework assessments and operational evidence for divergence from organisational values, exposing missing pre-deployment assessment and changed framework scope.</td>
+<td>FP3; RP6 developer frameworks; GT M2.13; KX-17/20</td>
+<td>Developer commitments do not become organisational authority by default.</td>
+<td>007</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-011</td>
+<td><strong>Emergence:</strong> Assess permitted cross-component interactions and cumulative effects that individual component evaluations may miss, identifying affected owners and system-level review needs.</td>
+<td>RP5 emergent behaviour; FP10; DEC-056/057; GT M1.13</td>
+<td>Assured parts do not establish assured collective behaviour.</td>
+<td>008</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-012</td>
+<td><strong>Quiet-state blind spots:</strong> Treat apparently stable or alarm-free operation as compatible with missing coverage, weak challenge or accumulating risk, retaining appropriate review questions and limitations.</td>
+<td>FP5/6; RP5; GT M1.12/13</td>
+<td>No alarm is not proof of sound judgement.</td>
+<td>009</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-013</td>
+<td><strong>Distributional patterns:</strong> Surface evidenced cumulative trade-off burdens and consequences across relevant groups/time, including no-exit impacts, with permitted scope and uncertainty.</td>
+<td>FP7/10; RP4/6; TD §3 Stage Three</td>
+<td>Per-decision acceptability can conceal repeated burden.</td>
+<td>010</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-014</td>
+<td><strong>Deferred to Phase 2; not a current architectural requirement/capability/test.</strong> Legacy wording: AOS-25-REQ-014 (deferred under DEC-097); identifier retained for traceability only.</td>
+<td>DEC-017; TD §§3/6; GI §§4/7</td>
+<td>Repeated preference is a review signal, not a moral verdict.</td>
+<td>010</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-015</td>
+<td><strong>Deferred to Phase 2; not a current architectural requirement/capability/test.</strong> Legacy wording: AOS-25-REQ-015 (deferred under DEC-097); identifier retained for traceability only.</td>
+<td>DEC-088; TD §5 decision tracking; H §§5/10; S §19</td>
+<td>Real decisions need not have one persona winner.</td>
+<td>011</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-016</td>
+<td><strong>Unacted telos concerns:</strong> Give prominence to evidenced telos-tier concerns raised without an adequate recorded response, distinguishing unresolved, unrecorded, disputed and genuinely dispositioned cases.</td>
+<td>TD §3 Stage Three; DEC-083; RP6</td>
+<td>Neglected purpose concerns matter more than persona win counts.</td>
+<td>012</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-017</td>
+<td><strong>Outcome learning:</strong> Connect proposals, human decisions, actions, actual outcomes, unintended consequences and remaining duties, separating action completion from effectiveness.</td>
+<td>RP1/4; CMP GIL-C34; H §§10–12</td>
+<td>Learning requires consequence evidence.</td>
+<td>013</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-018</td>
+<td><strong>Causal limits:</strong> Keep alternative explanations, exposure differences, confounders, delays and attribution limits visible in outcome/pattern assessments.</td>
+<td>FP5/6/10; RP5; S §§4/10</td>
+<td>Correlation cannot establish institutional motives or causation.</td>
+<td>013</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-019</td>
+<td><strong>Assessment dimensions:</strong> Preserve the distinction between document quality, claim support and practice evidence when combining artefact assessments into oversight findings.</td>
+<td>DEC-091; AS §§4/10; CMP GIL-C16</td>
+<td>Good documentation is not demonstrated practice.</td>
+<td>014</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-020</td>
+<td><strong>Self-assessment standing:</strong> Label GI self-assessment as such and retain its method, evidence and limits; it cannot substitute for the independently prepared human account.</td>
+<td>WP dual authorship; DEC-010/011; GI REQ-034–036</td>
+<td>The interpreting system cannot independently assure itself.</td>
+<td>015</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-021</td>
+<td><strong>Independent cycle:</strong> Support independently prepared human interpretation/precedent review alongside GI assessment at least annually and on material drift triggers, with each account prepared without reference to the other before formal comparison.</td>
+<td>DEC-010/011; RP6 precedent; WP Governance of drift</td>
+<td>Independent divergence may reveal what self-flagging missed.</td>
+<td>015</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-022</td>
+<td><strong>Review basis:</strong> Make the authorised evidence basis, founding/changed instruments, scope and limitations available for both reports; identify differing evidence/revisions before comparison without forcing the independent author to adopt GI framing.</td>
+<td>DEC-010/011/085; REC-E/Q; WP dual authorship</td>
+<td>A fair comparison requires known scope, not identical conclusions.</td>
+<td>016</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-023</td>
+<td><strong>Disposition:</strong> Route the two reports and material differences to the empowered committee/board route for explicit reaffirmation, corrective action/precedent review or constitutional referral under actual powers.</td>
+<td>DEC-012/024/025; WP outcomes; H §§5–7</td>
+<td>A report must produce a governed response.</td>
+<td>017</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-024</td>
+<td><strong>Corrective duties:</strong> Track required review/corrective responses with accepted accountable owner, completion date, cover, escalation and exact target/scope.</td>
+<td>DEC-012; RP1; KX-26; H §§10–12</td>
+<td>Discussion alone does not close a feedback loop.</td>
+<td>018</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-025</td>
+<td><strong>Closure evidence:</strong> Close a corrective duty only on the required completion/review evidence and record remaining risk and follow-up; a disposition or receipt alone is insufficient.</td>
+<td>DEC-012/067–078; KX-21/26; RP1</td>
+<td>Completed action may still need effectiveness review.</td>
+<td>018</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-026</td>
+<td><strong>Reserved amendment:</strong> Refer proposed precedent pruning, boundary or purpose changes to empowered 21/01/30 workflows; only the board changes telos, and no retrospective automatic reversal follows an oversight finding.</td>
+<td>DEC-024/025/080/081/089; KX-08/13; H §7</td>
+<td>Oversight detects; authorised governance changes meaning.</td>
+<td>017</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-027</td>
+<td><strong>Protected findings:</strong> Route credible mandatory protected classes promptly through the empowered ordinary/alternate route, without waiting for annual review, executive permission or ordinary report validation.</td>
+<td>DEC-083/073–078; GI §10; protected reporting/recovery v0.1</td>
+<td>A review calendar must not suppress an obligation.</td>
+<td>019</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-028</td>
+<td><strong>Provisional status:</strong> Record/access provisional findings within current controls with exact limitations, and distinguish them from formally validated oversight; urgent protected reporting need not await validation.</td>
+<td>DEC-084; SC §4.4; CMP GIL-C08</td>
+<td>Preserves timely evidence without invented validation.</td>
+<td>020</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-029</td>
+<td><strong>Selective brake:</strong> Seek or apply only the separately conferred containment powers for materially affected reliance/effects, preserving independently authorised service and protected duties.</td>
+<td>DEC-063/067/089; REC-A/D/X; coordination v0.2</td>
+<td>A concern does not authorise unlimited suspension.</td>
+<td>019</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-030</td>
+<td><strong>Protected deliberation:</strong> Use permitted preparation material and authorised human post-meeting accounts while keeping AI out of live protected board/committee deliberation.</td>
+<td>DEC-008/087; RP2; H §§1/10</td>
+<td>Independent human observation remains human.</td>
+<td>021</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-031</td>
+<td><strong>Permitted aggregation:</strong> Apply independent data-use permission to the oversight purpose and cross-entity joins/derived views; aggregation or group membership must not imply safety or permission.</td>
+<td>DEC-049–053/090; RP9; AOS-03 §§4/9</td>
+<td>Combining records can create an unapproved inference capability.</td>
+<td>021</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-032</td>
+<td><strong>Human preferences:</strong> Use only permitted human-provided/confirmed descriptions; do not infer feelings, personality or moral weights, or silently calibrate norms/precedent from observed choices.</td>
+<td>DEC-018/088; RP4 constrained; AOS-03 §9</td>
+<td>Oversight must not turn into covert profiling.</td>
+<td>021</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-033</td>
+<td><strong>Correction impact:</strong> Reassess materially affected oversight on corrected evidence, analysis, approval, permission or criteria and notify dependent owners, including affected AOS-30 preparation/decision/account/outcome workflows.</td>
+<td>DEC-062–078/089; KX-13; H §§10–12</td>
+<td>Corrections must reach the humans relying on the pattern.</td>
+<td>022</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-034</td>
+<td><strong>Exact reviewed revision:</strong> Bind validation/disposition to exact reviewed revisions; changed material does not inherit an earlier review or approval.</td>
+<td>DEC-028/029/063–066; SC §4.4; KX-06 v0.3</td>
+<td>Reviewed is a scoped state.</td>
+<td>022</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-035</td>
+<td><strong>Handoff states:</strong> Distinguish production, delivery, receipt, validation, application, responsibility acceptance and substantive resolution with purpose-specific evidence and unknown outcomes retained.</td>
+<td>KX-21/26; DEC-030/067/072</td>
+<td>Sent is not handled.</td>
+<td>023</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-036</td>
+<td><strong>Handoff recovery:</strong> Preserve owned duties for absent/unresponsive/implicated recipients and failed/overdue review through approved appropriately independent alternatives, without an implicated sole gatekeeper, reconciling prior effects and current controls before repetition.</td>
+<td>DEC-073–078/083; KX-21/26; protected reporting/recovery</td>
+<td>A tracker cannot quietly abandon a human obligation.</td>
+<td>023</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-037</td>
+<td><strong>Own research:</strong> Maintain AOS-25’s controlled external-research remit for drift, oversight, independent evaluation, blind spots and emergent governance risks against its exact specification baseline.</td>
+<td>DEC-086; template v0.4 §4.4; R</td>
+<td>Oversight itself needs external challenge.</td>
+<td>024</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-038</td>
+<td><strong>Research control:</strong> Run assigned research through approved remit, triggers, tools, powers/use, source-currentness and retrieval controls under 14/04/03/01/05.</td>
+<td>DEC-086; R; RSVIEW-0.1</td>
+<td>A research function is bounded work.</td>
+<td>024</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-039</td>
+<td><strong>Research evidence:</strong> Record actual coverage, provenance/dates/assurance, evidence versus inference, relevance, exact affected elements, uncertainty and cross-component implications in the common research views.</td>
+<td>R; RSVIEW-0.1; REC-E/Q</td>
+<td>Findings must justify their relevance.</td>
+<td>024</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-040</td>
+<td><strong>Research disposition:</strong> Route specialist research findings to the empowered human change/review owner with due/cover/escalation and recorded outcome; no finding amends a specification or profile automatically.</td>
+<td>DEC-086; AOS-01 §§6.6/10.8; R</td>
+<td>Research proposes; governance adopts.</td>
+<td>025</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-041</td>
+<td><strong>Degraded research:</strong> Report partial, failed, stale or unperformed research separately from a completed bounded no-material-finding result, retaining owned recovery.</td>
+<td>R; AOS-04 CON-009; RSVIEW-0.1</td>
+<td>Quiet coverage can conceal missing research.</td>
+<td>025</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-042</td>
+<td><strong>GI research oversight:</strong> Review the coverage, unresolved findings, dependencies and response effectiveness of the GI component research remits without replacing their specialist ownership or inferring adequacy from run completion.</td>
+<td>GI §4.4/REQ-037–046; DEC-082/086; R</td>
+<td>Separate successful runs may leave a shared blind spot.</td>
+<td>026</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-043</td>
+<td><strong>Agent performance:</strong> Consume ordinary agent/model evaluation, uncertainty, incidents and cumulative-effect evidence for oversight; do not activate exploratory self-calibration or alter governing settings autonomously.</td>
+<td>DEC-018/054–057; KX-16/17/19/20; CMP GIL-C22/27</td>
+<td>Ordinary monitoring is in scope; unapproved adaptation is not.</td>
+<td>027</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-044</td>
+<td><strong>Longitudinal evaluation:</strong> Evaluate material oversight method/model/profile changes using contrasting hard cases and cumulative histories, including independent findings missed by GI and changed-record/permission scenarios, under kernel change controls.</td>
+<td>FP5/6/10; DEC-057; WP Validation; KX-17</td>
+<td>Single-case plausibility cannot demonstrate drift detection.</td>
+<td>027</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-045</td>
+<td><strong>Quality profiles:</strong> Use approved materiality, comparison, uncertainty, false/missed finding, coverage and timeliness criteria; show missing required settings as owned gates rather than inventing thresholds.</td>
+<td>GI §§13/16/17; DEC-031–041; KX-17</td>
+<td>Unapproved numbers silently change governance.</td>
+<td>028</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-046</td>
+<td><strong>Governed histories:</strong> Retain oversight/review/decision links and audit evidence under approved class/purpose/location/retention/deletion policy; do not require unlimited recoverable raw histories.</td>
+<td>DEC-045–048; KX-15; CMP GIL-C24/25</td>
+<td>Learning remains subject to governed data lifecycle.</td>
+<td>029</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-047</td>
+<td><strong>Current controls:</strong> Where required revisions, powers, use or assurance are unknown, stale, incompatible or conflicting, contain affected reliance and return an owned limitation/referral; untrusted source instructions do not expand powers.</td>
+<td>DEC-028–030/062–078; AOS-01–05/14 §§6/11</td>
+<td>Missing controls cannot become implied permission.</td>
+<td>029</td>
+</tr>
+<tr>
+<td>AOS-25-REQ-048</td>
+<td><strong>Oversight challenge:</strong> Expose AOS-25’s own assumptions, coverage and self-assessment limits, preserve permitted challenge and seek competent independent review; do not claim automatic governance certification or achieved effectiveness.</td>
+<td>FP5/6/8; GT; DEC-010–012/091; WP self-flagging</td>
+<td>The overseer must remain contestable.</td>
+<td>030</td>
+</tr>
+</tbody></table>
+<h3 id="44-external-research-and-specification-adaptation">4.4 External research and specification adaptation</h3>
+<p>CAP-006/FUN-008/REQ-037–041/CON-009/VER-024–025 allocate the component&#39;s own research. FUN-009/REQ-042/VER-026 separately review GI portfolio coverage. Neither replaces internal sensing, artefact currency checks or specialist research ownership. Inherit DEC-086, RSVIEW-0.1 and 04 CON-009/02 CON-007; create no schedule or deployment.</p>
+<table>
+<thead>
+<tr>
+<th>Controlled profile element</th>
+<th>AOS-25 allocation / owner and gate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Remit/baseline</td>
+<td>Exact AOS-25 revision: oversight/drift detection, independent evaluation, cumulative/distributional effects, developer frameworks, epistemic blind spots and emergent governance risk; oversight owner maintains questions</td>
+</tr>
+<tr>
+<td>External developments/sources</td>
+<td>Relevant primary research, standards/regulatory/practice changes and incidents; authoritative source preference, jurisdiction/applicability/status/currentness and admission required; no automatic applicability</td>
+</tr>
+<tr>
+<td>Assignment/triggers</td>
+<td>Approved assigned/shared agent/service, cadence, material-event triggers and coverage expectations; oversight/research owner proposes, empowered profile/change owner approves before operation; no default daily/quarterly schedule</td>
+</tr>
+<tr>
+<td>Controls</td>
+<td>14 retrieval/source verification; 01 powers, 03 permitted use, 04 bounded agent/task, 05 runtime; licensing/privacy/derived-use restrictions; internal histories are not exported merely to research a method</td>
+</tr>
+<tr>
+<td>Assessment/evidence</td>
+<td>Publication/event/access/effective dates, assurance, evidence versus inference, exact affected CAP/FUN/REQ/CON/VER, relevance, alternatives, materiality/urgency, uncertainty and affected component/institutional review implications</td>
+</tr>
+<tr>
+<td>Coverage/quality</td>
+<td>Complete/partial/failed/stale/unperformed distinguished; bounded no-material-finding only for completed declared coverage; approved false/missed finding/fidelity rubric and representative longitudinal examples remain gates</td>
+</tr>
+<tr>
+<td>Human disposition</td>
+<td>Named empowered change/review owner, recipients, completion/due handling, cover/escalation and outcome under 01/30; no autonomous specification, norm or profile amendment</td>
+</tr>
+<tr>
+<td>Degraded handling</td>
+<td>Failed retrieval, access, assurance or coverage yields explicit limit and owned recovery; urgent protected finding uses separately permitted protected route; no silence-as-clear result</td>
+</tr>
+<tr>
+<td>Lifecycle/profile review</td>
+<td>KX-15/02/03/05 records/location/retention/deletion and governed profile version/review; exact operational settings require appointed owners/approval</td>
+</tr>
+</tbody></table>
+<p>GI portfolio review asks whether 20–25 remits collectively miss a material dependency, whether repeated findings reach accountable humans and whether response evidence is credible. It uses permitted coverage records, not an assumption that every component has an operating agent. It may identify kernel/domain research dependencies and refer them to their owners, without taking over all AOS research or launching tasks.</p>
+<h2 id="5-states-and-lifecycle">5. States and lifecycle</h2>
+<table>
+<thead>
+<tr>
+<th>State / entry condition</th>
+<th>Permitted transition, authority and evidence</th>
+<th>Delay/failure/closure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Review due/triggered: approved cycle or material indication</td>
+<td>Scope entity/period/baseline and assign permitted preparation; record trigger/owner</td>
+<td>Annual minimum under DEC-010/011; material trigger does not wait for annual cycle; additional timings are approved profiles</td>
+</tr>
+<tr>
+<td>Evidence scoped/limited: exact sources/current controls known</td>
+<td>Prepare GI account with coverage, or owned limitation if dependencies missing</td>
+<td>Missing history is visible; no “no drift” success from unperformed work</td>
+</tr>
+<tr>
+<td>GI provisional/reviewed account</td>
+<td>Record actual validation state and preserve limits; independent human account remains distinct</td>
+<td>Material changes invalidate affected reviewed reliance; urgent duty uses separately valid route</td>
+</tr>
+<tr>
+<td>Independent human account pending/prepared</td>
+<td>Independent author prepares without consulting GI&#39;s account first; record basis/author/limitations</td>
+<td>No substitution by GI, shared model output or late co-signing; absent capacity remains an owned gap</td>
+</tr>
+<tr>
+<td>Comparison/disposition pending</td>
+<td>Empowered institution compares known bases, identifies differences and records actual outcome</td>
+<td>Implicated/unresponsive route uses approved alternative; mere meeting discussion does not close duty</td>
+</tr>
+<tr>
+<td>Corrective duty accepted/in progress</td>
+<td>Owner with date/cover executes separately authorised action; evidence and effectiveness review retained</td>
+<td>Overdue/unknown results escalate under profile; closure requires evidence, remaining risk/follow-up visible</td>
+</tr>
+<tr>
+<td>Reassessed/superseded/closed</td>
+<td>Exact corrected analysis/disposition and dependent impacts recorded under lifecycle</td>
+<td>No erased historical effects or automatic retroactive reversal; separately surviving duties continue</td>
+</tr>
+</tbody></table>
+<p>Research/agent/effect states use their common definitions. A disposition can be reaffirmation, a corrective/precedent action, or constitutional referral; each retains evidence, powers and scope. It cannot confer powers by selecting a state label.</p>
+<h2 id="6-functional-contracts">6. Functional contracts</h2>
+<p>CON views bind existing semantic authorities rather than introduce new IFs or schemas. Common required meanings are exact compatible revision, entity/purpose/period, producer/consumer identity/capacity, evidence/assurance, powers/use, uncertainty/coverage, correlation, effective/observed time and purpose-specific acknowledgement. Absent/conflicting/incompatible meanings produce owned rejection/limitation. Units/valid-value ranges and actual wire/field binding remain common-schema/profile gates; no local guesses.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Producer → consumer / existing meaning and failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-CON-001</td>
+<td>02/21/22/23/24/20 → 25: REC-E/Q and KX-22/AOS-20-IF-001/Shared §4.4 canonical histories, scope/coverage/status/criteria and uncertainties; missing evidence stays missing, not “no concern”</td>
+</tr>
+<tr>
+<td>AOS-25-CON-002</td>
+<td>01/03/04/05 → 25: REC-A/D/X, KX-01/08/11/12/16–20 current powers/use/boundaries, model/evaluation/incident/change; unknown controls contain affected reliance</td>
+</tr>
+<tr>
+<td>AOS-25-CON-003</td>
+<td>30/13/02 ↔ 25: KX-06 v0.3/07/21/26 decision/approval/obligation, actual effects/outcomes and confirmed purpose-bound mapping; Chair draft distinct from board approval; unknown effect not invented</td>
+</tr>
+<tr>
+<td>AOS-25-CON-004</td>
+<td>25 and independent human authors → empowered review route/30/21/20: distinct scoped reports, independent preparation evidence, differences and KX-22/06/26 disposition; GI never authors its independent human assurance</td>
+</tr>
+<tr>
+<td>AOS-25-CON-005</td>
+<td>25 → 24/14/permitted human audiences: exact canonical position/limits/review and KX-14 permitted projection; 24 fidelity, 14 external release; no persona ranking/approval inflation</td>
+</tr>
+<tr>
+<td>AOS-25-CON-006</td>
+<td>25/30/13 ↔ empowered owner/alternate route: KX-19 protected finding/26 handoff/21 acknowledgement; accepted responsibility, date/cover/escalation and actual response; executive suppression is not closure</td>
+</tr>
+<tr>
+<td>AOS-25-CON-007</td>
+<td>Evidence/control/analysis owners ↔ 25/21–24/30/affected consumers: KX-13 exact correction/restriction/impact, old/new revisions/effective scope, reassessment/notification and remaining duties; no historical decision rewrite</td>
+</tr>
+<tr>
+<td>AOS-25-CON-008</td>
+<td>25 ↔ 02/03/04/05/40/30: KX-15/17/20 governed histories, evaluation, release/recovery and audit; permitted longitudinal evidence with no indefinite raw retention or self-release</td>
+</tr>
+<tr>
+<td>AOS-25-CON-009</td>
+<td>25/04/20–24 ↔ 14/02/01/30/component research owners: RSVIEW-0.1/04 CON-009/02 CON-007 profiles/runs/findings/dispositions and qualified coverage/response review; specialist ownership and human change preserved</td>
+</tr>
+</tbody></table>
+<p>Ordering is per declared entity/source/review/duty, not a universal total order. Duplicate reports do not cancel independent sources or surviving obligations. Receipt, validation, application and responsibility acceptance differ by purpose. Failed delivery retains owner/reason; retry reconciles actual prior effects and current controls. Revocation/correction reaches materially dependent review/presentation/human workflows. Exact schemas, timings, compatibility, ordering/retry bindings and counterpart 13/40 adoption remain operating dependencies; functional counterparts 20–24/30 are drafted, not implemented assurance.</p>
+<h2 id="7-authority-and-human-judgement">7. Authority and human judgement</h2>
+<p>AOS-25 may compare permitted evidence, identify possible drift and propose action within approved remit. Independent human review and empowered committee/board disposition are indispensable. Each account is prepared without reference to the other account before formal comparison; disagreement is a valuable signal, not a defect to smooth away. Common permitted evidence does not require common framing or identical findings. Changed/different bases must be explicit.</p>
+<p>Only the board changes telos. Precedent review/pruning and delegation/boundary changes use their applicable 21/01/30 powers and approved process; no universal committee-minor/board-material shortcut applies. Under DEC-103, draft review does not create a board decision; authenticated evidence, decision validity, minutes approval and execution permission remain separate. Correction can prompt selective containment under separately conferred powers; an oversight conclusion alone cannot reverse completed effects or suspend unrelated authorised service.</p>
+<p>Annual and material-triggered interpretation/precedent review is already settled under DEC-010–012. The organisation appoints independent reviewers and an empowered institution, records actual dispositions and gives corrective owners completion dates. Project independent review being deferred does not waive this operating human independence. AI does not observe live protected meetings; human reviewers may use their own lawful/permitted observations and authorised post-meeting accounts, retaining their evidence/status.</p>
+<p>Material protected classes include credible telos conflict, Mode 2 bypass, suppression, obligations failure, material safety/welfare and assurance failure under DEC-083. They use the protected ordinary/alternate route without executive veto or annual delay. Semantic explanation remains the default with recorded limited exceptions under DEC-027; exceptions do not waive enforced use restrictions.</p>
+<h2 id="8-governing-principles-and-tests">8. Governing principles and tests</h2>
+<table>
+<thead>
+<tr>
+<th>FP v4 principle</th>
+<th>AOS-25 application / anchors</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FP1 Telos, conferred purpose and function</td>
+<td>Purpose/optimisation distinction and board-only amendment; REQ-006–007/026</td>
+</tr>
+<tr>
+<td>FP2 Mode 2 is permanently human</td>
+<td>Boundary drift referral and no persona moral verdict; REQ-008/014/021–023/030</td>
+</tr>
+<tr>
+<td>FP3 Architectural integrity</td>
+<td>Structural values, developer frameworks and applied powers reviewed; REQ-008–010/043–044</td>
+</tr>
+<tr>
+<td>FP4 Radical transparency</td>
+<td>Contestable evidence, differences, limitations and accountable response; REQ-001–004/020–025/033–036/048</td>
+</tr>
+<tr>
+<td>FP5 Bounded rationality and structural imperfection</td>
+<td>Quiet gaps, confounders, independent missed findings and owned failure; REQ-003/011–012/018/036/044/048</td>
+</tr>
+<tr>
+<td>FP6 Epistemic humility</td>
+<td>Self-account insufficient, no-alarm state not safety, unknowns retained; REQ-012/020–022/028/045/047–048</td>
+</tr>
+<tr>
+<td>FP7 No-exit obligation</td>
+<td>Cumulative resident burdens and human-confirmed context, no silence-as-consent; REQ-013/015–016/031–032</td>
+</tr>
+<tr>
+<td>FP8 Constitutional mediator principle</td>
+<td>Empowered dispositions, institutional judgement and contestable oversight; REQ-021–027/048</td>
+</tr>
+<tr>
+<td>FP9 Compliance as consequence</td>
+<td>Compliance/coherence separate; no automated governance certificate; REQ-005/019/048</td>
+</tr>
+<tr>
+<td>FP10 Complexity and emergence</td>
+<td>Cross-component accumulation and evidenced consequence learning; REQ-011–018/042–044</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>RP v6 domain</th>
+<th>Contribution / limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 Architecture and Completeness</td>
+<td>Actual-outcome feedback and owned due/closure; 017/024–025/035–036</td>
+</tr>
+<tr>
+<td>2 Mode 1/Mode 2</td>
+<td>Board-authorised boundaries, standing review and protected human judgement; 008/014/021–030</td>
+</tr>
+<tr>
+<td>3 1+5 Architecture</td>
+<td>GI oversight consumes domain evidence without replacing domain/kernel owners; 001/011/031/042</td>
+</tr>
+<tr>
+<td>4 Options and Decisions</td>
+<td>Consequences/distribution and confirmed mapping, no silent moral calibration; 013–018/032</td>
+</tr>
+<tr>
+<td>5 Blind Spots and Honesty</td>
+<td>Comparative limits, quiet gaps, emergent effects and self-assessment challenge; 003–004/011–012/018/048</td>
+</tr>
+<tr>
+<td>6 Ethics and Telos</td>
+<td>Founding meaning, precedent, developer-framework divergence, purpose-led coherence; 005–010/014/016/026</td>
+</tr>
+<tr>
+<td>7 Radical Transparency</td>
+<td>Reconstructable permitted evidence, dissent/differences and dispositions; 002/020–025/033–036/046</td>
+</tr>
+<tr>
+<td>8 Agentic Delegation</td>
+<td>Current powers, ordinary performance, duty and bounded research; 027–029/035–044/047</td>
+</tr>
+<tr>
+<td>9 Data and Sensing Boundaries</td>
+<td>Purpose-bound aggregation with no inferred personal feelings/weights; 030–032/046–047</td>
+</tr>
+</tbody></table>
+<p>All ten FP and nine RP domains apply. The following accounts for every GT test; it supplies technical contributions, not executed passes or substitutes for human judgement.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Oversight contribution / enduring human limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M1.1 Strategic Coherence</td>
+<td>Purpose/strategy/outcome patterns; humans determine strategic coherence and direction</td>
+</tr>
+<tr>
+<td>M1.2 Sensing Architecture</td>
+<td>Coverage, missing populations and unperformed checks; oversight does not itself create lawful sensing</td>
+</tr>
+<tr>
+<td>M1.3 Risk Intelligence</td>
+<td>Aggregate exposure/response gaps and risk evidence; owners and humans assess/respond</td>
+</tr>
+<tr>
+<td>M1.4 Composition and Capability</td>
+<td>Review competence/capacity gaps and independent authorship; actual board capability remains human assessment</td>
+</tr>
+<tr>
+<td>M1.5 Performance Legibility</td>
+<td>Outcomes, comparability and causal limits; indicators do not certify effectiveness</td>
+</tr>
+<tr>
+<td>M1.6 Compliance Assurance</td>
+<td>Compliance evidence versus coherence kept separate; no automatic legal certificate</td>
+</tr>
+<tr>
+<td>M1.7 Governance Documentation</td>
+<td>Exact instruments/precedent/approval and criteria histories; humans confer governing authority</td>
+</tr>
+<tr>
+<td>M1.8 Accountability Architecture</td>
+<td>Accepted duties, dates, escalation and evidence-based closure; sent reports alone are inadequate</td>
+</tr>
+<tr>
+<td>M1.9 Value for Money</td>
+<td>Cumulative resources/burdens/consequences made contestable; humans adjudicate value</td>
+</tr>
+<tr>
+<td>M1.10 Human–AI Interaction Norms</td>
+<td>Review approval/authority drift and overrides; governing norms are not model-calibrated</td>
+</tr>
+<tr>
+<td>M1.11 Learning Metabolism</td>
+<td>Actual consequences and corrective effectiveness feed review; completion is not learning evidence</td>
+</tr>
+<tr>
+<td>M1.12 Continuous Self-Assessment</td>
+<td>Bounded GI account, research coverage and independent challenge; self-account alone is insufficient</td>
+</tr>
+<tr>
+<td>M1.13 Emergent System Behaviour</td>
+<td>Examine cumulative cross-component effects beyond individual evaluations; system safety needs its own evidence</td>
+</tr>
+<tr>
+<td>M1.14 Golden Thread Integrity</td>
+<td>Surface source/currency/response gaps in permitted building-safety governance evidence; domain/named humans retain actual integrity duties</td>
+</tr>
+<tr>
+<td>M2.1 Values Architecture</td>
+<td>Compare encoded thresholds/controls with approved values; humans determine values and conflicts</td>
+</tr>
+<tr>
+<td>M2.2 Coherence Under Pressure</td>
+<td>Review patterns of difficult decisions and ignored concerns; no motive inferred from outcomes alone</td>
+</tr>
+<tr>
+<td>M2.3 Incommensurable Trade-off Capacity</td>
+<td>Unranked longitudinal tensions and burdens; humans decide which good yields</td>
+</tr>
+<tr>
+<td>M2.4 Epistemic Brake Function</td>
+<td>Qualified concerns and separately authorised selective brakes; no autonomous general veto</td>
+</tr>
+<tr>
+<td>M2.5 Directorial Independence</td>
+<td>Distinct independent human report and protected challenge route; genuine independence remains institutional/human</td>
+</tr>
+<tr>
+<td>M2.6 Social Legitimacy</td>
+<td>Permitted lived-outcome/voice evidence and limits; legitimacy is not a sentiment score</td>
+</tr>
+<tr>
+<td>M2.7 No-Exit Obligation</td>
+<td>Repeated resident burdens and missing voice cannot be erased by low complaints; humans assess lived effects</td>
+</tr>
+<tr>
+<td>M2.8 Radical Transparency</td>
+<td>Explainable material patterns and accountable dispositions within permitted disclosure; unlimited access unnecessary</td>
+</tr>
+<tr>
+<td>M2.9 Moral Drift Detection</td>
+<td>Founding-purpose/precedent reconciliation and response tracking; empowered humans determine meaning/remedy</td>
+</tr>
+<tr>
+<td>M2.10 Purpose Stability</td>
+<td>Actual approved purpose versus changing strategy/optimisation; only board changes telos</td>
+</tr>
+<tr>
+<td>M2.11 Murmuration Capacity</td>
+<td>Evidence of distributed challenge/differing accounts; collective human sense-making is not simulated consensus</td>
+</tr>
+<tr>
+<td>M2.12 Constitutional Authority</td>
+<td>Exact powers, reserved questions and disposition routes; oversight supplies evidence, not legitimacy</td>
+</tr>
+<tr>
+<td>M2.13 AI Constitutional Framework Governance</td>
+<td>Prior assessment and continuing divergence/change monitoring; actual framework acceptability is human-governed</td>
+</tr>
+<tr>
+<td>M2.14 Purpose-Led Design</td>
+<td>Separate purpose-led coherence from compliance sufficiency; human design rationale remains required</td>
+</tr>
+<tr>
+<td>M2.15 Telos/Function Distinction</td>
+<td>Evidence of organisational judgement versus system optimisation; observed alignment must be verified, not assumed</td>
+</tr>
+</tbody></table>
+<h2 id="9-data-privacy-and-disclosure">9. Data, privacy and disclosure</h2>
+<p>Oversight uses permitted evidence/analysis, governing instruments/precedent, overrides, evaluations/incidents, human decisions and actual outcomes, confirmed mapping, independent reports, coverage and duty/disposition records. Each has its own status, purpose, provenance and lifecycle. A cross-domain join can reveal personal patterns absent from any individual domain; aggregation is not automatically anonymous or permitted. Group/subsidiary analysis retains distinct powers/applicability and approved scope.</p>
+<p>Human-provided/confirmed emotional or preference descriptions can inform a scoped review; no inferred emotion, individual personality, sentiment/motive or moral-weight profile follows. Survey/interview evidence is permitted only under purpose/use controls and retains self-report and sampling limits. Documentary quality, claim support and actual practice remain separate. Live protected AI deliberation capture stays excluded.</p>
+<p>Reports and linked evidence use 03/KX-14 audience/purpose permission and 24 faithful presentation; material withholding/unknown evidence remains visible within permitted explanation. KX-15 governs retention, legal holds, location and authorised deletion. Longitudinal review does not justify keeping every raw conversation/content copy indefinitely recoverable; deletion may limit later coverage, which must be declared rather than secretly reconstructed.</p>
+<h2 id="10-normal-and-degraded-flows">10. Normal and degraded flows</h2>
+<p><strong>Oversight cycle:</strong> approved entity/period/question → permitted exact histories/current instruments → coverage/comparability and source/assurance checks → GI account separating compliance/coherence and pattern limits → independent human and GI accounts each prepared without reference to the other account before formal comparison → known-basis comparison → empowered disposition → accepted actions/dates/cover → actual effects/effectiveness review and next-cycle feedback. Different reports/bases are preserved; their disagreement cannot be removed to publish a convenient single consensus.</p>
+<p><strong>Material trigger/protected concern:</strong> credible drift/bypass/neglected obligation → minimum permitted evidence and current controls → selective dependent-reliance containment only under conferred powers → ordinary/alternate protected human route → responsibility acceptance or owned failed handoff → empowered timely review/response → preserved outcomes and residual duties. It does not wait for the annual cycle or executive report sign-off.</p>
+<p><strong>Deferred Phase 2 use case:</strong> CAP-01-specific persona/reading mapping and its longitudinal workflow are parked in Phase 2 (deferred under DEC-097). General cumulative distributional-burden, drift and unacted purpose-concern review remain current architectural responsibilities.</p>
+<p><strong>Correction:</strong> material source/analysis/criteria/approval/use change → identify affected oversight/report/disposition reliance → retain exact old/new impact and contain/mark affected reliance → accountable reassessment and notifications to 21–24/30 as relevant → new reviewed revision and outstanding duties. It neither rewrites approved minutes nor assumes automatic reversal of completed consequences.</p>
+<p><strong>Research normal/degraded:</strong> approved profile/trigger → controlled 14 evidence → specialist relevance/coverage → exact adaptation proposal → empowered disposition. Failed/stale/unperformed coverage produces an owned limitation and recovery duty, not a no-material-finding success. <strong>GI portfolio review:</strong> component-owned coverage/findings/responses → examine shared gaps/contradictions → refer adequacy questions to exact owners/change routes; no new task activation or central replacement remit.</p>
+<h2 id="11-failure-and-recovery">11. Failure and recovery</h2>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Required functional response / owner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Missing histories or incomparable metrics</td>
+<td>Qualify/withhold affected conclusion, retain denominator/basis limits and refer evidence/oversight owner</td>
+</tr>
+<tr>
+<td>Either account absent or prepared using the other account before comparison</td>
+<td>Record independence/capacity gap and owned recovery; no GI report or co-signature substitutes</td>
+</tr>
+<tr>
+<td>Apparent stable/green operation with unperformed checks</td>
+<td>Expose coverage and quiet-state limitation; raise appropriate challenge rather than certify no drift</td>
+</tr>
+<tr>
+<td>Confirmed repeated preference mistaken for moral failure</td>
+<td>Preserve context, mixed readings and causal limits; refer human judgement without accusation/ranking</td>
+</tr>
+<tr>
+<td>Executive suppression/implicated or unresponsive recipient</td>
+<td>Protected alternate route, cover/escalation and surviving duties; receipt/discussion is not closure</td>
+</tr>
+<tr>
+<td>Unknown powers/use, stale review or hostile source instructions</td>
+<td>Contain affected reliance, retain reason/owner, reject power expansion from content</td>
+</tr>
+<tr>
+<td>Corrective action completed but outcomes unknown/adverse</td>
+<td>Keep effectiveness/remaining-risk review open with accepted ownership and dates</td>
+</tr>
+<tr>
+<td>Lost delivery, uncertain effects or recovery/replay</td>
+<td>Reconcile actual effects/current revisions/controls before repetition; no invented responsibility acceptance</td>
+</tr>
+</tbody></table>
+<p>Recovery requires compatible exact source/control/report revisions, current use/powers, sufficient declared coverage, required independent review and owned handoff evidence for the affected scope. Separately authorised urgent human duties continue. A restored monitoring service does not prove constitutional coherence or retrospectively authorise old effects.</p>
+<h2 id="12-evidence-and-audit">12. Evidence and audit</h2>
+<p>Reconstruction links trigger/remit/entity/period → exact histories/instruments/evidence → permitted use/powers/assurance → method/profile/model and comparison basis → GI and independent reports → differences/validation → actual human disposition → accepted corrective duties/cover/dates → action/effect/effectiveness and correction/notification → remaining risk/closure. Retain alternative accounts and uncertainty proportionately under lifecycle; a digest/hash identifies a record, not truth or permission. Trace oversight&#39;s own omissions/challenges and the response to them.</p>
+<h2 id="13-security-and-quality-attributes">13. Security and quality attributes</h2>
+<p>Quality is judged by evidence fidelity, scope/comparability, detection of material cumulative drift and blind spots, false/missed findings, independence preservation, useful human challenge, privacy, timely owned response and outcome feedback. Evaluation includes individually defensible rulings that drift only in aggregate, genuine authorised purpose change, justified repeated persona alignment, neglected telos concerns, changing definitions, missing/biased samples, contested override histories, developer-framework changes and cross-component effects invisible to local evaluation.</p>
+<p>Constructed cases are necessary but insufficient: sustained/replayed permitted histories must show whether independent review catches what self-assessment misses, and whether required responses reach effective closure. Competent human evaluation applies approved rubrics; numerical thresholds, sample sizes, capacity, periods, alert timing and retention require approved profiles. Annual minimum/material triggers are settled; additional cadence/settings are not invented. A method/model/profile change uses 01/04/05/40 change/evaluation controls before authorised operation. Threats include evidence poisoning, suppressed records, prompt injection, misleading joins, unauthorised histories and compromised/implicated review routes.</p>
+<h2 id="14-invariants">14. Invariants</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Invariant / REQ and VER anchors</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-INV-001</td>
+<td>Oversight retains exact scope/evidence/coverage/comparability; REQ-001–004, VER-001–002</td>
+</tr>
+<tr>
+<td>AOS-25-INV-002</td>
+<td>Compliance/self-assessment is not human coherence/independent assurance; REQ-005/019–022/048, VER-003/014–016/030</td>
+</tr>
+<tr>
+<td>AOS-25-INV-003</td>
+<td>Founding meaning and reserved powers are not changed by accumulated model readings; REQ-006–010/026, VER-004–007/017</td>
+</tr>
+<tr>
+<td>AOS-25-INV-004</td>
+<td>General cumulative patterns supply no machine adjudication between incommensurable goods or inferred personal profile; current REQ-013/016/032 and VER-010/012/021 retained. CAP-01-specific REQ-014/015 and VER-011 deferred.</td>
+</tr>
+<tr>
+<td>AOS-25-INV-005</td>
+<td>Annual/triggered human review and protected duty cannot become optional because GI runs smoothly; REQ-021/027/036, VER-015/019/023</td>
+</tr>
+<tr>
+<td>AOS-25-INV-006</td>
+<td>Disposition/receipt/completed action does not prove effective closure; REQ-017–018/024–025/035, VER-013/018/023</td>
+</tr>
+<tr>
+<td>AOS-25-INV-007</td>
+<td>Corrections/current permission control affected reliance; histories obey lifecycle; REQ-031/033–034/046–047, VER-021–022/029</td>
+</tr>
+<tr>
+<td>AOS-25-INV-008</td>
+<td>Research/performance/feedback proposes governed adaptation, never self-calibration or self-certification; REQ-037–045/048, VER-024–028/030</td>
+</tr>
+</tbody></table>
+<h2 id="15-verification-and-conformance-plan">15. Verification and conformance plan</h2>
+<p>All cases are <strong>planned/unexecuted</strong>. Common preconditions: authorised test scope, exact controlled source/analysis/control/profile revisions, permitted representative histories, appointed oversight/analytical/use/independent/human-duty owners and approved assessment rubric. Common procedure: introduce the row&#39;s stimulus, produce scoped GI outputs and independently prepared human input where required, inspect controls/reports/differences/handoffs, apply the recorded disposition through separately authorised workflows, and reconstruct relevant consequences/corrections. Evidence: inputs/revisions/scope, actual outputs/limitations/checks, report authorship/basis, disposition/powers and accepted-duty/action/effect/notification records. Assessor: competent appointed oversight reviewer with independent human governance judgement and data-use/security/analytical specialists for affected boundaries. This is operating independence, not a claim of achieved independent project review. Tests assert technical contributions, not a correct machine answer to Mode 2 questions.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>REQs</th>
+<th>Specific precondition / stimulus → expected result and acceptance evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-VER-001</td>
+<td>001/002</td>
+<td>Competing entity/period/source revisions and conflicting evidence → assess requested scope → exact bounded evidence/inference/assurance and conflicts retained; inspect source links/basis</td>
+</tr>
+<tr>
+<td>AOS-25-VER-002</td>
+<td>003/004</td>
+<td>Missing/unseeded/excluded population and changed measure definitions → compare trend → denominator/coverage/comparability qualified, no unknown-as-zero or false trend; inspect actual comparison</td>
+</tr>
+<tr>
+<td>AOS-25-VER-003</td>
+<td>005</td>
+<td>Technically compliant decisions undermine a founding commitment → review → compliance/coherence assessed separately and human concern referred; inspect reports, no certification</td>
+</tr>
+<tr>
+<td>AOS-25-VER-004</td>
+<td>006/007</td>
+<td>Individually plausible precedent chain progressively diverges from founding text; alternative fixture has genuine authorised change → accumulate → possible drift detected against exact founding/change baseline, legitimate amendment not mislabelled; inspect paired histories/findings</td>
+</tr>
+<tr>
+<td>AOS-25-VER-005</td>
+<td>008</td>
+<td>Incremental delegated classifications move reserved judgement into Mode 1 → review → actual authorising instruments checked and bypass/ambiguity referred, no autonomous boundary rewrite; inspect powers/referral</td>
+</tr>
+<tr>
+<td>AOS-25-VER-006</td>
+<td>009</td>
+<td>High justified override count and low concealed misuse count → review context → no count-only misconduct/safety verdict; reasons/scope/effects retained; inspect history/limits</td>
+</tr>
+<tr>
+<td>AOS-25-VER-007</td>
+<td>010</td>
+<td>Model-framework changes or lacks required prior assessment and shapes material outputs → assess → divergence/missing-assessment concern to empowered owner, no assumed developer-value adoption; inspect framework/evaluation records</td>
+</tr>
+<tr>
+<td>AOS-25-VER-008</td>
+<td>011</td>
+<td>Locally satisfactory components produce a cumulative conflicting effect → combine permitted history → system-level concern/owners exposed despite local passes; inspect effects and review duty</td>
+</tr>
+<tr>
+<td>AOS-25-VER-009</td>
+<td>012</td>
+<td>Stable indicators with failed coverage/weak challenge → assess quiet period → limits and questions visible, no no-drift assurance; inspect coverage and output</td>
+</tr>
+<tr>
+<td>AOS-25-VER-010</td>
+<td>013/014</td>
+<td>Several decisions repeatedly burden one group with fact-based justifications → review → qualified distribution/tension pattern without machine adjudication between incommensurable goods or unsupported accusation; inspect canonical findings and24 rendering. CAP-01 persona tracking is deferred.</td>
+</tr>
+<tr>
+<td>AOS-25-VER-011</td>
+<td>015</td>
+<td><strong>Deferred to Phase 2; not a current architectural requirement/capability/test.</strong> Legacy wording: AOS-25-VER-011 (deferred under DEC-097); identifier retained for traceability only.</td>
+</tr>
+<tr>
+<td>AOS-25-VER-012</td>
+<td>016</td>
+<td>Telos concerns include unresolved, missing, rejected with rationale and completed responses → report → inadequate-response pattern prominent, categories distinguished; inspect duty/decision links</td>
+</tr>
+<tr>
+<td>AOS-25-VER-013</td>
+<td>017/018</td>
+<td>Action complete but outcomes delayed/adverse with confounders → learn → effectiveness and causal limits visible, remaining duties owned; inspect consequences/follow-up</td>
+</tr>
+<tr>
+<td>AOS-25-VER-014</td>
+<td>019</td>
+<td>High document quality but weak claim/practice evidence → aggregate → dimensions remain distinct, no effectiveness promotion; inspect assessment inputs/output</td>
+</tr>
+<tr>
+<td>AOS-25-VER-015</td>
+<td>020/021</td>
+<td><strong>Setup:</strong> annual review due, and a separate earlier material-trigger fixture in which GI misses drift found by the human reviewer. <strong>Procedure:</strong> prepare the two accounts independently, then inspect authorship/history. In separate adversarial attempts, offer the human account to GI before GI preparation and GI’s account to the human author before human preparation. <strong>Expected result:</strong> both reviews occur at the applicable trigger; GI is labelled a self-account; each original account is prepared without reference to the other. An account that used the other before preparation cannot claim independent preparation. Common permitted underlying evidence remains usable; original accounts, differing evidence bases and later responses remain distinct. <strong>Status:</strong> planned, not executed.</td>
+</tr>
+<tr>
+<td>AOS-25-VER-016</td>
+<td>022</td>
+<td>Human and GI reports differ in evidence revisions as well as conclusions → compare → known basis/limits explicit, dissent preserved without forced GI framing; inspect comparison and sources</td>
+</tr>
+<tr>
+<td>AOS-25-VER-017</td>
+<td>023/026</td>
+<td>Reports propose pruning precedent or changing telos/delegation → disposition → actual empowered reaffirm/correct/referral route, board-only telos, no automatic amendment/reversal; inspect 01/21/30 approval/applied state</td>
+</tr>
+<tr>
+<td>AOS-25-VER-018</td>
+<td>024/025</td>
+<td>Committee records correction but owner unaccepted/action incomplete/effectiveness uncertain → track → accepted owner/date/cover/escalation and evidence-based closure only, residual risk retained; inspect duty states</td>
+</tr>
+<tr>
+<td>AOS-25-VER-019</td>
+<td>027/029</td>
+<td>Credible protected concern during annual/window delay, requested total suspension without powers → route → protected alternate route without executive gate, only authorised selective containment and surviving duties; inspect reports/powers/effects</td>
+</tr>
+<tr>
+<td>AOS-25-VER-020</td>
+<td>028</td>
+<td>Provisional evidence urgently material but not validated → record/report → precise provisional status under permitted access, protected report not blocked, no formal-validation claim; inspect controls/status</td>
+</tr>
+<tr>
+<td>AOS-25-VER-021</td>
+<td>030/031/032</td>
+<td>Live-meeting request, cross-entity join and temptation to infer feelings/weights → assess → protected live boundary and independent use checks enforced, only permitted confirmed descriptions/mappings; inspect use/powers/data/output</td>
+</tr>
+<tr>
+<td>AOS-25-VER-022</td>
+<td>033/034</td>
+<td>Correction/revocation materially affects oversight and board pack/decision → reassess → exact affected reviewed state invalidated, old/new impacts and owners notified including 30; inspect outstanding duties</td>
+</tr>
+<tr>
+<td>AOS-25-VER-023</td>
+<td>035/036</td>
+<td>Delivered report without accepted owner; implicated normal recipient/release controller, false alternative under the same gate, suppression, lost response and uncertain prior effects → assess approved class-specific alternate and recover → technical and organisational independence assessed separately; actual permitted alternate/cover and original tracker maintained, no automatic external disclosure, false acceptance or route-assurance claim. Reconcile current controls/effects before repetition. Planned, not executed.</td>
+</tr>
+<tr>
+<td>AOS-25-VER-024</td>
+<td>037/038/039</td>
+<td>Approved own research profile/trigger and relevant primary source → run normal research → bounded retrieval, exact baseline/dates/coverage/affected elements and qualified implications; inspect common research records</td>
+</tr>
+<tr>
+<td>AOS-25-VER-025</td>
+<td>040/041</td>
+<td>Material research finding alongside failed/stale coverage → dispose/recover → empowered change owner, owned recovery and distinct limitations, no auto-amendment/no-finding success; inspect history/duty</td>
+</tr>
+<tr>
+<td>AOS-25-VER-026</td>
+<td>042</td>
+<td>GI remits each report completed runs but a shared topic is unassigned and responses lack effect evidence → portfolio review → common gap and response limits routed to exact owners, no invented operating agent/central takeover; inspect remit/coverage/disposition records</td>
+</tr>
+<tr>
+<td>AOS-25-VER-027</td>
+<td>043/044</td>
+<td>Ordinary performance evidence and changed oversight method; independent cumulative case defeats self-report → evaluate → longitudinal/contrasting assessment and governed release, no exploratory self-calibration; inspect evaluation/change records</td>
+</tr>
+<tr>
+<td>AOS-25-VER-028</td>
+<td>045</td>
+<td>Required threshold/rubric/timing unset → attempt operation → named setup gate/limitation rather than guessed defaults; inspect profile and output</td>
+</tr>
+<tr>
+<td>AOS-25-VER-029</td>
+<td>046/047</td>
+<td>Authorised deletion, stale controls and hostile source instructions → assess/recover → lifecycle enforced, coverage limit visible, affected reliance contained and power expansion rejected; inspect disposition/use/control records</td>
+</tr>
+<tr>
+<td>AOS-25-VER-030</td>
+<td>048</td>
+<td>Competent human disputes an oversight assumption and has evidence outside GI&#39;s sampled scope → challenge → permitted history, limits and independent review/duty retained; no self-certified effectiveness; inspect response/basis</td>
+</tr>
+</tbody></table>
+<p>Each requirement has one primary case and every case lists its requirements. Actual execution records require exact tested versions/date/assessor/evidence and separate conclusions. Cumulative cases must span relevant decision/review/correction cycles; a single paper fixture cannot establish full GI coverage.</p>
+<h3 id="151-planned-conformance-claims">15.1 Planned conformance claims</h3>
+<p>Each CR is planned/unsubstantiated, initial history 0.1. No achieved assertion follows from the wording or author checks.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source → REQ/FUN → contract responsibility → acceptance evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-CR-001</td>
+<td>FP/RP5/6/GT; WP/TD → REQ-001–019, FUN-001–004 → CON-001–003/005 → VER-001–014 scoped, cumulative, comparable and unranked evidence with limits</td>
+</tr>
+<tr>
+<td>AOS-25-CR-002</td>
+<td>DEC-010–012/024/025/073–089 → REQ-020–036, FUN-005–007 → CON-002–007 → VER-015–023 independent authorship, empowered disposition, owned response and corrected reliance over cycles</td>
+</tr>
+<tr>
+<td>AOS-25-CR-003</td>
+<td>DEC-086/template v0.4 §4.4 → REQ-037–042, FUN-008–009 → CON-009 → VER-024–026 own normal/degraded research and qualified portfolio review without self-amendment</td>
+</tr>
+<tr>
+<td>AOS-25-CR-004</td>
+<td>DEC-018/045–048/054–078; FP5/6/10/GT → REQ-043–048, FUN-001/005/007 → CON-002/004/008 → VER-027–030 governed evaluation/history/controls and contestable overseer, not certification</td>
+</tr>
+</tbody></table>
+<h2 id="16-dependencies-and-delivery-stages">16. Dependencies and delivery stages</h2>
+<p>Drafting uses the current governing baseline and functional counterparts 20–24/30; this draft completes the mapped GI component drafting set, not whole-set independent assurance or GIL disposition closure. Next author work is a GI-set consistency/disposition review, then AOS-40 acceptance scenarios under to-do item 8. Detailed 13/40 adoption remains pending.</p>
+<p>Build requires a separately authorised slice, exact compatible contracts and approved methods/profiles. Activation requires organisation purpose/instruments/precedent, appointed oversight/independent/committee/duty/cover roles, permitted histories/audiences, review calendar/material triggers, evaluated thresholds/quality/capacity and reliable protected/recovery routes. Operation requires maintained source/control currency, actual independent preparation, accepted responses, consequence evidence, coverage and governed research. Absence of an operating annual mechanism cannot be papered over by this drafting milestone.</p>
+<h2 id="17-issues-and-gates">17. Issues and gates</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type / source; affected capability / owned dependency and required evidence / gate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-25-ISS-001</td>
+<td>Review dependency; template/QS; all CAPs; Mark wording/whole-document review before baseline approval; next GI-set/disposition consistency review and planned 40 evidence allocation</td>
+</tr>
+<tr>
+<td>AOS-25-ISS-002</td>
+<td>Operating dependency; DEC-010–012/083; CAP-004/005; organisation/01/30 appoint independent author, empowered review route, duty/cover/escalation and demonstrate independence/accepted outcomes before operation</td>
+</tr>
+<tr>
+<td>AOS-25-ISS-003</td>
+<td>Operating dependency; §§4/13, DEC-031–041; CAP-001–004/007; oversight/evaluation owner approves methods, coverage/comparison/materiality/false-missed finding/timeliness rubric and representative longitudinal evidence before reliance</td>
+</tr>
+<tr>
+<td>AOS-25-ISS-004</td>
+<td>Operating dependency; 03/DEC-090/091; CAP-001/003/005; data-use/evidence owners approve histories, group joins, audience needs/limitations and retained/deleted scope before use</td>
+</tr>
+<tr>
+<td>AOS-25-ISS-005</td>
+<td>Compatibility dependency; §6/common views; all CAPs; semantic owners approve exact schemas/bindings/version/ack/lifecycle/recovery and pending 13/40 adoption before operational reliance</td>
+</tr>
+<tr>
+<td>AOS-25-ISS-006</td>
+<td>Research setup dependency; DEC-086/§4.4; CAP-006; component research/change owners approve own profile/assignment/triggers/coverage/recipients/dates/cover and portfolio inputs before research operation</td>
+</tr>
+<tr>
+<td>AOS-25-ISS-007</td>
+<td>Project review dependency; QS G3; all CAPs; Mark&#39;s independent project review remains deferred; no author/GI evidence substitutes for required separate-reviewer gate or operating independent institution</td>
+</tr>
+</tbody></table>
+<p>All ISS rows are open, initial history 0.1; no closed disposition or confidence estimate is asserted. Each row names source, affected scope, owner, evidence and gate. Settled architectural directions are applied rather than reopened. Required setup values/appointments remain owned dependencies; no additional general design question is identified.</p>
+<h2 id="18-non-normative-implementation-notes">18. Non-normative implementation notes</h2>
+<p>Dashboards, cohort/history views, replayed cases and paired review packs are possible implementations. A shared agent/service may fulfil several approved remits; independent human preparation is an institutional condition, not merely using a different model. No vendor, model, wire API, committee name, sample size, risk score, schedule or deployment count is selected here. A diagram/count can make a pattern legible, but must not create persona ranking, implied motive or unsupported assurance.</p>
+<h2 id="19-traceability-and-change">19. Traceability and change</h2>
+<p>§4.3 links sources/derivations to each proposed REQ and planned §15 case. CAP/FUN, CON/state and INV links make the responsibility and acceptance path explicit; §8 accounts for all principles/tests. The appended common/source allocations add ownership without changing definitions, parent requirements or DEC status. GIL dispositions C03/04/10/19/22/24/25/27/32/34 are carried into coverage, periodic/triggered review, research separation, histories, no calibration and actual consequence learning; retired numerical/retention/approval defaults stay retired. WP confirmation assumptions remain reconciled to explicit empowered precedent approval.</p>
+<p>Changing an oversight method can alter what the organisation notices; material changes therefore undergo affected-function evaluation and authorised profile/change control. Findings propose, human governance adopts, and operational applied state is separately evidenced. Preserve prior reports, dissent, corrections and actual consequences only within lifecycle. Author structure/ID/table and requirement-case checks are document evidence, not case execution, independent review or readiness approval.</p>
+<h2 id="20-handover-and-continuity">20. Handover and continuity</h2>
+<p>The oversight owner maintains exact baselines, approved review/research/evaluation profiles, independent authorship arrangements, permitted histories, open material findings and response dates/cover/escalation, actual outcome evidence and affected superseded reports. Successors receive restrictions/uncertainty and surviving protected/corrective duties, not merely a green dashboard. Institution/corpus/change owners retain their powers.</p>
+<p>Builders work only within separately authorised scope and compatible exact profiles/contracts. Missing powers/use, unknown governing meaning, required unapproved parameters, absent independent review route or unsupported release claims stop affected work into accountable referral. Draft completion supplies no build or activation permission. Interface/runtime failure leaves a permitted human fallback for material duties; it cannot silently suspend the annual/triggered obligation.</p>
+<h2 id="21-review-and-control">21. Review and control</h2>
+<table>
+<thead>
+<tr>
+<th>AOS-QS coverage</th>
+<th>Evidence / limits</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>QS-01–03</td>
+<td>Purpose, source status and authority in §§1–3; controlled metadata/manifest</td>
+</tr>
+<tr>
+<td>QS-04–10</td>
+<td>Atomic proposed REQs with source/rationale/owner/status/history/dependencies/cases in §4.3/§15</td>
+</tr>
+<tr>
+<td>QS-11–14</td>
+<td>Responsibilities, lifecycle, semantic contracts, workflows and failure in §§3/5/6/9–11; physical mappings later gates</td>
+</tr>
+<tr>
+<td>QS-15–20</td>
+<td>Human independence/powers, uncertainty, cumulative evaluation/research, audit/change in §§7–13/19; actual effectiveness not claimed</td>
+</tr>
+<tr>
+<td>QS-21–24</td>
+<td>Planned VER/CR, owned issues/stages and continuity in §§15–17/20; no executed case</td>
+</tr>
+<tr>
+<td>QS-25–28</td>
+<td>Traceability, builder stop conditions and author checks; project independent review deferred, no achieved readiness gate</td>
+</tr>
+</tbody></table>
+<p>Specification-quality conclusion: functional review draft with 48 proposed REQs, nine CON views, 30 planned cases and four unsubstantiated conformance claims. Design-adequacy conclusion: supports evidence-qualified oversight and independently contestable learning while retaining permanent human adjudication and governed change. Operational detection, independence, response effectiveness and institutional legitimacy require actual evidence and appointed human review. No tailoring exemption, test pass, whole-document/build/activation or readiness approval is claimed. Next: GI-set consistency/disposition review, then AOS-40 acceptance scenarios.</p>
+<h2 id="component-summary">Component summary</h2>
+<p><strong>Purpose/owns:</strong> reveal accumulated governance drift, blind spots and consequences; prepare the GI account and track governed response. <strong>Reserved:</strong> independent human authorship, constitutional/value judgement, source/precedent adoption, powers/use and execution remain with their named owners. <strong>Receives/produces:</strong> permitted histories/instruments/outcomes/current controls → scoped canonical oversight, differences, protected referrals, accepted corrective duties and research proposals. <strong>Research:</strong> oversight-specific external remit plus qualified GI portfolio coverage/response review, without replacing specialist duties. <strong>States/dependencies:</strong> §5; kernel/14/20–24/30 and pending detailed 13/40. <strong>Conformant when:</strong> CR-001–004 supported by executed §15 evidence across relevant cycles in authorised scope. <strong>Open:</strong> wording/set review, actual appointments/profiles/independence, exact compatibility and operating evidence in §17.</p>
+<h2 id="phase-2-scope-disposition-9-october-2026">Phase 2 scope disposition — 9 October 2026</h2>
+<p>DEC-097 controls over prior inclusion/annex statements. CAP-01/02-specific legacy requirements/cases are deferred and supply no current-core completion/acceptance obligation. General human judgement, independent challenge, evidence fidelity, cumulative risk/drift and protected reporting remain current. Existing closure of AT-CR-01–05 and pilot5b is retained; neither is reopened by this scope change. No case executed or operating approval granted.</p>
+<p><strong>Allocation and source status:</strong> Any older source/adoption row relying on deferred CAP-only IDs is a historical use-case contribution, not current-core coverage. Core source sufficiency must use the surviving general obligations and accepted evidence; no source is promoted by this deferral. Retained numbered totals count catalogue/trace entries, including deferred IDs, and must not be read as active-core requirement/test totals.</p>
+<h2 id="historical-opening-status-notices-retained-provenance">Historical opening status notices — retained provenance</h2>
+<p>These are dated drafting snapshots, including their then-current versions, totals, completion statements and next tasks. They do not define today&#39;s baseline or work queue. The present document retains its proposed/planned status; approved directions retain their recorded scope. Use the current inventory, adopted README and live to-do list for orientation; authoritative requirement and decision text remains in its named sections.</p>
+<p><strong>Historical status notice — revision set:</strong> AOS-00/Map v0.44; DEC-001–097; AOS-10v0.5/20v0.6/22v0.5/24v0.4/25v0.3/40v0.8; other components unchanged; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; acceptance annexv0.2; reviewv0.3.</p>
+<p><strong>Historical status notice — scope decision — 9 October 2026, DEC-097:</strong> Mark has moved CAP-01 Trade-Off Divergence and CAP-02 Risk Register Assessment into Phase 2 as specific use cases built on AOS. They are outside the current architecture/specification completion scope and are not current build, acceptance or publication prerequisites. No use-case design, configuration, implementation or testing is scheduled now. DEC-017&#39;s architectural inclusion is superseded on this point; its original record remains history. General human judgement, evidence, data-use/authority, independent challenge and protected reporting controls remain in the architecture. Dedicated legacy use-case IDs are retained only as deferred trace references, with original wording parked in Phase 2 (deferred under DEC-097); mixed rows retain only their general architectural obligations in current scope. Earlier inclusion/next-task/annex-dependency statements are superseded.</p>
+<p><strong>GI consistency closure — 7 October 2026:</strong> Mark authorised GI-CR-01–04 corrections and closure. Functional drafting, reciprocal report-independence wording, decision/outcome consumer allocation, Mode 2 wording and current completion statements are reconciled. AOS-23 changes counterpart/current references only; its REQ/VER/CON rows are unchanged. AOS-00/Map v0.32, DEC-001–091; AOS-20 v0.5/21 v0.6/22 v0.4/23 v0.5/24 v0.3/25 v0.2/30 v0.5; AOS-01–05 v0.8, AOS-14 v0.4; Shared v0.15/Core v0.6/Exchange Register v0.14/source matrix v0.15; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. The review v0.2 records closure evidence; next AOS-40 acceptance scenarios. Earlier dated baseline/next-step statements remain historical. No new DEC/IF/operating power, case execution or build/activation/readiness approval; independent project review remains deferred and operating human independence remains mandatory.</p>
+</main></body></html>

@@ -1,0 +1,175 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Adaptive Operating System — specification suite · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-readme.pdf">PDF</a> &nbsp; <a href="aos-readme.md">Markdown</a></nav><main><h1 id="adaptive-operating-system-specification-suite">Adaptive Operating System — specification suite</h1>
+<p>Document: aos-readme · Source revision or record: Adopted orientation, 29 October 2026</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p><strong>Expanded README adopted by Mark Sweeny · 29 October 2026</strong></p>
+<p>Status: adopted orientation and navigation text. Individual specifications, approved decisions and AOS-QS retain their own authority and readiness gates. Adoption clarifies the suite&#39;s purpose and current maturity; it does not amend technical requirements or resolve the substantive questions identified in the 29 October deliverability review.</p>
+<h2 id="what-this-suite-is-for">What this suite is for</h2>
+<p>The Adaptive Operating System (AOS) describes how an organisation can use AI across its work while preserving human authority, accountability, evidence and the ability to challenge how the organisation fulfils its purpose. Its initial context is UK social housing, with scope and jurisdiction governed by the individual specifications and recorded decisions.</p>
+<p>The suite translates that architecture into component responsibilities, shared logical records and exchanges, authority and data-use rules, failure and recovery behaviour, human decision points and planned acceptance cases. Its technical specifications are written primarily for AI coding agents and the people who commission, supervise, integrate and assess their work. The explanatory material also supports suppliers and other interested readers.</p>
+<p>The project objective is a coherent specification suite from which an AI coding agent can build and test an authorised scope without inventing material architectural or governance decisions. The present suite is a functional review draft towards that objective. Completing functional drafting does not establish readiness to build every component.</p>
+<h2 id="what-is-specified-and-what-remains-to-be-done">What is specified, and what remains to be done</h2>
+<p>The component and common-contract documents define proposed behaviour and obligations at a logical level. They include record fields, relationships, lifecycle conditions, permissions, ownership, acknowledgement stages and failure rules. They are more detailed than a conceptual description. They do not yet supply a complete, approved, executable integration package for a deployed AOS.</p>
+<p>For a selected implementation, further work must bind the relevant requirements to exact compatible schemas, supported operations, endpoints, organisation instruments, approved profile values, named responsible people, evaluation methods and evidence. The scope must identify its dependencies, exclusions and unresolved questions. Material unresolved decisions must be referred to the appropriate authority; a coding agent cannot make them true by choosing a convenient default.</p>
+<p>No AOS software test execution, whole-system implementation verification or successful institutional operation is established by these documents. Separate website software checks and a limited research-agent pilot do not establish those claims for the architecture. The suite also does not constitute a statutory compliance opinion, independent human assurance, procurement approval or a certification scheme.</p>
+<h2 id="how-the-architecture-fits-together">How the architecture fits together</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Kernel, AOS-01–05</td>
+<td>Authority and change; shared data and records; identity and permitted use; agent behaviour and lifecycle; platform enforcement, resilience and recovery.</td>
+</tr>
+<tr>
+<td>Sensing domains, AOS-10–14</td>
+<td>Asset, Resident, People, Process and Boundary evidence and their specialist responsibilities. Process coordinates operations; Boundary governs external exchange.</td>
+</tr>
+<tr>
+<td>Governance Intelligence, AOS-20–25</td>
+<td>Corpus, synthesis, interpretation, options, artefact assessment, presentation, oversight and learning within permitted scope.</td>
+</tr>
+<tr>
+<td>Governance Hub, AOS-30</td>
+<td>Software support for empowered human decisions, responsibility acceptance, records and follow-through. The actual governing people and bodies retain their authority.</td>
+</tr>
+<tr>
+<td>Acceptance and assurance, AOS-40</td>
+<td>Planned component-to-system assessment, evidence requirements, readiness and commissioning.</td>
+</tr>
+</tbody></table>
+<p>These are allocations of responsibility, not a requirement to buy or deploy one product per component. One product can support several functions; several products and human procedures can realise one function. “Unified data” means governed shared meaning and exchange, without prescribing one physical database.</p>
+<p>Governance Intelligence contributes positively by bringing evidence together, identifying patterns and tensions, examining alternatives, preparing explanations and making neglected purpose concerns visible. Empowered humans judge competing goods and decide what to do. The quality of that contribution requires evaluation; neither a plausible report nor a quiet dashboard proves effective governance.</p>
+<h2 id="what-an-implementer-may-decide">What an implementer may decide</h2>
+<p>The specifications describe required behaviour while leaving justified implementation discretion. A database, transport, policy engine, programming language, model provider or deployment arrangement can be selected where the choice preserves the required semantics, controls and accepted scope. These choices still require review where their consequences affect security, data use, compatibility or assurance.</p>
+<p>Organisation-specific authority, permitted processing, consequential-action classifications, operating limits, human-reserved decisions, protected recipients and role appointments must be authorised by the relevant organisation. They are not merely developer preferences. Approved profiles require the validation, ownership and failure behaviour specified by the suite; a blank parameter is not zero risk or unlimited permission.</p>
+<p>An implementer must stop and refer a material ambiguity about authority, ownership, permitted inference, source meaning, human judgement, restriction inheritance or acceptance. A technology choice that would require weakening a prohibition or transferring a responsibility is an architectural/governance change, even if expressed as configuration.</p>
+<h2 id="reading-status-and-evidence-correctly">Reading status and evidence correctly</h2>
+<table>
+<thead>
+<tr>
+<th>Wording or record</th>
+<th>What it establishes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Approved architectural direction</td>
+<td>A recorded project decision within its stated scope; exact requirement wording, implementation and operating authority may remain separate.</td>
+</tr>
+<tr>
+<td>Proposed requirement</td>
+<td>Reviewable normative wording; “shall” does not itself confer approval.</td>
+</tr>
+<tr>
+<td>Planned verification case</td>
+<td>An intended assessment and expected evidence; no execution or pass is implied.</td>
+</tr>
+<tr>
+<td>Author consistency or documentary closure</td>
+<td>Completion of a stated drafting/checking task within its recorded limits.</td>
+</tr>
+<tr>
+<td>G3 — ready for authorised build</td>
+<td>Under AOS-QS, competent separate quality/design review, fixed dependencies, resolved blocking findings and an approved bounded build scope.</td>
+</tr>
+<tr>
+<td>G4 — implementation verified</td>
+<td>Actual evidence against the specified baseline and scope. It does not itself authorise live operation or prove organisational effectiveness.</td>
+</tr>
+<tr>
+<td>Operational/institutional assurance</td>
+<td>Competent assessment of actual powers, people, service conditions, legal/domain duties and outcomes; some claims require longitudinal evidence.</td>
+</tr>
+</tbody></table>
+<p>Project custody, independent project review and an adopting organisation&#39;s operational roles are different responsibilities. An unappointed required role remains a dependency. The architecture&#39;s Change Constitution is a draft proposal for review; it has not been adopted merely because it was written. A second AI assessment is useful challenge and does not supply independent human assurance.</p>
+<p>Counts require similar care. A requirement catalogue can include retained historical or deferred identities. Reciprocal producer and consumer obligations are not independent statistical samples. Parent cases, variants, local cases and observed endpoint results are different units. A coverage claim must name the exact active scope, method, baseline and evidence rather than rely on a total.</p>
+<h2 id="distinctions-that-must-survive-implementation">Distinctions that must survive implementation</h2>
+<p>An observation is not an inference; an inference is not a recommendation; a recommendation is not authority. Permission to use data does not confer permission to act. Delivery does not prove validation, accepted human responsibility, actual effect or fulfilment.</p>
+<p>Records can therefore carry several independent states. Boundary admission can be permitted while downstream data use is withheld. Quarantine is a custody state, escalation is a routing state, and neither grants authority. The applicable contract defines the mapping; a generic “approved” flag cannot replace it.</p>
+<p>Ownership is similarly layered. For exchange-related obligations, Boundary recognises the obligation, AOS-02 governs its shared record semantics, Process tracks accepted responsibility and fulfilment, and AOS-30 supports empowered human disposition. This does not give every participating component ownership of the same meaning. The current common register and approved decisions govern exact allocation.</p>
+<p>The architecture requires independently enforceable controls within an explicitly assessed perimeter and threat scope. It does not establish instantaneous global revocation, control of every off-system human action, recall of disclosed information, or immunity from every privileged infrastructure actor. Declared limits must have consequences for allowed operation and assurance claims. They cannot be hidden in a disclaimer while the same guarantee is claimed elsewhere.</p>
+<p>Purpose and use restrictions apply to derived information where the relevant rules require them. Transformation or aggregation does not by itself make information safe or grant a new purpose. The required derivation, disclosure-risk and downstream-control rules must be explicit for the implemented scope. Human referral likewise requires real empowered capacity; authentication, acceptance clicks and signatures do not prove substantive judgement.</p>
+<h2 id="start-here-and-find-the-controlling-documents">Start here and find the controlling documents</h2>
+<p>Begin with the <a href="project-objective.html">project objective</a>, <a href="aos-00.html">system architecture and decision register</a>, <a href="specification-map.html">specification map</a> and <a href="specification-quality-standard.html">specification quality standard</a>. Then read the relevant component specifications together with their shared contracts and acceptance material.</p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>Contents and purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="../index.html#section-00-foundations">00 Foundations</a></td>
+<td>Architectural rules and source traceability.</td>
+</tr>
+<tr>
+<td><a href="../index.html#section-01-reference-architecture">01 Reference Architecture</a></td>
+<td>The 18 component specifications and AOS-40 variants/coverage annex.</td>
+</tr>
+<tr>
+<td><a href="../index.html#section-02-architectural-contracts">02 Architectural Contracts</a></td>
+<td>Shared/Core records, Exchange Register, Control Coordination, Protected Reporting and Recovery, Operational Profiles, Contract Model and Extension/Conformance specification.</td>
+</tr>
+<tr>
+<td><a href="../index.html#section-03-governance-of-aos">03 Governance of AOS</a></td>
+<td>Proposed Change Constitution.</td>
+</tr>
+<tr>
+<td><a href="../Supporting-Specifications/readme-reference-implementations.html">Reference implementation context</a></td>
+<td>First-demonstration context.</td>
+</tr>
+<tr>
+<td><a href="../index.html#section-05-ecosystem">05 Ecosystem</a></td>
+<td>Supplier alignment briefing.</td>
+</tr>
+<tr>
+<td><a href="../Supporting-Specifications/architecture-issues-register.html">Issues register</a> and <a href="../Supporting-Specifications/aos-14-boundary-research-agent.html">research charter</a></td>
+<td>Common issues register and Boundary research-agent charter; component issues also remain in their documents.</td>
+</tr>
+<tr>
+<td><a href="../index.html#section-90-architecture-records">90 Architecture Records</a></td>
+<td>Dated assessments, findings, dispositions and design rationale. Read their stated scope and later disposition.</td>
+</tr>
+<tr>
+<td><a href="../index.html#section-v0-1">V0.1</a></td>
+<td>Live AOS-00, map, quality standard, objective, historical source summary and selected source documents under a historical folder name.</td>
+</tr>
+<tr>
+<td>Phase 2 (deferred under DEC-097 and DEC-098)</td>
+<td>Deferred applications: CAP-01 Trade-Off Divergence, CAP-02 Risk Register Assessment and RI-001 Living Specification.</td>
+</tr>
+</tbody></table>
+<p><code>V0.1</code> is a historical path, not a frozen release. Filenames containing <code>v0.1</code> or <code>review-draft</code> can contain later internal revisions. Use the document&#39;s internal control record, applicable decision and the <a href="../Supporting-Specifications/aos-current-document-inventory-2026-10-29.html">current document inventory</a>; do not infer status from a filename, folder or modification date. Where current statements conflict, record the conflict and obtain resolution rather than silently selecting one.</p>
+<p>Under DEC-097/098, the three Phase 2 applications are deferred. Their retained IDs and source history do not create current-core acceptance obligations. General risk, independent challenge, human judgement and protected reporting remain in scope. The overdue-repair example is the first selected demonstration context; it is not the source of universal architectural rules.</p>
+<h2 id="reading-the-suite-as-a-supplier">Reading the suite as a supplier</h2>
+<p>Use the <a href="../Supporting-Specifications/aos-supplier-alignment-briefing-v0-1.html">supplier alignment briefing</a> and <a href="aos-extension-and-conformance-specification-v0-1.html">Extension, architectural fit and scoped conformance</a> to map a product&#39;s contribution, retained responsibilities, required exchanges, evidence and gaps.</p>
+<p>Architectural contribution mapping can precede a deployed API. Logical contract alignment requires assessed meanings and translations. Verified interoperability requires actual compatible implementations and observations. None establishes whole-AOS certification. An illustrative product mapping is not an assessment of a supplier, product version or configuration. Existing-system data availability and effect-control capability must be established rather than assumed.</p>
+<h2 id="how-to-repeat-an-independent-review">How to repeat an independent review</h2>
+<p>Supply a dated package inventory with exact document identities, internal versions, status and hashes. Include AOS-00 and its decision register, the map, objective, quality standard, governing controlled sources, component specifications, common contracts, acceptance annex, source traceability and applicable scope/deferred-status records. Identify unavailable documents explicitly. Internal conversations are unnecessary to interpret a complete public package.</p>
+<p>Ask the reviewer to distinguish:</p>
+<ol>
+<li>An unresolved material architectural/governance decision.</li>
+<li>A contradiction, ambiguous definition, broken allocation or document-control defect.</li>
+<li>Implementation or organisation-specific preparation already identified by the suite.</li>
+<li>A proposition requiring experiments, competent human assessment or operational evidence.</li>
+<li>A misunderstanding or missing explanation, supported by the actual controlling passage.</li>
+</ol>
+<p>For each finding, request the exact document/version/section, evidence, consequence, confidence and proposed remedy. Ask what the suite supplies today, whether it is sufficient for its stated review stage, and what remains before an authorised build. A declaration that something is “implementation detail” is insufficient if it leaves a material governing decision for the developer to invent.</p>
+<p>Evaluate architectural obligations, specification quality, technical feasibility, build readiness and institutional effectiveness separately. Where the existing requirement is clear but untested, report the missing evidence rather than describing the requirement as absent. Where a guarantee is infeasible or ambiguous, challenge the guarantee directly. This README is orientation, not a defence against valid criticism.</p>
+<p>A kernel feasibility experiment can test enforcement, records, races and recovery. A demonstration of AOS&#39;s wider proposition also needs evidence about Governance Intelligence&#39;s contribution to human understanding and decisions. Neither a synthetic slice nor an AI review can establish long-term organisational effectiveness.</p>
+<h2 id="documentary-correction-edition-29-october-2026">Documentary correction edition — 29 October 2026</h2>
+<p>Mark authorised D-01–09 from the deliverability review. The <a href="../Supporting-Specifications/aos-documentary-corrections-2026-10-29.html">correction record</a> identifies the changes and retained limitations. The <a href="../Supporting-Specifications/aos-current-document-inventory-2026-10-29.html">current document inventory</a> distinguishes functional baselines, the dated editorial edition and catalogue counts. Substantive questions from the review remain separately unresolved.</p>
+<h2 id="decision-evidence-and-minutes-dec-103-29-october-2026">Decision evidence and minutes — DEC-103, 29 October 2026</h2>
+<p>AOS distinguishes a decision’s validity/effective time, attributable record evidence/authentication, separate minutes approval and current permission to act. It imposes no universal rule that later approval of minutes creates a board decision, and no universal second board approval of separate record wording. Actual legal form, governing instruments and an approved evidence/reliance policy govern the required proof; an authenticated record may carry evidential weight without becoming conclusive or authority-creating. Missing/disputed sufficient evidence prevents affected automated reliance with accountable review; it does not itself erase a legally valid decision. Any stricter automated-reliance gate must be labelled as policy. See <a href="../Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.html">DEC-103</a>.</p>
+<h2 id="protected-reporting-dec-104-29-october-2026">Protected reporting — DEC-104, 29 October 2026</h2>
+<p>Each mandatory protected-finding category requires an approved arrangement assessed against both technical failure and implicated-person interference. An implicated person cannot be the sole gatekeeper for its required authorised audience. Appropriately independent alternatives, permissions, minimal content, recipient verification, custody and continuing ownership must be established in advance and tested; an external route is included only where justified and lawfully authorised. Missing adequate arrangements remain owned gaps and prevent operational-assurance claims. See <a href="../Supporting-Specifications/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29.html">DEC-104</a>.</p>
+<h2 id="technical-control-assurance-dec-105-29-october-2026">Technical-control assurance — DEC-105, 29 October 2026</h2>
+<p>Operational reliance on technical controls requires declared scope/limits and accepted observations of enforcement paths, revocation timing/uncertainty, cumulative admission, conservative unknown effects and current-state recovery without revived permissions or repeated effects. Build/prototype authorisation is separate from implemented evidence and live approval. An experiment may establish the mechanism or expose a candidate failure; narrative assurances and a test-only pass do not supply operational assurance. See <a href="../Supporting-Specifications/aos-dec-105-technical-control-limits-and-evidence-2026-10-29.html">DEC-105</a>.</p>
+</main></body></html>

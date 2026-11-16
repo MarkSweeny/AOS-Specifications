@@ -1,0 +1,175 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Where does your product fit in AOS? · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-supplier-alignment-briefing-v0-1.pdf">PDF</a> &nbsp; <a href="aos-supplier-alignment-briefing-v0-1.md">Markdown</a></nav><main><h1 id="where-does-your-product-fit-in-aos">Where does your product fit in AOS?</h1>
+<p>Document: aos-supplier-alignment-briefing-v0-1 · Source revision or record: Discussion draft, editorial revision 29 October 2026</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p><strong>Editorial edition — 29 October 2026:</strong> Mark authorised documentary corrections D-01–09. This edition reconciles navigation, count/revision pointers, conformance links and historical scope labels; existing technical meanings, requirement/IF/decision identities and proposed/planned status are retained. The internal version below identifies the retained functional baseline; this dated editorial edition identifies the corrected document. See the <a href="aos-current-document-inventory-2026-10-29.html">current document inventory</a> and <a href="aos-documentary-corrections-2026-10-29.html">correction record</a>. Earlier dated adoption baselines are historical snapshots; exact logical family/view revisions are in Exchange Register §4.</p>
+<h2 id="an-invitation-to-system-suppliers">An invitation to system suppliers</h2>
+<p><strong>Draft for discussion · Editorial revision 29 October 2026</strong></p>
+<p>Editorial change: corrected the AOS expansion; no supplier capability, conformance or publication approval is implied.</p>
+<p>Good systems grow from the knowledge of the people who build and use them. If you supply software, sensors or technology services to housing organisations, you already bring part of that knowledge: an understanding of the work, the information it needs and the practical difficulties of making it all happen.</p>
+<p>We would like to explore how that experience, and the capabilities of your products, can contribute to the Adaptive Operating System (AOS).</p>
+<p>AOS is a reference architecture for bringing organisational information, software, AI and human judgement together. Its initial setting is social housing in England. It describes how different capabilities can work together to help an organisation understand what is happening, respond effectively and account for its decisions.</p>
+<p>The starting question is simple: <strong>where could your product fit into this mosaic, and what could we achieve together?</strong></p>
+<p>We want to build on products that organisations already use and value. A product might contribute to several parts of AOS; several products and human teams might contribute to the same part. Each brings something useful. The shared task is to make those contributions work well together.</p>
+<p>This briefing is an invitation to that conversation. Your experience can help us understand the possibilities, make the connections practical and improve the architecture itself.</p>
+<h2 id="the-picture-we-are-building-together">The picture we are building together</h2>
+<p>AOS brings together five areas of organisational understanding:</p>
+<ul>
+<li><strong>Assets:</strong> understanding homes, buildings and equipment—their condition, what needs attention and whether work has achieved its purpose.</li>
+<li><strong>Residents:</strong> understanding service needs, choices and participation, communicating in agreed ways and respecting the limits on private information.</li>
+<li><strong>People:</strong> understanding workforce skills, capacity and employment information, and supporting people-management work while keeping employment judgement with humans.</li>
+<li><strong>Processes:</strong> understanding how work should happen, how it actually happens, who has accepted responsibility and whether the intended outcome has been achieved.</li>
+<li><strong>External exchanges:</strong> understanding information and activity across organisational boundaries, including relationships with suppliers, contractors and external services.</li>
+</ul>
+<p>Governance Intelligence draws on appropriate evidence from these areas to help people interpret events, ask better questions, exercise oversight and prepare decisions. Accountable humans retain decisions that require judgement between competing values, along with the powers reserved to them.</p>
+<p>Shared arrangements connect the parts: reliable records, clear meanings, identity and permissions, security, controlled actions and recovery when something goes wrong.</p>
+<p>Your product might provide information, carry out a function, connect systems or support these shared arrangements. Together, we can identify where its contribution is most useful and what it needs around it.</p>
+<h2 id="where-you-might-recognise-your-contribution">Where you might recognise your contribution</h2>
+<p>These examples offer starting points for discussion. We would welcome your help in refining them.</p>
+<table>
+<thead>
+<tr>
+<th>Your product or service</th>
+<th>A possible contribution to AOS</th>
+<th>A useful conversation to have together</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Housing management or repairs software</td>
+<td>Tenancy and service records, repair promises, appointments, contacts and work events</td>
+<td>How we connect these records to a shared understanding of responsibility, progress and the outcome for the resident</td>
+</tr>
+<tr>
+<td>Asset management or building-information software</td>
+<td>Asset identities, inspections, condition evidence, maintenance history and information supporting safety responsibilities</td>
+<td>How we preserve the source, age and limits of evidence, and share changes with those who rely on it</td>
+</tr>
+<tr>
+<td>HR or workforce software</td>
+<td>Employment records, skills and training evidence, and workforce-service processes</td>
+<td>How we support useful work within agreed purposes, protect sensitive information and preserve human employment judgement</td>
+</tr>
+<tr>
+<td>Sensors or IoT services</td>
+<td>Observations about physical conditions, device health and gaps in coverage</td>
+<td>How we combine readings with other evidence, understand their reliability and respond when readings are missing</td>
+</tr>
+<tr>
+<td>Finance or treasury software</td>
+<td>Financial records, commitments, expenditure, forecasts and payment evidence</td>
+<td>How we connect financial information to authorised commitments and organisational outcomes while keeping their meanings clear</td>
+</tr>
+<tr>
+<td>Workflow or case-management software</td>
+<td>Work definitions, assignments, deadlines, exceptions, escalation and follow-up</td>
+<td>How we connect work to people who have accepted responsibility, and keep unfinished or disputed matters visible</td>
+</tr>
+<tr>
+<td>Governance or document software</td>
+<td>Papers, evidence, analysis, decision records and explanations</td>
+<td>How we help people understand the evidence, its limitations, what has been approved and what happened afterwards</td>
+</tr>
+<tr>
+<td>Integration, identity, AI or platform services</td>
+<td>Connections between systems, shared records, identity checks, controlled processing and dependable operation</td>
+<td>How we preserve meaning and permissions across connections, and maintain a reliable account of actions and their effects</td>
+</tr>
+</tbody></table>
+<p>A contribution may involve your product, an adapter, another supplier&#39;s service and the organisation&#39;s own people. Understanding that combination gives us a better basis for collaboration and helps everyone see where their expertise is needed.</p>
+<h2 id="four-questions-to-explore-together">Four questions to explore together</h2>
+<h3 id="what-can-we-learn-from-your-product">What can we learn from your product?</h3>
+<p>Your knowledge of the information your product holds or produces is central to understanding its place in AOS. We would like to explore where that information comes from, what it means and what it can reasonably tell us.</p>
+<p>A sensor reading, an inspection finding, a contractor&#39;s report and a verified service outcome each add something different. Keeping those differences clear helps people make sound decisions. The same is true of information that is uncertain, disputed, missing or out of date.</p>
+<p>Where systems hold overlapping information, we can agree which source to rely on for each purpose and how to share corrections.</p>
+<h3 id="what-can-your-product-help-people-do">What can your product help people do?</h3>
+<p>We would like to understand the work your product supports and the actions it can take. Reading a record, sending a message, making a commitment and carrying out an action involve different responsibilities.</p>
+<p>Together, we can clarify who authorises those activities, what information they use and how their limits are maintained. Existing permissions remain important when systems are connected; a connection does not itself create new decision rights or permission to reuse information.</p>
+<p>For example, measuring a property&#39;s condition does not automatically authorise conclusions about a resident&#39;s behaviour. Access to employment records does not automatically permit workforce profiling. Clear boundaries help suppliers and organisations develop useful capabilities with confidence.</p>
+<h3 id="what-does-it-need-from-others">What does it need from others?</h3>
+<p>Every product has a scope. Understanding what sits around it helps us design a workable whole.</p>
+<p>Your product may rely on another service to check permissions, a person to assess physical evidence, a manager to approve expenditure or a team to resolve a disputed fact. Those are opportunities to make the connections and responsibilities clear.</p>
+<p>Where a person needs to accept a duty, we should establish together that they have accepted its scope and have the authority, capacity and cover to carry it out. A name in a field is only part of that arrangement.</p>
+<h3 id="how-can-we-keep-the-arrangement-dependable">How can we keep the arrangement dependable?</h3>
+<p>Suppliers bring valuable experience of real operating conditions. We want to draw on that experience when considering missing information, interrupted work, changed permissions, conflicting records and failed connections.</p>
+<p>What can continue safely? What needs to pause? Who should be informed? How can unfinished work be handed over? How would an organisation retain its information and outstanding responsibilities if it changed supplier?</p>
+<p>Sometimes a lost response leaves us unsure whether an action happened. Checking before retrying can prevent a repeated payment or instruction. Agreeing how to resolve that uncertainty is part of building a dependable connection together.</p>
+<h2 id="bringing-it-to-life-a-repair-reported-as-complete">Bringing it to life: a repair reported as complete</h2>
+<p>Imagine a repairs platform that records a promised completion date and receives a contractor&#39;s message saying the repair is complete.</p>
+<p>The supplier already brings useful capabilities: records of the promise, the job and property, the contractor&#39;s report, changes over time and communications sent or received. The housing organisation brings knowledge of its service responsibilities and the arrangements for assessing the work. Other products or services may contribute further evidence.</p>
+<p>The collaboration is about bringing those contributions together. A contractor&#39;s completion message is evidence, but does not by itself establish that the work was completed satisfactorily. Payment of an invoice does not establish that either.</p>
+<p>AOS connects the report, assessment of the work, accepted human responsibility and service outcome, keeping their meanings distinct. If completion remains uncertain, everyone who needs to act should be able to see that. A revised internal target does not erase the original promise to the resident.</p>
+<p>If follow-up is needed, an authorised person accepts responsibility. Communication uses the channel currently agreed with the resident and provides the appropriate case-owner and repairs-team contact details. Silence from the resident does not establish that the problem is resolved.</p>
+<p>A shared account of the product&#39;s contribution might then read:</p>
+<blockquote>
+<p>Our platform provides the repair records, work events and history, and supports these parts of the workflow. Together with the organisation and its other providers, we can connect those capabilities to assessment of completion, permission checks and accepted human responsibility. These are the connections already available, and these are the areas we could develop together.</p>
+</blockquote>
+<p>That gives us a practical basis for deciding what to do next.</p>
+<h2 id="a-starting-point-for-our-conversation">A starting point for our conversation</h2>
+<p>You do not need a lengthy submission to begin. A short account under these headings would help us prepare a useful discussion. We can develop it together as our understanding grows.</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>What would help us start</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Your product</td>
+<td>Its name, version or service configuration, users and operating context</td>
+</tr>
+<tr>
+<td>Its contribution</td>
+<td>The capabilities you see contributing to AOS and the value they offer</td>
+</tr>
+<tr>
+<td>Information and actions</td>
+<td>What it provides or needs, where information comes from and any limits on its meaning</td>
+</tr>
+<tr>
+<td>Responsibilities</td>
+<td>How information, decisions, permissions and human approval are handled</td>
+</tr>
+<tr>
+<td>Working with others</td>
+<td>Existing integrations and the other products, adapters or human procedures involved</td>
+</tr>
+<tr>
+<td>Dependable operation</td>
+<td>How corrections, outages, changed permissions, uncertain results, recovery and supplier exit are handled</td>
+</tr>
+<tr>
+<td>What we can build on</td>
+<td>Capabilities available now, supporting evidence, possible adaptations and questions still to resolve</td>
+</tr>
+<tr>
+<td>Your perspective</td>
+<td>What we have missed, what may be impractical and how you think the architecture could improve</td>
+</tr>
+</tbody></table>
+<p>Being clear about what is available today and what would need development helps us choose a realistic next step. An honest account of a limitation gives us something useful to work on. We welcome challenge as well as enthusiasm.</p>
+<h2 id="building-confidence-as-we-progress">Building confidence as we progress</h2>
+<p>We can develop our understanding in three stages:</p>
+<ul>
+<li><strong>Understanding the fit:</strong> agreeing how the product contributes, what it is responsible for and what it needs from others.</li>
+<li><strong>Agreeing the connections:</strong> establishing how information exchanges preserve meaning, permissions and the handling of change or failure.</li>
+<li><strong>Demonstrating the behaviour:</strong> testing a particular configuration and recording what it has shown under specified conditions.</li>
+</ul>
+<p>Different capabilities may be at different stages. We can explore a useful contribution before every connection exists, then gather evidence as the work develops.</p>
+<p>Keeping conclusions specific helps everyone understand what has been established and what remains to be done. Evidence for one connection or function supports a claim about that scope; it does not establish conformity across the whole architecture. Software assessment also cannot establish that an organisation is well governed.</p>
+<h2 id="developing-the-technical-connections">Developing the technical connections</h2>
+<p>APIs will be part of some implementations. Our first conversation gives them a purpose: which capabilities should work together, what information they should exchange and what responsibilities they need to preserve.</p>
+<p>From there, a particular implementation can define its interfaces, supported versions, identity and security arrangements, and tests. AOS currently offers a reference architecture and proposed assessment approach; there is no live AOS API or certification service.</p>
+<p>The immediate opportunity is to arrive together at a strong answer to <strong>“Where does our product fit, and what would be a worthwhile next step?”</strong></p>
+<h2 id="let39s-start-with-one-useful-contribution">Let&#39;s start with one useful contribution</h2>
+<p>Choose a capability that you think could make a useful contribution. We can explore its place in the architecture, the connections it needs and the practical value of developing them.</p>
+<p>That discussion should work in both directions. Your experience may reveal an unclear assumption, a missing capability or a better way to achieve an intended outcome. We want that feedback to inform the architecture, with proposed changes recorded and considered through the project&#39;s change process.</p>
+<p>The ambition is a system whose parts work well together because the people building and using them have developed a shared understanding of the whole.</p>
+<h2 id="further-reading-and-status">Further reading and status</h2>
+<p>The <a href="../Foundation/aos-extension-and-conformance-specification-v0-1.html">extension and scoped conformance specification</a> sets out the underlying proposed requirements and assessment method. The <a href="../Foundation/specification-map.html">specification map</a> and <a href="../Foundation/aos-00.html">system architecture</a> provide more detail about the components and governing decisions.</p>
+<p>This is a discussion draft describing intended arrangements. Product-specific assessments, technical connections and operational approvals will need an agreed scope and supporting evidence. The briefing does not endorse a named supplier or certify conformity.</p>
+<p><strong>Project custodian:</strong> Mark Sweeny. <strong>Draft prepared by:</strong> Codex at Mark&#39;s request. Item 12a author drafting is complete; substantive review and publication remain separate. CAP-01 and CAP-02 remain deferred to Phase 2.</p>
+</main></body></html>

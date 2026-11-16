@@ -1,0 +1,301 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AOS-01–05 kernel consistency review · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-01-05-kernel-consistency-review-v0-1.pdf">PDF</a> &nbsp; <a href="aos-01-05-kernel-consistency-review-v0-1.md">Markdown</a></nav><main><h1 id="aos-0105-kernel-consistency-review">AOS-01–05 kernel consistency review</h1>
+<p>Document: aos-01-05-kernel-consistency-review-v0-1 · Source revision or record: v0.5</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p>Version: 0.5<br>Date: 6 October 2026 (initial review 5 October)<br>Status: author review; findings and recommended corrections, not approved specification amendments or independent assurance.</p>
+<p><strong>6 October current reconciliation status:</strong> actions 1–3 are drafted and adopted at kernel logical-document level. AOS-01–05 v0.5, AOS-00/Map v0.17, Core/Shared v0.3, Register v0.2 and Control Coordination v0.1 record DEC-067–072, including withholding notification. KR-02/03/06 are logically reconciled; commissioning/implementation and executed independent evidence remain open. KR-07/08 logically resolved, KR-10 author-checked closed, KR-01 kernel common-definition adoption recorded with non-kernel and actual conformance open, KR-09 kernel traceability links recorded with wider source allocation open. KR-04/05 remain action 4. Original §§1–6 retain the initial review; §§7–9 record dated follow-ups. Filename retained for stable links.</p>
+<h2 id="1-overall-finding">1. Overall finding</h2>
+<p>The five drafts form a coherent kernel at the level of responsibilities and governing behaviour. I found no fundamental contradiction in the allocation of authority, data stewardship, permitted use, agent execution and platform enforcement. Their central rules agree: humans retain reserved judgement; agents cannot manufacture permission; authority and permitted use are separate; affected automation is withheld when required controls are missing; uncertain effects require reconciliation; restart cannot revive withdrawn permissions.</p>
+<p>The set is <strong>not yet a fully reconciled, build-ready kernel</strong>. Ten findings below identify incomplete exchanges, unresolved coordination rules, one important evidence-sequencing ambiguity, and document maintenance defects. Several gaps were already declared in the individual drafts; this review makes their cross-component consequences and closure responsibilities explicit. It does not treat deliberately open implementation choices as contradictory decisions.</p>
+<p>Recommended next step: reconcile these findings across the five drafts and shared contracts before moving on to the next major drafting tranche. Existing approved directions do not need to be asked again merely to perform that reconciliation. Concrete organisational powers, thresholds, flows and commissioning choices still require their own appropriate approval.</p>
+<h2 id="2-review-baseline-and-limits">2. Review baseline and limits</h2>
+<p>Reviewed current AOS-01, 02, 03, 04 and 05, each at v0.2, against AOS-00 v0.15, Specification Map v0.15, Shared Contracts v0.1, Core Record Contracts v0.1 and Operational Profiles v0.1, including their later dated decision dispositions. Governing references are Foundational Principles v4, Reasoning Principles v6 and Governance Intelligence Tests; quality and template references are AOS-QS v0.1 and component template v0.3.</p>
+<p>The review compared responsibilities (§3), requirement registers (§4), states (§5), exchanges (§6), powers (§7), workflows and failure/recovery (§§10–13), invariants, planned verification, dependencies and issue status (§§14–17). It assessed document consistency and connected scenarios, not running software, legal compliance, operational capacity or the full specification suite beyond this kernel. Earlier pending-choice notes in appended histories were read in light of their subsequent recorded approvals.</p>
+<p>All 228 proposed component requirements have sequential identifiers and reference existing planned verification cases. All are represented in the corresponding verification mappings: 44/20 for AOS-01, 46/24 for AOS-02, 42/25 for AOS-03, 46/30 for AOS-04 and 50/38 for AOS-05, giving 137 planned cases. This is a structural check, not evidence that the cases are sufficient or have passed. Separate independent review and readiness evidence remain outstanding.</p>
+<h2 id="3-responsibilities-that-agree">3. Responsibilities that agree</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Primary responsibility</th>
+<th>Boundary maintained across the set</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-01</td>
+<td>Interpret and determine organisational authority; govern grants, restrictions and protected amendments</td>
+<td>Identity, a successful tool call or an operational administrator cannot create organisational power</td>
+</tr>
+<tr>
+<td>AOS-02</td>
+<td>Common record structures, entity/source references, provenance, assurance lineage, correction and governed exchange</td>
+<td>Admission is not factual truth, access permission or an authority grant; each record family retains its semantic owner</td>
+</tr>
+<tr>
+<td>AOS-03</td>
+<td>Identity and representation assurance; consent and permitted processing, inference, disclosure and lifecycle use</td>
+<td>An authority allow does not permit data use; consent cannot waive constitutional prohibitions</td>
+</tr>
+<tr>
+<td>AOS-04</td>
+<td>Bounded agent tasks, planning/delegation, memory, lifecycle and execution meaning</td>
+<td>Each receiving agent needs its own applicable controls; plans and model output cannot authorise effects</td>
+</tr>
+<tr>
+<td>AOS-05</td>
+<td>Independent technical enforcement, isolation, credentials, health, containment, deployment and recovery</td>
+<td>Platform administration implements approved powers; technical containment cannot amend constitutional authority</td>
+</tr>
+</tbody></table>
+<p>REC-A belongs semantically to AOS-01, REC-D to AOS-03 and REC-X to AOS-04, with runtime evidence supplied by AOS-05. AOS-02 supplies common structures. This division is consistent; “shared records” should not be read as AOS-02 owning every family&#39;s meaning.</p>
+<h2 id="4-findings-and-recommended-corrections">4. Findings and recommended corrections</h2>
+<p>Priority <strong>high</strong> means resolve before building or claiming conformance for the affected function. <strong>Medium</strong> means reconcile before accepting the set as a common document baseline. <strong>Low</strong> means document presentation repair. These are proposed closure assignments to components; they do not appoint operational people.</p>
+<h3 id="kr-01-reciprocal-exchange-definitions-are-incomplete">KR-01 — Reciprocal exchange definitions are incomplete</h3>
+<p><strong>High — integration gap.</strong> The five §6 catalogues describe compatible exchanges, but do not yet provide a single complete register linking each local CON to its definitive shared definition, producer, every consumer, exact revision and acceptance obligations. Their 33 CON entries are overlapping views, not 33 independently owned interfaces. REC-D and REC-X still lack definitive IF identifiers. Consent changes, identity assurance, agent lifecycle, health/incident, recovery and release exchanges remain mainly descriptive.</p>
+<p><strong>Evidence:</strong> all five §6 catalogues; Core Records §§2, 5 and 6; Shared Contracts §§4–5 and P01–P04/P09. Existing seven IF identifiers must be preserved.</p>
+<p><strong>Consequence:</strong> separately built components could accept different field meanings, statuses, acknowledgements or incompatible versions while each appears locally compliant.</p>
+<p><strong>Correction:</strong> AOS-02 coordinates one shared register; AOS-01/03/04/05 own their respective semantics and reciprocal acceptance. Fix mandatory/conditional fields, units, unknown values, state transitions, rejection, retries and compatibility rules. Distinguish agent lifecycle, task state, execution attempt, observed effect and human case disposition throughout. Allocate missing identifiers through the controlled catalogue rather than inventing local replacements.</p>
+<h3 id="kr-02-there-is-no-completed-rule-for-a-current-control-snapshot-at-the-effect-boundary">KR-02 — There is no completed rule for a current control snapshot at the effect boundary</h3>
+<p><strong>High — acknowledged coordination gap.</strong> All five demand current controls, but freshness, invalidation delivery, in-flight races and mixed-version activation remain open. An approved policy, a current identity, a valid REC-A, a valid REC-D, an active agent and an operating platform are distinct states; their favourable combination is not yet defined precisely enough to govern one effect.</p>
+<p><strong>Evidence:</strong> AOS-01 REQ-011 and §§5–6; AOS-03 §§5–6; AOS-04 REQ-006–008/025/029; AOS-05 §§6 and 13.2; Core Records P03 and §4.3; Shared Contracts §4.6 explicitly leaves distribution barriers and mixed versions open.</p>
+<p><strong>Consequence:</strong> a queued operation could use a partly activated policy or a stale consent/restriction while individual services report success.</p>
+<p><strong>Correction:</strong> AOS-01/03/04/05 jointly define the action-bound checkpoint profile, acceptable current-state evidence, invalidation ordering, partial activation and irreversible-action handling. Add a combined admission table covering mismatches, unavailable controls and changes after checking. Specify residual race limits rather than promising instantaneous global revocation.</p>
+<h3 id="kr-03-the-correction-notification-map-omits-an-important-consumer">KR-03 — The correction notification map omits an important consumer</h3>
+<p><strong>High — concrete catalogue omission.</strong> AOS-02 CON-003 explicitly lists AOS-01/03/04/13/21–25 as correction/lineage consumers but omits AOS-05. Its §10.2 also names a narrower consumer set. AOS-05 nevertheless needs current restrictions and corrected evidence when enforcing, restoring or replaying affected work. This is an incomplete map, not a requirement allowing the platform to ignore changes.</p>
+<p><strong>Evidence:</strong> AOS-02 §6.1 CON-003 and §10.2; AOS-03 CON-004/REQ-035; AOS-04 REQ-029; AOS-05 §§6, 10.4 and 11.</p>
+<p><strong>Correction:</strong> add AOS-05 where it has material dependencies, and define how source corrections, identity/representation changes, consent withdrawal, authority changes and deletion/restriction dispositions reach affected consumers. Name the impact assessment owner and distinguish event receipt from actual application. Cover delayed, duplicated and out-of-order changes, including pending queues and restored copies.</p>
+<h3 id="kr-04-protected-reporting-during-control-failure-is-an-obligation-without-a-completed-route">KR-04 — Protected reporting during control failure is an obligation without a completed route</h3>
+<p><strong>High — continuity gap.</strong> The drafts consistently require protected findings and outstanding duties to survive agent stoppage or ordinary administrative suppression. They also prohibit sending through an unpermitted route. An independently available, properly authorised reporting and duty-transfer route has not yet been concretely defined for loss or compromise of shared identity, permission, record or delivery dependencies.</p>
+<p><strong>Evidence:</strong> AOS-01 REQ-027–028; AOS-03 REQ-027–029 and §11; AOS-04 REQ-016–017 and §11; AOS-05 REQ-017–019 and §§10–13; Core Records §5.2 requires an approved metadata-access bootstrap profile.</p>
+<p><strong>Consequence:</strong> “stop the unsafe action” can work while the required finding never reaches an empowered human. Recording an attempted report does not fulfil its audience obligation.</p>
+<p><strong>Correction:</strong> AOS-05 coordinates with AOS-01/03/04 and the AOS-13/20/25/30 owners to specify minimal permitted reporting content, independently governed credentials/custody, routes, recipients, acknowledgement, cover and common-failure behaviour. If no lawful usable route exists, retain an explicitly owned unresolved duty and activate the approved human fallback. Do not resolve this gap with a blanket privacy or authority bypass.</p>
+<h3 id="kr-05-recovery-requires-current-restrictions-but-their-recovery-source-and-reconciliation-proof-are-incomplete">KR-05 — Recovery requires current restrictions, but their recovery source and reconciliation proof are incomplete</h3>
+<p><strong>High — recovery gap.</strong> The drafts agree that restored data, queues and grants cannot be used until current restrictions and unknown effects are reconciled. They do not yet fix the authoritative recovery inputs or sufficient proof when the usual current-state service is itself lost or compromised.</p>
+<p><strong>Evidence:</strong> AOS-01 REQ-029/036 and §11; AOS-02 §§11–13; AOS-03 REQ-030–032/036–037; AOS-04 §10.3; AOS-05 CON-006/007 and §10.4; Shared Contracts P03/P08/P09.</p>
+<p><strong>Consequence:</strong> an otherwise successful restore can reintroduce deleted material, expired permissions or an uncertain already-dispatched operation. Withholding unknown scope is coherent, but it does not supply a recovery procedure.</p>
+<p><strong>Correction:</strong> AOS-05 with AOS-01/02/03/04 specifies authoritative restriction/disposition sources, restoration isolation, freshness/version reconciliation, accepted evidence and empowered release of recovered scope. Include provider failover and rollback, outstanding duties, deletion propagation and possible external effects. If currentness cannot be established, affected use stays withheld.</p>
+<h3 id="kr-06-cumulative-effect-limits-lack-a-complete-cross-agent-enforcement-arrangement">KR-06 — Cumulative-effect limits lack a complete cross-agent enforcement arrangement</h3>
+<p><strong>High — enforcement gap.</strong> DEC-056 and AOS-04 REQ-045 require bounds across linked tasks, agents and periods. AOS-05 requires corresponding measures and limits. The shared accounting scope, enforcement owner and behaviour under simultaneous workers or unavailable accounting are not yet settled.</p>
+<p><strong>Evidence:</strong> AOS-04 REQ-021/039/045, §§10.2 and 13 and VER-014/025/029; AOS-05 §13.2; AOS-01 ISS-013.</p>
+<p><strong>Consequence:</strong> individually permitted workers can jointly exceed a contact, commitment or resource bound, especially during retries, cancellation or failover.</p>
+<p><strong>Correction:</strong> AOS-04/05 jointly define linked-work identity, effect units and period, authoritative accounting, how parallel admission prevents excess, partial/unknown-effect treatment and the approved brake/review route. AOS-01/03 approve applicable authority/use constraints; AOS-02 preserves evidence. Exact values remain commissioning choices. Do not equate staying within a numeric budget with ethical acceptability.</p>
+<h3 id="kr-07-permission-evidence-and-later-enforcement-evidence-need-clearer-sequencing">KR-07 — Permission evidence and later enforcement evidence need clearer sequencing</h3>
+<p><strong>Medium — wording ambiguity, not an established policy contradiction.</strong> AOS-03 REQ-040 says a data-use determination retains “actual enforcement evidence”. Core REC-D §5.1 defines the evaluation result, which must exist before dependent use; REC-X §6.1 records the final check and actual effect. The current wording leaves unclear whether enforcement proof is required before issuing the determination or linked after use.</p>
+<p><strong>Consequence:</strong> a literal implementation could create a circular prerequisite or revise a historical determination in a way that obscures what was originally decided.</p>
+<p><strong>Correction:</strong> AOS-03 with AOS-02/04/05 distinguishes contemporaneous evaluation evidence from subsequent linked checkpoint/enforcement/effect evidence. Permit or refusal must remain reconstructable at its original revision; later execution evidence identifies that exact determination. Define evidence for withheld operations as well as completed ones, and prohibit a pending evidence link being presented as proof of enforcement.</p>
+<h3 id="kr-08-assurance-provenance-is-richer-in-the-components-than-in-the-detailed-field-contract">KR-08 — Assurance provenance is richer in the components than in the detailed field contract</h3>
+<p><strong>Medium — schema completeness gap.</strong> AOS-02 §3.1 and REQ-040–043 require origin to be distinct from supporting evidence, validation method/version, validator, accountable role, currentness, scope and limitations. Core REC-E §3.1 can hold quality and provenance references, but does not yet explicitly map that complete chain to fields or a required companion assurance record. AOS-03 disclosure and AOS-04/05 audit depend on it.</p>
+<p><strong>Correction:</strong> AOS-02 extends the single shared definition or defines its linked assurance record, with exact requirement-to-field mappings. Carry assurance references and limitations through transformations and authorised projections. A generic source reference or a confidence number must not silently stand in for the approved assurance chain.</p>
+<h3 id="kr-09-the-set-needs-a-common-decision-baseline-and-accurate-contractstatus-labels">KR-09 — The set needs a common decision baseline and accurate contract/status labels</h3>
+<p><strong>Medium — document reconciliation gap.</strong> The five v0.2 drafts cite successively newer architecture/map baselines: .11/.8, .12/.9, .13/.11, .14/.13 and .15/.15. Those accurately describe their drafting history, but do not establish that earlier components have been checked against every later applicable decision. AOS-01 ISS-011 still uses a broad “Decision required” label despite DEC-051 settling the general welfare-protocol direction; detailed board instruments remain open. Its ISS-013 needs DEC-056 alignment. AOS-02 CON-004 still says AOS-03 is “to co-draft”. AOS-01 §6.1 leaves other definitive IF allocation broadly open although Shared Contracts §4.6 already preserves AOS-01-IF-002 for policy amendment/activation.</p>
+<p><strong>Correction:</strong> revalidate against AOS-00 .15/DEC-001–061 and Map .15, preserving historical origins. Explicitly map CON-002 to the existing policy-activation interface and relevant companion views. Separate approved direction from unresolved organisational detail in issue labels. Complete reciprocal decision/source/REQ/contract/VER traceability; do not merely change version labels or reopen approved general questions.</p>
+<h3 id="kr-10-four-appended-register-blocks-are-broken-markdown-table-continuations">KR-10 — Four appended register blocks are broken Markdown table continuations</h3>
+<p><strong>Low — presentation defect.</strong> A blank line separates AOS-04 REQ-043–046 and VER-027–030, and AOS-05 REQ-047–050 and VER-035–038, from their preceding tables without a fresh header/separator. These rows have valid identifiers but will not consistently render as part of a table.</p>
+<p><strong>Correction:</strong> remove the intervening blank lines or introduce complete continuation headers. The five specifications were not edited by this review; this repair belongs in the reconciliation pass.</p>
+<h2 id="5-behaviour-checked-across-component-boundaries">5. Behaviour checked across component boundaries</h2>
+<table>
+<thead>
+<tr>
+<th>Connected scenario</th>
+<th>Consistent intended behaviour</th>
+<th>Remaining finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Authority allows but data use denies, or vice versa</td>
+<td>Affected operation withheld; separately permitted referral only</td>
+<td>KR-01/02: exact bindings and combined checkpoint</td>
+</tr>
+<tr>
+<td>Consent, representation or source changes while work is queued</td>
+<td>Materially dependent work reassessed; completed history preserved</td>
+<td>KR-02/03: propagation and application evidence</td>
+</tr>
+<tr>
+<td>Worker delegation, parallel work and persistent memory</td>
+<td>Explicit capability bounds; receiver checks; no private-content laundering</td>
+<td>KR-01/06: common records and collective enforcement</td>
+</tr>
+<tr>
+<td>Technical incident requires immediate isolation</td>
+<td>Preapproved technical containment; grant amendment and reinstatement remain separate</td>
+<td>KR-04/05: continued duties and recovery proof</td>
+</tr>
+<tr>
+<td>Control store or reporting provider fails</td>
+<td>Dependent automation withheld; unaffected valid scope may continue; approved human fallback</td>
+<td>KR-02/04: scope evidence and independent permitted reporting</td>
+</tr>
+<tr>
+<td>Timeout after possible external disclosure, followed by retry</td>
+<td>Indeterminate effect; authorised reconciliation before consequential repetition</td>
+<td>KR-01/05: shared attempt linkage and recovery sequence</td>
+</tr>
+<tr>
+<td>Restore, rollback or automatic failover</td>
+<td>Only exact eligible approved scope; current restrictions; accepted behaviour/location/compatibility evidence</td>
+<td>KR-02/05: applied-state reconciliation</td>
+</tr>
+<tr>
+<td>Originating source is authoritative but assurance is absent</td>
+<td>Admission does not establish truth; uncertainty remains visible</td>
+<td>KR-08: complete assurance chain</td>
+</tr>
+</tbody></table>
+<p>Three apparent tensions are resolved by the existing boundary rules. AOS-01&#39;s human power to suspend a grant does not prohibit AOS-05&#39;s separately preauthorised technical isolation. AOS-04&#39;s material-change acceptance rule does not prohibit failover to an already accepted, still eligible exact configuration under DEC-061. Evidence preservation does not prohibit governed deletion: permitted lifecycle and minimal disposition records must coexist, without hidden content copies. These should be tested together, but are not conflicting architectural directions.</p>
+<h2 id="6-closure-order-and-acceptance-of-the-reconciliation">6. Closure order and acceptance of the reconciliation</h2>
+<ol>
+<li>Reconcile decision/status/IF labels and register formatting (KR-09/10), retaining the approved decision record.</li>
+<li>Complete the common exchange register, assurance chain and evaluation-versus-enforcement sequence (KR-01/07/08), with reciprocal component adoption.</li>
+<li>Complete checkpoint/activation and change-notification rules (KR-02/03), then cumulative-effect enforcement (KR-06).</li>
+<li>Complete protected reporting and recovery arrangements (KR-04/05), including the required non-kernel human-handoff and oversight boundaries.</li>
+<li>Add connected AOS-40 scenarios covering these findings, then commission the concrete scope and obtain independent review/evidence before any readiness claim.</li>
+</ol>
+<p>For each finding, retain changed source/REQ/CON/schema/VER references, its assigned owner, remaining approved-profile choices and review evidence. A finding closes only when the affected producers and consumers agree on the same controlled definition and expected failure behaviour. Merely adding another local requirement or marking a planned case as present does not close an integration gap.</p>
+<p>No general design question is resubmitted to Mark by this report. No component requirement has been approved, no verification executed, and no build or activation readiness promoted. Item 6 remains in progress; the review itself is complete.</p>
+<h2 id="7-action-1-disposition-6-october-2026">7. Action 1 disposition, 6 October 2026</h2>
+<p>At Mark’s request, reconciled document labels/references and register presentation; no new architectural direction or normative requirement was approved. AOS-00 and Specification Map remain v0.15. All five component drafts are now v0.3, with common current architecture references and §19.1 later-decision applicability records. Historical approval/source versions remain identified as derivation history.</p>
+<table>
+<thead>
+<tr>
+<th>Finding / scope</th>
+<th>Changed records / author evidence</th>
+<th>Disposition / remaining work</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KR-09 current baseline</td>
+<td>All five document-control tables and §19.1; applicable later decisions mapped to existing component anchors and residual issues</td>
+<td>Label/baseline portion complete; no fundamental responsibility conflict found in this pass. Historical origins preserved.</td>
+</tr>
+<tr>
+<td>KR-09 issue status</td>
+<td>AOS-01 ISS-011 identifies DEC-051 approved welfare direction separately from actual board instruments/legal assessment; ISS-013 identifies DEC-056 approved cumulative bounds separately from grouping, measures and enforcement detail</td>
+<td>General directions settled; organisational profiles and integration mechanisms remain open.</td>
+</tr>
+<tr>
+<td>KR-09 interface/status references</td>
+<td>AOS-01 §6 CON-002 explicitly references existing AOS-01-IF-002 / Shared Contracts §4.6; CON-003/004 name related existing decision/escalation interfaces and companion records. AOS-02 CON-004 references drafted AOS-03 v0.3 instead of “to co-draft”. AOS-01/02 next-step text now points to shared adoption.</td>
+<td>Interface labels corrected; no new IF allocated or claim of final field/schema adoption.</td>
+</tr>
+<tr>
+<td>KR-09 complete traceability</td>
+<td>§19.1 in each component records applicability and residual allocation</td>
+<td>Remains open: complete reciprocal decision/source/REQ/contract/field/VER allocation is shared-contract work. KR-09 as a whole is not closed.</td>
+</tr>
+<tr>
+<td>KR-10 register presentation</td>
+<td>Joined AOS-04 REQ-042/043 and VER-026/027 boundaries; AOS-05 REQ-046/047 and VER-034/035 boundaries</td>
+<td>Closed by author checks: four broken continuations repaired, row order/content and stable identifiers preserved.</td>
+</tr>
+</tbody></table>
+<p>Author validation compared the complete ordered requirement and planned-verification table rows before/after: all 228 proposed REQs and 137 planned VERs are unchanged. Checked the four specific table boundaries, common baseline/version labels, edited references and retained issue dispositions. These checks provide document evidence only; no executable scenario, independent review or readiness evidence was produced.</p>
+<p>Next is action 2: common exchange definitions, assurance provenance and evaluation-versus-enforcement sequence (KR-01/07/08), with reciprocal adoption and remaining KR-09 traceability. Action 3 (KR-02/03/06) and action 4 (KR-04/05) follow; item 5b remains separate.</p>
+<h2 id="8-action-2-disposition-6-october-2026">8. Action-2 disposition, 6 October 2026</h2>
+<p>Mark approved all five questions (“All agreed”): separate exact-fact assurance record; explicit incomplete status and use-specific suitability; original evaluation/checkpoint/later evidence sequence; exact supported versions or reviewed translations; purpose-specific staged acknowledgements. Recorded as DEC-062–066 in AOS-00 v0.16; Map v0.16 aligns.</p>
+<table>
+<thead>
+<tr>
+<th>Finding / logical closure scope</th>
+<th>Changed definition / reciprocal evidence</th>
+<th>Disposition / residual work</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KR-01 common exchange definitions</td>
+<td>Kernel Exchange Register v0.1 §§3–6 maps every one of 33 CON views to the same logical definition, version, single semantic owner, producer/consumers and acknowledgement/failure rules. Existing seven IFs preserved; proposed REC-D/X IF identifiers allocated in the controlled catalogue. AOS-01–05 v0.4 §6.3 adopt Core/Shared v0.2 and register v0.1.</td>
+<td>Kernel logical-definition/document-adoption pass complete. Full-suite/non-kernel endpoint adoption, wire schema/configuration and actual interoperability evidence remain open; KR-01 is not a build-readiness closure.</td>
+</tr>
+<tr>
+<td>KR-07 evaluation/enforcement sequence</td>
+<td>Core v0.2 §5.3 and register §7; AOS-03 REQ-040 now retains contemporaneous evaluation; new REQs in all five link later checkpoint/effect to exact original revision. Withheld/unknown evidence explicitly represented.</td>
+<td>Resolved at logical drafting level; current-snapshot/race mechanism remains KR-02. Independent review and execution evidence pending.</td>
+</tr>
+<tr>
+<td>KR-08 complete assurance chain</td>
+<td>REC-Q in Core v0.2 §3.4; register KX-08/KXR-03/04; AOS-02 complete-chain REQ-052, existing REQ-040–043 and all consumers’ assurance-suitability requirements/cases. Source matrix v0.2 addendum retains origin distinct from supporting validation and permitted projection.</td>
+<td>Resolved at logical drafting level; actual assessor/source profiles, use thresholds/currentness, privacy approval and executed evidence remain commissioning tasks.</td>
+</tr>
+<tr>
+<td>KR-09 traceability portion</td>
+<td>Each component §19.2 maps exact source/decision → KXR/common field → proposed REQ → planned VER → reciprocal ends; source matrix addendum records all five. Earlier derivation/history preserved.</td>
+<td>Action-2 kernel links recorded. Wider suite full source allocation and independent evidence remain open.</td>
+</tr>
+<tr>
+<td>KR-03 omitted consumer</td>
+<td>AOS-02 CON-003 explicitly includes materially dependent AOS-05; register KX-13 and reciprocal CON map agree.</td>
+<td>Catalogue omission corrected as part of reciprocal adoption; notification propagation, owner/race/application rules remain action 3.</td>
+</tr>
+</tbody></table>
+<p>Author checks: 33 unique CONs map to existing common keys; source/REQ/VER references resolve; original seven IFs stable; two companion numbers explicitly proposed; all register IDs contiguous; tables render structurally. Added 26 proposed component requirements and 30 planned cases, giving 254/167 totals. Original requirement wording preserved except AOS-03 REQ-040’s approved sequencing clarification; original planned-case rows preserved. No runtime, implementation, independent review or G2/G3/G4 claim.</p>
+<p>Next: explain action 3 and resolve detailed current-control snapshot/change-notification/cumulative-enforcement choices before drafting that pass. Action 4 protected reporting/recovery remains separate. Non-kernel GI/human-handoff adoption follows and research pilot remains open separately.</p>
+<h2 id="9-action-3-disposition-6-october-2026">9. Action-3 disposition, 6 October 2026</h2>
+<p>Mark approved recommendations 1–4 and 6, then explicitly approved recommendation 5 after adding accountable notification: separately authorised operational owner notification, actual acknowledgement/cover/escalation, traceable coalescing, owned failed-delivery exceptions and appropriate permitted resident-agreed-channel update where service is affected. Recorded DEC-067–072 in AOS-00/Map v0.17.</p>
+<table>
+<thead>
+<tr>
+<th>Finding / scope</th>
+<th>Changed logical definition and reciprocal adoption</th>
+<th>Disposition / limitations</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KR-02 current control snapshot/activation</td>
+<td>Control Coordination §§2–4/9 CHECK and ACT; exact request/attempt binding, current independent source evidence, compatible applied vector, restriction-priority fence, declared last enforceable point, pass/withhold/unresolved, irreversible crossing/impact handling. Register v0.2 changed-family versions explicit; Core/Shared v0.3 and all five v0.5 §6.4 adopt.</td>
+<td>Logically reconciled at kernel-document level. Actual fencing/partition/freshness/boundary/race values, measured bypass behavior and independent acceptance remain open. No instantaneous global revocation promise.</td>
+</tr>
+<tr>
+<td>KR-03 changes through actual application</td>
+<td>Annex §5/9 CHG; semantic/impact owner, complete known dependency scope including AOS-05, per-receiver applied/no-material-dependency/owned unresolved evidence, duplicate/conflict/effective-state handling, selective pending reassessment and significant completed consequence review.</td>
+<td>Logically reconciled. Actual routing coverage, role appointment/deadline/cover and non-kernel adoption remain commissioning tasks; recovered copy reconciliation remains KR-05.</td>
+</tr>
+<tr>
+<td>KR-06 aggregate enforcement/reservations</td>
+<td>Annex §6/9 ACC/RSV: AOS-04 linked-work/effect semantics, AOS-05 authoritative shared concurrent account, AOS-02 evidence; overlapping capacity vector, no double spend, confirmed consumption plus retained conservative uncertain reservation, release only evidenced unused, no cancellation/expiry/provider/period reset evasion.</td>
+<td>Logically reconciled. Actual measures/upper bounds/units/limits/period rules, accounting mechanism/availability and executed concurrency assurance remain open. Numeric compliance alone is not ethical approval.</td>
+</tr>
+<tr>
+<td>Withholding notification amendment</td>
+<td>Annex §7/9 WHD: named functional operational owner, minimal separately permitted route/payload, human responsibility acknowledgement, cover/escalation, traceable coalescing, owned failed-delivery exception, resident update through agreed channels where appropriate. Acknowledgement is not underlying service completion.</td>
+<td>Approved and drafted across all five components. Actual independently usable route, human cover/capacity and shared-control failure operation remain KR-04/action 4; inability to notify never authorises blocked execution.</td>
+</tr>
+<tr>
+<td>Controlled resumption</td>
+<td>Annex §8 BRK/CHECK/RSV and component §10.6: reconcile prior effects, fresh current controls/accounts and applicable human approval; no restart queue replay or release of uncertain exposure.</td>
+<td>Logical direction specified; authoritative recovery input/proof remains KR-05/action 4.</td>
+</tr>
+</tbody></table>
+<p>Added 40 proposed component REQs and 40 planned VERs: current totals 294/207 (01 57/34; 02 60/38; 03 55/39; 04 59/44; 05 63/52). All prior v0.4 requirement and planned-case rows retained unchanged. Each new row maps through source/decision → KCR → common field → CON/producer-consumer → planned VER/KCV, with matrix v0.3 addendum. Author checks cover table/identifier/link/reciprocal-version integrity; no scenario executed, implementation selected, independent review or readiness gate promoted.</p>
+<p>Next: explain action 4 and present required decisions for protected reporting despite shared-control failure and authoritative current-state/effect recovery proof. Non-kernel GI/human-handoff adoption, role/profile/technology commissioning and executed independent evidence remain item 6; research pilot item 5b stays separate.</p>
+<h2 id="10-action-4-disposition-6-october-2026">10. Action-4 disposition, 6 October 2026</h2>
+<p>Mark approved all six reporting/recovery recommendations and asked that standard-derived provisions be referenced. Recorded DEC-073–078 in AOS-00/Map v0.18; AOS-00/Map v0.18; AOS-01–05 v0.6; Core/Shared v0.4; Exchange Register v0.3; Control Coordination v0.2; <a href="../Foundation/aos-kernel-protected-reporting-and-recovery-v0-1.html">Protected Reporting and Recovery v0.1</a>. Added 30 proposed REQs and 30 planned VERs: totals 324/237. Common logical protocols/dictionaries and all relevant existing CON views are adopted reciprocally by the five components; prior REQ/VER records and IF/CON identities preserved.</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Current disposition</th>
+<th>Evidence / limitation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KR-04 protected reporting during shared-control failure</td>
+<td>Logically reconciled at kernel-document level</td>
+<td>Annex §§2/3/5: separate authorised fallback, assessed dependencies/permissions/recipients/custody, distinct human acceptance, owned failed-fallback exception and continuing resident duty. Actual independent route, staffing, times and delivery proof open.</td>
+</tr>
+<tr>
+<td>KR-05 recovery cannot revive obsolete controls/data/effects</td>
+<td>Logically reconciled at kernel-document level</td>
+<td>Annex §§4/5: authoritative integrity/currentness/completeness, isolated applied dispositions, configuration validation, conservative effect/reservation reconciliation and empowered scoped acceptance. Actual recovery mechanisms and execution proof open.</td>
+</tr>
+<tr>
+<td>Standards traceability</td>
+<td>Primary edition/scope and selected public-control provenance recorded</td>
+<td>Annex §7 distinguishes direct NIST design principles, AOS-specific choices and ISO scope alignment; licensed ISO clause verification/applicability remain open. No equivalence/certification claim.</td>
+</tr>
+</tbody></table>
+<p>Author checks: identifiers/contiguous register numbering, preserved earlier numeric rows, table structure, proposed requirement/planned case links, 33 original CON allocations and document references. This is author document review, not execution, sufficiency assurance or independent acceptance. All original high-priority kernel integration findings now have logical dispositions; commissioning/non-kernel/whole-suite source and independent assurance remain open. Next read current GI charter/human-handoff material before recommending further drafting; research pilot remains separate.</p>
+</main></body></html>

@@ -1,0 +1,1490 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AOS kernel exchange register and reciprocal adoption · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-kernel-exchange-register-v0-1.pdf">PDF</a> &nbsp; <a href="aos-kernel-exchange-register-v0-1.md">Markdown</a></nav><main><h1 id="aos-kernel-exchange-register-and-reciprocal-adoption">AOS kernel exchange register and reciprocal adoption</h1>
+<p>Document: aos-kernel-exchange-register-v0-1 · Source revision or record: v0.26</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p><strong>DEC-105 adopted — 29 October 2026:</strong> Current revision 0.26. Operational technical-control reliance requires declared scope/limits and accepted observed enforcement/failure/recovery evidence; build/prototype and G4/live approval gates remain separate. <a href="../Supporting-Specifications/aos-dec-105-technical-control-limits-and-evidence-2026-10-29.html">Decision/amendment record</a>. Earlier counts/baselines are dated history; current inventory and annex addendum control catalogue navigation. Existing non-waivable rules and DEC-099–104 retained; all new cases/variants remain planned/unexecuted.</p>
+<p><strong>DEC-104 adopted — 29 October 2026:</strong> Current revision 0.25. Each mandatory protected-finding category requires assessed technical-failure and implicated-person interference arrangements with an appropriately independent authorised alternative and no implicated sole release gatekeeper. <a href="../Supporting-Specifications/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29.html">Decision/amendment record</a>. External reporting is conditional on justified lawful authority, not a default. Exact profiles/permissions, protected_finding v0.3 compatibility and actual evidence remain gates; amended wording retains ordinary separate review and cases are planned/unexecuted. Earlier contrary or narrower baselines are history for this scope.</p>
+<p><strong>DEC-103 adopted — 29 October 2026:</strong> Current revision 0.24. Decision validity/effective time, attributable evidence/authentication, minutes approval and permission to execute are separate. DEC-087 is partly superseded; <a href="../Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.html">decision/amendment and legal-source record</a>. No universal later-minutes or second decision-record approval gate. Exact instruments/evidence policy, KX-06 v0.3 compatibility and ordinary separate review/readiness gates remain required; cases unexecuted. Earlier contrary wording is historical only where explicitly identified.</p>
+<p><strong>DEC-102 adopted — 29 October 2026:</strong> Mark approved demonstrated adequacy of organisation-defined classifications/settings against governing constraints. Current document revision 0.23; see the <a href="../Supporting-Specifications/aos-dec-102-classification-and-configuration-adequacy-2026-10-29.html">decision and amendment record</a>. Earlier baselines are dated history. DEC-099–101 retained; detailed amended requirements remain subject to separate review/readiness gates and cases remain planned/unexecuted.</p>
+<p><strong>DEC-100 adopted — 29 October 2026:</strong> Mark approved separate advance-authorised minimum control-metadata access. Current document revision 0.22; this notice supersedes earlier baseline notices for the affected scope only. See the <a href="../Supporting-Specifications/aos-dec-100-control-metadata-access-2026-10-29.html">decision and amendment record</a>. DEC-099 remains approved. Requirements remain proposed wording implementing the approved direction; cases remain planned/unexecuted and ordinary separate review/readiness gates apply.</p>
+<p><strong>DEC-099 adopted — 29 October 2026:</strong> Mark approved the derived-information restriction rule. Current document revision 0.21; earlier functional/editorial baselines below are retained history. The <a href="../Supporting-Specifications/aos-dec-099-derived-information-restrictions-2026-10-29.html">decision and controlled amendment record</a> governs this change. Existing requirement/case/IF identities are retained; amended wording remains subject to the normal separate review and readiness gates. No case execution or operating approval is implied.</p>
+<p><strong>Editorial edition — 29 October 2026:</strong> Mark authorised documentary corrections D-01–09. This edition reconciles navigation, count/revision pointers, conformance links and historical scope labels; existing technical meanings, requirement/IF/decision identities and proposed/planned status are retained. The internal version below identifies the retained functional baseline; this dated editorial edition identifies the corrected document. See the <a href="../Supporting-Specifications/aos-current-document-inventory-2026-10-29.html">current document inventory</a> and <a href="../Supporting-Specifications/aos-documentary-corrections-2026-10-29.html">correction record</a>. Earlier dated adoption baselines are historical snapshots; exact logical family/view revisions are in Exchange Register §4.</p>
+<p>Version: 0.26<br>Date: 29 October 2026<br>Status: logical review draft; DEC-062–078 directions approved by Mark; field/requirement wording proposed, cases planned. No implementation, independent review or readiness claim.</p>
+<p><strong>Historical action-3 supplement:</strong> <a href="aos-kernel-control-coordination-v0-1.html">Kernel Control Coordination v0.1</a> defines combined checks, applied activation/changes, shared account/reservation, withholding notification and resumption under DEC-067–072. KR-02/03/06 are reconciled logically; commissioned mechanisms/values and independent execution evidence remain open. Original action-2 directions DEC-062–066 stand.</p>
+<p><strong>Action-4 protocol reference (originating baseline):</strong> <a href="aos-kernel-protected-reporting-and-recovery-v0-1.html">Protected Reporting and Recovery v0.1</a> and §11 supply approved DEC-073–078 protocols and changed-view declarations; Core/Shared v0.4, coordination v0.2 and components v0.6 adopt them. Standards derivation/alignment is annex §7.</p>
+<p><strong>Historical AOS-20 initial adoption reference:</strong> §12 maps AOS-20 v0.1 against AOS-00/Map v0.20 and Shared v0.5/Core v0.4; unchanged kernel views retain dated component baseline references.</p>
+<h2 id="1-controlled-scope-and-ownership">1. Controlled scope and ownership</h2>
+<p>This is the common logical register for the33 original kernel CON views, additional common research views and current reciprocal component adoption. Current kernel01–05v0.8, Architecture/Mapv0.45 and DEC001–097 govern; later supplements record exact allocations. FPv4/RPv6/GT remain governing sources. Earlier definition-generation references are history, not alternative current ownership. AOS-02 coordinates structures; the single semantic owner below governs meaning. Producer and consumer obligations are reciprocal. An organisation appoints the accountable roles and approves its own profiles; specification ownership is not a person appointment.</p>
+<p>Existing seven IF identifiers are preserved. This controlled catalogue allocates <strong>proposed AOS-03-IF-001</strong> to REC-D and <strong>proposed AOS-04-IF-001</strong> to REC-X; identifier allocation is document control, not approval of the schema or live interface. KX identifiers are stable local definition keys in this annex, not additional approved IFs. Where an existing IF carries several views, the views remain linked definitions rather than independently owned alternatives.</p>
+<p>Core Record Contractsv0.11 is the single field definition for REC-E/A/D/X and the linked REC-Q assurance record. Shared Contractsv0.27 §4 remains the definition for the seven original IFs. This register supplies additional common supporting shapes, explicit version/acknowledgement rules and reciprocal allocation. It does not duplicate those dictionaries. Differences must be resolved through controlled amendment, never by silently selecting a later date.</p>
+<h2 id="2-approved-detailed-directions">2. Approved detailed directions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Direction / applicable definitions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DEC-062</td>
+<td>Assurance is a separate record linked to an exact fact revision; retain supporting evidence, method/version, validator, accountable role, assessment date, scope and limitations. Multiple assessments and disagreement coexist. KX-01/08; REC-Q.</td>
+</tr>
+<tr>
+<td>DEC-063</td>
+<td>Admit evidence with explicit unassessed/partial/disputed/validated-for-purpose status; the intended use sets required assurance. Admission is not suitability for action. KX-01/08; REC-Q.</td>
+</tr>
+<tr>
+<td>DEC-064</td>
+<td>Keep original permission/evaluation, pre-action checkpoint, and later enforcement/observed-effect evidence distinct and linked. Withheld operations retain blocker/control evidence; later links do not rewrite the decision. KX-02/03/04.</td>
+</tr>
+<tr>
+<td>DEC-065</td>
+<td>Exchange exact definition revisions; accept supported versions or a reviewed meaning/restriction-preserving translation. Declare permitted losses and use suitability. Reject or hold incompatible exchanges unresolved. KX-10/21 and every family.</td>
+</tr>
+<tr>
+<td>DEC-066</td>
+<td>Declare required receipt/validation/application/human-responsibility acknowledgements by exchange purpose. Delivery does not establish later stages; information-only exchanges need no human acknowledgement unless their purpose requires it. KX-21 and every family.</td>
+</tr>
+</tbody></table>
+<h2 id="3-shared-logical-types-and-envelope">3. Shared logical types and envelope</h2>
+<p>R means exactly one required value; C means required under the stated condition; O optional. <code>ref</code> is an exact organisation, identity and revision triple; <code>refs</code> is a collection of such triples. Unqualified collection cardinality is R 0..n; where at least one member is necessary the definition says R 1..n. A required collection can be empty only with an explicit reason permitted by the named profile. No absent bound means unlimited power.</p>
+<p><code>key</code> is a nonempty controlled semantic identifier; <code>text</code> is explanatory content governed by access rules, not executable instructions. <code>time</code> is a tagged calendar date or timestamp: preserve precision and calendar/time basis; timestamps name zone/offset and known clock uncertainty. <code>quantity</code> contains value, unit and approved range/profile; quantities with incompatible units are invalid without a reviewed conversion. <code>scope</code> contains typed subjects, fields/operations, purpose and organisation boundary plus the exact profile. <code>value</code> is tagged known, unknown, unavailable, withheld or not_applicable; non-known tags require reason and governing profile. Withheld values reference an authorised disclosure rule. Mandatory unknown values cannot satisfy a dependent favourable check.</p>
+<p>Every supporting shape in §5 uses Core Records §2.1 shared header, extended by these exchange fields; existing REC headers consume the same fields through the Core v0.3 amendment:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Cardinality / type</th>
+<th>Acceptance rule</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>definition_key / definition_revision</td>
+<td>R key; R key</td>
+<td>Exact KX/family and revision; never infer compatibility from a version number.</td>
+</tr>
+<tr>
+<td>sender / intended_receivers</td>
+<td>R ref; R 1..n refs</td>
+<td>Authorised producer and declared receiving roles/components, without uncontrolled broadcast. Each receive/use is independently permitted.</td>
+</tr>
+<tr>
+<td>payload_binding</td>
+<td>R ref or governed structured payload</td>
+<td>Exact content/revision and restrictions. Material content change creates a new revision.</td>
+</tr>
+<tr>
+<td>ordering_scope / event_identity</td>
+<td>R scope; R key</td>
+<td>Declared per-entity/case/request scope and duplicate identity; no universal total order.</td>
+</tr>
+<tr>
+<td>profile_manifest</td>
+<td>R 1..n refs</td>
+<td>Schema/vocabulary/access/assurance/acknowledgement profiles needed for this exchange. Unresolved profile blocks the dependent use.</td>
+</tr>
+<tr>
+<td>required_ack_stages</td>
+<td>R set from receipt, validation, application, responsibility</td>
+<td>Purpose-specific obligations; empty only with explicit approved information-only basis. Actual effect is separate REC-X evidence.</td>
+</tr>
+<tr>
+<td>compatibility_evidence</td>
+<td>C ref</td>
+<td>Required if receiver interprets a different revision through an accepted mapping. KX-10.</td>
+</tr>
+<tr>
+<td>assurance_refs</td>
+<td>R refs</td>
+<td>Exact REC-Q assessments, or explicit unassessed state for evidence without assessment. Empty is not assurance of truth.</td>
+</tr>
+<tr>
+<td>obligation_refs</td>
+<td>R refs</td>
+<td>Continuing duties, including unavailable/rejected exchanges; empty with explicit no-duty basis.</td>
+</tr>
+</tbody></table>
+<p>Conflicting contents under the same identity/revision are rejected as conflict, with permitted evidence preserved; identical repeats may be acknowledged against the original but do not refresh permissions or establish a new effect. Corrections are new revisions linked to the original, under the approved retention/deletion policy. Receiving systems validate types/cardinalities/vocabularies, organisation, role, references, version, purpose and restrictions before reliance. Secret values and unnecessary private content never enter the header. A permitted projection can replace protected content only if the intended consumer can still establish the required meaning; otherwise the dependent conclusion remains unresolved.</p>
+<h2 id="4-current-logical-familyview-revision-and-owner-index-29-october-2026">4. Current logical family/view, revision and owner index — 29 October 2026</h2>
+<p>This is the single current family/view revision and ownership index. Sections 10–20 preserve dated adoption and reciprocal allocations; an older baseline in those records is not an alternative live revision. Core v0.11 and Shared v0.27 are current dictionary documents; family/view revisions below are separate identities, not those document version numbers. Existing logical revisions are reconciled here; this editorial correction allocates no new IF, changes no field meaning and infers no executable compatibility.</p>
+<p><strong>KX-04 record versus CHECK view:</strong> AOS-04 remains the semantic owner of REC-X execution behaviour. AOS-05 supplies and owns the combined runtime CHECK evidence defined in Control Coordination v0.3 §9. <code>REC-X.final_control_check</code> references that CHECK; a checkpoint is not the later observed effect and does not transfer ownership of the enclosing REC-X record. AOS-02 supplies shared structure/custody. The current Core §6 field dictionary and Coordination §9 must be read together.</p>
+<p>Consumers below include kernel recipients and known non-kernel boundary roles. Every other producer/consumer must be registered explicitly before commissioning that scope. External/domain/oversight/human components are declared dependencies; the original table records kernel-end allocation; current SENSING-ADOPTION-2026-10-09 below explicitly adopts the domain/assurance ends.</p>
+<table>
+<thead>
+<tr>
+<th>Key / declared definition revision</th>
+<th>Single semantic owner</th>
+<th>Producers → kernel consumers; additional dependent consumers</th>
+<th>Single definition / required acknowledgement stages</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KX-01 Evidence, AOS-02-IF-001 / REC-E; definition v0.1</td>
+<td>AOS-02</td>
+<td>Permitted adapters/domains/humans → 01/02/03/04/05 as permitted; 13/14/21–25</td>
+<td>Core v0.11 §§2–3; receipt, validation; application if an affected index/projection is being updated.</td>
+</tr>
+<tr>
+<td>KX-02 Authority, AOS-01-IF-001 / REC-A; definition v0.2</td>
+<td>AOS-01</td>
+<td>Authority control → 03/04/05, 02 permitted custody; 13/14/requesters</td>
+<td>Core v0.11 §4; receipt, validation; consumption/checkpoint evidence is KX-04, not new authority.</td>
+</tr>
+<tr>
+<td>KX-03 Data use, proposed AOS-03-IF-001 / REC-D; definition v0.2</td>
+<td>AOS-03</td>
+<td>Use control → 01/02/04/05; permitted processing components</td>
+<td>Core v0.11 §5; receipt, validation; original result stays reconstructable.</td>
+</tr>
+<tr>
+<td>KX-04 Execution, proposed AOS-04-IF-001 / REC-X; definition v0.2</td>
+<td>AOS-04</td>
+<td>Executor plus AOS-05 observations → 01/02/03/04/05 as permitted; 13/14/25</td>
+<td>Core v0.11 §6; receipt, validation; result/effect and remaining duties separate.</td>
+</tr>
+<tr>
+<td>KX-05 Policy amendment/activation, AOS-01-IF-002; definition v0.2</td>
+<td>AOS-01</td>
+<td>Authorised governance workflow → 01/03/04/05, 02 custody; 21/25/30</td>
+<td>Shared v0.27 §4.6; receipt, validation, application; human approval is KX-06 evidence.</td>
+</tr>
+<tr>
+<td>KX-06 Human decision/debrief, AOS-30-IF-001; definition v0.3</td>
+<td>AOS-30</td>
+<td>Authorised post-meeting human workflow → 01/02/03/04/05 when relied on; 20/21/22/23/24/25 where purpose-permitted and relevant</td>
+<td>AOS-30 v0.7 §6.2 / DEC-103 adoption below and Shared v0.27 §4.5; receipt, validation; actual powers/process and sufficient policy-assessed evidence required; decision validity, authentication, minutes approval and execution distinct. No universal later-minutes/second approval; prior v0.1/v0.2 retained history, no implicit compatibility.</td>
+</tr>
+<tr>
+<td>KX-07 Escalation, AOS-13-IF-001; definition v0.1</td>
+<td>AOS-13</td>
+<td>Authorised finding producer → kernel sender/tracker or recipient within powers; 13/20/25/30/domain humans</td>
+<td>Shared v0.27 §4.3; receipt, validation, responsibility and applicable application/follow-up.</td>
+</tr>
+<tr>
+<td>KX-08 Fact assurance / REC-Q; definition v0.1</td>
+<td>AOS-02</td>
+<td>Authorised assessor/validator → 01/02/03/04/05 as permitted; analytical/oversight consumers</td>
+<td>Core v0.11 §3.4; receipt, validation; use-specific suitability assessed separately.</td>
+</tr>
+<tr>
+<td>KX-09 Entity/source identity; definition v0.1</td>
+<td>AOS-02</td>
+<td>Source steward/adapters → 01/02/03/04/05 as needed; domain/analysis consumers</td>
+<td>§5.1; receipt, validation, application for changed mapping; entity match is not actor assurance.</td>
+</tr>
+<tr>
+<td>KX-10 Definition/mapping compatibility; definition v0.1</td>
+<td>AOS-02</td>
+<td>Schema/standards registry with semantic-owner review → all kernel producers/consumers; adapters</td>
+<td>§5.2; receipt, validation, application if compatibility configuration changes.</td>
+</tr>
+<tr>
+<td>KX-11 Identity/capacity assurance; definition v0.1</td>
+<td>AOS-03</td>
+<td>Authorised identity/representation registrar → 01/02/04/05; 14/30</td>
+<td>§5.3; receipt, validation; application for changed bindings.</td>
+</tr>
+<tr>
+<td>KX-12 Consent/basis expression and state; definition v0.1</td>
+<td>AOS-03</td>
+<td>Person/verified representative via permitted workflow → 01/02/03/04/05 where dependent; 11/12/13/14</td>
+<td>§5.4; receipt, validation; application to dependent state required, responsibility if unresolved human duty.</td>
+</tr>
+<tr>
+<td>KX-13 Change/impact notice; definition v0.2</td>
+<td>AOS-02</td>
+<td>Source/authority/use semantic owners → all materially dependent kernel consumers; 13/14/21–25/30</td>
+<td>§5.5; receipt, validation, application; responsibility for owned unresolved impact. Routing/checkpoint logical protocol now in Control Coordination §§3–5; mechanism/profile values remain commissioned.</td>
+</tr>
+<tr>
+<td>KX-14 Permitted disclosure/explanation; definition v0.1</td>
+<td>AOS-03</td>
+<td>Permitted projector/rendering workflow → authorised kernel audience; 14/20/24/30/resident/workforce</td>
+<td>§5.6 plus KX-03/04; receipt, validation; human acknowledgement only where underlying duty requires it.</td>
+</tr>
+<tr>
+<td>KX-15 Data lifecycle/location disposition; definition v0.1</td>
+<td>AOS-03</td>
+<td>Authorised privacy/record-class workflow → 02/04/05; 14/domain custodians</td>
+<td>§5.7; receipt, validation, application to declared copy/use scope; Protected Reporting and Recovery §§4–5 supplies the logical recovery rule; actual currentness/deletion evidence remains a commissioning prerequisite.</td>
+</tr>
+<tr>
+<td>KX-16 Agent definition/task/lifecycle/memory; definition v0.2</td>
+<td>AOS-04</td>
+<td>Authorised lifecycle registrar/coordinator/executor → 01/02/03/04/05; 13/25/30</td>
+<td>§5.8 distinct views; receipt, validation; application for lifecycle/assignment/memory disposition, responsibility for human duty transfer.</td>
+</tr>
+<tr>
+<td>KX-17 Evaluation/feedback; definition v0.1</td>
+<td>AOS-04</td>
+<td>Assessor/monitor → 02/04/05; approver/25/40</td>
+<td>§5.9; receipt, validation; accepted release is a separate KX-06/20 event.</td>
+</tr>
+<tr>
+<td>KX-18 Deployment/privileged operation; definition v0.2</td>
+<td>AOS-05</td>
+<td>Approved release/operator workflow → 01/02/03/04/05; reviewers</td>
+<td>§5.10 distinct views; receipt, validation, application for deployment/access effects, governed reviewer responsibility where required.</td>
+</tr>
+<tr>
+<td>KX-19 Health/incident/protected finding; protected_finding definition v0.3; other views v0.1</td>
+<td>AOS-05</td>
+<td>Monitors/empowered incident workflow → 01/02/03/04/05 as needed; service owner/13/20/25/30</td>
+<td>§5.11 distinct views; receipt, validation; application for containment, responsibility for protected handoff. Protected Reporting and Recovery v0.3 §§3/5 defines protected_finding v0.3; actual independent-route evidence remains a commissioning prerequisite.</td>
+</tr>
+<tr>
+<td>KX-20 Recovery/release/supplier assessment; recovery definition v0.2; other views v0.1</td>
+<td>AOS-05</td>
+<td>Approved recovery/release/professional workflow → 01/02/03/04/05; 13/14/reviewer/40</td>
+<td>§5.12 distinct views; receipt, validation, application for changed/restored scope; approval/custody duty uses KX-06/07. Protected Reporting and Recovery §§4/5 defines recovery v0.2; actual recovery mechanism/evidence remains a commissioning prerequisite.</td>
+</tr>
+<tr>
+<td>KX-21 Acknowledgement/rejection; definition v0.2</td>
+<td>AOS-02</td>
+<td>Actual recipient/applier/empowered human → sender/tracker, 02 permitted custody; semantic-owner oversight</td>
+<td>§5.13; no recursive acknowledgement of acknowledgements; a duty-bearing rejection links KX-07 obligation.</td>
+</tr>
+<tr>
+<td>KX-22 Canonical analysis, AOS-20-IF-001; definition v0.1</td>
+<td>AOS-20</td>
+<td>GI analysis workflow → kernel permitted custody/control consumer; 24/25/30/executives</td>
+<td>Shared v0.27 §4.4; receipt, validation; review and human decisions are distinct.</td>
+</tr>
+<tr>
+<td>KX-23 External exchange, AOS-14-IF-001; definition v0.1</td>
+<td>AOS-14</td>
+<td>Controlled ingress/egress → kernel control/evidence/executor consumer; permitted external party</td>
+<td>Shared v0.27 §4.7; receipt, validation; external effect KX-04; responsibility when obligation requires it.</td>
+</tr>
+</tbody></table>
+<p>| KX-24 Cumulative account / ACC; definition v0.1 | AOS-05 | AOS-04 demand/profile and AOS-01/03 constraints → authoritative AOS-05 accounting; AOS-02 custody and permitted consumers | Control Coordination v0.3 §9 ACC; all applicable scopes and units, conservative uncertain exposure; no authority grant. |
+| KX-25 Reservation / RSV; definition v0.1 | AOS-05; AOS-04 supplies effect semantics | Authoritative runtime accounting → execution/control/evidence consumers | Control Coordination v0.3 §9 RSV; exact demand-vector admission and reconciliation; no release solely on expiry/cancellation. |
+| KX-26 Withholding/continuing duty / WHD; definition v0.2 | AOS-04 | Blocker/service workflow with AOS-05 evidence → permitted control, AOS-13/30 and service consumers; AOS-02 custody | Control Coordination v0.3 §9 WHD plus Protected Reporting and Recovery §5; v0.1 is historical; staged acknowledgement and accepted responsibility remain distinct. |</p>
+<p><strong>DEC-099 dependent-use rule:</strong> KX-01/REC-E lineage/restriction evidence and KX-03/REC-D permitted-use assessments are subject to the approved combined-source rule in Core v0.11 / Shared v0.27 and AOS-02/03 v0.9. Family/view IDs are retained. No wire-schema or logical-view revision is allocated by this direction alone: profiles must explicitly bind the revised normative rule, exact accepted definitions and compatibility/evidence before dependent reliance; an older producer/consumer revision is not silently deemed conformant.</p>
+<p><strong>DEC-100 checking-service dependency:</strong> REC-A/KX-02 and REC-D/KX-03 assess requests under the independently verifiable advance metadata permission defined in Core v0.11 / Shared v0.27 and AOS-01/03 REQ-069. Their existing family/view keys are retained; the approved metadata profile and compatibility/verification evidence must be bound explicitly before dependent reliance. A favourable business result cannot supply the checker’s permission.</p>
+<p><strong>DEC-102 profile-adequacy gate:</strong> An applicable approved profile/classification also requires evidence that it preserves governing constraints, under Shared v0.27 / Operational Profiles v0.3 and AOS-01 REQ-015/070. Missing or inadequate evidence blocks dependent reliance; a profile reference, label or approval alone is insufficient. Existing family/view identities remain unchanged; exact compatibility must still be assessed.</p>
+<p><strong>DEC-103 reciprocal adoption — KX-06 v0.3:</strong> AOS-30 v0.7 owns the revised four-axis decision/evidence meaning; AOS-02 v0.10 common record/custody and Core v0.11 / Shared v0.27 carry it. AOS-01 v0.11, 03 v0.11, 04/05 v0.9, 14 v0.9, 20/21 v0.7, 22/23 v0.6, 24 v0.5, 25 v0.4 and 40 v0.11 explicitly preserve these independent states for their relevant permitted reliance. Operational Profiles v0.4 binds the actual evidence/approval rules. Receipt/application is not legal validity or substantive judgement. Old v0.2 consumers cannot be silently treated as v0.3: approved exact wire/profile/field mappings and endpoint acceptance evidence remain gates. No older dated adoption row constitutes present compatibility proof.</p>
+<p><strong>DEC-104 reciprocal protected-reporting adoption:</strong> Protected Reporting and Recovery v0.3 supplies the class/profile and protocol; KX-19 protected_finding v0.3 route/dependency evidence includes technical and implicated-person/sole-release control risks and approved appropriately independent alternatives. Current kernel01/02/03/04/05, GI20, Oversight25, Hub30 and40 explicitly adopt their relevant authority/record/use/task/runtime/recipient/acceptance duties; use the current document inventory for exact document revisions. Existing KX-19 health/incident v0.1, KX-20 recovery v0.2 and KX-26 v0.2 remain distinct and unchanged. No old v0.2 producer/consumer is assumed compatible: bind exact profiles, mappings, permissions, endpoint acceptance and actual evidence before dependent reliance.</p>
+<p><strong>DEC-105 technical-control evidence dependency:</strong> Current profile/coordination/recovery document revisions add operational assurance gates for the existing record meanings. AOS-05 v0.11 REQ-077 / VER-065 and AOS-40 v0.13 REQ-041 / VER-039-V01/V02 bind declared scope/limits to actual boundary/account/recovery observations. No family/view key or revision is changed by this assurance addition; exact schema/profile/compatibility and actual evidence remain required. An intention, model refusal, previous snapshot or test-only prototype is not operational control evidence.</p>
+<h2 id="5-additional-logical-field-definitions">5. Additional logical field definitions</h2>
+<p>These definitions supply exact common minimum shapes. Extension fields require an identified version, semantic owner and reviewed compatibility. Transport identifier syntax, domain dictionaries, clock tolerances and operational values are commissioned profiles, not guessed defaults. Every view has its own record identity, declared view key and exact header even when several views share a family.</p>
+<h3 id="51-kx-09-entitysource-mapping">5.1 KX-09 entity/source mapping</h3>
+<p>R: <code>source_entity:ref</code>, <code>canonical_entity:ref</code>, <code>relationship:key</code> (equivalent, related, split_from, merged_from, disputed), <code>matching_rule:ref</code>, <code>mapping_status:key</code> (proposed, accepted, disputed, superseded, restricted), <code>effective_scope:scope</code>, <code>evidence:refs 1..n</code>. C: <code>review_decision:ref</code> for uncertain/destructive acceptance; <code>prior_mapping:refs 1..n</code> for merge/split/correction. O: <code>confidence:value</code>, only with method/profile. Lifecycle proposed → accepted/disputed → superseded/restricted; source identities preserved. Uncertain match cannot be promoted solely by score/name/address.</p>
+<h3 id="52-kx-10-schematranslation-compatibility">5.2 KX-10 schema/translation compatibility</h3>
+<p>R: <code>source_definition:ref</code>, <code>target_definition:ref</code>, <code>mapping_revision:ref</code>, <code>field_map:rows 1..n</code>, <code>scope:scope</code>, <code>review:ref</code>, <code>status:key</code> (proposed, accepted, rejected, superseded). Each field-map row requires source/target paths, type/cardinality, units/code/time conversion, loss/value-status handling and meaning/restriction impact. R: <code>losses:rows 0..n</code>, <code>acceptance_cases:refs 1..n</code>; C <code>use_acceptance:ref</code> if loss occurs, proving acceptability for this intended use. No loss of permission, purpose, material uncertainty or required assurance can qualify as a valid translation. Lifecycle proposed → reviewed accepted/rejected → superseded. Major/minor labels alone prove nothing. Unknown mandatory fields cannot be discarded; harmless optional extension may be ignored only under this exact accepted mapping.</p>
+<h3 id="53-kx-11-actor-identitycapacity">5.3 KX-11 actor identity/capacity</h3>
+<p>R: <code>actor:ref</code>, <code>identity_subject:ref</code>, <code>operation_class:scope</code>, <code>assurance_method:ref</code>, <code>verification_evidence:refs 1..n</code>, <code>assurance_result:key</code> (verified, unverified, unresolved), <code>validity:profile terms</code>, <code>limitations:values</code>. C: <code>represented_principal:ref</code>, <code>representation_scope:scope</code>, <code>mandate_evidence:refs 1..n</code> if acting for another; <code>accessible_alternative:ref</code> where used. Role membership is evidenced at the relevant time. Verified for one class is not verified for every operation; failed verification does not imply refusal of all permitted public/assisted service. Later change links KX-13; propagation logical protocol now in Control Coordination §5; operational settings/evidence remain open.</p>
+<h3 id="54-kx-12-consentbasis-state">5.4 KX-12 consent/basis state</h3>
+<p>R: <code>subject:ref</code>, <code>expression:key</code> (grant, refuse, withdraw, change, expire, unresolved), <code>scope:scope</code>, <code>notice_revision:ref</code>, <code>basis_record:ref</code>, <code>expression_evidence:refs 1..n</code>, <code>effective_time:time</code>, <code>state_revision:ref</code>, <code>accessible_route:ref</code>. C: representative binding via KX-11; prior expression/state for change; required human determination for exception. Silence/non-engagement cannot populate grant. Other lawful basis records remain distinct and cannot be fabricated to defeat withdrawal. Expression evidence may be pending/unresolved; processing reliance cannot assume grant. Application acknowledgement records actual dependent state change, not delivery alone.</p>
+<h3 id="55-kx-13-correctionrestrictionimpact">5.5 KX-13 correction/restriction/impact</h3>
+<p>R: <code>change_kind:key</code> (source_correction, dispute, identity_change, authority_change, consent_change, lifecycle_restriction, deletion_disposition), <code>subject_scope:scope</code>, <code>old_revision:ref</code>, <code>new_revision:ref</code>, <code>reason_and_basis:refs 1..n</code>, <code>effective_time:time</code>, <code>dependency_set:refs</code>, <code>impact_owner:ref</code>, <code>impact_result:key</code> (unassessed, affected_pending, no_material_dependency, completed_consequence_review, unresolved), <code>remaining_duties:refs</code>. C: accountable review for significant completed consequence; reassessment refs for affected pending work; deletion/restriction disposition for lifecycle changes. Notification references are not proof of delivery/application. Control Coordination §§3–5 now fixes logical delayed/duplicate/out-of-order handling, combined state and impact routing; exact mechanisms/values and executed evidence remain open.</p>
+<h3 id="56-kx-14-disclosureprojection">5.6 KX-14 disclosure/projection</h3>
+<p>R: <code>source_records:refs 1..n</code>, <code>canonical_revision:ref</code>, <code>recipient_scope:scope</code>, <code>purpose:ref</code>, <code>data_use_result:ref</code>, <code>projection_definition:ref</code>, <code>projected_payload:governed ref</code>, <code>material_limits:values</code>, <code>assurance_refs:refs</code>, <code>withholding:key</code> (none, partial, complete). C: <code>exception_review:ref</code> when required material is withheld; channel agreement and selected channels for resident contact; REC-X for attempted disclosure. Projection preserves material meaning/uncertainty and approval status; inaccessible required evidence is unresolved, not invented validation. An explanation is not disclosure permission.</p>
+<h3 id="57-kx-15-lifecyclelocation">5.7 KX-15 lifecycle/location</h3>
+<p>R: <code>record_class:key</code>, <code>subject_copy_scope:scope</code>, <code>inventory:refs 1..n</code>, <code>policy:ref</code>, <code>disposition:key</code> (retain, restrict, correct, delete, transfer_custody, unresolved), <code>basis:refs 1..n</code>, <code>location_assessment:ref</code>, <code>approval:ref or explicitly unresolved value</code>, <code>outcome:key</code> (proposed, approved, applied, partial, indeterminate, blocked), <code>permitted_disposition_evidence:refs</code>. C: prior disposition, conflict/human decision, affected providers/backups/caches, continuing duty/custody. Proposed/approved is not applied; deletion cannot retain hidden payload. Protected Reporting and Recovery §§4–5 defines the current logical recovery-source/currentness requirements; actual commissioned proof remains open.</p>
+<h3 id="58-kx-16-agent-views">5.8 KX-16 agent views</h3>
+<p><code>definition</code>: R principal/instance refs, definition/deployment refs, accountable owner, capability/tool/profile refs, validity and lifecycle state (candidate, active, suspended, retired); C approval/restriction/successor refs. <code>task</code>: R task ref, purpose, requester/receiver, scope, permitted outputs, constraints, evidence refs, budget profile and expiry terms; C parent/delegation refs. <code>lifecycle</code>: R subject revision, old/new state, authority, reason, effective time, affected work and continuing duties; C successor/approval/evaluation refs. <code>memory</code>: R task binding, permitted-use result, exact source/derived refs, assurance refs, purpose/restrictions, retention/lifecycle profile, status (task_scoped, approved_persistent, restricted, disposed); C approved persistent capability and receiving-use basis when beyond the task.</p>
+<p>Each named element is typed ref/refs/scope/key/time or profile terms according to §§3/4; named constraints are typed profile values, not free instructions. Definition lifecycle, task state, attempt state, observed effect and human case state are distinct fields, never one shared status. Task states: proposed, accepted, running, blocked, completed, cancelled, indeterminate; completed requires its defined output evidence, not case closure. Assignment is not permission; receiver independently establishes controls. Control Coordination §6 now fixes authoritative cumulative accounting/reservation semantics; exact measures/values and implementation remain commissioned.</p>
+<h3 id="59-kx-17-evaluation">5.9 KX-17 evaluation</h3>
+<p>R tested configuration ref, scope, dataset/fixture refs, rubric/version, metrics with units and uncertainty, findings, thresholds/profile, assessor/accountability, evidence refs, limitations, result (pending, accepted_for_stated_scope, rejected, unresolved). C reviewer/acceptance decision and change impact. Missing evaluation cannot be replaced by a self-reported confidence score. Material release acceptance uses empowered decision and KX-20; a feedback suggestion is not a deployed change.</p>
+<h3 id="510-kx-18-deploymentprivilege-views">5.10 KX-18 deployment/privilege views</h3>
+<p><code>manifest</code>: R organisation/environment, exact software/model/tool/schema/control revisions, profile refs, data-flow/location assessment refs, scope, owner/powers and release evidence, state (candidate, accepted, applied, blocked, superseded); C prior manifest and rollback refs. <code>privileged_operation</code>: R actor, operation/scope, authority/use refs, expiry terms, privilege class, secret reference without secret value, checkpoint/REC-X and review obligation; C bounded exception decision and independent review. Separation of powers is enforced by the commissioned mechanism; this field definition does not authorise combined privilege.</p>
+<h3 id="511-kx-19-healthincident-views">5.11 KX-19 health/incident views</h3>
+<p><code>health</code>: R indicator key, observed scope/time, expected observation/profile, measurement/value-status, coverage, observation method/evidence and limitations; status healthy, degraded, unavailable or unknown is scoped to that indicator. <code>incident</code>: R incident ref, affected scope, evidence/uncertainty, trigger/profile, intervention power, requested/applied containment, REC-X links, remaining effects/duties and review owner. <code>protected_finding</code>: R finding/evidence refs, classification, required audience, separately permitted minimal payload/route, obligation/owner/cover profile and acknowledgement refs. Missing observation is unknown; attempted delivery is not audience receipt. Common-failure route, containment implementation and delivery capacity remain actions 3/4 commissioning work.</p>
+<h3 id="512-kx-20-recoveryreleasesupplier-views">5.12 KX-20 recovery/release/supplier views</h3>
+<p><code>recovery</code>: R source backup/config refs, restoration scope/isolation, coverage with time/data-loss units, current restriction/grant/disposition refs, prior attempt/effect reconciliation refs, validation/evidence and release decision/status, outstanding duties; unknown items are explicitly tagged and block dependent release. <code>release</code>: R old/new manifest, exact change scope, impact assessment, accepted evaluation, compatibility/location refs, approved rollback/failover scope and applied-state evidence; C irreversible-effect reconciliation. <code>supplier</code>: R provider/route identity, exact function/data scope, processing/storage/backup/support/subprocessor flow/location refs, professional/legal assessment and limitations, decision/expiry, exit/custody/deletion duties. Assessment, approval and applied scope are separate statuses. Protected Reporting and Recovery §§3–5 supplies the authoritative logical reporting/recovery input and fallback protocols; merely having these fields proves neither currentness nor actual fallback operation.</p>
+<h3 id="513-kx-21-acknowledgementrejection">5.13 KX-21 acknowledgement/rejection</h3>
+<p>R: <code>exchange_ref:ref</code>, <code>receiver:ref</code>, <code>stage:key</code> (receipt, validation, application, responsibility), <code>result:key</code> (confirmed, rejected, partial, unresolved), <code>event_time:time</code>, <code>evidence:refs</code>, <code>limitations:values</code>. C: human/role/power and accepted duty scope for responsibility; applied target/version for application; rejected field/version/reason and permitted referral for rejection; residual scope/owner/duty for partial/unresolved. Unknown evidence cannot be confirmed. Validation records type/reference checks, not truth certification. Application records the change actually made, not merely queued. Stage events may be produced independently; earlier stages never imply later ones. Deadline/cover is the exact commissioned acknowledgement profile. Expiry creates an owned exception without fabricating receipt/ownership or retry authority.</p>
+<h2 id="6-every-kernel-con-references-these-same-definitions">6. Every kernel CON references these same definitions</h2>
+<p>P = produces; C = consumes; S = common custody/structure. Entries describe component participation, not operational role appointments. Definition revisions are explicitly declared per family in §4; current detailed documents are Core/Shared v0.3, with Control Coordination v0.1 supplement. Unchanged family revisions are not automatically promoted by a document-version change. Both ends validate the same declared manifest.</p>
+<table>
+<thead>
+<tr>
+<th>Component CON</th>
+<th>Definitive common definitions</th>
+<th>Kernel role / reciprocal ends</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-01-CON-001</td>
+<td>KX-02/11/03/21</td>
+<td>P authority → 03/04/05 C; C identity/use from 03; 02 S.</td>
+</tr>
+<tr>
+<td>AOS-01-CON-002</td>
+<td>KX-05/06/13/21</td>
+<td>P policy → 03/04/05 C; 02 S; C empowered human decision.</td>
+</tr>
+<tr>
+<td>AOS-01-CON-003</td>
+<td>KX-06/05</td>
+<td>C human decision; P governed activation to 03/04/05.</td>
+</tr>
+<tr>
+<td>AOS-01-CON-004</td>
+<td>KX-03/04/07/14</td>
+<td>C use/execution; P permitted referral; human/workflow ends remain dependencies.</td>
+</tr>
+<tr>
+<td>AOS-02-CON-001</td>
+<td>KX-01/08/21</td>
+<td>P/C evidence and assurance; 01/03/04/05 C as permitted.</td>
+</tr>
+<tr>
+<td>AOS-02-CON-002</td>
+<td>KX-09</td>
+<td>P common mappings → dependent 01/03/04/05 C.</td>
+</tr>
+<tr>
+<td>AOS-02-CON-003</td>
+<td>KX-13/01/08</td>
+<td>P impact shape / notice → materially dependent 01/03/04/05 C; source owner supplies meaning.</td>
+</tr>
+<tr>
+<td>AOS-02-CON-004</td>
+<td>KX-03/11/14/15</td>
+<td>C use/identity/lifecycle; P permitted projections → authorised consumers.</td>
+</tr>
+<tr>
+<td>AOS-02-CON-005</td>
+<td>KX-02/04/05/06/07/22</td>
+<td>S common families; C owner-produced records; permitted record exchange to consumers.</td>
+</tr>
+<tr>
+<td>AOS-02-CON-006</td>
+<td>KX-10/21</td>
+<td>P registry/compatibility → 01/03/04/05 C; semantic owners review.</td>
+</tr>
+<tr>
+<td>AOS-03-CON-001</td>
+<td>KX-11</td>
+<td>P identity/capacity → 01/02/04/05 C.</td>
+</tr>
+<tr>
+<td>AOS-03-CON-002</td>
+<td>KX-03/02/04</td>
+<td>P use → 01/02/04/05 C; C original evaluation/checkpoint/effect links.</td>
+</tr>
+<tr>
+<td>AOS-03-CON-003</td>
+<td>KX-12/13</td>
+<td>P consent/basis state → materially dependent 01/02/04/05 C.</td>
+</tr>
+<tr>
+<td>AOS-03-CON-004</td>
+<td>KX-13/01/03</td>
+<td>C common impact; P use-specific changes → affected 01/02/04/05 C.</td>
+</tr>
+<tr>
+<td>AOS-03-CON-005</td>
+<td>KX-14/03/08/22/23/04</td>
+<td>P use/disclosure decision; C assurance/source; execution and non-kernel rendering/external ends linked.</td>
+</tr>
+<tr>
+<td>AOS-03-CON-006</td>
+<td>KX-15/20</td>
+<td>P lifecycle/use constraints → 02/04/05 C; C applied/recovery evidence.</td>
+</tr>
+<tr>
+<td>AOS-03-CON-007</td>
+<td>KX-07/06/02</td>
+<td>P permitted human referral; C human decision and authority; non-kernel accountable human end pending.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-001</td>
+<td>KX-16 definition / KX-11/18</td>
+<td>P/C instance binding with 03 identity and 05 deployment; 01 C authority-relevant binding, 02 S.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-002</td>
+<td>KX-16 task / KX-02/03</td>
+<td>P/C bounded assignments; 01/03 evaluate, 05 enforces, 02 S.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-003</td>
+<td>KX-02/03/05/13/21</td>
+<td>C authority/use/policy/change → executor; 05 same C; 02 S.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-004</td>
+<td>KX-04/08</td>
+<td>P execution meaning + 05 observations → 01/02/03 C as permitted; 05 reciprocal observations.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-005</td>
+<td>KX-07/06/19 protected_finding</td>
+<td>P finding/handoff; C human disposition; 05 reporting end, 02 S.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-006</td>
+<td>KX-16 memory / KX-01/03/08/15</td>
+<td>C sources/assurance/use/lifecycle; P bounded memory disposition; 02/03/05 reciprocal.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-007</td>
+<td>KX-16 lifecycle / KX-05/06/18/20</td>
+<td>P lifecycle → 05 C; C governance/deployment/release; 01/03 C material changes, 02 S.</td>
+</tr>
+<tr>
+<td>AOS-04-CON-008</td>
+<td>KX-17/08/20</td>
+<td>P evaluation → 05 release consumer, 02 S; approval/25/40 dependencies.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-001</td>
+<td>KX-18 manifest / KX-10/16/20</td>
+<td>P applied manifest → 04/01/03 C; C compatible definitions/release, 02 S.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-002</td>
+<td>KX-02/03/04/05/13</td>
+<td>C same controls as 04; P runtime checkpoint/effect evidence → 04/02/01/03 C.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-003</td>
+<td>KX-18 privileged_operation / KX-11/02/03/04</td>
+<td>C identity/powers/use; P privilege/effect/review evidence → 01/02/03/04 where permitted.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-004</td>
+<td>KX-19 health/protected_finding / KX-07/21</td>
+<td>P observations/reporting evidence → 01/02/03/04 C as dependent; C duty acknowledgements.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-005</td>
+<td>KX-19 incident / KX-06/04</td>
+<td>P incident/applied intervention → 01/02/03/04 C; C human powers, preserve duties.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-006</td>
+<td>KX-20 recovery / KX-13/15/04</td>
+<td>C current restrictions/dispositions/effects from 01–04; P restoration validation → 01–04 C.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-007</td>
+<td>KX-20 release / KX-17/18/10</td>
+<td>C accepted evaluation/mapping/manifest; P release/applied state → 01–04 C as dependent.</td>
+</tr>
+<tr>
+<td>AOS-05-CON-008</td>
+<td>KX-20 supplier / KX-15/23/06</td>
+<td>P assessed flow/exit evidence → 01/02/03/04 C as needed; C approved use/exchange/decision.</td>
+</tr>
+</tbody></table>
+<h2 id="7-assurance-and-permission-sequence">7. Assurance and permission sequence</h2>
+<p>REC-Q can report unassessed/partial/disputed/validated_for_purpose, with supporting evidence and limitations. Conflicting assessments do not overwrite one another or imply latest-arrival precedence. Each use profile declares required fact scope, accepted method/assessor, freshness and uncertainty/conflict tolerance; thresholds are actual organisational settings. Missing required assurance prevents that dependent conclusion/action, not all evidence admission or independently permitted referral.</p>
+<p>REC-A and REC-D preserve exact request revision, input/instrument evidence, evaluator, original result and conditions at issuance. Neither needs evidence of a future effect. REC-X links those exact results, the distinct pre-action check and subsequent runtime/effect records. Before an attempted consequential effect, required checkpoint recording must be available under the approved profile; after it, appended evidence identifies what occurred. A refused/withheld attempt records denial/unavailable control evidence and whether no effect was actually confirmed; a timeout is not proof of absence. No pending or absent enforcement link is presented as successful enforcement. This clarifies record order; Control Coordination §3 now supplies the current-state/combined-check logical protocol; actual enforceable boundary/freshness/race settings remain commissioned.</p>
+<h2 id="8-proposed-obligations-source-traceability-and-reciprocal-adoption">8. Proposed obligations, source traceability and reciprocal adoption</h2>
+<p>KXR IDs are annex obligations; mapped component REQs are proposed, not approval claims. FP4 Radical Transparency/FP6 Epistemic Humility, RP v6 domain 7 auditability and uncertainty, domain 8 contextual delegation, domain 9 purpose limits, and GT M1.13 systemic coherence are controlling derivations. DEC-062–066 specify the approved refinements. Exact source manifest is unchanged.</p>
+<table>
+<thead>
+<tr>
+<th>Annex obligation</th>
+<th>Proposed single obligation / exact drafting source</th>
+<th>Field / reciprocal adoption</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KXR-01</td>
+<td>A producer shall name the exact controlled definition and required profiles for each exchange. DEC-002/065; AOS-QS QS-12</td>
+<td>§3 definition/profile fields; all 33 §6 views.</td>
+</tr>
+<tr>
+<td>KXR-02</td>
+<td>A receiving component shall reject or hold unresolved an unsupported exchange without an accepted meaning/restriction-preserving mapping. DEC-065; FP6/RP9</td>
+<td>KX-10; new adoption REQ in each component.</td>
+</tr>
+<tr>
+<td>KXR-03</td>
+<td>A fact-assurance assessment shall reference the exact fact revision and retain the complete approved assurance chain. DEC-046/062; FP4/RP7</td>
+<td>REC-Q fields; AOS-02 REQ-040–043 and new assurance-link REQ.</td>
+</tr>
+<tr>
+<td>KXR-04</td>
+<td>Evidence admission shall preserve incomplete/disputed assurance status separately from use-specific suitability. DEC-063; FP6/RP7 uncertainty</td>
+<td>REC-E.assurance_refs / REC-Q.status / suitability; new adoption REQ in 01–05.</td>
+</tr>
+<tr>
+<td>KXR-05</td>
+<td>Permission evaluation shall remain reconstructable separately from later checkpoint/enforcement/effect evidence. DEC-064; RP7 auditability</td>
+<td>REC-D evaluator/evidence; REC-X exact-result links; clarified AOS-03 REQ-040 and new linkage REQ in 01/02/04/05.</td>
+</tr>
+<tr>
+<td>KXR-06</td>
+<td>An acknowledgement shall identify the evidenced stage without implying subsequent application, human responsibility or effect. DEC-066; RP1 accountability/GT M1.13</td>
+<td>KX-21.stage/result/evidence; new adoption REQ in each component.</td>
+</tr>
+<tr>
+<td>KXR-07</td>
+<td>A translation shall declare permitted loss and evidence of acceptability for its intended use. DEC-065; FP4/RP9</td>
+<td>KX-10.field_map/losses/use_acceptance; receiving adoption REQ.</td>
+</tr>
+<tr>
+<td>KXR-08</td>
+<td>Each component CON shall identify its common definitions and reciprocal production/consumption obligations. DEC-002; GT M1.13/QS-21</td>
+<td>§6 all 33 mappings; component §6.3 adoption.</td>
+</tr>
+</tbody></table>
+<p>Each component v0.4 §19.2 records new proposed REQ and planned VER allocation to this annex. The Source Traceability Matrix action-2 addendum records these links while preserving its original 80-item disposition. Complete source allocation for the wider suite is not asserted.</p>
+<h2 id="9-planned-connected-cases-and-acceptance-limits">9. Planned connected cases and acceptance limits</h2>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Inputs / expected behaviour / evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KXV-01 Definition mismatch</td>
+<td>Supported, unsupported and explicitly translated payloads; accept only compatible meaning/restrictions, preserve declared loss; retain original/translated version, review and receiver validation.</td>
+</tr>
+<tr>
+<td>KXV-02 Multiple assurances</td>
+<td>Exact fact revision with unassessed, partial, disputed and purpose-bounded assessments; all coexist, source origin distinct, intended-use suitability evidenced; changing fact revision cannot inherit validation silently.</td>
+</tr>
+<tr>
+<td>KXV-03 Evaluation before effect</td>
+<td>Issue permit/refusal before execution; append later checkpoint/effect evidence or withheld record; original decision reconstructable, no circular prerequisite or false pending-link proof.</td>
+</tr>
+<tr>
+<td>KXV-04 Stage acknowledgements</td>
+<td>Deliver/validate without application or human ownership; no false completion; information-only receipt need not invent human acknowledgement; required missing stages remain owned exceptions.</td>
+</tr>
+<tr>
+<td>KXV-05 Reciprocal 33-view walkthrough</td>
+<td>Producer and consumer inspect the same manifest/definition for every §6 row; matching units/cardinality/status/rejection/duty rules and owner; record mismatch findings. No non-kernel end is assumed adopted.</td>
+</tr>
+<tr>
+<td>KXV-06 Restricted projection</td>
+<td>Authorised assurance projection preserves required substance; unavailable material evidence leaves suitability unresolved; no privacy bypass or false validation.</td>
+</tr>
+</tbody></table>
+<p>These cases are planned, not executed. Author checks verify 33 unique CON mappings, stable IFs, all definition references, field/REQ/VER/source links and document structure. Logical action-2 reconciliation is complete at the five kernel document ends. Wire schemas, organisation vocabulary/roles/profile values and executed conformance remain build prerequisites. Non-kernel endpoint adoption remains item 6/GI/human-handoff work. KR-01 is reconciled for kernel logical definitions but remains open for full-suite adoption/build evidence; KR-07/08 are resolved at logical drafting level, subject to independent review. KR-09 action-2 links are recorded; wider suite source allocation remains open. Action 3 now supplies logical KR-02/03/06 reconciliation through the Control Coordination annex. At this action-2 snapshot KR-04/05 awaited action 4. Section 11 records their later logical treatment; actual operational conformance remains open, and later component adoption sections govern documentary allocation.</p>
+<h2 id="10-historical-action-3-common-definition-adoption">10. Historical action-3 common-definition adoption</h2>
+<p>The Control Coordination v0.1 supplement is the single logical definition for CHECK, ACT, CHG, ACC, RSV, WHD and BRK. Existing action/request/permission/effect/acknowledgement shapes consume its additional fields and coordinated transitions; original evaluations remain historical, never rewritten. KX-02/03/04/05/13/16/18/21 definition revisions are now 0.2; unchanged original families stay 0.1. At the originating action-3 step KX-24/25/26 were allocated as local definitions at revision 0.1, not approved IF allocations. KX-26 was subsequently extended to v0.2 by action 4; §4 is the current index. Every message declares the actual accepted definition revision; unsupported changes need the reviewed compatibility rule, not assumed backward compatibility.</p>
+<table>
+<thead>
+<tr>
+<th>New key / revision</th>
+<th>Single semantic owner / definition</th>
+<th>Reciprocal production/consumption</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KX-24 / 0.1</td>
+<td>AOS-05 authoritative cumulative account; Control Coordination §9 ACC</td>
+<td>AOS-04 profile/linked-work producer, AOS-05 account producer/enforcer, AOS-01/03 constraints/consumers, AOS-02 evidence custody; dependent CON map in annex §9.</td>
+</tr>
+<tr>
+<td>KX-25 / 0.1</td>
+<td>AOS-05 authoritative reservation; AOS-04 effect semantics; annex §9 RSV</td>
+<td>Runtime registrar → AOS-04 execution and AOS-01/02/03/05 dependent control/evidence; cancellations/provider changes retain previous uncertain effects.</td>
+</tr>
+<tr>
+<td>KX-26 / 0.2</td>
+<td>AOS-04 continuing duty/withholding semantics; annex §9 WHD</td>
+<td>Blocker/service workflow plus AOS-05 evidence → permitted AOS-01/02/03/04/05 consumers and non-kernel AOS-13/30/resident workflow; acknowledgement responsibility distinct from delivery.</td>
+</tr>
+</tbody></table>
+<p>All original 33 CON IDs remain; their existing family mappings are extended through component v0.5 §6.4 and annex §9. KX-04 CHECK consumes ACC/RSV; KX-05 activation consumes ACT/KX-21; KX-13 consumes CHG and actual applied state; KX-16 task/brake and KX-07 human handoff consume WHD/BRK. KX-21 defines receipt/application/responsibility evidence. Material privacy, authority, effect and resident-channel restrictions persist across all account/notification projections.</p>
+<p>Source/field/REQ/CON/VER allocation is component §19.3 and matrix v0.3. Eight KCR obligations/eight KCV connected cases are proposed/planned; nothing executed. Current scope is logical kernel adoption, not assured independent reporting/recovery or a full-suite build-ready closure.</p>
+<h2 id="11-action-4-originating-definitions-and-adoption-record">11. Action-4 originating definitions and adoption record</h2>
+<p>Baseline at the originating adoption step: AOS-00/Map v0.18; AOS-01–05 v0.6; Core/Shared v0.4; Exchange Register v0.3; Control Coordination v0.2; approved DEC-073–078. <a href="aos-kernel-protected-reporting-and-recovery-v0-1.html">Protected Reporting and Recovery v0.1</a> §5 is the authoritative proposed logical extension for KX-19 protected_finding v0.2, KX-20 recovery v0.2 and KX-26 WHD v0.2. Earlier fields remain and required new fields are those named in that dictionary. Health/incident and release/supplier views retain their prior definitions. KX-15 supplies unchanged lifecycle semantics with the newly explicit recovery current-state/application proof obligation. Exact-view compatibility review is required; no implicit translation.</p>
+<p>All 33 original CON allocations remain; annex §5 identifies the affected reciprocal kernel views. AOS-01/03 retain authority/use semantic powers, 04 task/effect/duty semantics, 05 route operation/isolated recovery/enforced scoped release, 02 common custody/evidence. Annex §§3–4 now completes former action-4 route/currentness references in §§5.7/5.11/5.12 and WHD: logical design complete, actual commissioning/delivery/recovery evidence open. Standards reference/derivation is annex §7, cases and REQ/VER links §6. No new approved IF or conformance/readiness claim.</p>
+<h2 id="12-aos-20-initial-gi-adoption-6-october-2026">12. AOS-20 initial GI adoption — 6 October 2026</h2>
+<p>AOS-20 v0.1 adopts the existing envelope and declared record-view versions against AOS-00/Map v0.20, Shared v0.5/Core v0.4. Kernel components remain v0.6; their prior decision baselines retain their dated standing. All 33 kernel CON mappings and IF allocations remain unchanged. The following nine AOS-20 views extend consumer/producer allocation beyond the kernel; detailed 21–25/30 adoption and actual interoperability remain open. AOS-20-CON-007 supporting candidate/coverage fields are proposed in its §6.2; exact schema/02/25/14 adoption remains ISS-004, not an approved new IF.</p>
+<table>
+<thead>
+<tr>
+<th>AOS-20 CON</th>
+<th>Common families / responsibility</th>
+<th>Definition and reciprocity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-20-CON-001</td>
+<td>KX-02/05/06/18; REC-A and CHECK/ACT; exact charter/profile scope, approval, effective restrictions and applied-state evidence</td>
+<td>01 governance/30 approved decision → 20/21–25; 05 applied state, 02 custody; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-002</td>
+<td>KX-01/08/09/10/13/15; REC-E/Q; source/tier/revision, separate assurance, lifecycle constraints and current correction dependencies</td>
+<td>21 steward/source owners/02 structures → 20/22/23/25; 20 returns impact refs; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-003</td>
+<td>KX-22; Shared §4.4 exact analysis/version/purpose/options/uncertainty/review/disclosure state; not an action grant</td>
+<td>21/22/23/25 findings under 20 remit → 24/authorised humans/30; 02 custody; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-004</td>
+<td>KX-06/05/13; exact decision/powers/rationale/context/review/applicability; confirmation/approval/application distinct</td>
+<td>Authorised post-meeting/other human workflow via 30 → 01/20/21/25; 02 custody; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-005</td>
+<td>KX-07/19 protected_finding v0.2/26 v0.2; separately permitted payload, verified route, owner/cover/acceptance and unresolved duties</td>
+<td>20/25 or permitted research producer → 13 routing/30 empowered audience; 05 protected route; 02 custody; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-006</td>
+<td>KX-01/08/17/22/06; distinguish independent report, self-assessment, annual/triggered review and disposition/action evidence</td>
+<td>25 GI assessment and independent human reviewer → authorised Committee/30; outcome → 20/21/25; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-007</td>
+<td>Existing envelope/REC-E/Q/KX-13/22/06 views; §6.2 candidate fields supplement a proposed supporting view, no new approved IF allocation</td>
+<td>Approved GI research processes using 14 ingress → 20/25/affected semantic owners/human reviewer; 02 custody; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-008</td>
+<td>REC-X; CHECK/ACT/CHG/ACC/RSV/WHD, KX-18/20; binding actual attempt/effect/reservation and accepted scoped recovery</td>
+<td>04 task/profile and 20 constraints → 05 gate/account; 05 execution/recovery evidence → 20/25/01/03; 02 custody; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+<tr>
+<td>AOS-20-CON-009</td>
+<td>KX-03/14/23; REC-D/X and AOS-14-IF-001; audience purpose/agreement/permission/exact projection and actual outcome</td>
+<td>03 use/disclosure decision + 20 canonical content → 24 presentation/14 dispatch → authorised audience; result → 20/30; single definition AOS-20 §6/common dictionaries; downstream adoption pending.</td>
+</tr>
+</tbody></table>
+<h2 id="13-common-external-research-logical-adoption-6-october-2026">13. Common external-research logical adoption — 6 October 2026</h2>
+<p>Baseline at the originating adoption step: AOS-00/Map v0.22, DEC-001–086; AOS-01–05 v0.7; AOS-14 v0.3; AOS-20 v0.2; Shared v0.6/Core v0.5/Register v0.5; source matrix v0.7; template v0.4. DEC-086 is the existing approved architectural direction; no new DEC/approved IF/REC family is allocated. Local supporting-view revision <strong>RSVIEW-0.1</strong> names the logical adoption of AOS-02 v0.7 §6.6; it is not an executable wire-schema approval. AOS-04 v0.7 CON-009 owns behaviour/profile semantics, component owners own remits/substantive findings, AOS-14 v0.3 governs external access/source verification, AOS-01 v0.7 owns powers/change, AOS-03 v0.7 use/privacy and AOS-05 v0.7 independently observed enforcement/resilience. Schema custody is AOS-02; handoff/decision semantics remain 13/30 with their detailed drafts pending.</p>
+<table>
+<thead>
+<tr>
+<th>View / exact logical definition</th>
+<th>Producer → permitted consumers</th>
+<th>Validation / reciprocal obligation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>research_profile, 02 v0.7 §6.6 / 04 v0.7 §§3.1/6.6</td>
+<td>Component owner and empowered profile workflow → assigned agent/service, 01/03/05/14 controls, 02 custody</td>
+<td>Bind approved exact remit/baseline/tools/use/routes/coverage/rubric/roles/settings; receiving consumer validates its scope, never inherits permission from storage or public access.</td>
+</tr>
+<tr>
+<td>research_run, 02 v0.7 §6.6 / 04 v0.7 §5.1</td>
+<td>Assigned research executor with 14 retrieval and 05 observed evidence → 02 custody, component reviewer/tracker, permitted 25/40 evaluation</td>
+<td>Exact profile/config/task/attempt/source revisions and actual coverage/status; no material finding is bounded to coverage, not universal completeness.</td>
+</tr>
+<tr>
+<td>research_finding, 02 v0.7 §6.6</td>
+<td>Component research assessment → component reviewer, relevant affected owners, permitted GI, 13/30 routing, 02 custody</td>
+<td>Preserve evidence versus inference, dates/status/jurisdiction/assurance and affected exact elements; shared source does not collapse distinct component implications/duties.</td>
+</tr>
+<tr>
+<td>research_disposition, 02 v0.7 §6.6 / 01 v0.7 §6.6</td>
+<td>Empowered human decision workflow → affected component/tracker, 01 change workflow and 02 custody</td>
+<td>Exact finding revision/powers/rationale/follow-up; acceptance for work separate from amendment approval, verified application and outcome. 30 adoption remains future drafting.</td>
+</tr>
+</tbody></table>
+<p>Existing REC-E/Q/A/D/X carry evidence, assurance, authority, processing and execution links; canonical analysis/human decision/escalation/policy change preserve original IF meanings. Existing KX-13 correction, KX-21 staged acknowledgement, KX-26 owned handoff, current control and privacy/lifecycle/recovery protocols apply. A source-verification result is evidence of provenance/status under declared limits, not truth, legal correctness or adoption. No transport/wire type, cardinality or numerical default is created here.</p>
+<table>
+<thead>
+<tr>
+<th>Component adoption</th>
+<th>Local capability/function/contract</th>
+<th>New proposed requirements</th>
+<th>New planned cases</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-03 v0.7</td>
+<td>CAP-007/FUN-013/CON-008</td>
+<td>REQ-062–068</td>
+<td>VER-046–051</td>
+</tr>
+<tr>
+<td>AOS-05 v0.7</td>
+<td>CAP-007/FUN-009/CON-009</td>
+<td>REQ-070–076</td>
+<td>VER-059–064</td>
+</tr>
+<tr>
+<td>AOS-14 v0.3</td>
+<td>CAP-009/FUN-010/CON-005</td>
+<td>REQ-001–008</td>
+<td>VER-001–006</td>
+</tr>
+<tr>
+<td>AOS-20 v0.2</td>
+<td>CAP-006/FUN-009/CON-007</td>
+<td>REQ-053–057</td>
+<td>VER-033–038</td>
+</tr>
+<tr>
+<td>AOS-01 v0.7</td>
+<td>CAP-006/FUN-011; existing CON-001–004</td>
+<td>REQ-064–068</td>
+<td>VER-041–044</td>
+</tr>
+<tr>
+<td>AOS-02 v0.7</td>
+<td>CAP-007/FUN-011/CON-007; single logical dictionary §6.6</td>
+<td>REQ-067–073</td>
+<td>VER-045–049</td>
+</tr>
+<tr>
+<td>AOS-04 v0.7</td>
+<td>CAP-007/FUN-009/CON-009</td>
+<td>REQ-066–077</td>
+<td>VER-051–057</td>
+</tr>
+</tbody></table>
+<p>AOS-20 v0.2 §6.2 maps its earlier candidate fields into the common views; challenge kind/current position/smallest change/tradeoffs/alternatives remain specialist assessment content. Boundary charter 6 October maps agent recommendations separately from human dispositions and preserves pilot schedule/quiet-reporting history. Earlier dated “supporting-view adoption pending” notes are superseded at this logical documentary level only.</p>
+<p>Component owners coordinate setup gaps: remit/sources/jurisdiction/cadence/triggers/assignment/roles/recipients/deadlines/cover; 01/03/05/14 own powers/use/enforcement/access; 02 owns reviewed wire types/units/cardinalities/schema/version/mapping; 04/40 with specialist humans own accepted evaluation and assurance. Gate: dependent interoperable build/activation/reliance. Detailed 13/21–25/30/40 consumer specifications and actual commissioning/conformance remain open and inherit template v0.4; no adoption by an undrafted component is claimed. Planned hostile-source, uncertainty/coverage, shared-impact/correction, failed-handoff/urgent and attempted self-amendment cases assess those reciprocal ends before conformance.</p>
+<h2 id="14-historical-aos-30-initial-human-workflow-adoption-6-october-2026">14. Historical AOS-30 initial human-workflow adoption — 6 October 2026</h2>
+<p>Baseline at the originating adoption step: AOS-00/Map v0.23, DEC-001–086 unchanged; AOS-30 v0.1; AOS-01–05 v0.7, AOS-14 v0.3 and AOS-20 v0.2; Shared v0.7/Core v0.5/Register v0.6; source matrix v0.8; template v0.4. <a href="../Governance-Intelligence/aos-30-governance-hub-and-accountable-decision-workflows.html">AOS-30 v0.1</a> derives from FP v4/RP v6/GT and existing directions; no new approved DEC, IF or REC family. Q01 account approver/collective validity/extract policy, Q02 permitted descriptive feedback and Q03 dispute/correction handling remain proposed, not normative approvals.</p>
+<table>
+<thead>
+<tr>
+<th>AOS-30 CON</th>
+<th>Common definition / exact revision</th>
+<th>Reciprocal logical ends and residual adoption</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CON-001</td>
+<td>KX-01/11/12; Operational Profiles §3</td>
+<td>01 powers/03 identity plus organisation instruments → 30/13; actual appointments/profile evidence open.</td>
+</tr>
+<tr>
+<td>CON-002</td>
+<td>KX-07/21/26 and protected_finding v0.2; KPR §§2/3/5</td>
+<td>Domain/13/20/05 sender → permitted 30 human/tracker; scoped acceptance/exception → sender/13/service/02. 13/service detailed adoption and real human capacity remain open.</td>
+</tr>
+<tr>
+<td>CON-003</td>
+<td>KX-22/AOS-20-IF-001 v0.1, GI v0.2 §6</td>
+<td>20–25 canonical preparation/24 rendering → authorised 30 decision-maker; no analysis-to-action grant.</td>
+</tr>
+<tr>
+<td>CON-004</td>
+<td>KX-06/AOS-30-IF-001 proposed logical revision 0.2</td>
+<td>Exact decision/debrief/account/powers/validity/approval/outcome/correction groups: single definition 30 §6.2, 02 shared shape. Empowered human/30 → 01/02/03/04/05/20/21/22/23/24/25 when permitted and relied on. Prior common v0.1 semantics remain history; exact v0.2 schema/compatibility and each affected consumer’s changed-field acceptance are required before implementation. No silent upgrade or downstream conformance claimed.</td>
+</tr>
+<tr>
+<td>CON-005</td>
+<td>KX-05/06/13/20; REC-E/Q/A/D/X; CHECK/ACT/CHG/ACC/RSV/WHD/BRK; KPR recovery v0.2</td>
+<td>30 human decision evidence/01 powers → 04/05/13 controlled effect; observed outcome → 30/02/20/25. Approval/account/application/service result distinct.</td>
+</tr>
+<tr>
+<td>CON-006</td>
+<td>KX-11/12/14/06/07; 03/11 channel/use and 14 external exchange</td>
+<td>Resident/representative via 11/03 → 30 empowered review; permitted 24/11/14 explanation/response. Detailed 11/24 and complaint/appeal powers remain commissioning/adoption gaps.</td>
+</tr>
+<tr>
+<td>CON-007</td>
+<td>KX-17/06; GI CON-006; DEC-010–012</td>
+<td>Separate GI/independent human preparation → 30/board/Committee; dispositions/actions → 01/21/25/02. Authentic independence/institutional adequacy not proved by records.</td>
+</tr>
+<tr>
+<td>CON-008</td>
+<td>RSVIEW-0.1/02 v0.7 §6.6 /04 v0.7 CON-009, register §13</td>
+<td>Approved 30 research profile/14 access → 02 custody/30 reviewer/relevant owners; human disposition → 01/tracker. No agent activation or additional sensing.</td>
+</tr>
+</tbody></table>
+<p>New component allocations: 48 proposed REQs/31 planned VERs; AOS-30 §19 supplies CAP/FUN/CON/source and reverse case links. KX-06 v0.2 adds proposed conditional collective-validity/descriptive feedback and separate human account approval/application/correction evidence without altering authority/use/execution semantics. Exact executable types/cardinalities/code lists/null/time/units/compatibility, Q01–Q03/powers/profile approvals and every required consumer’s acceptance remain build/activation gates. No quorum/timing default or universal two-signature rule supplied. No pre-existing kernel requirement or contract is retired or approved by this drafting entry.</p>
+<h2 id="aos-30-approved-direction-disposition-6-october-2026">AOS-30 approved-direction disposition — 6 October 2026</h2>
+<p><strong>Historical AOS-30 approval snapshot, 6 October 2026 — DEC-087 partly superseded by DEC-103:</strong> Mark agreed Q01 with an explicit role and approval qualification, and Q02/Q03 as recommended. DEC-087: The minute-taker drafts the account and is a clearly separate role from the Company Secretary as authorised steward. The Chair may approve the exact draft for submission; only the board approves the minutes and thereby the decision. Draft approval, stewardship, board approval, decision validity and actual application are separately evidenced. A Chair signature or certified extract cannot substitute for board approval; an extract references the exact board-approved minutes and decision before dependent authoritative reliance. DEC-088: Contextual emotional-register and revealed-preference descriptors must be explicitly human-provided or confirmed, purpose-bound and governed by access, retention and uncertainty controls. Missing or restricted material remains explicit. No AI inference from observation, individual profiling, sentiment scoring or compulsory person-by-person emotional account. Descriptors may inform proposals/review but cannot silently change governing instruments, precedent, moral weights or calibration. DEC-089: Preserve exact disputed records/history and use an empowered reviewer with an alternative route when implicated. Distinguish clerical account correction from a new governing decision. Withhold materially dependent automated reliance where authority/evidence is unresolved while retaining separately authorised service/reporting duties. No automatic blanket freeze or retrospective reversal of actual effects. Baseline at the originating adoption step: AOS-00/Map v0.24, DEC-001–089; AOS-30 v0.2; AOS-01–05 v0.7, AOS-14 v0.3 and AOS-20 v0.2; Shared v0.8/Core v0.5/Register v0.7; source matrix v0.9; template v0.4. The earlier initial-draft/pending-choice entries are historical. General choices are resolved; exact requirement wording, organisation profiles/appointments, privacy/retention policy, KX-06 executable schema and affected-consumer compatibility, source-row allocation and actual assurance remain open under item 6. No whole-document approval, executed verification, independent review or build/activation/readiness approval is inferred.</p>
+<p>Historical v0.2 adoption (superseded for present decision-view semantics by DEC-103 / KX-06 v0.3): §14 CON-004/KX-06 v0.2 referenced AOS-30 v0.2 §6.2, including separate minute-taker/Company Secretary identities, Chair draft approval and board minutes/decision approval events with exact minutes/source revision and approval times. DEC-087–089 remove the general Q gates, not the executable-schema/profile gate. Affected 01/02/03/04/05/20/21/22/23/24/25 consumers must accept these exact role, stage, revision and status semantics before implementation; existing kernel versions are not silently upgraded. An extract is a projection of board-approved source, never a substitute approval route.</p>
+<h2 id="15-aos-30-functional-reciprocal-alignment-7-october-2026">15. AOS-30 functional reciprocal alignment — 7 October 2026</h2>
+<p>Under DEC-103 and current AOS-30 §§5/6.2/10.3, decision validity/effective time, record authentication/evidence, minutes approval and permission to execute are distinct. Reliance uses sufficient attributable evidence assessed under the actual organisation’s legal form, instruments and approved evidence policy; a valid decision may precede minutes approval. A Chair-authenticated record or extract may be evidence through an authorised route, but no signature, draft or extract alone creates decision authority or resolves conflicting evidence. No universal second approval of exact decision wording is imposed where applicable arrangements do not require it. Minute-taker drafting and Company Secretary stewardship remain distinct; non-board decisions use their applicable empowered route. Current authority/data-use/conditions and observed effects remain separate. Missing or disputed sufficient evidence blocks affected automated reliance for accountable resolution, not a declaration of legal invalidity.</p>
+<p>AOS-00/Map v0.25, DEC-001–089; AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3 and AOS-30 v0.3; Shared v0.9/Core v0.6/Exchange Register v0.8; source matrix v0.9 and template v0.4 unchanged; Control Coordination v0.2/Protected Reporting and Recovery v0.1 unchanged.</p>
+<table>
+<thead>
+<tr>
+<th>Participant</th>
+<th>Current functional adoption</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01 CON-003</td>
+<td>Exact decision approval; Chair draft approval cannot activate board authority.</td>
+</tr>
+<tr>
+<td>02 CON-005/003</td>
+<td>Preserves approval status; conditionally notifies 30 of corrections affecting preparation/account/outcome review.</td>
+</tr>
+<tr>
+<td>03 CON-001/007</td>
+<td>Acting capacity/permitted review do not supply missing board approval.</td>
+</tr>
+<tr>
+<td>04 CON-003/005/007</td>
+<td>Human instructions/lifecycle changes preserve decision approval and independent controls.</td>
+</tr>
+<tr>
+<td>05 CON-005/007</td>
+<td>Intervention/release uses applicable decision evidence; platform privilege is not board approval.</td>
+</tr>
+<tr>
+<td>20 CON-004/002</td>
+<td>Exact approved decisions; canonical analysis revision and notification to affected 30 workflow on corrections.</td>
+</tr>
+<tr>
+<td>30 CON-004/005</td>
+<td>Produces approved accounts; receives corrections and obtains human review without rewriting GI analysis or approved minutes.</td>
+</tr>
+<tr>
+<td>14 permitted projections</td>
+<td>Preserves exact approval status/source; disclosure cannot upgrade a draft.</td>
+</tr>
+</tbody></table>
+<p>KX-06 logical v0.2 is explicitly adopted by these existing functional drafts; KX-13 already names AOS-30 as a dependent recipient, now explicit in AOS-02/AOS-30. Initial §14 changed-field adoption gaps are closed for these functional ends. Exact wire mapping/conformance and future 11/13/21–25/40 detailed adoption remain separate. No new contract/requirement/case identifier. CR30-01–03 closed.</p>
+<h2 id="16-aos-21-functional-adoption-7-october-2026">16. AOS-21 functional adoption — 7 October 2026</h2>
+<p>AOS-00/Map v0.27, DEC-001–091; AOS-21 v0.1; AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.10/Core v0.6/Exchange Register v0.9; source matrix v0.10; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Single common definitions unchanged; AOS-21 v0.1 §6 binds these exact proposed semantic views.</p>
+<table>
+<thead>
+<tr>
+<th>AOS-21 view</th>
+<th>Common definition / producer-consumer allocation</th>
+<th>Requirement / planned case coverage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CON-001 scoped source/profile</td>
+<td>REC-E/Q; KX-01/08/09/10/15; source owners/14/02/21 → 20/22/23/25</td>
+<td>REQ-001–016; VER-001–012</td>
+</tr>
+<tr>
+<td>CON-002 controls</td>
+<td>REC-A/D/X; KX-02/03/04, CHECK; 01/03/04/05 → 21; actual results → 02/control owners</td>
+<td>REQ-015/017/018/041/046/048; VER-012/023/027/030</td>
+</tr>
+<tr>
+<td>CON-003 decision/precedent</td>
+<td>KX-06 v0.2/05/13; existing 30/01 IFs; 30/01 → 21/02/25</td>
+<td>REQ-019–024/030/034; VER-009/013–016/020</td>
+</tr>
+<tr>
+<td>CON-004 corpus selection</td>
+<td>REC-E/Q; KX-01/08/14/22, 20 IF-001 when canonical analysis; 21 → 20/22–25/30</td>
+<td>REQ-031/032/034/035; VER-020/021/023</td>
+</tr>
+<tr>
+<td>CON-005 change/impact</td>
+<td>KX-13/15/21 and coordination; source/21/02/01/03 → materially affected 20–25/30/control owners</td>
+<td>REQ-026–030/034/036; VER-008/009/011/018–022</td>
+</tr>
+<tr>
+<td>CON-006 review/referral</td>
+<td>KX-17/22/06/19/26; protected reporting; 21/25/independent reviewer → empowered people/30/01</td>
+<td>REQ-025/029/043/044; VER-017/019/029</td>
+</tr>
+<tr>
+<td>CON-007 research</td>
+<td>RSVIEW-0.1, 02 §6.6 / 04 CON-009 and common REC/KX; agent/14 → 21/human reviewers/affected owners</td>
+<td>REQ-037–045; VER-024–029</td>
+</tr>
+<tr>
+<td>CON-008 lifecycle/recovery/disclosure</td>
+<td>KX-14/15/18/20/23, REC-D/X; 02/03/05/14 ↔ 21/permitted recipients</td>
+<td>REQ-017/018/032/033/047/048; VER-010/020/023/027/030</td>
+</tr>
+</tbody></table>
+<p>AOS-21 adopts exact Chair/board approval and conditional AOS-30 material-correction notification; 21 admission is not human approval, analysis revision or effect reversal. Source/assurance/control/research custodians retain their existing ownership. Register §§12/13/15 and AOS-20/30 existing functional contracts supply the counterpart meanings; later 22–25/13/40 drafts, implementation mapping and independently executed evidence remain open. No new IF/REC/KX or numerical default is allocated.</p>
+<h2 id="17-aos-23-functional-adoption-7-october-2026">17. AOS-23 functional adoption — 7 October 2026</h2>
+<p>AOS-00/Map v0.28, DEC-001–091; AOS-23 v0.1; AOS-21 v0.2 (functional endpoint/reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.11/Core v0.6/Exchange Register v0.10; source matrix v0.11; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. AOS-23 v0.1 §6 references unchanged single common definitions.</p>
+<table>
+<thead>
+<tr>
+<th>AOS-23 view</th>
+<th>Existing definition / producer → consumer</th>
+<th>Proposed REQ / planned VER coverage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CON-001 artefact/corroboration</td>
+<td>REC-E/Q, KX-01/08/09/10/15; 21/source owners/02/humans/14 → 23</td>
+<td>REQ-001–004/011–017/051; VER-001–003/006–009</td>
+</tr>
+<tr>
+<td>CON-002 scoped applicability</td>
+<td>21 CON-001/004, REC-E/Q/A/D, KX-05/09/13; 21/01/03 → 23; applicability findings → 21/humans</td>
+<td>REQ-005–010; VER-003–005</td>
+</tr>
+<tr>
+<td>CON-003 current controls/effects</td>
+<td>REC-A/D/X and CHECK/ACT/CHG/ACC/RSV/WHD, KX-02/03/04/18/20; 01/03/04/05 → 23; actual results → 02/25/control owners</td>
+<td>REQ-004/024/041/048/050/052; VER-001/014/025/029–032</td>
+</tr>
+<tr>
+<td>CON-004 canonical analysis/cycle</td>
+<td>Existing 20 IF-001/KX-22, REC-E/Q; 23 → 20/22/24/25/30/permitted reviewers</td>
+<td>REQ-011–023/033–035/038; VER-006–013/020–022</td>
+</tr>
+<tr>
+<td>CON-005 human review/outcome</td>
+<td>Existing 30 IF-001, KX-06 v0.2/17/21/26; 30/01/13 → 23/02/25</td>
+<td>REQ-020–022/030/035/039; VER-011/012/018/022/023/030</td>
+</tr>
+<tr>
+<td>CON-006 alerts/protected duty</td>
+<td>Existing 13 IF-001, KX-07/19/26/21 and protected route; 23 → 13/30/domain owners/05 protected route</td>
+<td>REQ-029–032/047; VER-017–019/029</td>
+</tr>
+<tr>
+<td>CON-007 correction/impact</td>
+<td>KX-13/15/21 and coordination; source/21/02/01/03 → 23; 23 → affected 20–25/30</td>
+<td>REQ-036–039; VER-021/023/024/030</td>
+</tr>
+<tr>
+<td>CON-008 own research</td>
+<td>RSVIEW-0.1, 02 §6.6, 04 CON-009 and common REC/KX; agent/14 → 23 reviewer/affected owners; disposition → tracker</td>
+<td>REQ-040–047; VER-025–029</td>
+</tr>
+<tr>
+<td>CON-009 disclosure/lifecycle/recovery</td>
+<td>KX-14/15/18/20/23, REC-D/X, existing 14 IF-001; 03/02/05/14 ↔ 23/recipients</td>
+<td>REQ-004/049–051; VER-003/031/032</td>
+</tr>
+</tbody></table>
+<p>AOS-21 v0.2 only updates assessment-counterpart references; its 48 REQs/eight CONs/30 cases and contract meanings are preserved. AOS-23 adopts exact review/approval status, Chair/board distinction and conditional 30 correction notification; canonical assessment revision never rewrites board minutes or reverses effects. Shared/core/20/21/30 and kernel meanings remain authoritative. Later 22/24/25/13/40 drafts, executable mappings and actual producer/consumer assurance remain open. No new IF/REC/KX is allocated.</p>
+<h2 id="18-aos-22-functional-adoption-7-october-2026">18. AOS-22 functional adoption — 7 October 2026</h2>
+<p>AOS-00/Map v0.29, DEC-001–091; AOS-22 v0.1; AOS-21 v0.3/AOS-23 v0.2 (counterpart/reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.12/Core v0.6/Exchange Register v0.11; source matrix v0.12; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. AOS-22 §6 binds unchanged single common definitions.</p>
+<table>
+<thead>
+<tr>
+<th>AOS-22 view</th>
+<th>Existing definition / producer → consumer</th>
+<th>Proposed REQ / planned VER coverage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CON-001 scoped evidence</td>
+<td>REC-E/Q; KX-01/08/09/10/15; domains/21/23/02/humans → 22</td>
+<td>REQ-001–010; VER-001–005</td>
+</tr>
+<tr>
+<td>CON-002 corpus/current controls</td>
+<td>REC-E/Q/A/D/X, CHECK/ACT/CHG/ACC/RSV/WHD, KX-02/03/04/05; 21/01/03/04/05 → 22; effects → 02/control owners</td>
+<td>REQ-002/005/010/015–018/041/051/052; VER-001/004/005/009–011/025/029/032</td>
+</tr>
+<tr>
+<td>CON-003 canonical synthesis/options</td>
+<td>Existing 20 IF-001/KX-22; REC-E/Q; 22 → 20/24/25/30/permitted reviewers</td>
+<td>REQ-007–014/020–027/033/034; VER-003/005–008/012–016/020/021</td>
+</tr>
+<tr>
+<td>CON-004 human approval/decision</td>
+<td>Existing 30 IF-001/KX-06 v0.2/17/21; 30/01 → 22/21/02/25</td>
+<td>REQ-015–018/034/038/039; VER-009–011/021/024</td>
+</tr>
+<tr>
+<td>CON-005 independent preparation</td>
+<td>KX-05/14/17/22, REC-A/D; independent authority/03/30/21 → 22/24/permitted recipients</td>
+<td>REQ-028–032; VER-017–019</td>
+</tr>
+<tr>
+<td>CON-006 owned/protected handoff</td>
+<td>Existing 13 IF-001/KX-07/19/21/26 and protected reporting; 22 → 13/30/05/affected owners</td>
+<td>REQ-026/031/035/047; VER-015/019/022/029</td>
+</tr>
+<tr>
+<td>CON-007 correction/feedback/oversight</td>
+<td>KX-13/15/17/21/22/26 and coordination; 21/23/02/01/03/30 → 22; 22 → affected 20/21/23/24/25/30</td>
+<td>REQ-036–039; VER-023/024</td>
+</tr>
+<tr>
+<td>CON-008 own research</td>
+<td>RSVIEW-0.1, 02 §6.6, 04 CON-009, common REC/KX; agent/14 → 22 reviewer/affected owners; disposition → tracker</td>
+<td>REQ-040–047; VER-025–029</td>
+</tr>
+<tr>
+<td>CON-009 lifecycle/external/recovery</td>
+<td>KX-14/15/18/20/23, REC-D/X and existing 14 IF-001; 03/02/05/14 ↔ 22/permitted audiences</td>
+<td>REQ-002/049–052; VER-001/031/032</td>
+</tr>
+</tbody></table>
+<p>All existing IFs, KX meanings and common research/status definitions retained. AOS-21 v0.3 and AOS-23 v0.2 update counterpart/current-start references only; original requirement/case/contract rows unchanged. AOS-22 adopts current Chair/board approval, graduated validation, independently governed preparation and conditional 30 material-correction notification. 24/25/13/40 detailed counterparts, exact physical mappings and actual producer/consumer conformance remain open.</p>
+<h2 id="19-aos-24-functional-adoption-7-october-2026">19. AOS-24 functional adoption — 7 October 2026</h2>
+<p>AOS-00/Map v0.30, DEC-001–091; AOS-24 v0.1; AOS-21 v0.4/AOS-22 v0.2/AOS-23 v0.3 (reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.13/Core v0.6/Exchange Register v0.12; source matrix v0.13; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. AOS-24 §6 binds unchanged single common definitions; the following are component views, not new exchanges/schemas. AOS-25 is pending; other named functional counterparts are drafted but actual schema/control compatibility remains an operational gate.</p>
+<table>
+<thead>
+<tr>
+<th>AOS-24 view</th>
+<th>Producer → consumer</th>
+<th>Common semantic authority / REQ / planned VER</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CON-001</td>
+<td>20/21/22/23/25/02 → 24</td>
+<td>AOS-20-IF-001; REC-E/Q; Shared §4.4; REQ-001–007; VER-001–007</td>
+</tr>
+<tr>
+<td>CON-002</td>
+<td>01/03/04/05 → 24</td>
+<td>REC-A/D/X; KX-11/12/16–20; REQ-008–009/030–031/039; VER-008/022/026</td>
+</tr>
+<tr>
+<td>CON-003</td>
+<td>24 → permitted audiences/14</td>
+<td>KX-14; AOS-14-IF-001; REQ-010–012/018–020/024; VER-009–010/015–016/019</td>
+</tr>
+<tr>
+<td>CON-004</td>
+<td>Humans/24 ↔ 22/23/25/30</td>
+<td>GI canonical view; AOS-30-IF-001/KX-06 v0.2/26; REQ-005/013–017/023; VER-005/011–014/018</td>
+</tr>
+<tr>
+<td>CON-005</td>
+<td>21–23/25/02/03/30 ↔ 24/14/owners</td>
+<td>KX-13; REQ-026–027; VER-020; material human-workflow impacts include 30</td>
+</tr>
+<tr>
+<td>CON-006</td>
+<td>24/14/13/30 ↔ owners</td>
+<td>KX-21/26; REQ-015/025/028–029/033; VER-012/019/021/023</td>
+</tr>
+<tr>
+<td>CON-007</td>
+<td>24 ↔ 02/03/04/05/21–23/25/30</td>
+<td>KX-15/17; REC-E/Q; REQ-032/039–040; VER-023/026</td>
+</tr>
+<tr>
+<td>CON-008</td>
+<td>24/04 ↔ 14/02/01/30</td>
+<td>RSVIEW-0.1; 04 CON-009/02 CON-007/01 change; REQ-034–038; VER-024–025</td>
+</tr>
+</tbody></table>
+<p>One canonical position can have differently worded, purpose-bound representations; material uncertainty, dissent, approval standing and CAP-01 no-ranking must survive. Data-use permission remains independent; receipt is not duty acceptance. Functional adoption introduces no operating approval, hidden profile value or automatic research.</p>
+<h2 id="20-aos-25-functional-adoption-7-october-2026">20. AOS-25 functional adoption — 7 October 2026</h2>
+<p>AOS-00/Map v0.31, DEC-001–091; AOS-25 v0.1; AOS-20 v0.4/AOS-21 v0.5/AOS-22 v0.3/AOS-23 v0.4/AOS-24 v0.2/AOS-30 v0.4 (counterpart-reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4; Shared v0.14/Core v0.6/Exchange Register v0.13; source matrix v0.14; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. AOS-25 §6 binds the following unchanged single common semantic definitions. These are functional views, not new schemas/exchanges or operational compatibility evidence.</p>
+<table>
+<thead>
+<tr>
+<th>AOS-25 view</th>
+<th>Producer → consumer</th>
+<th>Common authority / proposed REQ / planned VER</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CON-001</td>
+<td>02/21–24/20 → 25</td>
+<td>REC-E/Q; KX-22/AOS-20-IF-001/Shared §4.4; REQ-001–007/019/028; VER-001–004/014/020</td>
+</tr>
+<tr>
+<td>CON-002</td>
+<td>01/03/04/05 → 25</td>
+<td>REC-A/D/X; KX-01/08/11/12/16–20; REQ-008–012/029/043–045/047; VER-005–009/019/027–029</td>
+</tr>
+<tr>
+<td>CON-003</td>
+<td>30/13/02 ↔ 25</td>
+<td>KX-06 v0.2/07/21/26; actual decision/duty/effect and confirmed mixed mapping; REQ-013–018/024–025/035; VER-010–013/018/023</td>
+</tr>
+<tr>
+<td>CON-004</td>
+<td>25 and independent human authors → empowered institution/30/21/20</td>
+<td>KX-22/06/26; distinct reports/bases/disposition; REQ-020–023/026/030/048; VER-015–017/021/030</td>
+</tr>
+<tr>
+<td>CON-005</td>
+<td>25 → 24/14/permitted audiences</td>
+<td>KX-22/14; fidelity and independent use; REQ-014/019/028/031; VER-010/014/020–021</td>
+</tr>
+<tr>
+<td>CON-006</td>
+<td>25/30/13 ↔ empowered ordinary/alternate owner</td>
+<td>KX-19 protected finding/26/21; REQ-024–025/027/029/035–036; VER-018–019/023</td>
+</tr>
+<tr>
+<td>CON-007</td>
+<td>Semantic owners ↔ 25/21–24/30/affected consumers</td>
+<td>KX-13 exact correction/impact; REQ-033–034; VER-022; affected human workflow includes 30</td>
+</tr>
+<tr>
+<td>CON-008</td>
+<td>25 ↔ 02/03/04/05/40/30</td>
+<td>KX-15/17/20; governed audit/history/evaluation; REQ-043–048; VER-027–030</td>
+</tr>
+<tr>
+<td>CON-009</td>
+<td>25/04/20–24 ↔ 14/02/01/30/component research owners</td>
+<td>RSVIEW-0.1; 04 CON-009/02 CON-007/01 change; REQ-037–042; VER-024–026</td>
+</tr>
+</tbody></table>
+<p>AOS-20 CON-006, 21 oversight/correction, 22 decision/outcome/divergence, 23 broader effectiveness/feedback, 24 oversight rendering and 30 review/duty/outcome now have a drafted AOS-25 counterpart. No formal review status, independent authorship, actual duty acceptance, effects or applied controls are inferred from these allocations. Detailed 13/40 and actual compatibility/assurance remain open.</p>
+<h2 id="gi-consistency-reciprocal-closure-7-october-2026">GI consistency reciprocal closure — 7 October 2026</h2>
+<p>GI-CR-01–04 are closed at the functional-document level under Mark’s instruction. KX-06 retains its existing proposed logical v0.2; no new IF, transport or powers are introduced. Its permitted consumers include 23 CON-005 and 24 CON-004, alongside 22 CON-004 and 25 CON-003. Relevant actual outcome feedback includes 22/23/24/25 through 02 custody/permitted projections. Exact compatibility and observed delivery remain operational gates.</p>
+<p>RP v6 precedent integrity → 20 REQ-034/VER-014; 21 REQ-025/VER-017; 25 REQ-021/VER-015; 30 REQ-038/VER-023: each GI/human account is prepared without reference to the other before comparison; originals, different bases and subsequent responses remain distinct. FP2/RP2 → 20 REQ-019/VER-005 and 22 REQ-016/VER-009: approved moral weights cannot transfer Mode 2 judgement; commensurable Mode 1 comparison remains separate. 30 VER-021 adds the planned cross-component correction/approval/outcome walkthrough. All cases remain unexecuted.</p>
+<p>The GI review v0.2 closes all four findings and accounts for all 38 GIL disposition destinations; original source manifest and previous source statuses are preserved. Full source-item/operating assurance is not inferred. Item 7 is complete at the author functional-specification level; next AOS-40.</p>
+<h2 id="boundary-v06-reciprocal-logical-adoption-9-october-2026">Boundary v0.6 reciprocal logical adoption — 9 October 2026</h2>
+<p>The authoritative definition remains Shared Contracts§4.7 AOS-14-IF-001;02 common record semantics and evidence custody;01 authority,03 identity/use,04 agent behaviour and05 enforcement retain ownership. AOS-14§§6.1–6.2 supply the exact logical Boundary decomposition and mandatory commissioning completeness. No new IF/REC/wire schema is created. Unknown labels or missing mandatory profiles withhold dependent operation, not merely produce a diagnostic.</p>
+<table>
+<thead>
+<tr>
+<th>View / exact adoption</th>
+<th>Producer → consumer / owning meaning</th>
+<th>Requirement / verification chain</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>14-CON-001 request →14-IF-001</td>
+<td>10–13/04 or permitted external intake →14 assessed exchange/executor;14 boundary semantics,02 record master</td>
+<td>14 REQ010–013/019/026/047; VER008/009/011/015/027</td>
+</tr>
+<tr>
+<td>14-CON-002 determination →14-IF-001</td>
+<td>14 consuming01/03 current determinations and04/05 enforcement evidence → requesting executor/13/02</td>
+<td>14 REQ015–022/024–027/037/039/042/052/055; VER010–012/014–016/022–024/030/033</td>
+</tr>
+<tr>
+<td>14-CON-003 evidence →14-IF-001/02 evidence custody</td>
+<td>14/connector/04/05 plus attributed counterpart/domain outcome →02 custody; permitted10–13/25/30/40</td>
+<td>14 REQ014/017/023/028–032/036/038/040/041/043–046/048–054; VER009/010/013/017–019/021–026/028–032/034</td>
+</tr>
+<tr>
+<td>14-CON-004 obligation →14-IF-001</td>
+<td>14 recognised exchange source with01/03/domain legal/semantic steward →02/13/30 and appointed empowered duty owner</td>
+<td>14 REQ033–035; VER020/021; ISS006 exact general representation remains open</td>
+</tr>
+<tr>
+<td>14-CON-005 own research and shared retrieval →02§6.6/04-CON-009 RSVIEW-0.1</td>
+<td>Assigned specialist profile/agents and14 governed collection →02 custody/component reviewer/13 tracked duty/30 disposition; each component owns substantive relevance</td>
+<td>14 REQ001–008; VER001–006; shared retrieval cannot merge substantive owners</td>
+</tr>
+</tbody></table>
+<p>Producer and consumer apply the same approved exact manifest and preserve direction/operation, source/authority/use standing, attempts, staged acknowledgements and actual effect uncertainty. Inbound admit/conditional admit map to operation-bound Permit/Constrain; reject maps Deny; quarantine remains restricted evidence state and escalation remains a non-permissive review state; unresolved/invalid withhold.02 accepted/accepted-with-restrictions/rejected/unresolved remain a separate admission axis, never proof of truth or exchange permission. Exact valid context and mapping are authoritative in14§6.1;§6.2 requires approved cardinality/types/units/time/window/ordering/duplicate/retry/revocation/lifecycle and compatible revision profiles before dependent build.</p>
+<p>Assembled overdue-repair14 VER034 connects existing10/11/13/30 cases and40 v0.5 VER007–010/020–025/036/038. This records counterpart contributions; it does not amend40 case statements, claim every case fully covers every new Boundary obligation or substitute for an approved case-coverage manifest. All cases unexecuted. Shared-implementation/model scores and receipt/closure cannot upgrade domain work or human decisions. SENS-CR-02 remains open for10–13&#39;s other local views and whole-suite adoption; this addendum closes only Boundary incorporation.</p>
+<h2 id="approved-boundary-decision-adoption-9-october-2026">Approved Boundary decision adoption — 9 October 2026</h2>
+<p>| Approved decision / subject | Direction / rationale | Affected Boundary records | Approval and standing |
+| --- | --- | --- | --- | --- |
+| AOS-00-DEC-092 — Consequential external exchange | An external exchange is consequential when it can create or change an organisational commitment, disclose protected information, affect rights or service, trigger external action, or create a material obligation or risk. Materiality considers financial exposure and resource impact separately: payments, expenditure, liabilities or contingent exposure; and staff time, workload, capacity, equipment, facilities or other resource commitments and displacement of existing duties. Low monetary cost does not establish low resource impact. Record known quantities with their units/time basis and uncertainty; no invented money-to-time conversion or universal threshold. Apply organisation-approved criteria, including cumulative commitments. Routine public-information retrieval may use a lighter approved route only where its actual purpose, content and effects meet that profile. Uncertain classification goes to an accountable reviewer and cannot silently use the lighter route. | ISS-004; REQ-010–012/020–022/027/051; VER-008/012/016 | Mark;9October2026; Q1 agreed (Q1 with financial/resource clarification); approved architectural direction, exact component wording remains proposed |
+| AOS-00-DEC-093 — Outcome-specific exchange evidence | Define the required outcome and sufficient evidence for each exchange type. Sending, delivery, recipient acceptance and actual fulfilment remain distinct facts. Contractor receipt does not prove completed work. Where the required effect remains unknown, retain that standing and reconcile before retrying. An authorised person may close further investigation under the approved profile only with an explicit unknown outcome and retained owner/status of every outstanding duty; closure cannot become confirmed success. | ISS-005; REQ-029–032/036/053; VER-018/019/021/031/034 | Mark;9October2026; Q2 agreed (Q1 with financial/resource clarification); approved architectural direction, exact component wording remains proposed |
+| AOS-00-DEC-094 — Common external-obligation ownership | Use a common obligation record carrying source, applicability, exchange, responsible human owner, deadline where applicable, fulfilment evidence and current status. Boundary recognises exchange-associated obligations; relevant domain stewards determine substantive meaning and applicability under their authority; AOS-02 owns common record semantics; AOS-13 tracks accepted responsibility and fulfilment; AOS-30 supports accountable human disposition. Preserve financial and resource impacts separately where applicable, including unknown values. Uncertain or conflicting obligations go to an empowered human; automated recognition does not create legal authority or settle substantive meaning. | ISS-006; REQ-033–036; VER-020/021 | Mark;9October2026; Q3 agreed (Q1 with financial/resource clarification); approved architectural direction, exact component wording remains proposed |
+| AOS-00-DEC-095 — Operation-specific organisational boundary | Determine the boundary from organisational authority and control over the particular operation and data use. Hosting location alone is insufficient. A supplier system may carry out a delegated internal function while its onward disclosure or independent action crosses the external boundary. Each arrangement declares controlling parties, authority, operation/data-use scope, actual governed exchange points and independent shared-control enforcement. Ambiguous or missing control allocation remains an owned gap and withholds dependent consequential action. | ISS-007; REQ-010/011/026/047; VER-008/015/027 | Mark;9October2026; Q4 agreed (Q1 with financial/resource clarification); approved architectural direction, exact component wording remains proposed |
+| AOS-00-DEC-096 — Boundary patterns and system oversight | Boundary detects cumulative external-exchange patterns, including repeated disclosures, accumulating commitments, unusual counterparties, excessive restriction and attempts to evade controls by splitting actions. AOS-25 combines permitted Boundary signals with other domains to assess wider drift and emerging/system risks. Shared AOS-01/03/04/05 controls enforce approved limits and accounting; empowered humans decide policy/limit changes. Boundary cannot create a private budget, waive restrictions or adjudicate systemwide governance. | ISS-003; REQ-027/043–046; VER-016/025/026 | Mark;9October2026; Q5 agreed (Q1 with financial/resource clarification); approved architectural direction, exact component wording remains proposed |</p>
+<p>These directions do not appoint organisational officers, select numerical thresholds, convert resource impact into money or certify external obligations legally. Shared owners retain their meanings and independent enforcement. Proposed component requirements and planned cases retain stable identities; an approved direction is distinct from G3/build or operating approval. The organisation-specific profile must state criteria and aggregation windows for financial and resource materiality; exchange-type expected effect/evidence and authorised unresolved closure; obligation field types/cardinalities/lifecycle and owners; operation/data-use authority and control points; and Boundary-versus25 pattern routing/triggers. Missing or invalid mandatory settings withhold dependent effects/reliance and retain an owned gap. No deferred federation activation or new source-status promotion is implied.</p>
+<h2 id="sensing-adoption-2026-10-09-current-reciprocal-logical-manifest">SENSING-ADOPTION-2026-10-09 — current reciprocal logical manifest</h2>
+<p>This is the single current adoption register for all40 CON views across10–14 and40. Local§6 text supplies each exact producer/consumer and domain meaning; the common master column points to existing record/control definitions rather than duplicating their dictionaries. Stable view identities and shared semantic ownership are unchanged. Version numbers below are document revisions, not new wire-definition versions. KX24/25/26 and COORD preserve their current CHECK/ACT/CHG/RSV/WHD/BRK/ACC allocations. Baseline at the originating adoption step: Sharedv0.18/Corev0.6/Exchangev0.17; COORDv0.2/KPRv0.1/Profilesv0.1. Logical adoption does not approve concrete field types or compatible executable manifests.</p>
+<table>
+<thead>
+<tr>
+<th>Exact component/view revision</th>
+<th>Authoritative common master</th>
+<th>Retained producer → consumer / domain meaning</th>
+<th>Local requirement → planned case</th>
+<th>Exact40 supporting cases / residual gate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-10-CON-001 / documentv0.4</td>
+<td>KX-01/08/09/11/23; REC-E/Q</td>
+<td>Human/source adapter via14 → 02/10: organisation, building/property/component and relationship revision; source/method; physical quantity/unit/calibration basis where applicable; observed/admitted times; purpose, assurance, uncertainty, correction/access/lifecycle. 02 REC-E/Q owns common evidence; invalid or ambiguous scope stays rejected/unresolved.</td>
+<td>AOS-10-REQ-001, AOS-10-REQ-002, AOS-10-REQ-003, AOS-10-REQ-004, AOS-10-REQ-006, AOS-10-REQ-007, AOS-10-REQ-008, AOS-10-REQ-033, AOS-10-REQ-038 → AOS-10-VER-001, AOS-10-VER-002, AOS-10-VER-003, AOS-10-VER-005, AOS-10-VER-006, AOS-10-VER-027, AOS-10-VER-030</td>
+<td>AOS-40-VER-024, AOS-40-VER-025; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-002 / documentv0.4</td>
+<td>KX-01/08/09/10; REC-E/Q</td>
+<td>10 through02 → permitted service/22/24/30: exact object/view revision, observations versus inference, condition/time/coverage cells, conflicts/freshness/gaps, model/rule, limitations and lineage. Unsafe aggregation prohibited; no claim beyond evidenced scope.</td>
+<td>AOS-10-REQ-005, AOS-10-REQ-006, AOS-10-REQ-009, AOS-10-REQ-010, AOS-10-REQ-044, AOS-10-REQ-048 → AOS-10-VER-003, AOS-10-VER-004, AOS-10-VER-005, AOS-10-VER-007, AOS-10-VER-019</td>
+<td>AOS-40-VER-011, AOS-40-VER-025; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-003 / documentv0.4</td>
+<td>KX-01/02/03/04/07/08/21/26; REC-E/Q/A/D/X; COORD ACC</td>
+<td>10/competent humans → 13/30/02; returned work evidence →10: concern, physical consequence/exposure, urgency basis, tracker/owner/cover, acceptance, authorised action, attempted/partial/actual effect and resulting observation. Common REC-Q/A/D/X and ACC; receipt is not accepted responsibility.</td>
+<td>AOS-10-REQ-011, AOS-10-REQ-012, AOS-10-REQ-020, AOS-10-REQ-021, AOS-10-REQ-022, AOS-10-REQ-032, AOS-10-REQ-037 → AOS-10-VER-008, AOS-10-VER-009, AOS-10-VER-016, AOS-10-VER-017, AOS-10-VER-018</td>
+<td>AOS-40-VER-009, AOS-40-VER-014, AOS-40-VER-020, AOS-40-VER-022, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-004 / documentv0.4</td>
+<td>KX-01/08/09/21/23; REC-E/Q; Operational Profiles§§4/5</td>
+<td>Controlled records/human/contractor via14/02 →10→13/11/30: repair and promised scope, original communicated commitment, precision/timezone and communication proof, authorised revisions, internal targets separate, completion rule/work/inspection evidence, completion time, incomplete/partial/unverified/disputed classification and provenance. 02/Profiles and DEC-036–041 own shared semantics; 13 detects/tracks, 11 delivers contact, 30 supports human decisions.</td>
+<td>AOS-10-REQ-013, AOS-10-REQ-014, AOS-10-REQ-015, AOS-10-REQ-016, AOS-10-REQ-017, AOS-10-REQ-018, AOS-10-REQ-019, AOS-10-REQ-020, AOS-10-REQ-032 → AOS-10-VER-010, AOS-10-VER-011, AOS-10-VER-012, AOS-10-VER-013, AOS-10-VER-014, AOS-10-VER-015, AOS-10-VER-016, AOS-10-VER-017</td>
+<td>AOS-40-VER-007, AOS-40-VER-008, AOS-40-VER-009, AOS-40-VER-010, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-005 / documentv0.4</td>
+<td>KX-01/08; REC-E/Q; KX-22 only after20 canonical admission</td>
+<td>10 with permitted02/14 inputs →22/24/30/25: physical condition, scenario/horizon, costs/resource constraints, alternatives, distributional consequences, uncertainty/coverage, actual outcome and precise standing. REC-E/Q; no approved capital decision or institution-wide pass inferred.</td>
+<td>AOS-10-REQ-023, AOS-10-REQ-044 → AOS-10-VER-019</td>
+<td>AOS-40-VER-013, AOS-40-VER-027; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-006 / documentv0.4</td>
+<td>KX-01/03/08/14/15/21/23; REC-E/Q/D; COORD ACC</td>
+<td>Competent stewards/02/10 → permitted dutyholders/humans/external recipients through14: exact building/lifecycle/applicability profile, category inventory, current versions/history, gaps, authorised audience, delivery/usability confirmation and owned residual duties. Shared custody/access/exchange definitions; no statutory completeness inferred from transfer alone.</td>
+<td>AOS-10-REQ-024, AOS-10-REQ-025, AOS-10-REQ-026, AOS-10-REQ-027, AOS-10-REQ-047 → AOS-10-VER-020, AOS-10-VER-021, AOS-10-VER-022, AOS-10-VER-023</td>
+<td>AOS-40-VER-025, AOS-40-VER-036; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-10-CON-007 / documentv0.4</td>
+<td>RSVIEW-0.1;02§6.6/04-CON-009; KX-23/07/06/05/13/17/21</td>
+<td>Assigned research service/14/10 →02/13/30/01/affected owners: common profile/run/finding/disposition meanings, exact affected elements and asset-specific implications under RSVIEW-0.1; failed/partial retrieval and unaccepted reviewer remain explicit.</td>
+<td>AOS-10-REQ-039, AOS-10-REQ-040, AOS-10-REQ-041, AOS-10-REQ-042, AOS-10-REQ-043, AOS-10-REQ-045, AOS-10-REQ-046 → AOS-10-VER-026, AOS-10-VER-030, AOS-10-VER-031, AOS-10-VER-032, AOS-10-VER-033</td>
+<td>AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-11-CON-001 / documentv0.3</td>
+<td>KX-03/09/11/12/14/15; REC-D; private session projection only</td>
+<td>Resident or scoped representative/11 → permitted private service and03; confirmed selected request only →02/13: session/purpose/notice/participation revision, identity/representation scope, start/end, exact selected content/audience and sharing confirmation; separate03 permissions; private content not general enterprise evidence</td>
+<td>AOS-11-REQ-001, AOS-11-REQ-002, AOS-11-REQ-003, AOS-11-REQ-004, AOS-11-REQ-005, AOS-11-REQ-006, AOS-11-REQ-007, AOS-11-REQ-008, AOS-11-REQ-009 → AOS-11-VER-001, AOS-11-VER-002, AOS-11-VER-003, AOS-11-VER-004, AOS-11-VER-005</td>
+<td>AOS-40-VER-003, AOS-40-VER-015; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-11-CON-002 / documentv0.3</td>
+<td>KX-01/08/09/14; REC-E/Q/D;10-CON-001/002</td>
+<td>10/02 permitted source view →11→verified resident/private session: property/component, source/time/units/assurance/coverage, observations versus inference, versions/limitations; response preserves meaning; stale/absent evidence explicit</td>
+<td>AOS-11-REQ-010, AOS-11-REQ-011, AOS-11-REQ-012, AOS-11-REQ-013, AOS-11-REQ-014, AOS-11-REQ-015 → AOS-11-VER-006, AOS-11-VER-007, AOS-11-VER-008</td>
+<td>AOS-40-VER-011, AOS-40-VER-012, AOS-40-VER-025; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-11-CON-003 / documentv0.3</td>
+<td>KX-02/03/04/11/12/14/21/23/26; REC-A/D/X; ACC;14-CON-001–003</td>
+<td>Empowered service/13/30/11 → approved delivery/14→resident or verified designated recipient; result →02/13: exact content/scope, channel agreement, audience/current checks, owner/team contacts, dispatch/delivery/unknown/failure/acknowledgement, retries/effects; common REC-A/D/X, ACC; not human acceptance or completed service</td>
+<td>AOS-11-REQ-017, AOS-11-REQ-018, AOS-11-REQ-019, AOS-11-REQ-020, AOS-11-REQ-021, AOS-11-REQ-022, AOS-11-REQ-023, AOS-11-REQ-024 → AOS-11-VER-010, AOS-11-VER-011, AOS-11-VER-012</td>
+<td>AOS-40-VER-007, AOS-40-VER-009, AOS-40-VER-010, AOS-40-VER-014, AOS-40-VER-020, AOS-40-VER-022, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-11-CON-004 / documentv0.3</td>
+<td>KX-01/07/08/21/26; REC-E/Q;10-CON-004/13-CON-005</td>
+<td>Resident-selected or ordinary permitted service input/10/30 →11↔13/02: expressed need/dissatisfaction, original promise and scope/revisions, completion evidence standing, request/complaint/tracker/owner/cover, permitted response/remedy/outstanding work and actual outcome;10 owns condition/promise meaning,13 duties,30 human approval</td>
+<td>AOS-11-REQ-025, AOS-11-REQ-026, AOS-11-REQ-027, AOS-11-REQ-028, AOS-11-REQ-029, AOS-11-REQ-030 → AOS-11-VER-013, AOS-11-VER-014, AOS-11-VER-015, AOS-11-VER-016</td>
+<td>AOS-40-VER-007, AOS-40-VER-008, AOS-40-VER-010, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-11-CON-005 / documentv0.3</td>
+<td>KX-01/03/08/14; REC-E/Q/D; KX-22 only after20 canonical admission</td>
+<td>Separately permitted enterprise sources and volunteered input through02/14 →11→22/24/25/30: exact purpose/population/period, source/assurance/coverage/aggregation limits, findings/uncertainty, dissent and actual organisational response/outcome; no private transcript or inferred individual emotion/vulnerability</td>
+<td>AOS-11-REQ-031, AOS-11-REQ-032, AOS-11-REQ-033, AOS-11-REQ-034 → AOS-11-VER-017, AOS-11-VER-018</td>
+<td>AOS-40-VER-015, AOS-40-VER-027; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-11-CON-006 / documentv0.3</td>
+<td>KX-02/03/07/11/12/14/19/21/23/26; KPR/ACC</td>
+<td>Approved property trigger/profile + current participation/03 →11/13/empowered welfare function; permitted recipient via14: physical threshold/time/scope, Tier1/Tier2 participation, recipient/designation/barriers, minimal content/checks, delivery/acceptance/cover/outcome; silence not behavioural trigger; no invented emergency power</td>
+<td>AOS-11-REQ-035, AOS-11-REQ-036, AOS-11-REQ-037, AOS-11-REQ-038, AOS-11-REQ-039 → AOS-11-VER-019, AOS-11-VER-020, AOS-11-VER-021</td>
+<td>AOS-40-VER-014, AOS-40-VER-015, AOS-40-VER-021; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-11-CON-007 / documentv0.3</td>
+<td>RSVIEW-0.1;02§6.6/04-CON-009; KX-23/07/06/05/13/17/21</td>
+<td>Assigned specialist service/14/11 →02/13/30/01/affected owners: common profile/run/finding/disposition under RSVIEW-0.1, specialist implications and coverage/review/change links; unperformed/unaccepted explicit</td>
+<td>AOS-11-REQ-045, AOS-11-REQ-046, AOS-11-REQ-047, AOS-11-REQ-048, AOS-11-REQ-049 → AOS-11-VER-026, AOS-11-VER-027, AOS-11-VER-028</td>
+<td>AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-12-CON-001 / documentv0.3</td>
+<td>KX-01/03/08/09/11/15/23; REC-E/Q/D</td>
+<td>Approved HRIS/human/provider through14/02 →12:worker/role/organisation/effective relationship,source/method/time/version,assurance/uncertainty/purpose/sensitivity/lifecycle/correction;REC-E/Q;unverified/conflicting scope explicit</td>
+<td>AOS-12-REQ-001, AOS-12-REQ-002, AOS-12-REQ-033, AOS-12-REQ-034, AOS-12-REQ-035, AOS-12-REQ-040, AOS-12-REQ-044 → AOS-12-VER-001, AOS-12-VER-002, AOS-12-VER-023, AOS-12-VER-024, AOS-12-VER-027, AOS-12-VER-029</td>
+<td>AOS-40-VER-015, AOS-40-VER-025, AOS-40-VER-037; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-12-CON-002 / documentv0.3</td>
+<td>KX-01/03/08/11/14; REC-E/Q/D</td>
+<td>Permitted domain/02 evidence →12→scoped professional:role/task/current context,source assurance/coverage,observations/human context/inference,rule/model/version/limits and referral;no decision/action permission or resident private content inherited</td>
+<td>AOS-12-REQ-003, AOS-12-REQ-004, AOS-12-REQ-036, AOS-12-REQ-039 → AOS-12-VER-003, AOS-12-VER-024, AOS-12-VER-026</td>
+<td>AOS-40-VER-013, AOS-40-VER-015, AOS-40-VER-037; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-12-CON-003 / documentv0.3</td>
+<td>KX-01/06/08/09/17; REC-E/Q;30-IF-001 human evidence</td>
+<td>Approved framework/assessment/learning/human steward →12/02→permitted worker/professional/HR/30:exact role/framework,activity/qualification/capability status,evaluation and gaps,development alternatives,human decision/rationale/actual outcome;source claims distinct from validated competence</td>
+<td>AOS-12-REQ-005, AOS-12-REQ-006, AOS-12-REQ-008, AOS-12-REQ-009, AOS-12-REQ-010, AOS-12-REQ-011, AOS-12-REQ-012, AOS-12-REQ-013, AOS-12-REQ-014, AOS-12-REQ-015 → AOS-12-VER-004, AOS-12-VER-006, AOS-12-VER-007, AOS-12-VER-008, AOS-12-VER-009, AOS-12-VER-010</td>
+<td>AOS-40-VER-013, AOS-40-VER-037; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-12-CON-004 / documentv0.3</td>
+<td>KX-01/03/08/12/14/15/19; REC-E/Q/D; KPR protected scope</td>
+<td>Charter/scoped volunteered or otherwise specifically permitted sources →12/02→permitted listening reviewers:instrument/revision,purpose/basis/participation,expressed human account,source/population/period/disclosure profile,limitations/response standing;no unapproved individual sentiment/inference;protected text restricted</td>
+<td>AOS-12-REQ-016, AOS-12-REQ-017, AOS-12-REQ-018, AOS-12-REQ-019, AOS-12-REQ-020, AOS-12-REQ-021 → AOS-12-VER-010, AOS-12-VER-011, AOS-12-VER-012, AOS-12-VER-013, AOS-12-VER-014</td>
+<td>AOS-40-VER-015, AOS-40-VER-021, AOS-40-VER-037; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-12-CON-005 / documentv0.3</td>
+<td>KX-01/03/08/14; REC-E/Q/D; KX-22 only after20 canonical admission</td>
+<td>Scoped02/13/14 evidence and12 analysis →22/24/25/30/competent humans:load/capacity/context,comparison/assumptions/coverage,distribution,dependency/novelty limits,disclosure risks,suppression and proposed versus actual outcomes;REC-E/Q;no automated employment or institutional pass</td>
+<td>AOS-12-REQ-022, AOS-12-REQ-023, AOS-12-REQ-024, AOS-12-REQ-025, AOS-12-REQ-026, AOS-12-REQ-027, AOS-12-REQ-028, AOS-12-REQ-031 → AOS-12-VER-014, AOS-12-VER-015, AOS-12-VER-016, AOS-12-VER-017, AOS-12-VER-018, AOS-12-VER-021</td>
+<td>AOS-40-VER-013, AOS-40-VER-027, AOS-40-VER-037; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-12-CON-006 / documentv0.3</td>
+<td>KX-03/06/07/11/14/19/21/26; REC-A/D/X/Q; KPR/ACC</td>
+<td>Worker/representative/12 approved trigger →03/13/30/empowered protected audience:request/concern scope,minimum permitted evidence,independent reviewer/owner/cover/acceptance,reasoned restriction/challenge/action/outcome;REC-Q/A/D/X andKPR/ACC;failed handoff remains owned</td>
+<td>AOS-12-REQ-007, AOS-12-REQ-029, AOS-12-REQ-030, AOS-12-REQ-032, AOS-12-REQ-037, AOS-12-REQ-043 → AOS-12-VER-005, AOS-12-VER-019, AOS-12-VER-020, AOS-12-VER-022, AOS-12-VER-025, AOS-12-VER-029</td>
+<td>AOS-40-VER-014, AOS-40-VER-021, AOS-40-VER-037, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-12-CON-007 / documentv0.3</td>
+<td>RSVIEW-0.1;02§6.6/04-CON-009; KX-23/07/06/05/13/17/21</td>
+<td>Assigned specialist/14/12 →02/13/30/01/affected owners:RSVIEW-0.1 profile/run/finding/disposition and exact specialist implications;failed/partial/unaccepted standing explicit</td>
+<td>AOS-12-REQ-045, AOS-12-REQ-046, AOS-12-REQ-047, AOS-12-REQ-048, AOS-12-REQ-049 → AOS-12-VER-030, AOS-12-VER-031, AOS-12-VER-032</td>
+<td>AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-001 / documentv0.2</td>
+<td>KX-05/09/10/13/16/18/24; COORD ACT/CHG</td>
+<td>Authorised owner/01/05/dependencies →13/02/executors: exact scope/revision/purpose/steps/states/conditions/source instruments/human boundary, closure/fallback rules, rationale and compatible actual applied manifest; unapplied/unknown meaning not usable</td>
+<td>AOS-13-REQ-001, AOS-13-REQ-002, AOS-13-REQ-010, AOS-13-REQ-014, AOS-13-REQ-049 → AOS-13-VER-001, AOS-13-VER-002, AOS-13-VER-007, AOS-13-VER-010, AOS-13-VER-035</td>
+<td>AOS-40-VER-020, AOS-40-VER-025, AOS-40-VER-029, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-002 / documentv0.2</td>
+<td>KX-01/04/08/09/16/21; REC-E/Q/X</td>
+<td>Permitted domain/source/02/runtime →13→02/executors/reviewers: stable case/request/event/attempt identities, definition/profile/version, source assurance, time/standing, dependencies/pending work, current state/effects/residual duties; duplicates/order do not redefine truth</td>
+<td>AOS-13-REQ-003, AOS-13-REQ-004, AOS-13-REQ-005, AOS-13-REQ-006, AOS-13-REQ-007, AOS-13-REQ-008, AOS-13-REQ-048 → AOS-13-VER-003, AOS-13-VER-004, AOS-13-VER-005, AOS-13-VER-006, AOS-13-VER-035</td>
+<td>AOS-40-VER-025, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-003 / documentv0.2</td>
+<td>KX-07/19/21/26;13-IF-001; KPR/COORD ACC/WHD</td>
+<td>13/domain/control finding →permitted 30/human/recipient; stage result →13/02: existing 13-IF-001/KX-07, KX-21 and KX-26/WHD meaning; exact duty/source/limits, tracker, recipient/role/power, deadline/cover, receipt/validation/application/responsibility and residual rejected/unresolved scope; KPR protected route</td>
+<td>AOS-13-REQ-016, AOS-13-REQ-017, AOS-13-REQ-018, AOS-13-REQ-019, AOS-13-REQ-020, AOS-13-REQ-026, AOS-13-REQ-041 → AOS-13-VER-011, AOS-13-VER-012, AOS-13-VER-013, AOS-13-VER-014, AOS-13-VER-019, AOS-13-VER-029</td>
+<td>AOS-40-VER-009, AOS-40-VER-021, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-004 / documentv0.2</td>
+<td>KX-02/03/04/13/16/18/20/24/25; CHECK/ACT/CHG/RSV/BRK</td>
+<td>13 →04/05/shared controls/external route 14; result →13/02: exact task/request/attempt/arguments/actor/current source vector, authority/use, CHECK/applied configuration, shared account/reservations, observed prevented/applied/partial/unknown effect and reconciliation; no private copy of grant or account semantics</td>
+<td>AOS-13-REQ-011, AOS-13-REQ-012, AOS-13-REQ-013, AOS-13-REQ-015, AOS-13-REQ-021, AOS-13-REQ-022, AOS-13-REQ-023, AOS-13-REQ-025, AOS-13-REQ-044, AOS-13-REQ-046 → AOS-13-VER-008, AOS-13-VER-009, AOS-13-VER-010, AOS-13-VER-015, AOS-13-VER-016, AOS-13-VER-018, AOS-13-VER-032, AOS-13-VER-033</td>
+<td>AOS-40-VER-014, AOS-40-VER-020, AOS-40-VER-022, AOS-40-VER-023, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-005 / documentv0.2</td>
+<td>KX-01/06/07/08/12/14/21/23/26; Profiles§§4/5;10-CON-004/11-CON-003/004</td>
+<td>10/02 evidence +30 human scope →13↔11/14/service source: original communicated promise/precision/scope/revisions, completion rule/work/inspection/dispute standing, comparison classification, accepted owner/team cover, permitted both-contact communication result, actual outcome/residual duty; domain meanings unchanged</td>
+<td>AOS-13-REQ-030, AOS-13-REQ-031, AOS-13-REQ-032, AOS-13-REQ-033, AOS-13-REQ-034, AOS-13-REQ-035, AOS-13-REQ-036, AOS-13-REQ-037, AOS-13-REQ-038, AOS-13-REQ-039 → AOS-13-VER-022, AOS-13-VER-023, AOS-13-VER-024, AOS-13-VER-025, AOS-13-VER-026, AOS-13-VER-027</td>
+<td>AOS-40-VER-007, AOS-40-VER-008, AOS-40-VER-009, AOS-40-VER-010, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-006 / documentv0.2</td>
+<td>KX-01/08/17/19; REC-E/Q; KX-22 only after20 canonical admission</td>
+<td>13/02 admitted observation →permitted service/22/24/25/40: population/period/coverage, exact intended definition versus observed transaction, source/assurance/uncertainty, baseline/rubric/interpretation, owner/remedy/outcome and suppressed/unobserved scope; no completeness/legal pass inferred</td>
+<td>AOS-13-REQ-005, AOS-13-REQ-006, AOS-13-REQ-007, AOS-13-REQ-008, AOS-13-REQ-009, AOS-13-REQ-010, AOS-13-REQ-047 → AOS-13-VER-004, AOS-13-VER-005, AOS-13-VER-006, AOS-13-VER-007, AOS-13-VER-034</td>
+<td>AOS-40-VER-011, AOS-40-VER-025, AOS-40-VER-027, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-007 / documentv0.2</td>
+<td>KX-01/04/06/13/15/16/17/21; COORD CHG; REC-E/Q/X</td>
+<td>Execution/humans/domain stewards →13/02/21/25/30: actual consequences, approved human rationale, definition history/lesson/proposal, change impacts/applied acknowledgements and residual duties; governed lifecycle; no self-amendment</td>
+<td>AOS-13-REQ-027, AOS-13-REQ-028, AOS-13-REQ-029, AOS-13-REQ-043, AOS-13-REQ-048 → AOS-13-VER-020, AOS-13-VER-021, AOS-13-VER-031, AOS-13-VER-035</td>
+<td>AOS-40-VER-006, AOS-40-VER-022, AOS-40-VER-023, AOS-40-VER-025, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-13-CON-008 / documentv0.2</td>
+<td>RSVIEW-0.1;02§6.6/04-CON-009; KX-23/07/06/05/13/17/21</td>
+<td>Assigned specialist/14/13 →02/30/01/affected owners: common RSVIEW-0.1 profile/run/finding/disposition plus exact process implications; actual coverage/reviewer duties/change standing explicit</td>
+<td>AOS-13-REQ-050, AOS-13-REQ-051, AOS-13-REQ-052, AOS-13-REQ-053, AOS-13-REQ-054 → AOS-13-VER-036, AOS-13-VER-037, AOS-13-VER-038</td>
+<td>AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-14-CON-001 / documentv0.8</td>
+<td>KX-23/02/03/09/11/12;14-IF-001 request</td>
+<td>Domain/04/13 or permitted external intake →14/requesting executor; organisation/party/direction/operation/purpose/profile and current authority/use</td>
+<td>AOS-14-REQ-010, AOS-14-REQ-011, AOS-14-REQ-012, AOS-14-REQ-013, AOS-14-REQ-019, AOS-14-REQ-026, AOS-14-REQ-047 → AOS-14-VER-008, AOS-14-VER-009, AOS-14-VER-011, AOS-14-VER-015, AOS-14-VER-027, AOS-14-VER-034</td>
+<td>AOS-40-VER-024, AOS-40-VER-025; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-14-CON-002 / documentv0.8</td>
+<td>KX-23/02/03/11/14/24/25;14-IF-001 typed determination; CHECK</td>
+<td>14 consuming01/03/04/05 → executor/13/02; exact operation-bound Permit/Constrain/Deny/Quarantine/Escalate/Unresolved</td>
+<td>AOS-14-REQ-015, AOS-14-REQ-016, AOS-14-REQ-018, AOS-14-REQ-020, AOS-14-REQ-021, AOS-14-REQ-022, AOS-14-REQ-024, AOS-14-REQ-025, AOS-14-REQ-027, AOS-14-REQ-037, AOS-14-REQ-039, AOS-14-REQ-042, AOS-14-REQ-052, AOS-14-REQ-055 → AOS-14-VER-010, AOS-14-VER-011, AOS-14-VER-012, AOS-14-VER-014, AOS-14-VER-016, AOS-14-VER-022, AOS-14-VER-023, AOS-14-VER-024, AOS-14-VER-030, AOS-14-VER-033, AOS-14-VER-034</td>
+<td>AOS-40-VER-014, AOS-40-VER-015, AOS-40-VER-020; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-14-CON-003 / documentv0.8</td>
+<td>KX-23/01/04/08/13/15/21;14-IF-001 evidence; REC-E/Q/X</td>
+<td>14/connector/04/05 and attributed domain/counterparty effect →02/permitted10–13/25/30/40; attempt/stages/outcome/uncertainty</td>
+<td>AOS-14-REQ-014, AOS-14-REQ-017, AOS-14-REQ-023, AOS-14-REQ-028, AOS-14-REQ-029, AOS-14-REQ-030, AOS-14-REQ-031, AOS-14-REQ-032, AOS-14-REQ-036, AOS-14-REQ-038, AOS-14-REQ-040, AOS-14-REQ-041, AOS-14-REQ-043, AOS-14-REQ-044, AOS-14-REQ-045, AOS-14-REQ-046, AOS-14-REQ-048, AOS-14-REQ-049, AOS-14-REQ-050, AOS-14-REQ-051, AOS-14-REQ-053, AOS-14-REQ-054 → AOS-14-VER-009, AOS-14-VER-010, AOS-14-VER-013, AOS-14-VER-017, AOS-14-VER-018, AOS-14-VER-019, AOS-14-VER-021, AOS-14-VER-022, AOS-14-VER-023, AOS-14-VER-024, AOS-14-VER-025, AOS-14-VER-026, AOS-14-VER-028, AOS-14-VER-029, AOS-14-VER-030, AOS-14-VER-031, AOS-14-VER-032, AOS-14-VER-034</td>
+<td>AOS-40-VER-022, AOS-40-VER-023, AOS-40-VER-025, AOS-40-VER-036, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-14-CON-004 / documentv0.8</td>
+<td>KX-23/07/06/21/26;14-IF-001 obligation;13 tracking/02 common record</td>
+<td>14 recognised source with01/03/domain steward →02/13/30/empowered duty owner; common obligation and actual fulfilment</td>
+<td>AOS-14-REQ-033, AOS-14-REQ-034, AOS-14-REQ-035 → AOS-14-VER-020, AOS-14-VER-021, AOS-14-VER-034</td>
+<td>AOS-40-VER-009, AOS-40-VER-021, AOS-40-VER-022, AOS-40-VER-038; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-14-CON-005 / documentv0.8</td>
+<td>RSVIEW-0.1;02§6.6/04-CON-009; KX-23/07/06/05/13/17/21</td>
+<td>Assigned component research/14 retrieval →02/component reviewers/13/30/01; distinct specialist relevance and common research states</td>
+<td>AOS-14-REQ-001, AOS-14-REQ-002, AOS-14-REQ-003, AOS-14-REQ-004, AOS-14-REQ-005, AOS-14-REQ-006, AOS-14-REQ-007, AOS-14-REQ-008 → AOS-14-VER-001, AOS-14-VER-002, AOS-14-VER-003, AOS-14-VER-004, AOS-14-VER-005, AOS-14-VER-006</td>
+<td>AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-40-CON-001 / documentv0.8</td>
+<td>02 envelope/KX-10/20; QS21/26; no new IF</td>
+<td>Component/contract owners and 40 → assessors/builders/01/05/30: entity, requirements, case allocations, exact revisions, omissions, dependency/approval states; QS-21/26 and 02 record conventions</td>
+<td>AOS-40-REQ-001, AOS-40-REQ-002, AOS-40-REQ-003, AOS-40-REQ-004, AOS-40-REQ-026, AOS-40-REQ-030, AOS-40-REQ-031 → AOS-40-VER-001, AOS-40-VER-002, AOS-40-VER-011, AOS-40-VER-012, AOS-40-VER-025, AOS-40-VER-029, AOS-40-VER-036, AOS-40-VER-037, AOS-40-VER-038</td>
+<td>AOS-40-VER-001, AOS-40-VER-025, AOS-40-VER-029; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-40-CON-002 / documentv0.8</td>
+<td>KX-01/04/08/17; REC-E/Q/X; component fixture contracts</td>
+<td>Authorised runner/04/05/domain fixture → 40/02/assessor: run/case/fixture identity, method, actual sequence, input/control/model versions, permission, observed output/effect, clocks/units, uncertainty and limitations; REC-E/Q/X and component contracts</td>
+<td>AOS-40-REQ-005, AOS-40-REQ-006, AOS-40-REQ-007, AOS-40-REQ-008, AOS-40-REQ-009, AOS-40-REQ-010, AOS-40-REQ-011, AOS-40-REQ-012, AOS-40-REQ-013, AOS-40-REQ-015, AOS-40-REQ-016, AOS-40-REQ-017, AOS-40-REQ-018, AOS-40-REQ-019, AOS-40-REQ-020, AOS-40-REQ-021, AOS-40-REQ-022, AOS-40-REQ-023, AOS-40-REQ-024, AOS-40-REQ-025, AOS-40-REQ-026, AOS-40-REQ-027 → AOS-40-VER-002, AOS-40-VER-003, AOS-40-VER-004, AOS-40-VER-005, AOS-40-VER-006, AOS-40-VER-007, AOS-40-VER-008, AOS-40-VER-009, AOS-40-VER-010, AOS-40-VER-011, AOS-40-VER-012, AOS-40-VER-013, AOS-40-VER-014, AOS-40-VER-015, AOS-40-VER-016, AOS-40-VER-017, AOS-40-VER-018, AOS-40-VER-019, AOS-40-VER-020, AOS-40-VER-021, AOS-40-VER-022, AOS-40-VER-023, AOS-40-VER-024, AOS-40-VER-025, AOS-40-VER-026, AOS-40-VER-036, AOS-40-VER-037, AOS-40-VER-038</td>
+<td>AOS-40-VER-002, AOS-40-VER-003, AOS-40-VER-004, AOS-40-VER-005, AOS-40-VER-025; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-40-CON-003 / documentv0.8</td>
+<td>KX-07/19/21/26; permitted KPR/ACC</td>
+<td>40/assessor → affected owners/30/01: evidence and expected/observed difference, affected REQs/contracts, severity rationale, tracker, acceptance/cover/deadline, remedy/retest/disposition; KX-21/26 and permitted KX-19</td>
+<td>AOS-40-REQ-012/013 → AOS-40-VER-006; AOS-40-REQ-014 → AOS-40-VER-001; AOS-40-REQ-016 → AOS-40-VER-009/021/038; AOS-40-REQ-022 → AOS-40-VER-021</td>
+<td>AOS-40-VER-001/006/009/021/038; controlled annex variants and accepted duty/retest evidence; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-40-CON-004 / documentv0.8</td>
+<td>KX-06/20/24; QS24–28; COORD ACT/CHG</td>
+<td>40 and qualified human reviewers → 01/05/30/empowered organisation: separate quality/design conclusions, gate evidence, exclusions/blocked dependencies, accepted residuals, handover and approval/application; KX-20 existing release/recovery views and QS-24–28</td>
+<td>AOS-40-REQ-030, AOS-40-REQ-031, AOS-40-REQ-032, AOS-40-REQ-033 → AOS-40-VER-023, AOS-40-VER-026, AOS-40-VER-029, AOS-40-VER-030</td>
+<td>AOS-40-VER-029, AOS-40-VER-030; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-40-CON-005 / documentv0.8</td>
+<td>KX-01/06/08/17/22; REC-E/Q;25/30 independent comparison</td>
+<td>25/30/independent assessor/permitted affected-person input → 40/empowered reviewers: question, period/population, founding baseline, independent reports, comparison, rubric, dissent, limitations and follow-up; KX-06/17/22, REC-E/Q</td>
+<td>AOS-40-REQ-028, AOS-40-REQ-029 → AOS-40-VER-027, AOS-40-VER-028, AOS-40-VER-037</td>
+<td>AOS-40-VER-027, AOS-40-VER-028; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+<tr>
+<td>AOS-40-CON-006 / documentv0.8</td>
+<td>RSVIEW-0.1;02§6.6/04-CON-009; KX-23/07/06/05/13/17/21</td>
+<td>Assigned research workflow with 14 → 02/40 reviewer/affected owners; human disposition → 01/30/tracker: common views under 04-CON-009/02-CON-007/RSVIEW-0.1; no local replacement schema</td>
+<td>AOS-40-REQ-034, AOS-40-REQ-035, AOS-40-REQ-036, AOS-40-REQ-037, AOS-40-REQ-038, AOS-40-REQ-039 → AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035</td>
+<td>AOS-40-VER-031, AOS-40-VER-032, AOS-40-VER-033, AOS-40-VER-034, AOS-40-VER-035; local§17 and40-ISS-002/003 gate exact profiles/fixtures/compatibility before dependent build or execution</td>
+</tr>
+</tbody></table>
+<h3 id="mandatory-shared-exchange-behaviour-and-owned-remaining-gaps">Mandatory shared exchange behaviour and owned remaining gaps</h3>
+<p>01 owns constitutional/action authority;02 evidence/assurance, record/identity/revision/acknowledgement structure;03 identity/representation, basis, purpose and disclosure;04 task/effect semantics/evaluation;05 independent runtime/accounting/enforcement/recovery;13 escalation and accepted duty;14 external exchange;30 human decision standing. A domain supplies its own subject meaning and never upgrades another&#39;s authoritative status. Every mapped producer and recipient consumes the same exact approved master/profile revision. Unknown/invalid schema, units, reference, direction, purpose, clock basis or required field stays rejected/unresolved with an owned gap. Neither a doc version nor successful transport establishes compatible semantics.</p>
+<p>KX21 receipt/validation/application/responsibility stages apply only where the declared operation requires them; no recursive acknowledgement loop or compulsory human acknowledgement for every observation. Information custody/admission, restricted quarantine, source truth, recipient-use permission, delivery, accepted duty and actual effect remain separate. No arrival-order authority, duplicated independent evidence, repeated-effect permission or administrative success substitution. Retain scoped identity/order/rejection evidence; reconcile unknown effects before a separately current-checked retry. Common correction/revocation CHG selectively reopens materially dependent work and acknowledges actual application. Recovered consumers prove current authority/use/configuration/lifecycle and reconcile attempts/reservations/effects before continuation. Privacy/licensing/minimisation/correction/retention/deletion cover raw/derived/restored records; audit is not perpetual sensitive retention.</p>
+<p>Routine public retrieval only uses an approved lighter profile under DEC092; all governed external disclosure/contact/commitment remains current-checked under14/01/03/04/05. Financial and resource impact stay distinct under DEC092; outcome evidence and residual closure use DEC093;02 common obligations/domain substance/13 tracking use DEC094; operation/control/data-use perimeter DEC095; Boundary patterns versus25 system oversight DEC096. Private resident assistance never feeds enterprise or workforce uses by integration convenience; sensitive People/protected reporting remain separately scoped; physical sensing cannot become unapproved individual inference.</p>
+<p>Each local§17 ISS001 retains exact schema/field/role/source/case-master/profile and round-trip build gates; respective ISS002–006 retain approved times/units/currentness/completion/participation/cover/capacity/quality/rights/legal/continuity/research gates.40-ISS002/003 records actual fixtures and reciprocal endpoint validation. Domain/02/shared-control stewards own these gaps and required evidence before dependent build/execution/activation.40 cases above are specific supporting case contributions; actual complete coverage, approved fixture manifest and independent case assessment remain necessary before conformance. No case is executed by registering it. CAP01/02 annexes, full sector/legal mapping and institutional evidence remain separate. KX05/06/13 research disposition/change and RSVIEW-0.1 consume the single02§6.6/04-CON009 views with specialist ownership, source correction/coalescing and separately accepted review duties. No component becomes the substantive research owner for every other component.</p>
+<h2 id="acceptance-corrections-and-controlled-allocation-9-october-2026">Acceptance corrections and controlled allocation — 9 October 2026</h2>
+<p>AT-CR-01–05 closed at functional-document/author-review level. AOS-40 v0.7 retains40 proposed requirements and38 planned parent cases, with108 individually assessable variants in the controlled acceptance annex. All variants remain planned/unexecuted. Architecture/Mapv0.43; Sharedv0.19/Corev0.6/Registerv0.18/SourceMatrixv0.19; DEC001–096 unchanged. Original parent acceptance and local component obligations remain necessary. Exact approved current-core execution scope/endpoints/profiles, human appointments, implementation evidence and independent/institutional assurance remain separate dependencies. Pilot5b remains closed.</p>
+<p><strong>Controlled allocation:</strong> <a href="../Supporting-Specifications/aos-40-acceptance-variants-and-coverage-v0-1.html">Acceptance variants and coverage</a> §§2–6 define result rules, all38 parent joins,108 fixture/procedure/oracle variants, exact specialist counterparts and the660 retained local-case inventory. An inventory entry alone gives no assembled coverage; actual scoped execution must bind exact local requirement/contract/endpoints/variant/evidence or retain an owned exclusion. Remaining annex and execution-scope choices stay with AOS-40 ISS-002/003/007 and relevant semantic/assurance owners before affected reliance.</p>
+<p><strong>CON-003 master correction:</strong> AOS-40-REQ-012/013 → AOS-40-VER-006; AOS-40-REQ-014 → AOS-40-VER-001; AOS-40-REQ-016 → AOS-40-VER-009/021/038; AOS-40-REQ-022 → AOS-40-VER-021. The authoritative definition remains the Kernel Exchange Register; current projections adopt that one definition. These links distinguish finding/retest, traceability, accepted human duty and protected reporting. No transport receipt is proof of accepted duty or remedy.</p>
+<p><strong>Change:</strong> Authorised documentary corrections AT-CR-01–05; no new constitutional decision, requirement, parent case or interface; no source-status promotion or gate approval.</p>
+<h2 id="phase-2-scope-disposition-9-october-2026">Phase 2 scope disposition — 9 October 2026</h2>
+<p>DEC-097 controls over prior inclusion/annex statements. CAP-01/02-specific legacy requirements/cases are deferred and supply no current-core completion/acceptance obligation. General human judgement, independent challenge, evidence fidelity, cumulative risk/drift and protected reporting remain current. Existing closure of AT-CR-01–05 and pilot5b is retained; neither is reopened by this scope change. No case executed or operating approval granted.</p>
+<p><strong>Allocation and source status:</strong> Any older source/adoption row relying on deferred CAP-only IDs is a historical use-case contribution, not current-core coverage. Core source sufficiency must use the surviving general obligations and accepted evidence; no source is promoted by this deferral. Retained numbered totals count catalogue/trace entries, including deferred IDs, and must not be read as active-core requirement/test totals.</p>
+<h2 id="final-functional-document-completion-disposition-9october2026">Final functional-document completion disposition —9October2026</h2>
+<p><a href="../Supporting-Specifications/aos-core-documentation-completion-review-v0-1.html">Author completion review</a> records the bounded checks and closure of documentary tasks6/8/9. Source statuses, manifest, DEC001–097, proposed component requirements and planned cases are unchanged. No current-core coverage from deferred CAP-only IDs. Exact approved run/endpoint bindings, compatible implementation profiles and actual competent/independent/service/institutional evidence remain prerequisites before affected reliance. Next documentary task: item12 extension/conformance specification;12a supplier briefing,13a AOS Change Constitution and13/14 publication programme remain open. Mark substantive review is5d; implementation preparation and verification are11a/11b.</p>
+<h2 id="historical-opening-status-notices-retained-provenance">Historical opening status notices — retained provenance</h2>
+<p>These are dated drafting snapshots, including their then-current versions, totals, completion statements and next tasks. They do not define today&#39;s baseline or work queue. The present document retains its proposed/planned status; approved directions retain their recorded scope. Use the current inventory, adopted README and live to-do list for orientation; authoritative requirement and decision text remains in its named sections.</p>
+<p><strong>Historical status notice — functional-document completion — 9 October 2026:</strong> Items6,8 and9 are complete for functional drafting, planned case allocation and author consistency review. See <a href="../Supporting-Specifications/aos-core-documentation-completion-review-v0-1.html">final completion review</a>. This is documentary completion, not whole-document approval, executed acceptance, G3/G4 or operating/institutional assurance. CAP-01/02 remain parked in Phase2; pilot5b and prior author correction closures remain closed. Mark review and implementation-specific contracts/run scope/verification are separate work. Items12/12a/13a/13/14 remain outstanding; the complete documentation/publication programme is not finished. Earlier dated task/baseline statements are history. AOS-00/Mapv0.45; DEC001–097 unchanged; Sharedv0.21/Corev0.6/Registerv0.20/Matrixv0.21; component and acceptance/Phase2 revisions unchanged.</p>
+<p><strong>Historical status notice — revision set:</strong> AOS-00/Map v0.44; DEC-001–097; AOS-10v0.5/20v0.6/22v0.5/24v0.4/25v0.3/40v0.8; other components unchanged; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; acceptance annexv0.2; reviewv0.3.</p>
+<p><strong>Historical status notice — scope decision — 9 October 2026, DEC-097:</strong> Mark has moved CAP-01 Trade-Off Divergence and CAP-02 Risk Register Assessment into Phase 2 as specific use cases built on AOS. They are outside the current architecture/specification completion scope and are not current build, acceptance or publication prerequisites. No use-case design, configuration, implementation or testing is scheduled now. DEC-017&#39;s architectural inclusion is superseded on this point; its original record remains history. General human judgement, evidence, data-use/authority, independent challenge and protected reporting controls remain in the architecture. Dedicated legacy use-case IDs are retained only as deferred trace references, with original wording parked in Phase 2 (deferred under DEC-097); mixed rows retain only their general architectural obligations in current scope. Earlier inclusion/next-task/annex-dependency statements are superseded.</p>
+<p><strong>Historical status notice — acceptance corrections — 9 October 2026:</strong> AT-CR-01–05 closed at functional-document/author-review level. AOS-40 v0.7 retains40 proposed requirements and38 planned parent cases, with108 individually assessable variants in the controlled acceptance annex. All variants remain planned/unexecuted. Architecture/Mapv0.43; Sharedv0.19/Corev0.6/Registerv0.18/SourceMatrixv0.19; DEC001–096 unchanged. Original parent acceptance and local component obligations remain necessary. Exact approved current-core execution scope/endpoints/profiles, human appointments, implementation evidence and independent/institutional assurance remain separate dependencies. Pilot5b remains closed. Earlier dated baseline/progress notices below are history; this correction and the linked controlled annex govern current acceptance planning.</p>
+<p><strong>Historical status notice — sensing consistency closure — 9 October 2026:</strong> Mark authorised the remaining consistency work. SENS-CR-01–05 are closed at the functional-document/author-review level: all40 logical CON views across10–14 and40 have exact central adoption, producer/consumer/shared-owner and REQ/VER links; all80 controlled FP/RP/GT sources have precise current contributions and owned residual/gate dispositions; current body/control statements are reconciled. Versions10v0.4/11v0.3/12v0.3/13v0.2/14v0.8/40v0.6; Architecture/Mapv0.42; Sharedv0.18/Corev0.6/ExchangeRegisterv0.17/SourceMatrixv0.18; reviewv0.4. DEC001–096 unchanged. Sensing269 proposed REQs/176 planned VERs;40 retains40/38. No new requirement/case/interface, source promotion or execution. Exact compatible wire schemas/profiles, organisation appointments/capacity, independent review, legal/institutional/practice evidence and scoped build/activation remain separate; independent project review remains deferred. Earlier dated notices/addenda are historical. Current controlling allocation is the9October manifest and source addendum below.</p>
+<p><strong>Historical status notice — approved Boundary directions — 9 October 2026:</strong> Mark agreed all five review recommendations at09:51UK time, qualifying material obligations to distinguish financial exposure from resource impacts. AOS-00-DEC-092–096 records those architectural directions; prior DEC001–091 unchanged. AOS-14 v0.7 incorporates the decisions into existing requirements/cases/contracts and resolves ISS003–007 at architectural-direction level. Exact organisation-specific materiality criteria, outcome evidence, obligation schemas/owners, declared control paths and pattern profiles remain implementation/commissioning gates; federation remains deferred. Architecture/Mapv0.41; Sharedv0.17/ExchangeRegisterv0.16/SourceMatrixv0.17; reviewv0.3. Other component versions unchanged.55 proposed Boundary requirements/34 planned cases; no new REQ/VER/IF, executed test, whole-document or build/operating approval. Earlier dated notices are historical. Next: remaining whole-sensing common/source/status corrections SENS-CR-02–04; independent review remains deferred as previously agreed.</p>
+<p><strong>Historical status notice — Boundary completion — 9 October 2026:</strong> AOS-14 v0.6 completes the functional proposed core/research/supplier migration:55 requirements/34 planned cases, all80 FP/RP/GT contribution rows and explicit typed determination/contract mapping. Architecture/Map v0.40; DEC-001–091 unchanged. Shared Contracts v0.16/Exchange Register v0.15/Source Matrix v0.16 adopt Boundary-only links; Core v0.6, kernel01–05 v0.8 and10 v0.3/11 v0.2/12 v0.2/13 v0.1/25 v0.2/30 v0.5/40 v0.5 unchanged. Working naming resolved under existing OQ-013; federation deferred OQ-012; other material Boundary questions/commissioning and independent review remain gates. No new DEC/IF, case execution, build readiness or activation approval. Earlier dated baseline/next-step notes are history; no historical source status promoted. Next: Mark&#39;s Boundary review and scoped decision dispositions; complete remaining whole-sensing common/source/status remedies from SENS-CR-02–04.</p>
+<p><strong>GI consistency closure — 7 October 2026:</strong> Mark authorised GI-CR-01–04 corrections and closure. Functional drafting, reciprocal report-independence wording, decision/outcome consumer allocation, Mode 2 wording and current completion statements are reconciled. AOS-23 changes counterpart/current references only; its REQ/VER/CON rows are unchanged. AOS-00/Map v0.32, DEC-001–091; AOS-20 v0.5/21 v0.6/22 v0.4/23 v0.5/24 v0.3/25 v0.2/30 v0.5; AOS-01–05 v0.8, AOS-14 v0.4; Shared v0.15/Core v0.6/Exchange Register v0.14/source matrix v0.15; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. The review v0.2 records closure evidence; next AOS-40 acceptance scenarios. Earlier dated baseline/next-step statements remain historical. No new DEC/IF/operating power, case execution or build/activation/readiness approval; independent project review remains deferred and operating human independence remains mandatory.</p>
+<p><strong>Historical status notice — AOS-25 allocation — 7 October 2026:</strong> AOS-25 v0.1 drafted at Mark’s request: purpose/precedent and Mode 1/2 drift, overrides, developer-framework divergence, cumulative/system effects, coverage and distributional patterns; unranked CAP-01 longitudinal evidence; GI account alongside independently prepared annual/material-triggered human review; empowered disposition, accepted corrective owners/dates and actual consequence learning; protected handoff, corrections including affected 30 workflows, own DEC-086 research and GI research-portfolio oversight. 48 proposed REQs, nine CON views, 30 planned cases and four unsubstantiated CRs; none executed. No new DEC/IF or automatic calibration/deployment/schedule. Mapped GI component drafting is complete; wording, whole-set consistency/disposition review and operating dependencies remain. Next: author GI-set consistency/disposition review across AOS-20–25 and AOS-30, then AOS-40 acceptance scenarios under item 8; independent project review remains deferred. AOS-00/Map v0.31, DEC-001–091; AOS-25 v0.1; AOS-20 v0.4/AOS-21 v0.5/AOS-22 v0.3/AOS-23 v0.4/AOS-24 v0.2/AOS-30 v0.4 (counterpart-reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4; Shared v0.14/Core v0.6/Exchange Register v0.13; source matrix v0.14; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Earlier dated baseline/next-step entries remain history.</p>
+<p><strong>Historical status notice — AOS-24 allocation — 7 October 2026:</strong> AOS-24 v0.1 drafted at Mark’s request: faithful canonical rendering and provenance; uncertainty/review and exact Chair/board/action standing; unranked CAP-01 divergence and distinct assessment dimensions; accessible Petra interaction, scoped confirmation and challenge; purpose-bound audience disclosure; independent/protected preparation, correction notifications including affected AOS-30 workflows, evidenced delivery and own DEC-086 research. 40 proposed REQs, eight CON views and 26 planned cases, none executed. No new DEC/IF, deployment, schedule or numerical default. Next AOS-25 oversight, drift and learning; wording review and operating dependencies remain. AOS-00/Map v0.30, DEC-001–091; AOS-24 v0.1; AOS-21 v0.4/AOS-22 v0.2/AOS-23 v0.3 (reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.13/Core v0.6/Exchange Register v0.12; source matrix v0.13; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Earlier dated baseline and next-step entries remain history.</p>
+<p><strong>Historical status notice — AOS-22 allocation — 7 October 2026:</strong> AOS-22 v0.1 drafted at Mark’s request: permitted cross-domain synthesis; evidence-grounded proposed interpretation; human constitutional/value referral; actual-state options including infeasible alternatives; CAP-01 rigour/shared-basis divergence without ranking or recommendation between readings; independently governed preparation; canonical review, protected handoff, correction/outcome feedback and own DEC-086 research. 52 proposed REQs, nine CON views and 32 planned cases, none executed. No new DEC/IF or inferred moral-weight/default. Next AOS-24, then AOS-25; wording review and operating dependencies remain. AOS-00/Map v0.29, DEC-001–091; AOS-22 v0.1; AOS-21 v0.3/AOS-23 v0.2 (counterpart/reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.12/Core v0.6/Exchange Register v0.11; source matrix v0.12; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Earlier dated baseline entries remain history.</p>
+<p><strong>Historical status notice — AOS-23 allocation — 7 October 2026:</strong> AOS-23 v0.1 drafted at Mark’s request: permitted ingestion/normalisation; scoped criteria/application; document quality, claim support and practice evidence assessed separately under DEC-091; evidence/uncertainty and graduated human review; artefact/source currency monitoring, owned/protected alerts, reporting-cycle inputs, corrections/outcome feedback and own DEC-086 research remit. 52 proposed REQs, nine CON views and 32 planned cases, none executed. No new DEC/IF or numerical default. Next AOS-22 synthesis/interpretation/options, followed by AOS-24/25; wording review and operating dependencies remain. AOS-00/Map v0.28, DEC-001–091; AOS-23 v0.1; AOS-21 v0.2 (functional endpoint/reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.11/Core v0.6/Exchange Register v0.10; source matrix v0.11; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Earlier dated baseline entries remain history.</p>
+<p><strong>Historical status notice — AOS-21 allocation — 7 October 2026:</strong> AOS-21 v0.1 drafted at Mark’s request: scoped organisation/subsidiary profiles; external/operational/constitutional corpus; sourced artefact catalogue and criteria; delegated human stewardship; explicit approved precedent; currency, coverage, material correction and independent review; own DEC-086 research remit. 48 proposed REQs, eight CON views and 30 planned cases, none executed. DEC-090/091 applied; no new DEC or IF. Next AOS-23 using permitted corroboration with documentary quality, claim support and practice evidence separate. Functional drafting complete; wording/whole-document review and implementation/commissioning dependencies remain. AOS-00/Map v0.27, DEC-001–091; AOS-21 v0.1; AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.10/Core v0.6/Exchange Register v0.9; source matrix v0.10; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Earlier dated baseline notes remain history.</p>
+<p><strong>Historical status notice — AOS-30 alignment — 7 October 2026:</strong> functional drafting and consistency alignment complete under Mark’s instruction. AOS-00/Map v0.25, DEC-001–089; AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3 and AOS-30 v0.3; Shared v0.9/Core v0.6/Exchange Register v0.8; source matrix v0.9 and template v0.4 unchanged; Control Coordination v0.2/Protected Reporting and Recovery v0.1 unchanged. Earlier dated baseline/adoption/next-step entries are history. CR30-01–03 are closed at the functional-document level; implementation/commissioning evidence remains separate. No new DEC/REQ/VER/IF identifier or operating power is introduced.</p>
+<p><strong>Historical status notice — AOS-30 disposition:</strong> DEC-087–089 approved 6 October; AOS-30 v0.2 incorporates Mark’s Q01 role/approval qualification and agreed Q02/Q03. See the approved-direction disposition at the end; earlier pending-choice notes are dated history.</p>
+</main></body></html>

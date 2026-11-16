@@ -1,0 +1,1370 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AOS-21 — Corpus, organisation knowledge and precedent · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-21-corpus-organisation-knowledge-and-precedent.pdf">PDF</a> &nbsp; <a href="aos-21-corpus-organisation-knowledge-and-precedent.md">Markdown</a></nav><main><h1 id="aos-21-corpus-organisation-knowledge-and-precedent">AOS-21 — Corpus, organisation knowledge and precedent</h1>
+<p>Document: aos-21-corpus-organisation-knowledge-and-precedent · Source revision or record: v0.7</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p><strong>DEC-103 adopted — 29 October 2026:</strong> Current revision 0.7. Decision validity/effective time, attributable evidence/authentication, minutes approval and permission to execute are separate. DEC-087 is partly superseded; <a href="../Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.html">decision/amendment and legal-source record</a>. No universal later-minutes or second decision-record approval gate. Exact instruments/evidence policy, KX-06 v0.3 compatibility and ordinary separate review/readiness gates remain required; cases unexecuted. Earlier contrary wording is historical only where explicitly identified.</p>
+<p><strong>Editorial edition — 29 October 2026:</strong> Mark authorised documentary corrections D-01–09. This edition reconciles navigation, count/revision pointers, conformance links and historical scope labels; existing technical meanings, requirement/IF/decision identities and proposed/planned status are retained. The internal version below identifies the retained functional baseline; this dated editorial edition identifies the corrected document. See the <a href="../Supporting-Specifications/aos-current-document-inventory-2026-10-29.html">current document inventory</a> and <a href="../Supporting-Specifications/aos-documentary-corrections-2026-10-29.html">correction record</a>. Earlier dated adoption baselines are historical snapshots; exact logical family/view revisions are in Exchange Register §4.</p>
+<p><strong>AOS-25 oversight counterpart alignment — 7 October 2026:</strong> AOS-25 v0.1 now supplies the drafted oversight/drift/learning and GI research-portfolio counterpart. Reference-only revision; all existing requirement/case/contract rows preserved. AOS-00/Map v0.31, DEC-001–091; AOS-25 v0.1; AOS-20 v0.4/AOS-21 v0.5/AOS-22 v0.3/AOS-23 v0.4/AOS-24 v0.2/AOS-30 v0.4 (counterpart-reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4; Shared v0.14/Core v0.6/Exchange Register v0.13; source matrix v0.14; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Next: author GI-set consistency/disposition review across AOS-20–25 and AOS-30, then AOS-40 acceptance scenarios under item 8; independent project review remains deferred. Earlier dated consultation/adoption entries remain history.</p>
+<p><strong>AOS-24 presentation counterpart alignment — 7 October 2026:</strong> AOS-24 v0.1 now supplies the drafted faithful-rendering/explanation counterpart. Reference-only revision; requirement, case and contract rows unchanged. AOS-00/Map v0.30, DEC-001–091; AOS-24 v0.1; AOS-21 v0.4/AOS-22 v0.2/AOS-23 v0.3 (reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.13/Core v0.6/Exchange Register v0.12; source matrix v0.13; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval. Earlier dated consultation/adoption entries remain history.</p>
+<p><strong>AOS-22 synthesis counterpart alignment — 7 October 2026:</strong> AOS-22 v0.1 now supplies the drafted synthesis/interpretation/options counterpart. This revision changes pending-drafting/current-reference statements only; all requirement, case and contract meanings preserved. AOS-00/Map v0.29, DEC-001–091; AOS-22 v0.1; AOS-21 v0.3/AOS-23 v0.2 (counterpart/reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.12/Core v0.6/Exchange Register v0.11; source matrix v0.12; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval.</p>
+<p><strong>AOS-23 functional counterpart alignment — 7 October 2026:</strong> AOS-23 v0.1 is now drafted and adopts the existing corpus/profile/criteria/evidence/correction views. AOS-21 v0.2 updates pending-drafting references only; all requirements, cases and shared semantics preserved. AOS-00/Map v0.28, DEC-001–091; AOS-23 v0.1; AOS-21 v0.2 (functional endpoint/reference alignment only); AOS-01–05 v0.8, AOS-14 v0.4, AOS-20 v0.3, AOS-30 v0.3; Shared v0.11/Core v0.6/Exchange Register v0.10; source matrix v0.11; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. No build/activation/readiness approval.</p>
+<table>
+<thead>
+<tr>
+<th>Document control</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Component / version / date</td>
+<td>AOS-21 / 0.7 / 29 October 2026</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Functional specification review draft; requirement wording proposed</td>
+</tr>
+<tr>
+<td>Architecture baseline</td>
+<td>AOS-00/Map v0.32, DEC-001–091; prior consultation/allocation retained as history</td>
+</tr>
+<tr>
+<td>Governing sources</td>
+<td>Foundational Principles v4; AOS Reasoning Principles v6; Governance Intelligence Tests; preserved controlled source manifest</td>
+</tr>
+<tr>
+<td>Dependency manifest</td>
+<td>AOS-01–05 v0.8; AOS-14 v0.4; AOS-20 v0.3; AOS-30 v0.3; Shared v0.9/Core v0.6/Exchange Register v0.8; Control Coordination v0.2; Protected Reporting and Recovery v0.1; common research supporting view RSVIEW-0.1 and KX-06 v0.3. Shared v0.10/Register v0.9 adoption addenda retain these unchanged definitions; source matrix v0.10 records allocation</td>
+</tr>
+<tr>
+<td>Quality / template</td>
+<td>AOS-QS v0.1; component template v0.4</td>
+</tr>
+<tr>
+<td>Project owner / custodian</td>
+<td>Mark Sweeny</td>
+</tr>
+<tr>
+<td>Operational owner</td>
+<td>Accountable GI owner and human Governance Knowledge Steward; actual appointments and delegated powers remain organisation dependencies</td>
+</tr>
+<tr>
+<td>Author / reviewer</td>
+<td>Codex at Mark&#39;s request; author checks only; Mark review pending; independent project reviewer unassigned/deferred</td>
+</tr>
+<tr>
+<td>Approval / release</td>
+<td>DEC-090/091 approved as directions; no whole-document approval or build/activation/readiness determination</td>
+</tr>
+<tr>
+<td>Change history</td>
+<td>0.6 — GI-CR-01–04 author consistency correction/closure under Mark’s instruction; existing identifiers and proposed/planned status preserved. 0.5 — AOS-25 counterpart/reference alignment only; no requirement/case/contract change. 0.4 — AOS-24 counterpart/reference alignment only; no requirement/case/contract change. 0.3 — AOS-22 counterpart/reference alignment only; no requirement/case/contract change.  0.2 updates AOS-23 counterpart and current allocation references only; no REQ/VER/CON meaning change. 0.1 initial functional draft incorporating the GIL comparison v0.2, approved group scope and common external-research rule. New supporting adoption addenda reference existing definitions without changing their meanings.</td>
+</tr>
+</tbody></table>
+<h2 id="1-purpose-and-scope">1. Purpose and scope</h2>
+<p>AOS-21 makes the organisation&#39;s knowledge and governing sources identifiable, current for a declared purpose and traceable to the people entitled to maintain or adopt them. Without it, GI can treat an old policy, an unverified factual claim or its own interpretation as current authority. The intended outcome is that a permitted user or component can reconstruct which entity, source, revision, approval, applicability and limitations support a proposition—and see what remains unknown or disputed.</p>
+<p>Scope includes organisation and subsidiary profiles; external, operational and constitutional corpus; governance artefact catalogue, relationships and analytical criteria; source admission and currency; human stewardship; approved interpretation/precedent custody; and corpus-related challenge, correction and research. Organisation knowledge means sourced context, not a model&#39;s private memory. Corpus admission means permission to include a source for specified uses, not adoption of its propositions as organisational rules.</p>
+<p>AOS-02 owns canonical shared structures and custody, AOS-01 governing powers/change, AOS-03 permitted data use, AOS-04 agent behaviour and AOS-05 enforcement/recovery. AOS-14 governs external retrieval. AOS-22 interprets and synthesises; AOS-23 assesses artefacts and permitted corroboration; AOS-24 presents; AOS-25 oversees drift and independent review; AOS-30 supports empowered human decisions. AOS-21 does not create moral authority, assess the whole institution&#39;s effectiveness, certify legal compliance, observe protected boardroom deliberation or replace a document portal.</p>
+<p>Stakeholders include boards of relevant entities, committees, stewards, executives, residents, staff, source owners, reviewers, operators and suppliers. Their legitimate interests, acting capacities and access differ. A group relationship does not transfer governing powers, data-use permissions or approval between entities.</p>
+<h2 id="2-authority-and-sources">2. Authority and sources</h2>
+<p>FP v4/RP v6 govern. Approved decisions constrain proposed wording. The working paper and GIL supply reconciled design material, not additional powers. Source locators below apply throughout the requirement register; each requirement is an explicit functional derivation unless labelled as direct adoption of a decision.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Exact source / locator and use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FP</td>
+<td>Foundational_Principles_v4.docx, numbered principles 1–10; applicability in §8</td>
+</tr>
+<tr>
+<td>RP1</td>
+<td>RP v6, Architecture and Completeness: “Every governance process must close its feedback loop”; “Every human accountability layer must be explicitly named”</td>
+</tr>
+<tr>
+<td>RP2</td>
+<td>RP v6, Mode 1/Mode 2 Boundary: permanently human judgement, governance instruments and protected deliberation</td>
+</tr>
+<tr>
+<td>RP3</td>
+<td>RP v6, 1+5 Architecture: role clarity and cross-intelligence handoff</td>
+</tr>
+<tr>
+<td>RP4</td>
+<td>RP v6, Options and Decisions: actual organisational state and structured consequential decision feedback</td>
+</tr>
+<tr>
+<td>RP5/7</td>
+<td>RP v6, Blind Spots and Honesty / Radical Transparency: named limits, reconstructable behaviour and visible uncertainty</td>
+</tr>
+<tr>
+<td>RP6</td>
+<td>RP v6, Ethics and Telos: precedent drift paragraph beginning “Where the organisation&#39;s purpose is interpreted”; independent founding-text reconciliation; no-exit and developer framework distinction</td>
+</tr>
+<tr>
+<td>RP8/9</td>
+<td>RP v6, Agentic Delegation / Data and Sensing Boundaries: delegated powers, protected escalation and declared purpose</td>
+</tr>
+<tr>
+<td>WP</td>
+<td>Governance Intelligence: Internal Architecture — Working Paper, “Corpus”, “How the corpus holds meaning”, “Governance of drift” and “Validation regime”; its RP v5 and automatic-confirmation assumptions reconciled through DEC-080/081</td>
+</tr>
+<tr>
+<td>GIL</td>
+<td>GIL v2 §§2.1–2.2 organisation/knowledge base, §2.3 blind spots, §3 currency monitoring, §4 document lifecycle, §6.1/6.5 calibration/amendment and §9 subsidiary scope</td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>AOS-GIL-v2-Comparison-and-Reconciliation-v0.1.md, content v0.2, GIL-C01–38 and approved Q01/Q02; individual allocation in §19</td>
+</tr>
+<tr>
+<td>D</td>
+<td>AOS-00 v0.26 decision register: DEC-005/008/010–012/018/024–025/027/045–048/062–078/079–091, as cited by individual requirements</td>
+</tr>
+<tr>
+<td>GI</td>
+<td>AOS-20 v0.3 §§3/4/5/6/7/8/10/15: corpus stewardship, precedence approval, independent review and common research</td>
+</tr>
+<tr>
+<td>H</td>
+<td>AOS-30 v0.3 §§5/6/7/10: exact decision approval, correction, duties and human-provided context</td>
+</tr>
+<tr>
+<td>E / A / U / X / K</td>
+<td>Core v0.6 REC-E/Q, REC-A, REC-D, REC-X; Shared v0.9 §4; Exchange Register v0.8 KX definitions; coordination and reporting/recovery annexes</td>
+</tr>
+<tr>
+<td>R</td>
+<td>AOS-04 v0.8 §§3.1/5.1/6.6/10.8 CON-009; AOS-02 v0.8 §6.6 CON-007; AOS-01 v0.8 §§6.6/10.8; DEC-086/template v0.4 §4.4</td>
+</tr>
+</tbody></table>
+<p>The source manifest is preserved, not refreshed by this draft. Current legal/standards applicability requires admitted primary evidence and empowered review. No new ISO clause claim or legal verification is made here. The WP&#39;s suggestion that Boundary owns corpus updating is reconciled: AOS-21 owns relevance and admission; Boundary owns permitted external access and verification. Its suggested conversation-to-precedent shortcut is replaced by DEC-081 explicit empowered approval.</p>
+<h2 id="3-responsibilities">3. Responsibilities</h2>
+<table>
+<thead>
+<tr>
+<th>Responsibility</th>
+<th>AOS-21 / human responsibility</th>
+<th>Boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Organisation profiles</td>
+<td>Steward maintains exact sourced entity-specific context and coverage</td>
+<td>02 mapping/custody; 01 authority; no presumed parent powers over subsidiary</td>
+</tr>
+<tr>
+<td>Corpus admission</td>
+<td>Steward applies delegated classification, source and permitted-use policy; contested meaning referred</td>
+<td>Admission is separate from truth, adoption, activation and disclosure</td>
+</tr>
+<tr>
+<td>Catalogue / criteria</td>
+<td>Preserve source-backed artefact types, relationships, questions, applicability and revisions</td>
+<td>23 applies assessment; criterion is not a constitutional instrument</td>
+</tr>
+<tr>
+<td>Founding/operational corpus</td>
+<td>Capture exact approved texts, powers, effective scope and history</td>
+<td>01/empowered humans approve changes; board retains telos amendment</td>
+</tr>
+<tr>
+<td>Precedent</td>
+<td>Store separately approved interpretation with rationale, context and limits; preserve correction/withdrawal</td>
+<td>22 proposes; 30 records human approval; 25 owns drift-review coordination</td>
+</tr>
+<tr>
+<td>Currency / change</td>
+<td>Identify affected knowledge, consumers and owned reassessment; preserve actual applied state</td>
+<td>02 common propagation; consumers own changed analysis/action/account review</td>
+</tr>
+<tr>
+<td>External research</td>
+<td>Component owner owns corpus-related questions and implications; steward reviews source/curation findings</td>
+<td>Common agent/control infrastructure may be shared; 14 retrieval; 01 change</td>
+</tr>
+</tbody></table>
+<p>Actual delegated source admission, materiality/classification rules, accountable owners, cover and review deadlines must be organisationally appointed. No job title, technical administrator permission or AI confidence creates those powers.</p>
+<h2 id="4-capabilities-and-functions">4. Capabilities and functions</h2>
+<h3 id="41-capabilities">4.1 Capabilities</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-CAP-001</td>
+<td>Maintain sourced organisation and scoped subsidiary knowledge</td>
+</tr>
+<tr>
+<td>AOS-21-CAP-002</td>
+<td>Supply classified corpus and artefact knowledge with declared applicability</td>
+</tr>
+<tr>
+<td>AOS-21-CAP-003</td>
+<td>Preserve empowered approval and contestable precedent integrity</td>
+</tr>
+<tr>
+<td>AOS-21-CAP-004</td>
+<td>Handle currency, dependency changes and coverage limits</td>
+</tr>
+<tr>
+<td>AOS-21-CAP-005</td>
+<td>Supply permitted, version-bound evidence to GI and human review</td>
+</tr>
+<tr>
+<td>AOS-21-CAP-006</td>
+<td>Research external developments affecting AOS-21 and propose governed adaptation</td>
+</tr>
+</tbody></table>
+<h3 id="42-functions">4.2 Functions</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Trigger → input → behaviour → output; control and failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-FUN-001</td>
+<td>Profile request/change → permitted source revisions → reconcile scoped assertions and human confirmation → versioned profile; uncertain entity matches or facts remain unresolved</td>
+</tr>
+<tr>
+<td>AOS-21-FUN-002</td>
+<td>New/changed source → provenance, status, use permission and classification → delegated admission review → admitted/restricted/rejected source; unresolved authority referred</td>
+</tr>
+<tr>
+<td>AOS-21-FUN-003</td>
+<td>Catalogue/criteria proposal → source and entity applicability → preserve distinct semantic role and approval → versioned artefact knowledge; absent seed content becomes coverage gap</td>
+</tr>
+<tr>
+<td>AOS-21-FUN-004</td>
+<td>Human decision/interpretation → exact approved content and powers → validate faithful capture and explicit precedent designation → scoped precedent or pending/rejected candidate; confirmation alone cannot promote</td>
+</tr>
+<tr>
+<td>AOS-21-FUN-005</td>
+<td>Currency trigger/correction → old/new revisions and dependencies → identify affected use and notify owners → owned reassessment/restriction; failed delivery remains outstanding</td>
+</tr>
+<tr>
+<td>AOS-21-FUN-006</td>
+<td>GI/human request → purpose, entity, time and permissions → supply applicable evidence bundle → versioned projection and limitations; missing mandatory evidence prevents asserted suitability</td>
+</tr>
+<tr>
+<td>AOS-21-FUN-007</td>
+<td>Annual/material drift review → permitted founding text and precedent history → supply independent preparation evidence and receive empowered disposition → reaffirm/prune/referral records; independence is not supplied by a second model alone</td>
+</tr>
+<tr>
+<td>AOS-21-FUN-008</td>
+<td>Approved research trigger → external evidence via 14 → specialist relevance/impact analysis → common finding and tracked human disposition; no autonomous amendment</td>
+</tr>
+</tbody></table>
+<h3 id="43-proposed-requirements">4.3 Proposed requirements</h3>
+<p>Each row is a component requirement unless category begins I (interface). Categories G governance, D data, Q quality/uncertainty, S security/use, R research, O operation. Owner: accountable AOS-21/GI owner, with delegated human Steward responsible for curation; approver: Mark for project wording, applicable organisational authority for operating scope. All rows are proposed for the v0.1 functional scope, originating 7 October. Dependencies: cited source/decision, §6 contract for the function, and owned profile/assurance gaps in §17. Rationale is stated individually. Planned acceptance links are to §15; no cases executed. These common metadata apply to every row, avoiding repetition without omitting the QS-08 record attributes.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Proposed obligation</th>
+<th>Category / function</th>
+<th>Exact source / derivation</th>
+<th>Rationale</th>
+<th>Planned VER</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-REQ-001</td>
+<td>AOS-21 shall bind each organisation-profile assertion to its exact entity and source revision.</td>
+<td>D; FUN-001</td>
+<td>DEC-090; GIL §2.1; E/KX-09</td>
+<td>Prevents unsourced or entity-ambiguous context.</td>
+<td>001</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-002</td>
+<td>AOS-21 shall maintain relevant subsidiaries as distinct scoped profiles linked to the parent within the approved organisational remit.</td>
+<td>G; FUN-001</td>
+<td>DEC-090; CMP Q01/GIL-C38</td>
+<td>Preserves entity-specific governance rather than implicit parent-only coverage.</td>
+<td>002</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-003</td>
+<td>AOS-21 shall retain source and fact-assurance references separately for each profile assertion.</td>
+<td>D; FUN-001</td>
+<td>DEC-047/062; E/REC-Q; GIL-C12</td>
+<td>Origin does not prove factual assurance.</td>
+<td>001</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-004</td>
+<td>AOS-21 shall preserve unknown, unverified, disputed, restricted and refuted profile states under the common value/assurance definitions.</td>
+<td>Q; FUN-001</td>
+<td>DEC-063; E; GIL-C13</td>
+<td>Avoids false defaults and invented certainty.</td>
+<td>003</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-005</td>
+<td>AOS-21 shall withhold an entity or assertion reconciliation lacking the confirmation required by its approved mapping/curation policy.</td>
+<td>G; FUN-001</td>
+<td>DEC-045/090; K/KX-09; GI §3</td>
+<td>Prevents destructive or unempowered merging.</td>
+<td>002/003</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-006</td>
+<td>AOS-21 shall identify the applicable external, operational and constitutional corpus tier for admitted governing material.</td>
+<td>D; FUN-002</td>
+<td>GI REQ-009; WP Corpus; DEC-079/080</td>
+<td>Exposes different source roles and change powers.</td>
+<td>004</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-007</td>
+<td>AOS-21 shall retain corpus admission as a distinct state from organisational adoption of governing meaning.</td>
+<td>G; FUN-002</td>
+<td>DEC-080; WP Corpus; GIL-C15</td>
+<td>Storage cannot enact a norm.</td>
+<td>004</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-008</td>
+<td>AOS-21 shall refer disputed authority or proposed new governing meaning to the empowered human decision-maker.</td>
+<td>G; FUN-002</td>
+<td>DEC-080/081; GI REQ-008; RP2</td>
+<td>Curation cannot resolve constitutional judgement by default.</td>
+<td>005</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-009</td>
+<td>AOS-21 shall retain material source disagreements in the supplied corpus view until an empowered disposition resolves the affected use.</td>
+<td>Q; FUN-002</td>
+<td>RP5/7; GI §6; E/REC-Q</td>
+<td>Avoids a convenient source selection concealing conflict.</td>
+<td>005</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-010</td>
+<td>AOS-21 shall preserve each admitted source&#39;s provenance and publication, access and effective-date status, with explicit unknown reasons.</td>
+<td>D; FUN-002</td>
+<td>GIL §§2.2/3; E/KX-01; R common views</td>
+<td>Distinguishes source chronology from current applicability.</td>
+<td>006</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-011</td>
+<td>AOS-21 shall bind source applicability to declared jurisdiction, entity, purpose and relevant scope.</td>
+<td>D; FUN-002</td>
+<td>DEC-090; GIL-C14; U/KX-03</td>
+<td>Prevents cross-jurisdiction or cross-entity assumptions.</td>
+<td>006</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-012</td>
+<td>AOS-21 shall identify artefact-type, criteria, question and relationship entries by their exact sourced revisions.</td>
+<td>D; FUN-003</td>
+<td>GIL §2.2; GIL-C04/14; E</td>
+<td>Makes analytical knowledge traceable and extensible.</td>
+<td>007</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-013</td>
+<td>AOS-21 shall distinguish analytical assessment criteria from organisational constitutional powers in catalogue views.</td>
+<td>G; FUN-003</td>
+<td>Map AOS-21 allocation; GIL-C14; DEC-005</td>
+<td>Avoids treating a quality criterion as authority.</td>
+<td>004/007</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-014</td>
+<td>AOS-21 shall record unavailable catalogue or seed content as an explicit unassessed coverage limitation.</td>
+<td>Q; FUN-003</td>
+<td>GIL §§2.3/9; GIL-C04/19; RP5</td>
+<td>An empty library is not evidence that no obligation exists.</td>
+<td>007/011</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-015</td>
+<td>AOS-21 shall admit or maintain corpus material only within the human Steward&#39;s evidenced delegated curation powers.</td>
+<td>G; FUN-002/003</td>
+<td>DEC-080; GI REQ-006; A/REC-A</td>
+<td>Access privileges do not confer meaning-adoption powers.</td>
+<td>012</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-016</td>
+<td>AOS-21 shall bind each admission/maintenance disposition to its exact content revision and accountable actor.</td>
+<td>D; FUN-002/003</td>
+<td>RP7; DEC-080; E/A</td>
+<td>Makes faithful maintenance distinguishable from silent alteration.</td>
+<td>012</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-017</td>
+<td>AOS-21 shall obtain the independently valid data-use permission required for each processing or disclosure purpose.</td>
+<td>S; FUN-002/006</td>
+<td>U/REC-D; DEC-049–053; RP9</td>
+<td>Admission/public accessibility cannot waive use controls.</td>
+<td>023</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-018</td>
+<td>AOS-21 shall withhold a dependent operation when its required authority or use determination is missing, invalid or revoked.</td>
+<td>G; All</td>
+<td>A/U/X; coordination CHECK; DEC-064/067</td>
+<td>Prevents favourable reliance on missing controls.</td>
+<td>023</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-019</td>
+<td>AOS-21 shall capture the exact attributed decision record, evidence/authentication standing, decision-maker capacity, entity and effective scope under the organisation’s applicable decision and evidence arrangements.</td>
+<td>D; FUN-004</td>
+<td>H §§5/6/10; K/KX-06 v0.3; DEC-103/090</td>
+<td>Ensures that decision custody preserves actual approval.</td>
+<td>013/014</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-020</td>
+<td>AOS-21 shall require explicit empowered approval of exact meaning, rationale, context and limitations before designating an interpretation as approved precedent.</td>
+<td>G; FUN-004</td>
+<td>DEC-081; GI REQ-010; WP meaning</td>
+<td>Prevents automatic accumulation of normative case law.</td>
+<td>015</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-021</td>
+<td>AOS-21 shall retain ordinary conversational confirmation separately from approved precedent.</td>
+<td>G; FUN-004</td>
+<td>DEC-081; GI REQ-011; GIL-C27</td>
+<td>A conversational yes cannot adopt a ruling.</td>
+<td>015</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-022</td>
+<td>AOS-21 shall preserve minute-taker drafting, Company Secretary stewardship, decision validity/evidence, record authentication and minutes approval as distinct roles/events/statuses under DEC-103.</td>
+<td>G; FUN-004</td>
+<td>DEC-103; H §10.3; K/KX-06 v0.3</td>
+<td>Avoids promotion of a draft through the wrong role.</td>
+<td>013</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-023</td>
+<td>AOS-21 shall withhold affected authoritative reliance when attributable evidence is insufficient or disputed under the applicable evidence policy, without universally requiring later minutes approval or treating a Chair signature or extract alone as conclusive decision authority.</td>
+<td>G; FUN-004</td>
+<td>DEC-103; H §6.2; GI §6.5</td>
+<td>An extract/signature must be assessed for provenance and actual validity; no conclusive or automatic authority.</td>
+<td>014</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-024</td>
+<td>AOS-21 shall preserve the applicable empowered approval route for non-board decisions and precedent dispositions.</td>
+<td>G; FUN-004/007</td>
+<td>DEC-081/087; A/KX-06; H §7</td>
+<td>Avoids treating all bodies as the board or a single administrator.</td>
+<td>016</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-025</td>
+<td>AOS-21 shall supply permitted founding-text and precedent evidence for independent human reconciliation at least annually and on material drift triggers. Support preparation of the human and GI accounts without reference to each other before comparison, retaining their permitted original accounts and later responses.</td>
+<td>G; FUN-007</td>
+<td>DEC-010/011/085; RP6 precedent paragraph; GI REQ-034</td>
+<td>Accumulated interpretation requires an independent founding-text check.</td>
+<td>017</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-026</td>
+<td>AOS-21 shall expose source/profile currency as a purpose-specific status under the approved currentness policy.</td>
+<td>Q; FUN-005</td>
+<td>GIL §§3/6.1; GIL-C10/27; RP5</td>
+<td>Annual publication or successful retrieval alone does not establish currency.</td>
+<td>008</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-027</td>
+<td>AOS-21 shall identify materially dependent consumers and use scopes when a corpus/profile/precedent revision changes.</td>
+<td>I-D; FUN-005</td>
+<td>K/KX-13; coordination §5; DEC-068/069</td>
+<td>Finds where new evidence affects reliance.</td>
+<td>008/018</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-028</td>
+<td>AOS-21 shall issue governed change notifications to materially affected owners, including AOS-30 when preparation, account or outcome review is affected.</td>
+<td>I-O; FUN-005</td>
+<td>K/KX-13/21; GI §6.5; H §10</td>
+<td>Avoids leaving a human workflow reliant on corrected evidence.</td>
+<td>018</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-029</td>
+<td>AOS-21 shall retain required notification, responsibility-acceptance and reassessment duties until each purpose-specific completion condition is evidenced.</td>
+<td>O; FUN-005</td>
+<td>DEC-066/071/075; K/KX-21/26</td>
+<td>Delivery is not accepted ownership or resolution.</td>
+<td>019</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-030</td>
+<td>AOS-21 shall preserve the distinction between record correction and a new governing decision when applying an empowered disposition.</td>
+<td>G; FUN-005</td>
+<td>DEC-089; H §10; K/KX-13</td>
+<td>Clerical correction cannot enact or reverse a decision.</td>
+<td>009</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-031</td>
+<td>AOS-21 shall bind each supplied corpus bundle to its entity, purpose, relevant time basis and selected source revisions.</td>
+<td>I-D; FUN-006</td>
+<td>E; K/KX-01/14/22; RP4</td>
+<td>Makes the exact context of downstream reasoning reconstructable.</td>
+<td>020</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-032</td>
+<td>AOS-21 shall preserve permitted-use and disclosure restrictions in all supplied corpus views.</td>
+<td>S; FUN-006</td>
+<td>U; K/KX-14; RP9</td>
+<td>Retrieval cannot create unrestricted secondary use.</td>
+<td>020/023</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-033</td>
+<td>AOS-21 shall apply the authorised record-class lifecycle disposition to originals and derived corpus copies.</td>
+<td>S; All</td>
+<td>DEC-048; K/KX-15; GIL-C25</td>
+<td>Avoids perpetual hidden content retained as audit evidence.</td>
+<td>010</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-034</td>
+<td>AOS-21 shall retain permitted historical approval and applied-revision evidence when later changes alter current applicability.</td>
+<td>D; FUN-005/006</td>
+<td>DEC-064/068/089; K/KX-13; E</td>
+<td>A later state must not rewrite what actually occurred.</td>
+<td>009/020</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-035</td>
+<td>AOS-21 shall distinguish supplied documentary claims from separately sourced assurance or corroborating evidence.</td>
+<td>Q; FUN-003/006</td>
+<td>DEC-091; E/REC-Q; RP6 no-exit; GIL-C16</td>
+<td>Supports assessment without claiming that documents prove practice.</td>
+<td>021</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-036</td>
+<td>AOS-21 shall distinguish justified non-applicability, intentional exclusion, missing evidence, unseeded knowledge and unassessed scope in its coverage records.</td>
+<td>Q; FUN-005/006</td>
+<td>GIL-C19; RP5; GI §8</td>
+<td>Different limitations cannot be collapsed into reassurance.</td>
+<td>011/022</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-037</td>
+<td>AOS-21 shall maintain its component-specific external-research remit against exact assessed specification/dependency revisions.</td>
+<td>R; FUN-008</td>
+<td>DEC-086; R; template §4.4</td>
+<td>Separates adaptation research from document currency monitoring.</td>
+<td>024</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-038</td>
+<td>AOS-21 shall use the common research profile/run/finding/disposition views for its research records.</td>
+<td>R; FUN-008</td>
+<td>R; 02 §6.6 RSVIEW-0.1</td>
+<td>Avoids competing research evidence and status definitions.</td>
+<td>024</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-039</td>
+<td>AOS-21 shall bind research findings to evidence, source status/dates, uncertainty and exact affected elements.</td>
+<td>R; FUN-008</td>
+<td>R; RP5/7; DEC-086</td>
+<td>Makes source-to-challenge reasoning assessable.</td>
+<td>025</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-040</td>
+<td>AOS-21 shall report actual research coverage, including partial, failed, cancelled, not-performed and bounded no-material-finding outcomes.</td>
+<td>R; FUN-008</td>
+<td>R; GIL-C21; RP5</td>
+<td>Quiet output is not proof of complete checking.</td>
+<td>026</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-041</td>
+<td>AOS-21 shall obtain external research evidence through permitted Boundary retrieval and current common controls.</td>
+<td>R; FUN-008</td>
+<td>R; A/U/X; AOS-14-IF-001</td>
+<td>Prevents source/tool instructions bypassing authority or data use.</td>
+<td>027</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-042</td>
+<td>AOS-21 shall route research findings to permitted reviewers and materially affected component owners under the approved duty profile.</td>
+<td>R; FUN-008</td>
+<td>DEC-086; R; K/KX-26</td>
+<td>Shared evidence still has distinct component obligations.</td>
+<td>028</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-043</td>
+<td>AOS-21 shall retain research disposition duties unresolved when required reviewer acceptance or response is absent.</td>
+<td>R; FUN-008</td>
+<td>R; DEC-075; K/KX-21/26</td>
+<td>Unresponsive review cannot silently close a finding.</td>
+<td>029</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-044</td>
+<td>AOS-21 shall use the protected reporting route for findings within the approved mandatory classes despite an instruction to suppress them.</td>
+<td>G; FUN-005/008</td>
+<td>DEC-083; RP8; protected reporting annex §§3–6</td>
+<td>Ensures a corpus/research concern can reach alternate empowered humans.</td>
+<td>029</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-045</td>
+<td>AOS-21 shall refer any proposed specification or governing amendment through the applicable empowered change process before adoption.</td>
+<td>G; FUN-008</td>
+<td>DEC-086; AOS-01 §§6.6/10.8; DEC-018</td>
+<td>Research acceptance or publication is not amendment/activation approval.</td>
+<td>028/029</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-046</td>
+<td>AOS-21 shall preserve an evidence-linked audit record for consequential admission, selection and precedent transitions.</td>
+<td>D; All</td>
+<td>RP7; QS-19; E/X; §12</td>
+<td>Provides real evidence rather than retrospective generated proof.</td>
+<td>030</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-047</td>
+<td>AOS-21 shall exclude protected AI boardroom capture and inferred individual emotional/preference descriptions from its corpus inputs.</td>
+<td>S; FUN-002/004/006</td>
+<td>DEC-008/088; H §9; RP2/9</td>
+<td>Permitted approved records cannot become a route to prohibited sensing.</td>
+<td>023</td>
+</tr>
+<tr>
+<td>AOS-21-REQ-048</td>
+<td>AOS-21 shall reconcile restored/retried corpus operations against current restrictions and observed effect before renewed reliance.</td>
+<td>O; All</td>
+<td>DEC-076–078; K/KX-18/20; X</td>
+<td>Recovery must not resurrect obsolete powers, deleted content or duplicate effects.</td>
+<td>030</td>
+</tr>
+</tbody></table>
+<h3 id="44-external-research-and-specification-adaptation">4.4 External research and specification adaptation</h3>
+<p>This is research into AOS-21 adequacy, distinct from routine monitoring of a stored document&#39;s currency, AOS-23 organisational assessment and AOS-25 runtime/aggregate oversight. It inherits R common definitions; CON-007 is a view, not a separately invented research schema.</p>
+<table>
+<thead>
+<tr>
+<th>Controlled profile</th>
+<th>AOS-21 allocation / owner and gate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Remit / baseline</td>
+<td>Changes affecting corpus governance, source provenance, knowledge curation, organisational/group semantics, precedent integrity, effective-date/supersession methods, licensing/access or trustworthy retrieval. Assess exact AOS-21 and dependency revisions and approval status. Owner: component owner/Steward.</td>
+</tr>
+<tr>
+<td>Sources / jurisdiction</td>
+<td>Prefer applicable regulators/government, authoritative governance/standards bodies, primary knowledge/provenance research and evidenced incidents. Distinguish consultation, enacted/adopted and future-effective material. Exact approved source list, jurisdiction, admission/licensing rules remain ISS-003/006.</td>
+</tr>
+<tr>
+<td>Assignment / triggers</td>
+<td>Agent/shared service and approved cadence/event/coverage settings remain ISS-006. No per-artefact deployment or schedule is mandated.</td>
+</tr>
+<tr>
+<td>Controls</td>
+<td>01 authority, 03 use, 04 task/tool/memory/cumulative limits, 05 enforcement, 14 retrieval and verification. Public availability does not confer unrestricted reuse. Retrieved instructions remain untrusted data.</td>
+</tr>
+<tr>
+<td>Evidence / assessment</td>
+<td>Common profile/run/finding/disposition views bind sources and assurance, publication/event/access/effective dates or unknown reasons, affected CAP/FUN/REQ/CON/source/decision, alternatives, uncertainty, materiality/urgency and cross-component impacts.</td>
+</tr>
+<tr>
+<td>Quality / coverage</td>
+<td>Complete/partial/failed/cancelled/not-performed coverage and bounded no-material-finding. Human-approved relevance, missed/false finding and fidelity rubric; no numeric default. Owner: component reviewer with 04/40; ISS-006/007.</td>
+</tr>
+<tr>
+<td>Human review / change</td>
+<td>Named permitted reviewer, tracker, deadline, cover and escalation; accepted-for-work/rejected/deferred/unresolved rationale. Amendment approval, verification, actual application and outcome closure remain separate under 01/30. Protected urgent implications use existing reporting routes.</td>
+</tr>
+<tr>
+<td>Records / adoption</td>
+<td>02 §6.6 RSVIEW-0.1; KX-13/21/26 and REC-E/Q/A/D/X. Duplicate/correction/lifecycle/reassessment semantics are common. Exact schema and consumer compatibility are later ISS-004 dependencies.</td>
+</tr>
+</tbody></table>
+<p>Normal path: approved trigger → permitted research → coverage/evidence → AOS-21 relevance and impact → human disposition → approved change if warranted → applied revision and reviewed outcome. Degraded path: denied/failed source or stale baseline → explicit partial/failed coverage → owned exception and safe limitation → retry under current controls or human fallback. Urgent reporting continues under separately valid powers while amendment is pending. Research cannot expand sensing/tools, self-approve normative change or reopen DEC-018.</p>
+<h2 id="5-state-model">5. State model</h2>
+<p>These are semantic states, not database enums. Records retain independent dimensions; an admitted source can still contain disputed facts, and an approved decision can still be unapplied.</p>
+<table>
+<thead>
+<tr>
+<th>Object / states</th>
+<th>Entry, transition, authority and failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Source: received → admission pending → admitted/restricted/rejected</td>
+<td>Receipt preserves permitted provenance; delegated admission decision binds purpose/scope. Unknown authority/use remains pending/restricted. Currency change can mark stale/disputed/superseded without erasing history.</td>
+</tr>
+<tr>
+<td>Profile assertion: unassessed/partial/disputed → validated for purpose</td>
+<td>Evidence/assurance and empowered confirmation support the transition; use restrictions and validity remain. Material correction reopens affected suitability; no default false.</td>
+</tr>
+<tr>
+<td>Governing instrument: proposal → empowered approved → applicable/applied → superseded/withdrawn</td>
+<td>01 governs approval and actual application; effective dates and entity scope constrain use. Storage/admission does not perform these transitions.</td>
+</tr>
+<tr>
+<td>Precedent: candidate → explicit approved/rejected → applicable/restricted → corrected/withdrawn</td>
+<td>Empowered approval of exact meaning, context, rationale and limits required. Later correction preserves earlier record; dependent review and actual effects remain separately tracked.</td>
+</tr>
+<tr>
+<td>Impact case: detected → owners notified → responsibility accepted → reassessed → closed/unresolved</td>
+<td>02/13/30 acknowledgement semantics apply. Profile deadlines/cover govern timeout; delivery or closure of one consumer does not close remaining duties.</td>
+</tr>
+<tr>
+<td>Review: due/triggered → preparation → human disposition → follow-through</td>
+<td>Annual and material-trigger duties retained. Missing independent preparation or recipient leaves owned unresolved duty. Closure requires evidence of required outcome, not merely a report.</td>
+</tr>
+<tr>
+<td>Research</td>
+<td>Inherit AOS-04 §5.1 and AOS-02 §6.6 profile/run/finding/disposition states; run completion is not change approval.</td>
+</tr>
+</tbody></table>
+<p>Restrictions, withdrawal and revocation take effect through current common controls. Terminal rejection can close a candidate, while residual safety, reporting, retention or review duties remain open. Deadline expiry never creates consent or approval.</p>
+<h2 id="6-semantic-contracts-and-interfaces">6. Semantic contracts and interfaces</h2>
+<p>No new approved IF is introduced. CON IDs identify AOS-21 views of existing common definitions. Source facts and derived assertions use REC-E with separate REC-Q assurance; governing interpretations use the existing approval/change semantics. Component-specific entity/tier/catalogue/precedent references qualify common meaning without duplicating physical schemas.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Purpose / producer → consumer</th>
+<th>Authoritative meaning and failure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-CON-001</td>
+<td>Scoped source/profile evidence: source owner/Steward/14/02 → 21/20/22/23/25</td>
+<td>AOS-02-IF-001, REC-E/Q; KX-01/08/09/10/15. Exact entity/source revision, assertion versus assurance, dates, purpose and limitations. Disputed mapping or mandatory gaps prevent validated suitability.</td>
+</tr>
+<tr>
+<td>AOS-21-CON-002</td>
+<td>Authority/use/execution: 01/03/04/05 → 21; outcomes → 02/control owners</td>
+<td>AOS-01-IF-001, REC-A/D/X; KX-02/03/04 and coordination CHECK. Source admission cannot grant authority or use; absent/invalid control withholds dependent operation.</td>
+</tr>
+<tr>
+<td>AOS-21-CON-003</td>
+<td>Governing decision and precedent: empowered humans via 30/01 → 21/02/25</td>
+<td>AOS-30-IF-001, AOS-01-IF-002; KX-06 v0.3/05/13. Exact approval/powers/rationale/entity/effective scope; Chair draft approval distinct from decision validity/evidence and separate minutes approval; explicit precedent designation. Ambiguous approval remains pending.</td>
+</tr>
+<tr>
+<td>AOS-21-CON-004</td>
+<td>Corpus selection and analytical references: 21 → 20/22/23/24/25/30</td>
+<td>REC-E/Q, KX-01/08/14/22; AOS-20-IF-001 applies when the output is canonical analysis. Bundle binds exact requested scope, selected revisions, selection criteria and gaps. Presentation must not imply a new conclusion or approved rule.</td>
+</tr>
+<tr>
+<td>AOS-21-CON-005</td>
+<td>Correction/currency/dependency: 21/02/source owner/01/03 → affected 20–25/30 and control owners</td>
+<td>KX-13/15/21; coordination change/impact. Old/new revision, effective scope, reason, owners and remaining duties. Stale/duplicate/out-of-order messages reconcile authoritative state; no automatic effect reversal.</td>
+</tr>
+<tr>
+<td>AOS-21-CON-006</td>
+<td>Precedent review/protected referral: 21/independent reviewer/25 → empowered 30/Committee; dispositions → 21/01</td>
+<td>KX-17/22/06/19/26; Shared escalation and protected reporting. Independent preparation, self-assessment distinction, accepted owner/cover, exact review outcome. No executive suppression or receipt-as-resolution.</td>
+</tr>
+<tr>
+<td>AOS-21-CON-007</td>
+<td>Own external research: approved profile/agent using 14 → 21 reviewer/affected owners; human disposition → change tracker</td>
+<td>AOS-04 CON-009/AOS-02 §6.6 RSVIEW-0.1, existing REC/KX views. Exact baseline/evidence/coverage/impact/disposition; no autonomous amendment or competing research dictionary.</td>
+</tr>
+<tr>
+<td>AOS-21-CON-008</td>
+<td>Lifecycle/recovery/disclosure: 03/05/02/14 → 21; permitted status/results → requestor/30</td>
+<td>KX-14/15/18/20/23 and REC-D/X. Purpose-bound projection and class-based lifecycle; partial/unknown deletion/recovery remains explicit. No unrestricted replay of obsolete authority/content.</td>
+</tr>
+</tbody></table>
+<p>All views inherit shared organisation/identity/revision references, date precision/time basis, units where applicable, known/unknown/withheld states, exact definition versions and reviewed compatibility. Tier labels and entity types require controlled vocabulary; numerical quantities retain their source units. No physical field types, cardinalities, transport/API or timing defaults are selected here. ISS-004 owns later mappings.</p>
+<p>Ordering is per declared entity/source/case scope, not a universal total order. Duplicate recognition preserves independent sources and each duty. Receipt, validation, application and human-responsibility acceptance are declared by exchange purpose; information-only delivery need not invent a duty. Failed validation retains reason and owner; retries check current permission and known effects. Revocation/correction reaches materially dependent consumers under CON-005. Producers and consumers must use compatible exact semantics before operational reliance; the linked register records current versus pending adoption.</p>
+<h2 id="7-authority-and-decision-boundaries">7. Authority and decision boundaries</h2>
+<p>Delegated Mode 1 processing may classify, extract, reconcile, retrieve and propose under valid profiles. Routine faithful capture of an already approved text differs from deciding what that text means. The human Steward can maintain sources within explicit delegation; contested authority, new normative interpretation and amendments go to empowered humans. AOS-21 cannot select a convenient conflicting source or infer that newest publication supersedes a constitutional instrument.</p>
+<p>Only the empowered board changes telos; applicable constitutional procedure and entity powers remain under AOS-01. Schedule amendment follows DEC-025, not a generic librarian/admin approval. For board records, minute-taker, Company Secretary stewardship, Chair draft approval and board approval are distinct under DEC-087. Non-board decisions use their own valid approval route. Approved minutes do not automatically designate every statement as precedent or demonstrate that an action occurred.</p>
+<p>Constraints explain their governing reason and review route by default; recorded security/privacy/feasibility exceptions may limit explanation without waiving enforcement. Revoked authority, disputed material evidence or unresolved use blocks materially dependent automated reliance while separately authorised service/reporting duties continue. No autonomous normative self-calibration, emotional inference, retrospective effect reversal or blanket freeze is authorised.</p>
+<h2 id="8-reasoning-principles-applied">8. Reasoning principles applied</h2>
+<table>
+<thead>
+<tr>
+<th>Foundation / reasoning</th>
+<th>AOS-21 contribution and limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FP1/2/8; RP2/6</td>
+<td>Founding purpose and human moral authority preserved through tier/power/precedent separation; software stores evidence rather than holding intrinsic telos. REQ-006–008/019–025.</td>
+</tr>
+<tr>
+<td>FP3/9; RP6</td>
+<td>Organisation&#39;s purpose, developer framework evidence and analytical/legal references distinguished; compliance mapping validates rather than creates purpose. REQ-006–008/035.</td>
+</tr>
+<tr>
+<td>FP4; RP7</td>
+<td>Exact sources, approval, limitations and accountable rationale are reconstructable through permitted views. REQ-003/010/019/031–034/046.</td>
+</tr>
+<tr>
+<td>FP5/6; RP1/5</td>
+<td>Unknowns, conflicts, gaps, failed monitoring and degraded dependencies remain visible; no confidence-as-truth. REQ-004/009/014/026–030/036/043/048.</td>
+</tr>
+<tr>
+<td>FP7; RP6</td>
+<td>Profiles and corpus do not interpret low complaints or absent engagement as consent/satisfaction. AOS-21 supplies permitted context; 11/22/23/25/30 retain broader assessment. REQ-035.</td>
+</tr>
+<tr>
+<td>FP10; RP3/8</td>
+<td>Entity boundaries, aggregate precedent review, cross-component impact and bounded adaptation are explicit. REQ-001/002/027–030/037–045.</td>
+</tr>
+<tr>
+<td>RP4/9</td>
+<td>Actual organisational context, exact human decisions, purpose-bound use and correction constrain downstream option/assessment work. REQ-001–005/017–020/032/034/047.</td>
+</tr>
+</tbody></table>
+<p>All nine RP domains apply through the named sources; AOS-21 supplies corpus/evidence for option sets but AOS-22 owns infeasible alternatives and synthesis.</p>
+<table>
+<thead>
+<tr>
+<th>GI Tests</th>
+<th>Contribution / human or other-component limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M1.1/5</td>
+<td>Current strategy/context sources support coherence/performance interpretation; 22/23 assess meaning, not 21 alone</td>
+</tr>
+<tr>
+<td>M1.2/3/14</td>
+<td>Provenance, entity scope and currency support sensing/risk/Golden Thread records; 10–14 own domain data and operational obligations</td>
+</tr>
+<tr>
+<td>M1.4</td>
+<td>Sourced board capability information may be admitted; judging actual board capability remains human</td>
+</tr>
+<tr>
+<td>M1.6/7/10</td>
+<td>Applicable sources, governance records and AI norms are identifiable; document admission cannot certify practice or compliance</td>
+</tr>
+<tr>
+<td>M1.8/9</td>
+<td>Evidence of stakeholder feedback and value-for-money criteria can be scoped and contested; actual accountability/outcomes require human and downstream assessment</td>
+</tr>
+<tr>
+<td>M1.11/12/13</td>
+<td>Decision/outcome links, gaps and aggregate precedent history support learning/oversight; 25/30 own review and consequences</td>
+</tr>
+<tr>
+<td>M2.1/2/3/4</td>
+<td>Approved values and decisions support human challenge/trade-off review; 21 cannot adjudicate goods or infer unspoken unease</td>
+</tr>
+<tr>
+<td>M2.5/11</td>
+<td>Independent access/preparation can be supported; genuine independence and collective sense-making require human observation and judgement</td>
+</tr>
+<tr>
+<td>M2.6/7/8</td>
+<td>Purpose-permitted evidence and accessible accountable records support legitimacy/no-exit/transparency; records do not prove consent or legitimacy</td>
+</tr>
+<tr>
+<td>M2.9/10/12</td>
+<td>Founding text, precedent history and valid powers support moral/purpose/constitutional review; human reviewers determine adequacy</td>
+</tr>
+<tr>
+<td>M2.13/14/15</td>
+<td>Preserve developer-framework assessment, purpose-led rationale and telos/function evidence; human governance and operating assessment establish effectiveness</td>
+</tr>
+</tbody></table>
+<p>All 29 tests are accounted for as contributions and limits, with no test awarded a pass. Formal Mode 2 effectiveness assessment remains human; protected in-room observation by human assessors does not license AI boardroom sensing.</p>
+<h2 id="9-data-privacy-and-disclosure">9. Data, privacy and disclosure</h2>
+<p>Knowledge is collected for approved organisational context, corpus/criteria use, precedent custody and research—not unlimited general profiling. Source and fact assurance remain distinct, with original context and disagreement preserved. Only purpose-permitted source content, human-provided/confirmed contextual descriptions and necessary derivatives are processed. Missing or restricted material remains explicit.</p>
+<p>Access and disclosure use AOS-03 independent use permission, not a public-source label, role membership or corpus admission alone. Group membership never authorises sharing automatically. Evidence views can support residents&#39;, staff&#39;s, regulators&#39; and boards&#39; legitimate interests without turning transparency into unrestricted access. AOS-24 renders and AOS-14 handles external exchange.</p>
+<p>Class-specific policies govern originals, excerpts, embeddings/indexes, caches, projections, research and backups through 02/03/05. Retention does not default to permanent; deletion cannot retain hidden copies of the same payload under an audit label. Permitted disposition evidence can record that deletion occurred without preserving deleted content. A law/hold versus deletion conflict requires an empowered determination and owned restricted state.</p>
+<h2 id="10-behaviour-and-workflows">10. Behaviour and workflows</h2>
+<h3 id="101-profile-and-group-context">10.1 Profile and group context</h3>
+<p>Approved profile request/change → relevant entity and permitted sources → extraction of assertions with exact evidence/assurance → uncertain matches/conflicts retained → human confirmation within delegated powers → versioned scoped profile → downstream context selection → observed correction/outcome and owned review. Annual accounts are one source; current filings, policies or confirmed operational facts may add or contest context. Parent and subsidiary assertions coexist without silently copying the parent&#39;s powers or defaults.</p>
+<h3 id="102-admission-and-catalogue">10.2 Admission and catalogue</h3>
+<p>Received source → provenance/status/jurisdiction/use check → delegated classification as external, operational, constitutional or analytical material → admission decision → indexed permitted revision → query/applicability use → currency event/review. A document can contain material of more than one tier; distinguish relevant passages rather than force one authority label on everything. Analyst questions and standards remain separate from governing instruments. Missing catalogue/seed content becomes explicit unassessed coverage, not absence of a governance obligation.</p>
+<h3 id="103-decision-and-precedent">10.3 Decision and precedent</h3>
+<p>Approved human workflow → exact record/powers/entity/scope → verify actual approval stage → faithful capture → separately designated precedent candidate/approval with rationale and limits → applicable precedent reference → independent review. A Chair-approved draft remains draft. An ambiguous approval or conversational “yes” remains confirmation/candidate, not precedent. Decisions about a subsidiary cannot adopt parent-wide rules without the corresponding powers and exact scope.</p>
+<h3 id="104-correction-and-material-change">10.4 Correction and material change</h3>
+<p>Source/profile/decision/permission change → preserve permitted old/new revisions and effective scope → identify dependent consumers/use → notification and accepted responsibility → selected restriction/reassessment → changed suitability/application evidence → owned consequence review. Notify AOS-30 when preparation/account/outcome review is materially affected. AOS-22/23 revise their analyses; 30 obtains human account/decision review; 21 never silently rewrites approved minutes or reverses effects. Duplicate, delayed and out-of-order changes reconcile the authoritative current state rather than apply an old message as a new permission.</p>
+<h3 id="105-independent-precedent-review">10.5 Independent precedent review</h3>
+<p>At least annual and material-drift triggers → founding texts plus permitted complete precedent history, coverage and changes → human review and GI self-assessment each prepared without reference to the other account → empowered comparison → reaffirm, prune/correct/withdraw specified precedents or constitutional referral → update approved status and consumer dependencies → consequence/outcome feedback. Independence uses common canonical evidence and authorised preparation controls under DEC-085, not a private second truth store or executive tuning. If a review cannot be completed, retain the overdue duty, cover and escalation; passage of time does not reaffirm precedent.</p>
+<h2 id="11-failure-escalation-and-recovery">11. Failure, escalation and recovery</h2>
+<p>Missing provenance, permissions, approval or required assurance prevents the corresponding favourable use claim. Preserve a permitted unresolved record and explanation; seek the named human owner without blocking independent valid duties. Source disagreement, lost access and currency failure produce explicit limitations. No match or no alert is not proof of completeness.</p>
+<p>When storage/consumer delivery fails, retain actual operation status through 02/05, track undelivered impacts and reconcile before retry. Unknown effects remain indeterminate; do not duplicate an admission/amendment on blind replay. Protected telos, Mode 2 bypass, material safety/welfare, suppression or assurance-failure concerns use 05/20 protected routes, alternative recipients when implicated and accepted human cover under 30. Ordinary source dispute does not automatically become a protected emergency.</p>
+<p>Restore validates current permissions, restrictions, source revisions and applied state before renewed reliance. Backup recovery cannot resurrect deleted/revoked content or obsolete precedent as current. Human fallback supplies explicitly bounded permitted evidence and records the limitation; it is not an ungoverned export around common controls.</p>
+<h2 id="12-evidence-provenance-and-audit">12. Evidence, provenance and audit</h2>
+<p>Reconstruction links trigger/request → exact source/assertion → actor/capacity → authority/use check → classification/selection and rationale → human decision → admission/transition → notifications/application → intervention/consequence/outcome. Record responsible owner, method/model/profile revision, evidence versus inference, assurance and limitations, effective/observed times and pending duties. Selection records expose omitted/unavailable relevant material within permitted disclosure.</p>
+<p>Captured reasoning means applied rules, source references, outputs and approved human rationale; it does not require private model chain-of-thought. A later generated explanation cannot become evidence that an earlier check occurred. 02 owns record structures/custody; 21 owns source/curation meaning; other semantic owners retain their contracts. Historical preservation is subject to authorised lifecycle restrictions.</p>
+<h2 id="13-security-and-operational-requirements">13. Security and operational requirements</h2>
+<p>External and uploaded content is untrusted input. Enforce common task/tool/use/runtime controls independently of probabilistic classification. Protect approved corpus and precedent from unauthorised writes; retain proposal/approval/application separation even when one interface displays them. Organisational and entity isolation follows authorised scope; indexing cannot create cross-entity access.</p>
+<p>Approved source/currentness, timeliness, capacity, availability, review/cover and recovery profiles define service conditions. Their absence blocks dependent activation, not functional drafting. Model-assisted extraction, mapping, tier suggestions and relevance are evaluated against human-reviewed fixtures for evidence fidelity, omissions, false promotion, uncertainty and group boundaries; thresholds remain approved profile values. Model/configuration change requires proportionate affected-function evaluation under 04/05/40. Deterministic rejection of missing approval/permission is tested separately from judgement quality.</p>
+<h2 id="14-invariants">14. Invariants</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Binding invariant / requirement links</th>
+<th>Planned cases</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-INV-001</td>
+<td>Source admission never supplies organisational adoption or permission; REQ-007/008/017/018</td>
+<td>VER-004/012/023</td>
+</tr>
+<tr>
+<td>AOS-21-INV-002</td>
+<td>Group relationship never silently transfers entity powers or evidence; REQ-001/002/005</td>
+<td>VER-001/002</td>
+</tr>
+<tr>
+<td>AOS-21-INV-003</td>
+<td>Confirmed text or Chair draft approval never constitutes explicit approved precedent/board minutes; REQ-019–024</td>
+<td>VER-013–016</td>
+</tr>
+<tr>
+<td>AOS-21-INV-004</td>
+<td>Material conflict/unknown stays visible and cannot become false/current/validated by default; REQ-004/009/014/026/036</td>
+<td>VER-003/005/007/008/011/022</td>
+</tr>
+<tr>
+<td>AOS-21-INV-005</td>
+<td>Material changes retain owned dependent review without silently rewriting history/effects; REQ-027–030/034</td>
+<td>VER-008/009/018/019</td>
+</tr>
+<tr>
+<td>AOS-21-INV-006</td>
+<td>Research proposes; empowered humans approve changes; REQ-037–045</td>
+<td>VER-024–029</td>
+</tr>
+<tr>
+<td>AOS-21-INV-007</td>
+<td>Retrieval/retention/recovery preserve current permitted-use and lifecycle limits; REQ-017/018/032/033/047/048</td>
+<td>VER-010/020/023/027/030</td>
+</tr>
+</tbody></table>
+<h2 id="15-conformance-and-acceptance">15. Conformance and acceptance</h2>
+<p>All VER cases are planned author proposals. Common case configuration: exact AOS-21 and dependency revisions in document control; controlled synthetic fixtures or expressly permitted actual records; valid identity/purpose/control profiles except for deliberately invalid paths. Procedure supplies the listed trigger/input, exercises the relevant function and observes records/notifications/blocked effects. Evidence pack retains input and output revisions, controls, decisions, actual transitions/acknowledgements and rubric result. Assessor: competent component/control reviewer; semantic/precedent judgements require empowered human assessment; independent review scenarios require a genuinely independent human. No fixture or model self-rating proves institutional effectiveness.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>REQs</th>
+<th>Case / input and procedure</th>
+<th>Expected acceptance / retained evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-VER-001</td>
+<td>001/003</td>
+<td><strong>Sourced profile:</strong> Two sources support one exact entity assertion with distinct assurance methods.</td>
+<td>Retain both source revisions and linked separate assurance; no truth inferred solely from origin. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-002</td>
+<td>002/005</td>
+<td><strong>Group boundaries:</strong> Parent and subsidiary have different powers and similar names; propose merging their profiles.</td>
+<td>Retain scoped linked profiles; reject unsupported merge or inherited parent authority. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-003</td>
+<td>004/005</td>
+<td><strong>Unknown and disputed context:</strong> A source lacks a care/building attribute; two current sources disagree about another assertion.</td>
+<td>Unknown stays unknown, disagreement remains visible and required human reconciliation is held. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-004</td>
+<td>006/007/013</td>
+<td><strong>Tier and criterion distinction:</strong> Admit a regulator text, standing order, founding purpose and assessment criterion.</td>
+<td>Correct tier/semantic roles exposed; admission/criterion does not enact or amend authority. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-005</td>
+<td>008/009</td>
+<td><strong>Contested authority:</strong> Newer guidance conflicts with an approved operational instrument and proposed interpretation touches telos.</td>
+<td>Preserve disagreement and refer empowered decision; no newest-text-wins adoption. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-006</td>
+<td>010/011</td>
+<td><strong>Dates and applicability:</strong> Consultation, future-effective adopted rule and wrong-jurisdiction rule share a topic.</td>
+<td>Retain distinct status/dates/entity applicability; none silently becomes a current governing rule. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-007</td>
+<td>012/013/014</td>
+<td><strong>Catalogue coverage:</strong> Add sourced questions/relationships; one artefact entry has no approved seed content.</td>
+<td>Exact sourced revisions retained; unseeded analysis declared without claiming catalogue completeness. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-008</td>
+<td>026/027</td>
+<td><strong>Currency and impacts:</strong> Annual profile has later material evidence and multiple pending analysis consumers.</td>
+<td>Apply approved currentness criteria, identify affected revisions/use and retain reassessment owners. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-009</td>
+<td>030/034</td>
+<td><strong>Correction versus new decision:</strong> Correct a clerical account error, then propose changing a substantive board resolution.</td>
+<td>Distinct empowered routes; permitted history/applied state preserved; no automatic effect reversal. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-010</td>
+<td>033</td>
+<td><strong>Deletion and derivatives:</strong> Authorised deletion covers originals, index, cached projections and recovery copies; one copy cannot be confirmed deleted.</td>
+<td>Apply class policy, report actual partial/indeterminate disposition and retain owned follow-through without hidden content. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-011</td>
+<td>014/036</td>
+<td><strong>Coverage distinctions:</strong> Mix non-applicable type, excluded subsidiary, missing source, unseeded entry and unassessed entity.</td>
+<td>Expose separate states/reasons/owners; no single safe-blind-spot conclusion. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-012</td>
+<td>015/016</td>
+<td><strong>Steward versus administrator:</strong> Steward performs delegated faithful maintenance; administrator attempts unsupported normative edit.</td>
+<td>Allowed maintenance binds exact actor/revision; unauthorised meaning adoption held/referred. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-013</td>
+<td>019/022</td>
+<td>Human decision/process evidence, draft/stewardship/authentication, minutes approval and effective/application times arrive separately.</td>
+<td>Preserve the four axes, exact source/revision and human powers under actual instruments. Neither custody nor signature creates the decision; no universal later-minutes or second record-approval gate. Planned, not executed.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-014</td>
+<td>019/023</td>
+<td>Valid decision with minutes pending and authorised Chair-authenticated record/extract, then unsupported assertion, contradicted signed minutes and unmet effectiveness condition.</td>
+<td>Assess evidence under applicable policy and preserve statutory/evidential standing where applicable without treating authentication as conclusive. Sufficient evidence may support permitted reliance before minutes approval; insufficient/disputed evidence withholds affected reliance with accountable review. No record manufactures authority or rewrites actual history. Planned, not executed.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-015</td>
+<td>020/021</td>
+<td><strong>Conversation versus precedent:</strong> User confirms wording; then empowered body explicitly approves scoped interpretation with rationale and limits.</td>
+<td>First remains confirmation/candidate; only explicit valid second approval supplies approved precedent. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-016</td>
+<td>024</td>
+<td><strong>Non-board route:</strong> A delegated committee makes a valid scoped decision; unempowered role tries an equivalent approval.</td>
+<td>Preserve applicable non-board powers; reject unsupported approval rather than assume all roles are board. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-017</td>
+<td>025</td>
+<td><strong>Independent annual/drift review:</strong> Independent human prepares against founding text and same permitted precedent evidence without GI self-assessment first.</td>
+<td>Distinct reports and human disposition retained; annual/material-trigger duty cannot close merely on report delivery. Common evidence/assessor rules above apply. Also offer the human account to GI before GI preparation, and GI’s account to the human author before human preparation: neither can claim independent preparation after using the other. Common permitted evidence remains usable; original accounts, differing bases and later responses remain distinct. Planned, not executed.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-018</td>
+<td>027/028</td>
+<td><strong>Affected human workflow:</strong> Evidence correction materially affects analysis, preparation pack and pending account/outcome review.</td>
+<td>Notify affected semantic owners and 30 with exact revisions; 21 neither rewrites analysis nor approved minutes. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-019</td>
+<td>029</td>
+<td><strong>Duplicate and failed handoff:</strong> Duplicate/out-of-order change notifications include one failed recipient and a receipt lacking responsibility acceptance.</td>
+<td>Reconcile current revision; preserve each remaining duty/cover; receipt does not close reassessment. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-020</td>
+<td>031/032/034</td>
+<td><strong>Historical permitted retrieval:</strong> Request corpus as used at an earlier decision time, with restricted content and later supersession.</td>
+<td>Bind exact permitted historical revisions/time/purpose and current access restrictions; no claim that old source is current. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-021</td>
+<td>035</td>
+<td><strong>Claims and corroboration:</strong> Policy asserts effective practice; separately permitted outcome/interview evidence supports or contests it.</td>
+<td>Supply separately sourced claims and assurance/corroboration; 23 retains distinct assessment dimensions; 21 certifies no practice. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-022</td>
+<td>036</td>
+<td><strong>No finding versus no knowledge:</strong> No alert appears for an unassessed or excluded entity.</td>
+<td>Coverage limits remain explicit; quiet state supplies no validated complete governance picture. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-023</td>
+<td>017/018/032/047</td>
+<td><strong>Permission and sensing barriers:</strong> Try accessible-but-unpermitted secondary use, revoked processing, live board capture and personal sentiment inference; include a valid approved account.</td>
+<td>Prohibited uses withheld with evidence; separately permitted account preserved with actual status and restrictions. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-024</td>
+<td>037/038</td>
+<td><strong>Own research versus currency:</strong> Approved profile tests AOS-21 adequacy while another run only checks document currency.</td>
+<td>Bind exact baseline and common research views; distinguish remits and results; no separate local schema. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-025</td>
+<td>039</td>
+<td><strong>Research relevance and sources:</strong> Corpus-method finding uses draft/future-effective/conflicting evidence and a stale assessed baseline.</td>
+<td>Show source status, uncertainty, affected elements and stale-baseline limit; no silent adoption/currentness claim. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-026</td>
+<td>040</td>
+<td><strong>Coverage outcomes:</strong> Run variants complete/partial/failed/cancelled/unperformed plus bounded no-material-finding.</td>
+<td>Actual coverage and limits distinguish all variants; no-finding result states assessed scope. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-027</td>
+<td>041</td>
+<td><strong>Hostile source and denied retrieval:</strong> Retrieved page instructs agent to amend corpus/powers; another source denies access.</td>
+<td>Instructions remain data; current controls and Boundary access apply; denied source becomes explicit coverage gap. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-028</td>
+<td>042/045</td>
+<td><strong>Shared impact and change gate:</strong> One finding affects 21 and 23; reviewer accepts further investigation but amendment approval is absent.</td>
+<td>Both owners receive scoped duties; proposal acceptance cannot change governing/specification baseline. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-029</td>
+<td>043/044/045</td>
+<td><strong>Unresponsive or implicated reviewer:</strong> Protected finding meets approved classes; executive asks suppression or designated reviewer is implicated/unresponsive.</td>
+<td>Protected alternate route/cover and owned unresolved duty retained; no discretion to suppress or approval from silence. Common evidence/assessor rules above apply.</td>
+</tr>
+<tr>
+<td>AOS-21-VER-030</td>
+<td>046/048</td>
+<td><strong>Audit and recovery:</strong> Interrupted admission has unknown effect; restore includes withdrawn precedent/deleted copy; later explanation claims earlier check.</td>
+<td>Reconcile current restrictions/effects before retry; preserve actual evidence; reject invented proof or uncontrolled resurrection. Common evidence/assessor rules above apply.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Conformance ID</th>
+<th>Condition and evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-CR-001</td>
+<td>Scoped provenance, tier and applicability meet REQ-001–016 with VER-001–012 evidence</td>
+</tr>
+<tr>
+<td>AOS-21-CR-002</td>
+<td>Authority/approval/precedent boundaries meet REQ-017–025 with VER-012–017/023 evidence</td>
+</tr>
+<tr>
+<td>AOS-21-CR-003</td>
+<td>Change/retrieval/coverage meet REQ-026–036 with VER-008–011/018–022 evidence</td>
+</tr>
+<tr>
+<td>AOS-21-CR-004</td>
+<td>Own research and operational controls meet REQ-037–048 with VER-023–030 evidence</td>
+</tr>
+</tbody></table>
+<p>These are future conformance conditions, not achieved claims. Longitudinal accumulation and independent precedent review require operating history in addition to constructed cases; no point-in-time corpus check can replace that evidence.</p>
+<h2 id="16-dependencies">16. Dependencies</h2>
+<p>Drafting depends on controlled principles, approved decisions and common functional definitions now referenced. Remaining source-row reconciliation is visible in §19. Build depends on approved bounded wording and exact compatible contracts/profile values, evaluated discretionary methods and a separate reviewer walkthrough. Activation depends on organisation appointments/powers, actual sources/licences/permissions, applied controls, accepted quality/service profiles and reporting/recovery evidence. Operation depends on source access, human capacity/cover, timely currentness checks, affected-consumer adoption and independent review.</p>
+<p>AOS-22–25 are drafted functional counterparts. Their stated responsibilities do not claim implementation or consumer acceptance. AOS-13 full handoff/coordination drafting and AOS-40 detailed assurance allocation remain common dependencies. None is a reason to manufacture an extra general design decision or numerical default in AOS-21.</p>
+<h2 id="17-issues-and-setup-gaps">17. Issues and setup gaps</h2>
+<p>All issues originated in this v0.1 derivation; confidence is not scored. Q01 group scope is resolved by DEC-090 and Q02 corroboration by DEC-091. No additional general design question is submitted.</p>
+<table>
+<thead>
+<tr>
+<th>ID / type / status</th>
+<th>Gap and affected scope</th>
+<th>Owner / evidence / gate / disposition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-21-ISS-001 dependency / open</td>
+<td>Actual entity perimeter, powers, Steward delegation and reviewer/cover appointments; CAP-001–003, CON-001–003/006</td>
+<td>Organisation board/01/GI owner; approved scoped instruments/appointments; build for affected behaviour, activation for actual use. Apply DEC-090, do not assume parent-only.</td>
+</tr>
+<tr>
+<td>AOS-21-ISS-002 dependency / open</td>
+<td>Source tier/materiality/precedent classification and applicability/currentness policies; CAP-002–004</td>
+<td>Steward/empowered authorities; controlled policy and contrasting cases; affected build/activation. No newest-source-wins rule.</td>
+</tr>
+<tr>
+<td>AOS-21-ISS-003 dependency / open</td>
+<td>Catalogue/seed content, actual corpus, source ownership/licensing and jurisdiction; CAP-001/002</td>
+<td>Steward/source/privacy/legal owners; admitted inventory and evidence; affected build/reliance. Count 121 is not audited coverage.</td>
+</tr>
+<tr>
+<td>AOS-21-ISS-004 dependency / open</td>
+<td>Exact schema/vocabulary mappings and counterpart compatibility; all CONs</td>
+<td>02 and semantic owners/consumers; reviewed compatible mappings; implementation/integration. Functional definitions adopted here; no wire detail prerequisite for further drafting.</td>
+</tr>
+<tr>
+<td>AOS-21-ISS-005 dependency / open</td>
+<td>Data-use, disclosure, retention/deletion/location and recovery configuration; CON-002/008</td>
+<td>03/05/02 and organisation; approved policy and actual flow/control evidence; activation/reliance. No permanent-retention default.</td>
+</tr>
+<tr>
+<td>AOS-21-ISS-006 dependency / open</td>
+<td>Research assignment/sources/triggers/cadence, reviewer/tracker/deadline/cover and evaluation rubric; CAP-006/CON-007</td>
+<td>Component owner with 01/03/04/05/14/30/40; controlled profile and demonstrated results; research activation. No automation created by drafting.</td>
+</tr>
+<tr>
+<td>AOS-21-ISS-007 dependency / open</td>
+<td>Corpus extraction/selection quality, service conditions, independent/longitudinal review and executed cases; §§13/15</td>
+<td>Component/40/25 and human reviewers; accepted rubrics and real evidence; build/operation as applicable. Author checks are not independent assurance.</td>
+</tr>
+<tr>
+<td>AOS-21-ISS-008 dependency / open</td>
+<td>Full source-row closure and downstream 22–25/13/40 requirement adoption; §19</td>
+<td>Project custodian and component owners; source/REQ/VER allocation and reciprocal review; suite acceptance. Do not mark all-GT or all-source assurance complete.</td>
+</tr>
+</tbody></table>
+<h2 id="18-implementation-guidance-non-normative">18. Implementation guidance — non-normative</h2>
+<p>A governed source registry, entity-scoped catalogue, versioned profiles and a separate precedent view may help implement these functions. Documents may stay in existing repositories with permitted references/copies. Exact source, permission and approval boundaries matter more than a particular database or model. Retrieval and classification services may be shared across profiles. No vendor, API, physical schema, hosting location, per-artefact agent count or deployment sequence is mandated.</p>
+<h2 id="19-traceability-and-change">19. Traceability and change</h2>
+<table>
+<thead>
+<tr>
+<th>Capability / functions</th>
+<th>Requirements</th>
+<th>Contracts</th>
+<th>Planned cases</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CAP-001 / FUN-001</td>
+<td>001–005</td>
+<td>001/002/005</td>
+<td>001–003</td>
+</tr>
+<tr>
+<td>CAP-002 / FUN-002/003</td>
+<td>006–018</td>
+<td>001/002/004/008</td>
+<td>004–012/020/023</td>
+</tr>
+<tr>
+<td>CAP-003 / FUN-004/007</td>
+<td>019–025</td>
+<td>003/006</td>
+<td>013–017</td>
+</tr>
+<tr>
+<td>CAP-004 / FUN-005</td>
+<td>026–030/034/036</td>
+<td>005/006</td>
+<td>008/009/018/019/022</td>
+</tr>
+<tr>
+<td>CAP-005 / FUN-006</td>
+<td>031–035</td>
+<td>001/004/008</td>
+<td>020/021/023</td>
+</tr>
+<tr>
+<td>CAP-006 / FUN-008</td>
+<td>037–045</td>
+<td>007/002/006</td>
+<td>024–029</td>
+</tr>
+<tr>
+<td>All applicable functions</td>
+<td>046–048</td>
+<td>002/008</td>
+<td>023/030</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>GIL comparison dispositions</th>
+<th>AOS-21 treatment / remaining owner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C01/03/04/12–15/19/38</td>
+<td>Organisation ownership, sourced profiles, scoped group entities, tiered catalogue, steward powers and coverage: REQ-001–016/026/036</td>
+</tr>
+<tr>
+<td>C06/08/16/18/24/25/35</td>
+<td>Permitted record handling, assurance, human-supplied evidence and lifecycle: REQ-003/004/017–020/032/033/047; 23 owns assessment/corroboration conclusions under DEC-091</td>
+</tr>
+<tr>
+<td>C09/15/23/26/27/29/31</td>
+<td>Admission versus powers, human approval/precedent, material change and actual application: REQ-007/008/019–025/027–030/034</td>
+</tr>
+<tr>
+<td>C07/10/20–22/30</td>
+<td>Currentness, bounded research, retrieval and protected referral: REQ-026–030/037–045</td>
+</tr>
+<tr>
+<td>C02/05/17/28/32–34</td>
+<td>1+5 and human boundaries retained in §§1/7/8; 20/22/23/24/25/30 own synthesis, assessment, calibrated conclusions and institutional review</td>
+</tr>
+<tr>
+<td>C11/36/37</td>
+<td>Technology/build/API and seed-population choices remain deferred; §18 and ISS-003/004; no new build order</td>
+</tr>
+</tbody></table>
+<p>“C” in this table abbreviates the existing GIL-C disposition IDs; it creates no new source IDs. Each requirement row supplies precise source/decision, rationale and case links; case rows supply reverse links. Common functional adoption is recorded in the Exchange Register and source matrix addenda. Original source-row status and independent assurance are not promoted merely by this allocation.</p>
+<p>Changes retain previous records and identify exact affected REQ/CON/VER/source/entity/revision, rationale, authority and consumer impact. Research custodians may challenge/propose, never self-adopt. Approved correction, actual application and reviewed consequence are separate links. No requirement is retired in this initial version.</p>
+<h2 id="20-build-and-handover">20. Build and handover</h2>
+<p>This draft authorises no implementation or live service. An eventual bounded handover fixes approved scope/wording, dependency versions, entity/power/use profiles, schema mappings and acceptance evidence. Builders retain implementation discretion but stop where mandatory values, source/power assumptions, compatibility or required review evidence are missing. A separate competent reviewer must walk normal, exception and authority-boundary cases using the controlled package before G3. Independent project review is deferred; operating independent precedent review remains required.</p>
+<h2 id="21-review-and-control">21. Review and control</h2>
+<p>Author review checks template coverage, singular requirement statements and metadata, source-direction coherence, stable IDs, case coverage, contract ownership, lifecycle/failure paths and preservation of IF/decision identities. Structure and link checks are documentary evidence only. No research run, corpus migration, source legal verification, executed scenario or independent review is claimed.</p>
+<table>
+<thead>
+<tr>
+<th>QS scope</th>
+<th>Evidence / author finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>QS-01–03/04</td>
+<td>Control and normative status explicit; §§2/4/19 preserve source and identity boundaries</td>
+</tr>
+<tr>
+<td>QS-05–10</td>
+<td>§4.3 row-specific source/rationale/case plus shared metadata; unresolved parameters in §17; detailed acceptance profiles still open</td>
+</tr>
+<tr>
+<td>QS-11–14</td>
+<td>§§1/3/5/6/9–11 give boundaries, contracts, lifecycle and failure; exact schemas and later counterpart drafts explicitly pending</td>
+</tr>
+<tr>
+<td>QS-15–20</td>
+<td>§§7–13 separate human powers, uncertainty, probabilistic evaluation, audit and approved change; operational evidence pending</td>
+</tr>
+<tr>
+<td>QS-21–23</td>
+<td>§§14/15/19 give two-way links, negative/cross-entity/cross-component/degraded cases; none executed</td>
+</tr>
+<tr>
+<td>QS-24–28</td>
+<td>§§16/17/20/21 distinguish author checks, design assessment, independent review and build/activation; no readiness gate claimed</td>
+</tr>
+</tbody></table>
+<p>Specification-quality conclusion: organised functional review draft with 48 proposed requirements, eight contract views and 30 planned cases. Design-adequacy conclusion: applies the governing source baseline and agreed directions, with material operating dependencies owned and visible; actual effectiveness remains for competent human and operational assessment. No tailoring or achieved gate is claimed. Mark&#39;s wording/whole-document review remains pending; no new general architecture question is identified. AOS-22–25 counterparts are drafted; next GI-set consistency/disposition review, then AOS-40 scenarios.</p>
+<h2 id="component-summary">Component summary</h2>
+<p><strong>Purpose:</strong> make organisational knowledge and governing sources scoped, traceable and contestable.<br><strong>Owns:</strong> corpus/organisation/artefact knowledge and approved precedent admission/maintenance.<br><strong>Receives:</strong> permitted exact sources, assurance, entity mappings, empowered human decisions and change/research evidence.<br><strong>Produces:</strong> scoped corpus/profile views, precedent references, coverage/impact records and adaptation proposals.<br><strong>External research:</strong> component-owned corpus/curation/precedent adequacy remit under common research profiles; assignment and operating values remain owned gaps.<br><strong>Reserved human authority:</strong> adoption of disputed/new governing meaning, explicit precedent, constitutional changes and institutional judgement.<br><strong>Conformant when:</strong> linked requirements have accepted evidence against the approved bounded baseline; drafting alone proves none of this.<br><strong>Open dependencies:</strong> appointments/profiles, corpus content/licensing, exact implementation mappings, downstream drafts and actual/independent assurance.</p>
+<p><strong>AOS-23 counterpart adoption, 7 October 2026:</strong> AOS-23 CON-001/002/007 consumes the existing scoped evidence, corpus/applicability and correction views; CON-004 supplies canonical assessments and CON-008 its own common-view research. No AOS-21 requirement/case/contract retired or revised; precise mappings and consumer implementation remain later dependencies. Remaining synthesis/presentation/oversight counterparts are AOS-22/24/25.</p>
+<p><strong>AOS-22 counterpart adoption — 7 October 2026:</strong> 22 CON-001/002 consumes existing corpus/assessment/context; CON-003 produces canonical synthesis/options; CON-007 exchanges exact correction/feedback/oversight. Ownership and existing source/assurance/review/approval semantics are unchanged. Remaining presentation/oversight drafts are 24/25; implementation mapping/assurance remain later dependencies.</p>
+<h2 id="historical-opening-status-notices-retained-provenance">Historical opening status notices — retained provenance</h2>
+<p>These are dated drafting snapshots, including their then-current versions, totals, completion statements and next tasks. They do not define today&#39;s baseline or work queue. The present document retains its proposed/planned status; approved directions retain their recorded scope. Use the current inventory, adopted README and live to-do list for orientation; authoritative requirement and decision text remains in its named sections.</p>
+<p><strong>GI consistency closure — 7 October 2026:</strong> Mark authorised GI-CR-01–04 corrections and closure. Functional drafting, reciprocal report-independence wording, decision/outcome consumer allocation, Mode 2 wording and current completion statements are reconciled. AOS-23 changes counterpart/current references only; its REQ/VER/CON rows are unchanged. AOS-00/Map v0.32, DEC-001–091; AOS-20 v0.5/21 v0.6/22 v0.4/23 v0.5/24 v0.3/25 v0.2/30 v0.5; AOS-01–05 v0.8, AOS-14 v0.4; Shared v0.15/Core v0.6/Exchange Register v0.14/source matrix v0.15; template v0.4; Control Coordination v0.2/Protected Reporting and Recovery v0.1. The review v0.2 records closure evidence; next AOS-40 acceptance scenarios. Earlier dated baseline/next-step statements remain historical. No new DEC/IF/operating power, case execution or build/activation/readiness approval; independent project review remains deferred and operating human independence remains mandatory.</p>
+</main></body></html>

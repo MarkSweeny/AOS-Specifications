@@ -1,0 +1,289 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AOS core documentation — final author completion review · AOS v1.0</title><link rel="stylesheet" href="../edition.css"></head><body><nav><a href="../index.html">AOS Specifications v1.0 · Contents</a> &nbsp; <a href="aos-core-documentation-completion-review-v0-1.pdf">PDF</a> &nbsp; <a href="aos-core-documentation-completion-review-v0-1.md">Markdown</a></nav><main><h1 id="aos-core-documentation-final-author-completion-review">AOS core documentation — final author completion review</h1>
+<p>Document: aos-core-documentation-completion-review-v0-1 · Source revision or record: v0.1</p>
+<p>AOS Specifications v1.0 · Edition dated 3 November 2026</p>
+<p>Original architecture and specifications: Mark Sweeny, Governance Intelligence. © 2026 Mark Sweeny.</p>
+<p>AOS-authored material is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<p>Preserve third-party credits. Referenced external works remain subject to their own terms.</p>
+<p>Canonical collection: <a href="https://www.governanceintelligence.co.uk/aos">https://www.governanceintelligence.co.uk/aos</a></p>
+<p>Publication copy with editorial notices, public references and disclosure edits where applicable.</p>
+<p>Version: 0.1<br>Date: 9 October 2026<br>Requested by: Mark Sweeny<br>Reviewer: Codex; author document review, not independent human assurance<br>Status: review complete; items6/8/9 closed for functional drafting/planned allocation only.<br>Authority: existing DEC-001–097; no new design decision or approval of proposed requirement wording.</p>
+<h2 id="1-conclusion-and-exact-completion-boundary">1. Conclusion and exact completion boundary</h2>
+<p>The current functional component suite, common logical-contract allocation and planned acceptance catalogue meet the recorded documentary completion criteria for to-do items6,8 and9. Close those drafting tasks at author-review level. This means the proposed architecture is documented for substantive review, with explicit unresolved dependencies. It does not declare every source obligation fulfilled, every implementation interaction covered, complete executable schemas, whole-document approval, achieved G3/G4, independent assurance or permission to operate.</p>
+<p>CAP-01 Trade-Off Divergence and CAP-02 Risk Register Assessment are specific Phase2 use cases under DEC-097, outside current architectural completion. The twelve dedicated component requirement entries and seven local case entries remain deferred identifiers, not active-core obligations or acceptance. The two former AOS-00 inclusion requirements038/039 are separate deferred parent identifiers and are not counted in the18-component totals below. General human judgement, evidence, independent challenge and protected reporting remain in core scope.</p>
+<p>This review closes the functional workstreams. It does <strong>not</strong> declare the entire documentation/publication programme finished: extension/conformance specification (item12), supplier briefing (12a), AOS Change Constitution (13a), public-package preparation (13) and website publication (14) remain outstanding. Mark&#39;s substantive review remains distinct from this author assessment.</p>
+<h2 id="2-baseline-scope-and-method">2. Baseline, scope and method</h2>
+<p>Reviewed baseline: AOS-00/Mapv0.44, DEC001–097; kernel01–05v0.8; sensing10v0.5/11v0.3/12v0.3/13v0.2/14v0.8; GI20v0.6/21v0.6/22v0.5/23v0.5/24v0.4/25v0.3;30v0.5;40v0.8 with acceptance annex internalv0.2; Sharedv0.20/Corev0.6/Registerv0.19/Matrixv0.20; Coordinationv0.2/KPRv0.1/Profilesv0.1; FPv4/RPv6/GT and AOS-QSv0.1.</p>
+<p>Completion reconciliation changes only navigation/status/current baseline statements: AOS-00/Mapv0.45; Sharedv0.21/Registerv0.20/Matrixv0.21. Component requirements, planned cases, contract meanings, source statuses, DEC001–097 and the Phase2 record remain unchanged.</p>
+<p>Observed current OneDrive inventories were compared with available current working texts; all matched recorded byte sizes, allowing extraction&#39;s terminal-newline normalisation. The recently changed Phase2 and acceptance originals had also been read back and compared in full. Size currency is supporting evidence, not a content-integrity or truth guarantee. The method combined reading of current common/scope/adoption/acceptance records and prior closed kernel/GI/sensing findings, targeted semantic boundary checks, and indexing every numbered requirement and case in the18 component catalogues. It is not an independent exhaustive semantic assessment of every assertion or all possible combinations.</p>
+<p>Author checks: active requirement→defined planned case; declared primary links appear in reverse case links; identifiers resolve; Phase2 exclusions preserve general core obligations; current AOS-40 original acceptance plus variant definitions and human/evidence boundaries; common owners, producer/consumer/view navigation and owned dependency gates; task done-when criteria. Numerical requirements/cases below are catalogue entries, not independent tests or implemented functions.</p>
+<h2 id="3-documentary-task-dispositions">3. Documentary task dispositions</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Recorded completion criterion</th>
+<th>Evidence and disposition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6 — Shared authority, data and agent contracts</td>
+<td>Producers/consumers reference the same contracts; unresolved parameters have owners and no invented defaults</td>
+<td>Corev0.6 defines REC-E/A/D/X and linked REC-Q; Shared defines original IFs and companion meanings; Register§§4–13 and15–20 plus sensing manifest allocate common views, authoritative owners and reciprocal endpoints; coordination/protected-recovery/research supplements define logical changes/acknowledgements/duties. Parameters remain owned in P/ISS/profile registers. Closed for functional contract definition/allocation; executable schema/compatibility evidence tracked in11a/11b.</td>
+</tr>
+<tr>
+<td>8 — Acceptance scenarios</td>
+<td>Inputs, expected behaviour, human responsibilities and retained evidence identified</td>
+<td>AOS-40v0.8 retains40 requirements/38 parent cases/65 exact reciprocal links; annexv0.2 supplies108 independently assessable variants with inherited original acceptance, methods/assessors, evidence rules and fixed result-vector limits. All29 GT questions have bounded software/human applicability. Active local requirements have planned cases; retained local-only rows are explicitly not assembled evidence. AT-CR-01–05 remain author-closed. Closed for planned functional definition; exact run-scope/endpoint bindings and execution remain11a/11b.</td>
+</tr>
+<tr>
+<td>9 — Five domain specifications</td>
+<td>Responsibilities, permitted uses/actions, failure behaviour, acceptance criteria and consistent interfaces</td>
+<td>All five sensing drafts exist and SENS-CR-01–05 are author-closed. Boundary requirement migration, DEC092–096 adoption, supplier allocation, source dispositions and common adoption exist. Sensing has269 requirement rows/176 planned cases; none deferred by CAP reclassification. Current private Resident, People, Asset, Process and Boundary boundaries checked against shared control owners and AOS-40. Closed for functional drafting/author consistency; Mark review, appointments and actual service/implementation evidence remain separate.</td>
+</tr>
+</tbody></table>
+<h2 id="4-component-requirement-and-planned-case-coverage">4. Component requirement and planned-case coverage</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Retained requirement rows</th>
+<th>Current-core requirement rows</th>
+<th>Retained case rows</th>
+<th>Current-core case rows</th>
+<th>Primary planned allocation check</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AOS-01</td>
+<td>68</td>
+<td>68</td>
+<td>44</td>
+<td>44</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-02</td>
+<td>73</td>
+<td>73</td>
+<td>49</td>
+<td>49</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-03</td>
+<td>68</td>
+<td>68</td>
+<td>51</td>
+<td>51</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-04</td>
+<td>77</td>
+<td>77</td>
+<td>57</td>
+<td>57</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-05</td>
+<td>76</td>
+<td>76</td>
+<td>64</td>
+<td>64</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-10</td>
+<td>49</td>
+<td>49</td>
+<td>34</td>
+<td>34</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-11</td>
+<td>55</td>
+<td>55</td>
+<td>33</td>
+<td>33</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-12</td>
+<td>53</td>
+<td>53</td>
+<td>35</td>
+<td>35</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-13</td>
+<td>57</td>
+<td>57</td>
+<td>40</td>
+<td>40</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-14</td>
+<td>55</td>
+<td>55</td>
+<td>34</td>
+<td>34</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-20</td>
+<td>57</td>
+<td>56</td>
+<td>38</td>
+<td>38</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-21</td>
+<td>48</td>
+<td>48</td>
+<td>30</td>
+<td>30</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-22</td>
+<td>52</td>
+<td>44</td>
+<td>32</td>
+<td>27</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-23</td>
+<td>52</td>
+<td>52</td>
+<td>32</td>
+<td>32</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-24</td>
+<td>40</td>
+<td>39</td>
+<td>26</td>
+<td>25</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-25</td>
+<td>48</td>
+<td>46</td>
+<td>30</td>
+<td>29</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-30</td>
+<td>48</td>
+<td>48</td>
+<td>31</td>
+<td>31</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+<tr>
+<td>AOS-40</td>
+<td>40</td>
+<td>40</td>
+<td>38</td>
+<td>38</td>
+<td>No uncovered active requirement or missing primary case link</td>
+</tr>
+</tbody></table>
+<p>Totals: <strong>1,016</strong> retained component requirement rows, <strong>1,004</strong> current-core rows; <strong>698</strong> retained numbered cases, <strong>691</strong> current-core numbered cases. Twelve CAP-only component REQs and seven local cases are deferred. All1,004 active requirements have at least one primary planned case outside the deferred set. No declared primary requirement→case link lacks its reverse association; no referenced primary case or reverse requirement identifier is unresolved. The691 cases include38 AOS-40 parents; the108 variant records are additional granularity, not108 new parent cases. Shared KXV/KCV/KPV inheritance and overlapping cases are not independent samples.</p>
+<p>AOS-01/02/04/05/20 cases additionally list54 existing requirement associations beyond their requirement tables&#39; primary case columns. Those are supplementary case coverage, not broken primary links or54 new requirements. Their identifiers resolve. The source/case registries deliberately support many-to-many navigation; no false claim of identical primary and supplementary lists is made. AOS-40 itself has exactly65 forward/reverse associations.</p>
+<p>This check demonstrates planned allocation and identifier coherence. It does not prove each linked test sufficiently assesses every normative assertion. Original component acceptance, common method/evidence prerequisites, competent human assessment and selected execution-scope validation remain necessary. Every unbound local-to-assembled row stays owned and supplies no assembled coverage; mandatory in-scope bindings cannot be waived by this documentary closure.</p>
+<h2 id="5-responsibility-contracts-and-key-scope-boundaries">5. Responsibility, contracts and key scope boundaries</h2>
+<p>AOS-01 owns action/constitutional authority;02 common evidence/record identity/assurance/correction structure;03 identity/representation, lawful use/purpose/disclosure;04 agents/tasks/effect semantics/evaluation;05 independent runtime/check/accounting/recovery; domains own substantive service interpretation;13 tracking/accepted operational duty;14 external exchange;20–25 GI corpus/synthesis/assessment/presentation/oversight;30 empowered human decision/responsibility;40 evidence-supported assurance. No local CON view creates a competing semantic owner.</p>
+<p>The33 original kernel CON views are mapped to common definitions, with common research views additionally inherited. Register§§12/13/15–20 gives GI/human/research adoption; the sensing/current40 manifest gives40 local CON views across10–14/40 with producer/consumer/shared owner and requirement/case contribution. GI/human tables use scoped short CON IDs under their component headings; absence of a fully prefixed string is not a missing definition. Actual endpoint compatibility, wire profiles, enums/cardinalities, clocks, confidentiality and independently observed application remain build/execution prerequisites.</p>
+<p>Targeted boundary checks retained: financial versus resource materiality; send/deliver/accept/fulfil; Boundary recognition versus domain substantive obligation and02/13/30 duties; operation/data-use boundary versus hosting; Boundary patterns versus25 oversight; private Resident selection/refusal/accessibility/cancellation/derived leakage; People judgement and permissible disclosure; independent GI preparation/release/response/protected duties; exact Chair/board standing; permanent human Mode2; scope-specific reconciliation/recovery; outcome rather than administrative closure. These are checks of proposed documentary coherence, not observed system behaviour.</p>
+<p>The80 controlled FP/RP/GT source items retain their existing allocated/partial/unresolved histories and current contributions. All29 GT questions retain actual human/institutional evidence boundaries. Source sufficiency and sector/legal applicability are not promoted by completion or Phase2 deferral. A deferred CAP-only source contribution cannot substantiate current-core coverage. Source manifest unchanged.</p>
+<h2 id="6-findings-and-remedies-completed-in-this-review">6. Findings and remedies completed in this review</h2>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Remedy / author closure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FC-01 — To-do items6/8/9 still combine completed drafting, obsolete next steps and future implementation evidence</td>
+<td>Replaced live task entries with current completion scope and evidence; preserved former entries in dated history; separated Mark review and11a/11b implementation/verification prerequisites. Closed, author documentary level.</td>
+</tr>
+<tr>
+<td>FC-02 — Shared-contract initial-scope/adoption passages can appear to be current despite later completion supplements</td>
+<td>Corrected current control/scope/next-action notices and labelled initial-review/adoption passages as historical; current register/common supplements govern. No contract dictionary or proposed requirement amended. Closed, author documentary level.</td>
+</tr>
+<tr>
+<td>FC-03 — Navigation still needs a clear current-core completion versus Phase2/programme boundary</td>
+<td>Added this review and exact completion disposition to README/architecture/map/source navigation; item10 remains parked, other architectural governance/publication work remains open. Closed, author documentary level.</td>
+</tr>
+</tbody></table>
+<p>No new blocking functional-document defect was established by this bounded review. This does not mean all implementation, operational or substantive-assessment risks have been resolved. No previously closed acceptance/sensing/GI finding or pilot5b is reopened.</p>
+<h2 id="7-remaining-work-and-accountable-gates">7. Remaining work and accountable gates</h2>
+<table>
+<thead>
+<tr>
+<th>Remaining work</th>
+<th>Owner / gate</th>
+<th>Why it remains</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mark&#39;s substantive review/disposition of the core draft</td>
+<td>Mark, item5d; exact proposed wording and affected decisions</td>
+<td>Author completion is not project-owner whole-document approval.</td>
+</tr>
+<tr>
+<td>Extension/conformance specification and supplier alignment</td>
+<td>Project drafting owner/semantic owners; items12/12a, before claiming extension/product conformance or public supplier readiness</td>
+<td>Core responsibilities exist; explicit extension obligation and claim model plus standalone supplier briefing remain programme work.</td>
+</tr>
+<tr>
+<td>AOS Change Constitution</td>
+<td>Project owner/governance drafting, item13a; before relying on proposed AOS change rights/process</td>
+<td>Organisational control decisions do not by themselves complete governance of the architecture&#39;s own change process.</td>
+</tr>
+<tr>
+<td>Bounded implementation slice</td>
+<td>Mark/empowered organisation, item11; before build</td>
+<td>Exact scope, omissions, technology/location, organisation instruments, threat assumptions and stop conditions require authorisation.</td>
+</tr>
+<tr>
+<td>Implementation-specific contract and run matrix</td>
+<td>Component/semantic/control/service owners with40, item11a; before dependent build/execution/reliance</td>
+<td>Fixed compatible wire profiles/endpoints, approved values/clocks/roles/rubrics/fixtures/observability and mandatory variant/local-case bindings are needed.</td>
+</tr>
+<tr>
+<td>Actual verification and commissioning</td>
+<td>Competent appointed assessors, responsible organisation and service owners, item11b; before affected acceptance/release/activation</td>
+<td>Cases are planned; actual effect, recovery, human capacity/accessibility, adverse scenarios and retest evidence remain absent. G3/G4 and operating approval stay separate.</td>
+</tr>
+<tr>
+<td>Independent and institutional assurance</td>
+<td>Separately empowered reviewers/organisation; required gate before claimed assurance/operation</td>
+<td>Independent project review deferred; actual governance, legal/practice, safety, long-term outcomes and legitimacy cannot be certified through these document checks.</td>
+</tr>
+<tr>
+<td>Publication package and website</td>
+<td>Mark, items13/14, after selected package approval</td>
+<td>Complete public status labels, licensing/contribution rules, release/exit criteria and approved publication still required.</td>
+</tr>
+<tr>
+<td>CAP-01/02 use cases</td>
+<td>Mark, Phase2/item10 only on explicit resumption</td>
+<td>Outside current architecture; no date, current work or prerequisite.</td>
+</tr>
+</tbody></table>
+<p><strong>Recommended next documentary task:</strong> item12, extension and conformance specifications; then align the supplier briefing and AOS Change Constitution/publication package. This recommendation does not authorise a build, test execution or publication.</p>
+<h2 id="8-final-status">8. Final status</h2>
+<p>Items6/8/9: complete for functional drafting/planned allocation/author consistency. Components remain proposed review drafts. FindingsFC-01–03: author-documentary remedies closed. Tests: unexecuted. DEC001–097, source histories and manifest unchanged. Independent project review deferred. No whole-document approval, G3/G4, legal/institutional certification or live activation inferred.</p>
+</main></body></html>

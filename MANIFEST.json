@@ -1,0 +1,1792 @@
+{
+  "release": "v1.0",
+  "release_title": "AOS Specifications v1.0",
+  "edition_date": "2026-11-03",
+  "publisher": "Governance Intelligence",
+  "original_author": "Mark Sweeny",
+  "rights_holder": "Mark Sweeny",
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "canonical_url": "https://www.governanceintelligence.co.uk/aos",
+  "document_count": 64,
+  "documents": [
+    {
+      "id": "aos-readme",
+      "title": "Adaptive Operating System — specification suite",
+      "source_revision": "Adopted orientation, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-readme/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-readme.html",
+          "bytes": 21803,
+          "sha256": "a1b6c42a9b2e41ba4294142ed1c73a0a50852b090132fccf38616898185f9cd3"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-readme.md",
+          "bytes": 19210,
+          "sha256": "742417a6f6a5d173a6210dd6632c218e5059d0192b60c74b7bf49d4fddc21042"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-readme.pdf",
+          "bytes": 79580,
+          "sha256": "fe2038160417e45ab8610c7ee50328363adcbfbe1498d4492dea7c9c4b10a7d6"
+        }
+      ]
+    },
+    {
+      "id": "aos-source-traceability-matrix-v0-1",
+      "title": "AOS Source Traceability Matrix",
+      "source_revision": "v0.28",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-source-traceability-matrix-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-source-traceability-matrix-v0-1.html",
+          "bytes": 203706,
+          "sha256": "fb7d55ee88c03b26b06008f163ece6076153639fec04dca5641804532abe44d1"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-source-traceability-matrix-v0-1.md",
+          "bytes": 183852,
+          "sha256": "62f09354df561076988edbdf97dd7f8c463bf94b2a81b9166816bc22d250157f"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-source-traceability-matrix-v0-1.pdf",
+          "bytes": 216168,
+          "sha256": "738e8fcaeb2578bb64e8221a6e5375b5fbb83674e3d97416e1abed0859e7e135"
+        }
+      ]
+    },
+    {
+      "id": "architectural-rules-working-draft",
+      "title": "AOS architectural rules — working draft",
+      "source_revision": "Working guidance, 3 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/architectural-rules-working-draft/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/architectural-rules-working-draft.html",
+          "bytes": 5315,
+          "sha256": "6564025930ac81d4f0b06310271434bacf1182e9c950aae98ff8a04aff8063d4"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/architectural-rules-working-draft.md",
+          "bytes": 4349,
+          "sha256": "345597c15db4ffc0437c4d1240b9e69c0f23489dd31fe438aadea966e29fc325"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/architectural-rules-working-draft.pdf",
+          "bytes": 66227,
+          "sha256": "c9cb5a32edf48fda152d401a1d28ab51d6006f82df0362dfefa3ccf9d741862e"
+        }
+      ]
+    },
+    {
+      "id": "aos-01-authority-constitutional-controls-and-change",
+      "title": "AOS-01 — Authority, constitutional controls and change",
+      "source_revision": "v0.12",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-01-authority-constitutional-controls-and-change/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-01-authority-constitutional-controls-and-change.html",
+          "bytes": 147646,
+          "sha256": "9b739db3e8db4fa85b3f6e87d747f45d416ba21cdaf522b102199834f64c8753"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-01-authority-constitutional-controls-and-change.md",
+          "bytes": 128993,
+          "sha256": "09cd1e93f4ee130688262457915e915b98fbf368b3798e8c0d4e73d63c918491"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-01-authority-constitutional-controls-and-change.pdf",
+          "bytes": 192661,
+          "sha256": "ebf5928bed3e422c63a8233516c026fc99bc81fdb089097b0f68d1665b144a06"
+        }
+      ]
+    },
+    {
+      "id": "aos-02-unified-data-layer-and-shared-records",
+      "title": "AOS-02 — Unified Data Layer and shared records",
+      "source_revision": "v0.11",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-02-unified-data-layer-and-shared-records/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-02-unified-data-layer-and-shared-records.html",
+          "bytes": 154276,
+          "sha256": "5c7545506265915926961252617e71a0f9fccfcd513b34a9f77bab6742778606"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-02-unified-data-layer-and-shared-records.md",
+          "bytes": 135049,
+          "sha256": "a8b4e3396acffec39290545573a0b044d714c6a2f28689d6ab5e9adb9f2848d5"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-02-unified-data-layer-and-shared-records.pdf",
+          "bytes": 200609,
+          "sha256": "797943fa6d6ed54b249ae3ec5255933394a50f2633a31a3c7def8c3eeb4692b5"
+        }
+      ]
+    },
+    {
+      "id": "aos-03-identity-access-consent-and-data-use",
+      "title": "AOS-03 — Identity, access, consent and data use",
+      "source_revision": "v0.12",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-03-identity-access-consent-and-data-use/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-03-identity-access-consent-and-data-use.html",
+          "bytes": 169325,
+          "sha256": "61788c44e16d01eeaa7f44b9c234428246bbe6b2ae9cd3a42f4535aeecffc646"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-03-identity-access-consent-and-data-use.md",
+          "bytes": 149427,
+          "sha256": "61157073b08e03cd840449012fa079f8e340436e5ad31c51afbd1ed84ff04fb6"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-03-identity-access-consent-and-data-use.pdf",
+          "bytes": 212863,
+          "sha256": "2962e7b4055ce1da2dc326bea5d0fe45e350480d3534eeaebfd5f617fa8552ea"
+        }
+      ]
+    },
+    {
+      "id": "aos-04-common-agent-architecture-and-lifecycle",
+      "title": "AOS-04 — Common agent architecture and lifecycle",
+      "source_revision": "v0.10",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-04-common-agent-architecture-and-lifecycle/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-04-common-agent-architecture-and-lifecycle.html",
+          "bytes": 152158,
+          "sha256": "ca8aba240cfab7908b2283ffd971cd5f9198c760a5bee7216995b872716915b7"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-04-common-agent-architecture-and-lifecycle.md",
+          "bytes": 132691,
+          "sha256": "0db1661276f4fa4471fa9f77e1e793d8b0b20085d9fd376099f5dab8a551a2bf"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-04-common-agent-architecture-and-lifecycle.pdf",
+          "bytes": 199587,
+          "sha256": "01115f8e56cb99f09a63d2e5c460eddb92ff101836382f7dd353b984ea789f86"
+        }
+      ]
+    },
+    {
+      "id": "aos-05-platform-operation-security-and-resilience",
+      "title": "AOS-05 — Platform operation, security and resilience",
+      "source_revision": "v0.11",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-05-platform-operation-security-and-resilience/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-05-platform-operation-security-and-resilience.html",
+          "bytes": 171063,
+          "sha256": "84c13e786ca4ca199e5fdbb47802f01e4b8ebf4507820c1c84442de009e2e662"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-05-platform-operation-security-and-resilience.md",
+          "bytes": 150315,
+          "sha256": "f9534fe18d62428dbd830a6f972bcc9c9412f0601600d300a7dddb4a6f45ce44"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-05-platform-operation-security-and-resilience.pdf",
+          "bytes": 214242,
+          "sha256": "c06995a402ef4a3288cfaebb7a0cb9a8c0b494d18419c50351fdcad92054be72"
+        }
+      ]
+    },
+    {
+      "id": "aos-10-asset-intelligence",
+      "title": "AOS-10 — Asset Intelligence",
+      "source_revision": "v0.5 functional baseline, editorial edition 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-10-asset-intelligence/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Sensing-Domains/aos-10-asset-intelligence.html",
+          "bytes": 163050,
+          "sha256": "606f41235daf656f17b0e22fee0b147a7bc2ce39e5812607eab6cf3f3c01bc32"
+        },
+        {
+          "format": "md",
+          "path": "Sensing-Domains/aos-10-asset-intelligence.md",
+          "bytes": 145006,
+          "sha256": "70dce5d18ff277688badd3c08504f440d271439014b02ae7ceae60775a7a75d9"
+        },
+        {
+          "format": "pdf",
+          "path": "Sensing-Domains/aos-10-asset-intelligence.pdf",
+          "bytes": 192327,
+          "sha256": "b15d41ea516de1cf85f357c7e951adbc9e6c7ede6be64f65c28be43d379e7c5d"
+        }
+      ]
+    },
+    {
+      "id": "aos-11-resident-intelligence",
+      "title": "AOS-11 — Resident Intelligence",
+      "source_revision": "v0.3 functional baseline, editorial edition 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-11-resident-intelligence/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Sensing-Domains/aos-11-resident-intelligence.html",
+          "bytes": 157200,
+          "sha256": "d9358dedd055307627ddd1a938569e2c3a9d97ade22914a37606a49e7a09d3bf"
+        },
+        {
+          "format": "md",
+          "path": "Sensing-Domains/aos-11-resident-intelligence.md",
+          "bytes": 139143,
+          "sha256": "5fa093b2dc371c952a31787bb01eb9bb4f3c7330d79d30ea8e6edb29f78c14e0"
+        },
+        {
+          "format": "pdf",
+          "path": "Sensing-Domains/aos-11-resident-intelligence.pdf",
+          "bytes": 187027,
+          "sha256": "f8f79a30730fc88aa4c0b87e872ff5281577cf835e61c43422fd4652c2996c46"
+        }
+      ]
+    },
+    {
+      "id": "aos-12-people-intelligence",
+      "title": "AOS-12 — People Intelligence",
+      "source_revision": "v0.3 functional baseline, editorial edition 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-12-people-intelligence/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Sensing-Domains/aos-12-people-intelligence.html",
+          "bytes": 150462,
+          "sha256": "fc58e143c58cf5be44262d5a759f9f59463e27fc740d3bc4048d0a1bf19a5f59"
+        },
+        {
+          "format": "md",
+          "path": "Sensing-Domains/aos-12-people-intelligence.md",
+          "bytes": 132411,
+          "sha256": "3615c5d6058b6d16488566c9f4272a7a6a76e2586084dcf51a785330776cb43a"
+        },
+        {
+          "format": "pdf",
+          "path": "Sensing-Domains/aos-12-people-intelligence.pdf",
+          "bytes": 184458,
+          "sha256": "30edf07b2efac082bc7f62bc9e7a97816e02926fe0680a053f0a5f69fd4d6f27"
+        }
+      ]
+    },
+    {
+      "id": "aos-13-process-intelligence-and-operational-coordination",
+      "title": "AOS-13 — Process Intelligence and operational coordination",
+      "source_revision": "v0.2 functional baseline, editorial edition 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-13-process-intelligence-and-operational-coordination/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Sensing-Domains/aos-13-process-intelligence-and-operational-coordination.html",
+          "bytes": 171958,
+          "sha256": "baa65eaec2345aea2ef0723d281a33d2bf1f08ed46da15a90125d4e69e2ac862"
+        },
+        {
+          "format": "md",
+          "path": "Sensing-Domains/aos-13-process-intelligence-and-operational-coordination.md",
+          "bytes": 149434,
+          "sha256": "327df6b822b9a6409c4f62888a853e0553eb350751836951964f864db4883ed1"
+        },
+        {
+          "format": "pdf",
+          "path": "Sensing-Domains/aos-13-process-intelligence-and-operational-coordination.pdf",
+          "bytes": 200327,
+          "sha256": "ebeae38c835a4eb837b843ad510e157be2dfa30d6d9ce84427cf0a5926255446"
+        }
+      ]
+    },
+    {
+      "id": "aos-14-boundary-intelligence-and-external-exchange",
+      "title": "AOS-14 — Boundary Intelligence and External Exchange",
+      "source_revision": "v0.9",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-14-boundary-intelligence-and-external-exchange/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Sensing-Domains/aos-14-boundary-intelligence-and-external-exchange.html",
+          "bytes": 213411,
+          "sha256": "939ef6153cb80dc286be7adcaa3aac60f844602b2e55ce419908d0b8c99ff34b"
+        },
+        {
+          "format": "md",
+          "path": "Sensing-Domains/aos-14-boundary-intelligence-and-external-exchange.md",
+          "bytes": 190989,
+          "sha256": "38964edd55371e6efdb81e9238baac7c46b1a23daadb16f0381b862bfa872093"
+        },
+        {
+          "format": "pdf",
+          "path": "Sensing-Domains/aos-14-boundary-intelligence-and-external-exchange.pdf",
+          "bytes": 222260,
+          "sha256": "76ce1092b4d9cdba4a824be0d35f983b4682591df0e25df5e159b0e7d50782ae"
+        }
+      ]
+    },
+    {
+      "id": "aos-20-governance-intelligence-architecture-and-charter",
+      "title": "AOS-20 — Governance Intelligence architecture and charter",
+      "source_revision": "v0.8",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-20-governance-intelligence-architecture-and-charter/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Governance-Intelligence/aos-20-governance-intelligence-architecture-and-charter.html",
+          "bytes": 101463,
+          "sha256": "5b773f5dfe388dbe462e438bd2ae0b504b2e8edf18bd23f4cf5ed19aeb7ad274"
+        },
+        {
+          "format": "md",
+          "path": "Governance-Intelligence/aos-20-governance-intelligence-architecture-and-charter.md",
+          "bytes": 90258,
+          "sha256": "fb155725a70951f7ce8a79a948912b49c45a8958e0e7e0afa85916b1d1e5798f"
+        },
+        {
+          "format": "pdf",
+          "path": "Governance-Intelligence/aos-20-governance-intelligence-architecture-and-charter.pdf",
+          "bytes": 152697,
+          "sha256": "b8f95e249ee92cc97a6db5c48b6549525ad2bb79fe814a7a3c352f9f03017e3c"
+        }
+      ]
+    },
+    {
+      "id": "aos-21-corpus-organisation-knowledge-and-precedent",
+      "title": "AOS-21 — Corpus, organisation knowledge and precedent",
+      "source_revision": "v0.7",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-21-corpus-organisation-knowledge-and-precedent/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Governance-Intelligence/aos-21-corpus-organisation-knowledge-and-precedent.html",
+          "bytes": 88447,
+          "sha256": "14c9818944c6afcee5d5e59eef45326d76dd948f4b7bd1b66298511043133896"
+        },
+        {
+          "format": "md",
+          "path": "Governance-Intelligence/aos-21-corpus-organisation-knowledge-and-precedent.md",
+          "bytes": 77617,
+          "sha256": "6b197d623ff17ee9983f53f002e450232182ff23e90f4323f98bc9202b64e6ca"
+        },
+        {
+          "format": "pdf",
+          "path": "Governance-Intelligence/aos-21-corpus-organisation-knowledge-and-precedent.pdf",
+          "bytes": 143666,
+          "sha256": "2fbbb1d6832413e49f571859c116499fb30e36c37ad83bd6dd453833d85c9e9c"
+        }
+      ]
+    },
+    {
+      "id": "aos-22-synthesis-interpretation-and-option-preparation",
+      "title": "AOS-22 — Synthesis, interpretation and option preparation",
+      "source_revision": "v0.6",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-22-synthesis-interpretation-and-option-preparation/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Governance-Intelligence/aos-22-synthesis-interpretation-and-option-preparation.html",
+          "bytes": 94662,
+          "sha256": "a4b588af3f9a1a2030cd0d344834844ac10a8b08fcef9c99f25685619e96ab71"
+        },
+        {
+          "format": "md",
+          "path": "Governance-Intelligence/aos-22-synthesis-interpretation-and-option-preparation.md",
+          "bytes": 83294,
+          "sha256": "e83b6a5c775ace3c4143d07e72849474b46fd1d84c062dd6f1c200f40e3d234d"
+        },
+        {
+          "format": "pdf",
+          "path": "Governance-Intelligence/aos-22-synthesis-interpretation-and-option-preparation.pdf",
+          "bytes": 148773,
+          "sha256": "00e3b5eba1a67ea57fe9166ed236a8388bbec1ea1bd53e97be78b61949ff51b1"
+        }
+      ]
+    },
+    {
+      "id": "aos-23-governance-artefact-assessment-and-monitoring",
+      "title": "AOS-23 — Governance artefact assessment and monitoring",
+      "source_revision": "v0.6",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-23-governance-artefact-assessment-and-monitoring/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Governance-Intelligence/aos-23-governance-artefact-assessment-and-monitoring.html",
+          "bytes": 91160,
+          "sha256": "da71d662023a9c210920eac039f5f2da376cf7486d33437abf306dd1af59a3bd"
+        },
+        {
+          "format": "md",
+          "path": "Governance-Intelligence/aos-23-governance-artefact-assessment-and-monitoring.md",
+          "bytes": 79802,
+          "sha256": "3d1280a1deb45aff8efeaa9590d9b233e723ae02123eada8b4487722de74c664"
+        },
+        {
+          "format": "pdf",
+          "path": "Governance-Intelligence/aos-23-governance-artefact-assessment-and-monitoring.pdf",
+          "bytes": 146731,
+          "sha256": "ed82db004de7b5afeb7a6c0618556f3ddcd811a2fa7373b85f9c8452240e0934"
+        }
+      ]
+    },
+    {
+      "id": "aos-24-petra-presentation-and-explanation",
+      "title": "AOS-24 — Petra, presentation and explanation",
+      "source_revision": "v0.5",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-24-petra-presentation-and-explanation/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Governance-Intelligence/aos-24-petra-presentation-and-explanation.html",
+          "bytes": 78644,
+          "sha256": "6e1f04d4260ef98ea06bfe045e95e1e9b67049ad35da8dd8ca7ec2382f50796e"
+        },
+        {
+          "format": "md",
+          "path": "Governance-Intelligence/aos-24-petra-presentation-and-explanation.md",
+          "bytes": 68506,
+          "sha256": "102fa5033fde486e3fd7d3c35e783448631cbc6567265ccb51234db404c6b9ee"
+        },
+        {
+          "format": "pdf",
+          "path": "Governance-Intelligence/aos-24-petra-presentation-and-explanation.pdf",
+          "bytes": 134984,
+          "sha256": "1997dca9a2a300305017798796fbdac68fbf21a9b6e75b91a63465b57aa39e6e"
+        }
+      ]
+    },
+    {
+      "id": "aos-25-governance-oversight-drift-and-learning",
+      "title": "AOS-25 — Governance oversight, drift and learning",
+      "source_revision": "v0.5",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-25-governance-oversight-drift-and-learning/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Governance-Intelligence/aos-25-governance-oversight-drift-and-learning.html",
+          "bytes": 92059,
+          "sha256": "dc57f6072c186f002b3a4fd2bac34a42ac8d204a643c90406d49eb1accccd30d"
+        },
+        {
+          "format": "md",
+          "path": "Governance-Intelligence/aos-25-governance-oversight-drift-and-learning.md",
+          "bytes": 81133,
+          "sha256": "a0742dc2b34e53658f46f930147476d4d18ded8f4f7afd1843a5414c04f35565"
+        },
+        {
+          "format": "pdf",
+          "path": "Governance-Intelligence/aos-25-governance-oversight-drift-and-learning.pdf",
+          "bytes": 147596,
+          "sha256": "5759fd9fd8736acd5b0022d119d7bc71d6467d31b42feb79c8a66247a970010c"
+        }
+      ]
+    },
+    {
+      "id": "aos-30-governance-hub-and-accountable-decision-workflows",
+      "title": "AOS-30 — Governance Hub and accountable decision workflows",
+      "source_revision": "v0.8",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-30-governance-hub-and-accountable-decision-workflows/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Governance-Intelligence/aos-30-governance-hub-and-accountable-decision-workflows.html",
+          "bytes": 104254,
+          "sha256": "63ac721815e35f310663c04419debf6e308951890fc4c2bc55e5f9efdb3df6b1"
+        },
+        {
+          "format": "md",
+          "path": "Governance-Intelligence/aos-30-governance-hub-and-accountable-decision-workflows.md",
+          "bytes": 93091,
+          "sha256": "e0e134931b3491f85d3cdec152ae4c6f353b09784a40de53dcdd7c199ac866ec"
+        },
+        {
+          "format": "pdf",
+          "path": "Governance-Intelligence/aos-30-governance-hub-and-accountable-decision-workflows.pdf",
+          "bytes": 155838,
+          "sha256": "a446718a57fe0df2f25e809758eafadaf4484cb2bb9f0f67d4c49fd3f21d240c"
+        }
+      ]
+    },
+    {
+      "id": "aos-40-acceptance-integration-assurance-and-commissioning",
+      "title": "AOS-40 — Acceptance, integration assurance and commissioning",
+      "source_revision": "v0.13",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-40-acceptance-integration-assurance-and-commissioning/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-40-acceptance-integration-assurance-and-commissioning.html",
+          "bytes": 193053,
+          "sha256": "cd4cf94e35836c14a715fa373c20e8c9bdf6026e8e4514384e4568fb973f2d44"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-40-acceptance-integration-assurance-and-commissioning.md",
+          "bytes": 172872,
+          "sha256": "ef34022d992da49493a6aaea7a2bf4ffcd4eb330ba103f7cb50bf961942f76a9"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-40-acceptance-integration-assurance-and-commissioning.pdf",
+          "bytes": 210009,
+          "sha256": "c854f23b337b2402af384f1a65259364239b54d7bb604e25a5159fd3f96e2e2b"
+        }
+      ]
+    },
+    {
+      "id": "aos-40-acceptance-variants-and-coverage-v0-1",
+      "title": "AOS-40 — acceptance variants and coverage",
+      "source_revision": "v0.7",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-40-acceptance-variants-and-coverage-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-40-acceptance-variants-and-coverage-v0-1.html",
+          "bytes": 339076,
+          "sha256": "2b2626ce7524e76e16de4d2ddb9cd23c9844e44e6a846a7eef9bb062fc3163cf"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-40-acceptance-variants-and-coverage-v0-1.md",
+          "bytes": 302092,
+          "sha256": "3132a053719332b2f453f7caabde7b449fb4feff8b24719b4e9a4d73d25cc673"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-40-acceptance-variants-and-coverage-v0-1.pdf",
+          "bytes": 263852,
+          "sha256": "bdc94ab1bff1a1805210576b32ffc363fc5bd81a3a18add6bb13d8605351fcf9"
+        }
+      ]
+    },
+    {
+      "id": "aos-core-record-contracts-v0-1-review-draft",
+      "title": "AOS core record contracts — detailed review draft",
+      "source_revision": "v0.11",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-core-record-contracts-v0-1-review-draft/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-core-record-contracts-v0-1-review-draft.html",
+          "bytes": 106542,
+          "sha256": "bf14f2065d6b2cb7013ad06f7604b30f897bfa74bf06920f7089d6639ae64b24"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-core-record-contracts-v0-1-review-draft.md",
+          "bytes": 95447,
+          "sha256": "5aef62d5863650078209e5e9271e578c3f0b2393a2645a18cc28ea1984551eb7"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-core-record-contracts-v0-1-review-draft.pdf",
+          "bytes": 154453,
+          "sha256": "2111a10435744c201471b05095f5572956c4a07d2ba2d1d80f498d0737a41ecf"
+        }
+      ]
+    },
+    {
+      "id": "aos-extension-and-conformance-specification-v0-1",
+      "title": "AOS — Extension, architectural fit and scoped conformance",
+      "source_revision": "v0.1",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-extension-and-conformance-specification-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-extension-and-conformance-specification-v0-1.html",
+          "bytes": 29142,
+          "sha256": "183f64d7e4042c82b1610325a226430579d548276ddc191914e7ffef99fcaef0"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-extension-and-conformance-specification-v0-1.md",
+          "bytes": 25421,
+          "sha256": "f7ba05a9153ec8d90c66a4fc62580c481ed856542cd48cfc72075179ac8cc587"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-extension-and-conformance-specification-v0-1.pdf",
+          "bytes": 88857,
+          "sha256": "675f2eb4dac6d1accd5345b0315fe9ba6a8f1b5f2f064490b5c918cddcc3f81a"
+        }
+      ]
+    },
+    {
+      "id": "aos-kernel-control-coordination-v0-1",
+      "title": "AOS kernel control coordination",
+      "source_revision": "v0.3",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-kernel-control-coordination-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-kernel-control-coordination-v0-1.html",
+          "bytes": 41077,
+          "sha256": "b5aeca8044199d5dce1d7cad386e488b69c40f78818755dd7da528c659273b2c"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-kernel-control-coordination-v0-1.md",
+          "bytes": 37512,
+          "sha256": "52b231360e6319e67b1f41077a3ebed7a6e80c81a6208af477963ec871578265"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-kernel-control-coordination-v0-1.pdf",
+          "bytes": 95829,
+          "sha256": "647fdc3214b7e2383cb71622d1d7e9db16c97ad587abed98b000baf6010430fe"
+        }
+      ]
+    },
+    {
+      "id": "aos-kernel-exchange-register-v0-1",
+      "title": "AOS kernel exchange register and reciprocal adoption",
+      "source_revision": "v0.26",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-kernel-exchange-register-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-kernel-exchange-register-v0-1.html",
+          "bytes": 157498,
+          "sha256": "13e79e8053f806aecac6f1cf2fb7c60c4739f287faaee4ec734218532a694638"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-kernel-exchange-register-v0-1.md",
+          "bytes": 143840,
+          "sha256": "66c4ccc0fd85421e4c78dafdf1a8318584eb9c39d6744952025b6d411d3c4545"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-kernel-exchange-register-v0-1.pdf",
+          "bytes": 188320,
+          "sha256": "a0ad5f103765c60c9aeca3422f7afe4035446211c81ab2de6800e97d5e445f79"
+        }
+      ]
+    },
+    {
+      "id": "aos-kernel-protected-reporting-and-recovery-v0-1",
+      "title": "AOS kernel protected reporting and recovery",
+      "source_revision": "v0.3",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-kernel-protected-reporting-and-recovery-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-kernel-protected-reporting-and-recovery-v0-1.html",
+          "bytes": 34929,
+          "sha256": "748c35b8eff570c34bbb41e733967c04a6d70fb05bc8717e490ad89ab545e85b"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-kernel-protected-reporting-and-recovery-v0-1.md",
+          "bytes": 31811,
+          "sha256": "35ccd48578cabecd1d1708d6547206172c688d560af0a489e4660fdb4098b02a"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-kernel-protected-reporting-and-recovery-v0-1.pdf",
+          "bytes": 89534,
+          "sha256": "109e03f4cecf1e259c010c60c4cde907647b6edf7c3ebefe0b22f1d5db19ce80"
+        }
+      ]
+    },
+    {
+      "id": "aos-operational-profiles-v0-1-review-draft",
+      "title": "AOS operational profiles — review draft",
+      "source_revision": "v0.6",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-operational-profiles-v0-1-review-draft/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-operational-profiles-v0-1-review-draft.html",
+          "bytes": 54573,
+          "sha256": "3fb6a4b7f1670a7c3dd82e0f404ee361d08a6d8a5604dd3d4df9050d1c79f18b"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-operational-profiles-v0-1-review-draft.md",
+          "bytes": 48933,
+          "sha256": "b1650a7dc7a1ea050621c4bb03a62c3ca32163928ae8f6f17146177e19ff41e6"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-operational-profiles-v0-1-review-draft.pdf",
+          "bytes": 108559,
+          "sha256": "43a310acdd618617d25e2c1cc99837d7387fabd4cd86413bb493db853c8a60c1"
+        }
+      ]
+    },
+    {
+      "id": "aos-shared-contracts-v0-1-review-draft",
+      "title": "AOS shared contracts — joint review draft",
+      "source_revision": "v0.27",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-shared-contracts-v0-1-review-draft/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-shared-contracts-v0-1-review-draft.html",
+          "bytes": 143276,
+          "sha256": "7601b9cf93f5de3a2908d1f21eca553223335096b96665fd789061ba34198118"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-shared-contracts-v0-1-review-draft.md",
+          "bytes": 132689,
+          "sha256": "d695ee4c329ad5911caa1737f2e0ec55450b1f396e55fc09c709d9449b5f7eef"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-shared-contracts-v0-1-review-draft.pdf",
+          "bytes": 173824,
+          "sha256": "2b985856088698e32403033cf1a79a2201ad9585dfc1fdd683de435980b0d7b5"
+        }
+      ]
+    },
+    {
+      "id": "contract-model-working-draft",
+      "title": "Architectural contract model — working draft",
+      "source_revision": "Design brief, 29 September 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/contract-model-working-draft/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/contract-model-working-draft.html",
+          "bytes": 4087,
+          "sha256": "3aa689d5dc3f77c2abb2d43a85a83d9d686986a12c86d67180d2e6668c210a3b"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/contract-model-working-draft.md",
+          "bytes": 3272,
+          "sha256": "c8bcb5f1a8885d2af297c0d08b9baceaaecad7f55a09764dba3b89f3abd1668d"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/contract-model-working-draft.pdf",
+          "bytes": 65016,
+          "sha256": "c6a0ffb0eeb64bc544c4173b3d43908e27580d3ec903356c78c9c5e0e242bf07"
+        }
+      ]
+    },
+    {
+      "id": "aos-change-constitution-v0-1",
+      "title": "AOS Change Constitution",
+      "source_revision": "v0.1, 9 October 2026, draft for review",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-change-constitution-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-change-constitution-v0-1.html",
+          "bytes": 23112,
+          "sha256": "d014454259eb1f26f486966024516904bc4259a44b5e235721aeda0a99e59cac"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-change-constitution-v0-1.md",
+          "bytes": 20363,
+          "sha256": "67974031a479ac76999b4b96c94cbf1aec4c836015c264cc32d2f422b35920b4"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-change-constitution-v0-1.pdf",
+          "bytes": 81638,
+          "sha256": "7b34dee9d96a1d6973f58f1aa9096b7a2b5ccc5533a5e03416f7c65de305d599"
+        }
+      ]
+    },
+    {
+      "id": "readme-reference-implementations",
+      "title": "AOS reference implementations",
+      "source_revision": "README recording DEC-098 on 9 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/readme-reference-implementations/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/readme-reference-implementations.html",
+          "bytes": 2013,
+          "sha256": "836bb9e6f5fb9b3cb1828430ffe2c1228ef9bce450bcbe9c00449282e5dbd760"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/readme-reference-implementations.md",
+          "bytes": 1302,
+          "sha256": "831027e8ce868abcf95dc2763bb045f4d8fb370114ee23abfa71016dd83188f4"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/readme-reference-implementations.pdf",
+          "bytes": 63297,
+          "sha256": "9b1aca3112515f75bc9b61471bf6b0676fd9c60164faba1a496de1b8c325fa18"
+        }
+      ]
+    },
+    {
+      "id": "aos-supplier-alignment-briefing-v0-1",
+      "title": "Where does your product fit in AOS?",
+      "source_revision": "Discussion draft, editorial revision 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-supplier-alignment-briefing-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-supplier-alignment-briefing-v0-1.html",
+          "bytes": 19039,
+          "sha256": "d791104d68b49305bd9f070bf10915d27b13aa390d399d37803906415cd79fce"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-supplier-alignment-briefing-v0-1.md",
+          "bytes": 16457,
+          "sha256": "b08342c276fbb830f0eaf076c90a4cdd4ff12ad9b3a72c9eb5c95b3e03ff2c5d"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-supplier-alignment-briefing-v0-1.pdf",
+          "bytes": 78090,
+          "sha256": "b9302595f76d17287d1da4a24c43b92441ecfb04d5fcddfa201accf0eab78a40"
+        }
+      ]
+    },
+    {
+      "id": "aos-14-boundary-research-agent",
+      "title": "AOS-14 Boundary Intelligence research agent",
+      "source_revision": "DEC-086 charter update, 6 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-14-boundary-research-agent/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-14-boundary-research-agent.html",
+          "bytes": 12561,
+          "sha256": "731b79e7cd5b58fd8d1314a4fd0376fb165ead5ef44a176aa02c9327052223a1"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-14-boundary-research-agent.md",
+          "bytes": 11039,
+          "sha256": "7f672244953e555eb615adfa0f359de2491273fbcc1b1266d28cedf2578b9a9b"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-14-boundary-research-agent.pdf",
+          "bytes": 72810,
+          "sha256": "7a4770d74b8362aa4833bfd75638a9c3eb6daba0c5993083e602e492e49dddf6"
+        }
+      ]
+    },
+    {
+      "id": "architecture-issues-register",
+      "title": "Architecture issues register — FAR-001 intake",
+      "source_revision": "29 September intake with 9 October 2026 disposition",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/architecture-issues-register/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/architecture-issues-register.html",
+          "bytes": 10390,
+          "sha256": "555df377e85f291929d232006451ddcce3fd1a1d78988d738b035b21a4b1eee5"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/architecture-issues-register.md",
+          "bytes": 8668,
+          "sha256": "f6642e445cb2384b0251911ead2f413b637611d7f97ff58561205ede78dc23b4"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/architecture-issues-register.pdf",
+          "bytes": 71498,
+          "sha256": "b2e6c06260f33899a427146510aab386d5e2dfab26b659ec333a4b01bc5841bb"
+        }
+      ]
+    },
+    {
+      "id": "aos-01-05-kernel-consistency-review-v0-1",
+      "title": "AOS-01–05 kernel consistency review",
+      "source_revision": "v0.5",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-01-05-kernel-consistency-review-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-01-05-kernel-consistency-review-v0-1.html",
+          "bytes": 38056,
+          "sha256": "a91b22aa131e0dbce7fc34c51e51795f61ff9bd86b93a55954fc524cb709c9f9"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-01-05-kernel-consistency-review-v0-1.md",
+          "bytes": 33806,
+          "sha256": "68963e66e4ffd6dde0113230fde8958543c705448900dc384cb9c53af5e39db1"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-01-05-kernel-consistency-review-v0-1.pdf",
+          "bytes": 93333,
+          "sha256": "e93c014a35d0636b20de1aaed8b20911d0136f52452fb162eab3b5dba2209334"
+        }
+      ]
+    },
+    {
+      "id": "aos-10-14-sensing-consistency-and-source-allocation-review-v0-1",
+      "title": "AOS-10–14 — Sensing-domain consistency and source-allocation review",
+      "source_revision": "v0.4",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-10-14-sensing-consistency-and-source-allocation-review-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-10-14-sensing-consistency-and-source-allocation-review-v0-1.html",
+          "bytes": 68090,
+          "sha256": "a8af4ff7b489a669f3eb34d25314f1dd2911a022b329c0b9127f1d0910ed168e"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-10-14-sensing-consistency-and-source-allocation-review-v0-1.md",
+          "bytes": 59867,
+          "sha256": "cbbbfb458f5ff7c4061601f0c6eab07ebd3bc43f7ed8cbb15ef96f45a750d882"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-10-14-sensing-consistency-and-source-allocation-review-v0-1.pdf",
+          "bytes": 122280,
+          "sha256": "b61bfb8139a14777947dc4b9fb8a699c23a4757fae89180a581573d093c8dd9b"
+        }
+      ]
+    },
+    {
+      "id": "aos-20-25-and-30-gi-consistency-review-v0-1",
+      "title": "AOS-20–25 and AOS-30 — consistency review",
+      "source_revision": "v0.2",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-20-25-and-30-gi-consistency-review-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-20-25-and-30-gi-consistency-review-v0-1.html",
+          "bytes": 23300,
+          "sha256": "53948afc21d00229a2099eb4e89da008ef4f241c22951298a1787933776b30e8"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-20-25-and-30-gi-consistency-review-v0-1.md",
+          "bytes": 19478,
+          "sha256": "a172c007f82f93f34101253f3c99048a42b05b4acd1e504884bbe2fbcfb6401c"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-20-25-and-30-gi-consistency-review-v0-1.pdf",
+          "bytes": 85413,
+          "sha256": "d494017da8e0a6ba2c46cc998cc650acb907cae4ea212dadebf836142e500d55"
+        }
+      ]
+    },
+    {
+      "id": "aos-20-gi-material-review-and-design-questions-v0-1",
+      "title": "AOS-20 — existing GI material review and design questions",
+      "source_revision": "v0.2",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-20-gi-material-review-and-design-questions-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-20-gi-material-review-and-design-questions-v0-1.html",
+          "bytes": 19504,
+          "sha256": "e5754918aa17c65a1ef6475315a725644995c133386e9761818e752ec037e2f6"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-20-gi-material-review-and-design-questions-v0-1.md",
+          "bytes": 17022,
+          "sha256": "8ce868595eb47cb8f3a562ff31655d00fb475d8742987c4f096f0e64fdae91c3"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-20-gi-material-review-and-design-questions-v0-1.pdf",
+          "bytes": 79145,
+          "sha256": "de26437a834aac724f6b4a8ffdc8563a7b7cdf8efd979484c2018d47f9340e02"
+        }
+      ]
+    },
+    {
+      "id": "aos-30-kernel-and-gi-consistency-review-v0-1",
+      "title": "AOS-30 — consistency and coherence review against the kernel and GI",
+      "source_revision": "v0.2",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-30-kernel-and-gi-consistency-review-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-30-kernel-and-gi-consistency-review-v0-1.html",
+          "bytes": 15239,
+          "sha256": "500d6d2efd42aa2fff152a6320d78e605f0c8329b63e0836efb11391495bba61"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-30-kernel-and-gi-consistency-review-v0-1.md",
+          "bytes": 13098,
+          "sha256": "097b729d14e10bb738cc78f83a280333344d13dbb932b32f02f2fdc5e4575e02"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-30-kernel-and-gi-consistency-review-v0-1.pdf",
+          "bytes": 75001,
+          "sha256": "69328fee2c4e0c329f39165a40d4e524592e2f49768f67b6116a312f74d2654c"
+        }
+      ]
+    },
+    {
+      "id": "aos-40-acceptance-test-review-v0-1",
+      "title": "AOS-40 — planned acceptance-test review",
+      "source_revision": "v0.3",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-40-acceptance-test-review-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-40-acceptance-test-review-v0-1.html",
+          "bytes": 35072,
+          "sha256": "af68065ab70acdbe5d3aa17d6dd089a1349ee2ea07403c8f711d3f430fca01fb"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-40-acceptance-test-review-v0-1.md",
+          "bytes": 30772,
+          "sha256": "b7f71b2cbcff0227ec717bf2f0b58674056baf43e3fe5b21039dde0c3a39a4b3"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-40-acceptance-test-review-v0-1.pdf",
+          "bytes": 93183,
+          "sha256": "f27b3d400dc642c1075aa48cc968f7497f06d3a759841c544efc8b1246d340f4"
+        }
+      ]
+    },
+    {
+      "id": "aos-core-documentation-completion-review-v0-1",
+      "title": "AOS core documentation — final author completion review",
+      "source_revision": "v0.1",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-core-documentation-completion-review-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-core-documentation-completion-review-v0-1.html",
+          "bytes": 19831,
+          "sha256": "df839cff780c020671558735dd838f6510c922ea719b9de4fe28d17685292e05"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-core-documentation-completion-review-v0-1.md",
+          "bytes": 16900,
+          "sha256": "440c3fa77fdf69828da302e2589d419e29f74c5d9501594817f003ca9dd6684b"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-core-documentation-completion-review-v0-1.pdf",
+          "bytes": 79264,
+          "sha256": "f6197ae3151c710dc60c86d59ff1a7accd80047478399a53c91bdc0edf8ab5f4"
+        }
+      ]
+    },
+    {
+      "id": "aos-current-document-inventory-2026-10-29",
+      "title": "AOS current document inventory — 29 October 2026",
+      "source_revision": "29 October 2026 editorial control record",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-current-document-inventory-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-current-document-inventory-2026-10-29.html",
+          "bytes": 15470,
+          "sha256": "216eb720c93f69b60ab1d98646dbc5e1916e29920eac15144cefdfbe71e94caa"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-current-document-inventory-2026-10-29.md",
+          "bytes": 12276,
+          "sha256": "efb06e539b8bab3545661ccb732028b94feb837024897a05f5404b34a6a59e37"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-current-document-inventory-2026-10-29.pdf",
+          "bytes": 75003,
+          "sha256": "fcfc3d9c31f2781f2fbbc733b64fa985a22b687eb8195a6f2cb85f0bbd3431aa"
+        }
+      ]
+    },
+    {
+      "id": "aos-dec-099-derived-information-restrictions-2026-10-29",
+      "title": "DEC-099 — derived-information restrictions",
+      "source_revision": "DEC-99, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-dec-099-derived-information-restrictions-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-dec-099-derived-information-restrictions-2026-10-29.html",
+          "bytes": 4119,
+          "sha256": "5b6e53c1240640fbe81771fc072d5fbe0e23bf6673d3e16ee85914b20573fd44"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-dec-099-derived-information-restrictions-2026-10-29.md",
+          "bytes": 3227,
+          "sha256": "de1ad50b9c833df54c0257abfc4d0cc61a9d4e5bc8d1110f7e51f8819ffd50c7"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-dec-099-derived-information-restrictions-2026-10-29.pdf",
+          "bytes": 65608,
+          "sha256": "cd04594275cd4b397b8f24b7a573df8c201f63722a46aa0b68ed8c74bb58a5b4"
+        }
+      ]
+    },
+    {
+      "id": "aos-dec-100-control-metadata-access-2026-10-29",
+      "title": "DEC-100 — minimum control-metadata access",
+      "source_revision": "DEC-100, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-dec-100-control-metadata-access-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-dec-100-control-metadata-access-2026-10-29.html",
+          "bytes": 4576,
+          "sha256": "5a7c64d24f5f634676bddad0d0be117ecff6fbcc945423398f7edfebeb99e43a"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-dec-100-control-metadata-access-2026-10-29.md",
+          "bytes": 3720,
+          "sha256": "8376178b2afbcd745dc704d57389571873e98af99433b1da5b011eefb9dcb129"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-dec-100-control-metadata-access-2026-10-29.pdf",
+          "bytes": 66019,
+          "sha256": "f8c2610983218fbc7751c411c5d923ec767de4603621556dbc455062054a566f"
+        }
+      ]
+    },
+    {
+      "id": "aos-dec-101-human-capacity-and-meaningful-review-2026-10-29",
+      "title": "DEC-101 — human capacity and meaningful review",
+      "source_revision": "DEC-101, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-dec-101-human-capacity-and-meaningful-review-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-dec-101-human-capacity-and-meaningful-review-2026-10-29.html",
+          "bytes": 4416,
+          "sha256": "9173d588698209c59087cc2abb70fc35bba39d7b2ddf16999fa8c70c129c51eb"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-dec-101-human-capacity-and-meaningful-review-2026-10-29.md",
+          "bytes": 3516,
+          "sha256": "c74b388b74ea434acf76f097a9b65e64972fd73918e9513bf21795be539a7dbf"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-dec-101-human-capacity-and-meaningful-review-2026-10-29.pdf",
+          "bytes": 66042,
+          "sha256": "e4f55bfc4afa3befaed348023c7e5b94a2ab7e5c3575419314fbb0907bb7aaf6"
+        }
+      ]
+    },
+    {
+      "id": "aos-dec-102-classification-and-configuration-adequacy-2026-10-29",
+      "title": "DEC-102 — classification and configuration adequacy",
+      "source_revision": "DEC-102, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-dec-102-classification-and-configuration-adequacy-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-dec-102-classification-and-configuration-adequacy-2026-10-29.html",
+          "bytes": 5086,
+          "sha256": "15c73a6d36bc1c21758edeccd86c41cd5c9cde33331a1a8f6fe664c7d8522fa6"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-dec-102-classification-and-configuration-adequacy-2026-10-29.md",
+          "bytes": 4172,
+          "sha256": "864d5fcd094256ca55b5d64862b3c871f229b595baccded6b8ceb7eb58e11348"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-dec-102-classification-and-configuration-adequacy-2026-10-29.pdf",
+          "bytes": 66344,
+          "sha256": "b1d43b1dc141cb78afb9aae257bdb93c900c429930b535ae50c138ff2d1e4af0"
+        }
+      ]
+    },
+    {
+      "id": "aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29",
+      "title": "DEC-103 — decision validity, evidence, minutes and execution",
+      "source_revision": "DEC-103, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.html",
+          "bytes": 8122,
+          "sha256": "9795ca1a5b6b4b218780aac67f97a9fbe1de3d3beeaadf2895acd05b952a44d9"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.md",
+          "bytes": 6998,
+          "sha256": "b2076f92cbf32746d70f3659fa4fb7c70b0408307b646325a44acaa0478c6eba"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-dec-103-decision-validity-evidence-and-minutes-2026-10-29.pdf",
+          "bytes": 68412,
+          "sha256": "351352fe2f556240a89ed67c003b653bcf2146f2cccf51f325f563366896f7e5"
+        }
+      ]
+    },
+    {
+      "id": "aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29",
+      "title": "DEC-104 — protected reporting and implicated recipients",
+      "source_revision": "DEC-104, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29.html",
+          "bytes": 5933,
+          "sha256": "8f9d80de8414e6d26ffb6f895b75b292098791d6563bcfcea6110f59acfb194a"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29.md",
+          "bytes": 4994,
+          "sha256": "908017b887834edc0539fe2186613fbd2abbc9c5478f1b5133a49cd6f8230c36"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-dec-104-protected-reporting-and-implicated-recipients-2026-10-29.pdf",
+          "bytes": 67032,
+          "sha256": "4815c7179cf49f861446cb25de3bedd1d372e30273d16a20f1950b69af304d34"
+        }
+      ]
+    },
+    {
+      "id": "aos-dec-105-technical-control-limits-and-evidence-2026-10-29",
+      "title": "DEC-105 — technical-control limits and observed evidence",
+      "source_revision": "DEC-105, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-dec-105-technical-control-limits-and-evidence-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-dec-105-technical-control-limits-and-evidence-2026-10-29.html",
+          "bytes": 5909,
+          "sha256": "acd62870d0f7ee43c8e15fb752d340132834c9ac0dade9e0e98f784c3b2340e0"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-dec-105-technical-control-limits-and-evidence-2026-10-29.md",
+          "bytes": 4984,
+          "sha256": "e5676837fc676093f5d8a757aea2f023f6041ff50abd823c2212bc148c7f13c6"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-dec-105-technical-control-limits-and-evidence-2026-10-29.pdf",
+          "bytes": 66902,
+          "sha256": "546a9a627bd6444e845542bdb38f6bafebdc95af87bd014e37dcd517983530ce"
+        }
+      ]
+    },
+    {
+      "id": "aos-deliverability-review-s08-disposition-2026-10-29",
+      "title": "Deliverability review S-08 — rejected architectural change",
+      "source_revision": "S-08 disposition, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-deliverability-review-s08-disposition-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-deliverability-review-s08-disposition-2026-10-29.html",
+          "bytes": 3291,
+          "sha256": "539835f8601120f53279f34906ff7b6fa6f2b88231a38807957eea4fcb55b3c2"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-deliverability-review-s08-disposition-2026-10-29.md",
+          "bytes": 2426,
+          "sha256": "0a224767f8fd48761a5f03e8beed2b8e19302363a88b377da7e749138be02bfc"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-deliverability-review-s08-disposition-2026-10-29.pdf",
+          "bytes": 64198,
+          "sha256": "d243e19d2fc93c92e1c42aeb45a5c2dee9d598f904ccaf22148fed878b4f40c0"
+        }
+      ]
+    },
+    {
+      "id": "aos-deliverability-review-s09-and-final-disposition-2026-10-29",
+      "title": "Deliverability review — S-09 and final question dispositions",
+      "source_revision": "S-09 and final dispositions, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-deliverability-review-s09-and-final-disposition-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-deliverability-review-s09-and-final-disposition-2026-10-29.html",
+          "bytes": 6784,
+          "sha256": "b74222303d4e609e89ae67adfa383cb83d5b9bf9e3c210e22bcdb076996c5800"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-deliverability-review-s09-and-final-disposition-2026-10-29.md",
+          "bytes": 5382,
+          "sha256": "e7c664bd3bdfe193ffb330d62cf33b4d88d913a3b2d0d7e14898a17777d21c72"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-deliverability-review-s09-and-final-disposition-2026-10-29.pdf",
+          "bytes": 67283,
+          "sha256": "3da2812932bd556c780173d9edb4234d5c043a70695db89b63350aabf4a44c67"
+        }
+      ]
+    },
+    {
+      "id": "aos-documentary-corrections-2026-10-29",
+      "title": "AOS documentary corrections D-01–09 — 29 October 2026",
+      "source_revision": "D-01–09 corrections, 29 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-documentary-corrections-2026-10-29/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-documentary-corrections-2026-10-29.html",
+          "bytes": 9517,
+          "sha256": "75ef09a18edef36951ad6f6687f39aacfb3ce3bc3bde870033ca0811533b1e58"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-documentary-corrections-2026-10-29.md",
+          "bytes": 7739,
+          "sha256": "c392c8040144a989e0373545be037b57cd534f54bacef508d3a7b251fba7239c"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-documentary-corrections-2026-10-29.pdf",
+          "bytes": 68777,
+          "sha256": "9c9b1fdadf06df624a4c4f5cda4648c3d88c09a19a68fe4cd8df0e31ed4f1bdb"
+        }
+      ]
+    },
+    {
+      "id": "aos-gil-v2-comparison-and-reconciliation-v0-1",
+      "title": "AOS — GIL v2 comparison and reconciliation",
+      "source_revision": "v0.3",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-gil-v2-comparison-and-reconciliation-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/aos-gil-v2-comparison-and-reconciliation-v0-1.html",
+          "bytes": 28613,
+          "sha256": "5000ad5d5a52adc8419f76232b8e7442b2ecc81747c7a905412fc7175ddbf2a2"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/aos-gil-v2-comparison-and-reconciliation-v0-1.md",
+          "bytes": 24891,
+          "sha256": "0cfd54045d33c2a5c4d127d19d568b08a8f5e989ba024539717a742a6a6b5e20"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/aos-gil-v2-comparison-and-reconciliation-v0-1.pdf",
+          "bytes": 88972,
+          "sha256": "3086b98ab6fcb2198b95dafabb47171e6f05e032b255d0c0944c2cc9b97f2c11"
+        }
+      ]
+    },
+    {
+      "id": "far-001-boundary-functional-architecture-living-specification",
+      "title": "FAR-001 — Boundary Intelligence, Functional Architecture and the Living Specification",
+      "source_revision": "FAR-001, 29 September 2026 source decision log synthesis",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/far-001-boundary-functional-architecture-living-specification/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/far-001-boundary-functional-architecture-living-specification.html",
+          "bytes": 7441,
+          "sha256": "16fae7f5426a6fd624ca80184f2c09f00bb5defb9802488edd4194e9c818aa61"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/far-001-boundary-functional-architecture-living-specification.md",
+          "bytes": 6050,
+          "sha256": "c940cb66dd5a9512809300357f32498dd55fa568107c1f8084bc825876000dbb"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/far-001-boundary-functional-architecture-living-specification.pdf",
+          "bytes": 68234,
+          "sha256": "b8b98f38f77f8fff81e8335947a8dd53ad466e559ab61a5c45ddce797ea38734"
+        }
+      ]
+    },
+    {
+      "id": "far-001-reconciliation-v0-1",
+      "title": "FAR-001 reconciliation with the controlled AOS architecture",
+      "source_revision": "FAR-001 reconciliation v0.1, 3 October 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/far-001-reconciliation-v0-1/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Supporting-Specifications/far-001-reconciliation-v0-1.html",
+          "bytes": 23985,
+          "sha256": "a39d21d82f53bc51ece14ed76bce38f064c4289cefa16301b3de8091032f4d1b"
+        },
+        {
+          "format": "md",
+          "path": "Supporting-Specifications/far-001-reconciliation-v0-1.md",
+          "bytes": 20233,
+          "sha256": "2f314c89e8e45066adf34006b0ac8063ec4ee7b073c8d8f6f9e0e33f374ab6d9"
+        },
+        {
+          "format": "pdf",
+          "path": "Supporting-Specifications/far-001-reconciliation-v0-1.pdf",
+          "bytes": 84892,
+          "sha256": "cf650c322ddf61a0d975c13ec3306c75f13ccf62f601a62df26691056c235203"
+        }
+      ]
+    },
+    {
+      "id": "aos-historical-source-summary",
+      "title": "AOS historical source summary",
+      "source_revision": "Public descriptive summary of the 18 September 2026 source manifest v0.1",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-historical-source-summary/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-historical-source-summary.html",
+          "bytes": 2032,
+          "sha256": "769bf232ed4bff0c0119cb34048b79d20d14a30526411a283b6cd75fb3fa2e07"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-historical-source-summary.md",
+          "bytes": 1352,
+          "sha256": "7d0677b362d71d3f136517a31a0039fff68d194050cf28c4d8a56c4b4b7ee5fa"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-historical-source-summary.pdf",
+          "bytes": 63290,
+          "sha256": "102dea898d208ab85862c3330e332ec345ac689d7b72a931a0286ff1e0f506b6"
+        }
+      ]
+    },
+    {
+      "id": "aos-00",
+      "title": "AOS-00 — System Architecture and Specification Conventions",
+      "source_revision": "v0.55",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-00/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-00.html",
+          "bytes": 259370,
+          "sha256": "9ccf4ddff9477c67f537300b7f73742dd2163e8e9763f096e64068597720284c"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-00.md",
+          "bytes": 240298,
+          "sha256": "d5fa25fcc409ae7af5794ea77c96c6b6f3698b5a6aa3a3944ee84d9b48a6b4b3"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-00.pdf",
+          "bytes": 263793,
+          "sha256": "40b02cf046138a109ce882feeaec2ec103f33d27433a23cf8e89d4c9f97985ab"
+        }
+      ]
+    },
+    {
+      "id": "project-objective",
+      "title": "AOS Project Objective",
+      "source_revision": "Unnumbered Project Objective, source-manifest digest matches",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/project-objective/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/project-objective.html",
+          "bytes": 2136,
+          "sha256": "00fca76e9f40aa902070f27f4de90e9202776e9e3803cd304f8a96b1d7fadc3a"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/project-objective.md",
+          "bytes": 1491,
+          "sha256": "0ce629ade512246752ba3163a8330abfd404fb8f5ccf948b5f9953e68cdae549"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/project-objective.pdf",
+          "bytes": 63533,
+          "sha256": "6b670cc86c98f9dbc77fce6dddcd33ae05d7e2b71a60861e77c1b72c0d24fae5"
+        }
+      ]
+    },
+    {
+      "id": "specification-map",
+      "title": "AOS specification map",
+      "source_revision": "v0.55",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/specification-map/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/specification-map.html",
+          "bytes": 154628,
+          "sha256": "b8afe79bc28b7fdbeef0f5ac71ffc5293cd1beca387a9e1c9644cf2289610777"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/specification-map.md",
+          "bytes": 143796,
+          "sha256": "af2fcb096df3aeeab03de3464c18ffc899de14406f60d6c146ab6f39e3d496e6"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/specification-map.pdf",
+          "bytes": 178429,
+          "sha256": "651ccca3c1599e564178cc0e320b1c23250cb25d5dbf10223e8c74f840155eb6"
+        }
+      ]
+    },
+    {
+      "id": "specification-quality-standard",
+      "title": "AOS Specification Quality Standard",
+      "source_revision": "AOS-QS v0.1, 18 September 2026",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/specification-quality-standard/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/specification-quality-standard.html",
+          "bytes": 32462,
+          "sha256": "ef05e1304b79b4419d957e63ae77f3f924b11e3cc0226fcf3a4a4546414f4007"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/specification-quality-standard.md",
+          "bytes": 27953,
+          "sha256": "9987ed4ce334d2fe88832e83d0a0a7ce89fae252d3cad7ea6db89ddbf0d06bbe"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/specification-quality-standard.pdf",
+          "bytes": 89355,
+          "sha256": "a2e3a7b523caa96fe6f9570dac4987b9a357970a6fd479ec618abe6cdbb912e3"
+        }
+      ]
+    },
+    {
+      "id": "aos-reasoning-principles-v6",
+      "title": "AOS Reasoning Principles",
+      "source_revision": "Controlled RP v6, original source-manifest digest matches",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/aos-reasoning-principles-v6/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/aos-reasoning-principles-v6.html",
+          "bytes": 53570,
+          "sha256": "5d936dec1b5a871edec2f68bd70e031f4e80cb39f8f231b8c34d9adbed5b02cb"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/aos-reasoning-principles-v6.md",
+          "bytes": 50640,
+          "sha256": "a1b18d4f51aaa08ace2d09d5ba4eb4b8f85baf691dfa7881f509e6e53cdce4f9"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/aos-reasoning-principles-v6.pdf",
+          "bytes": 243951,
+          "sha256": "df507390ce476014b82a47920aabb3d51998dfe0779fb7a254979b7493337f0f"
+        },
+        {
+          "format": "docx",
+          "path": "Foundation/aos-reasoning-principles-v6.docx",
+          "bytes": 43458,
+          "sha256": "117434756209108d6d0c469bfffeb87d34273d1c1b98136f2357ab42d41d51dd"
+        }
+      ]
+    },
+    {
+      "id": "foundational-principles-v4",
+      "title": "Foundational Principles",
+      "source_revision": "Controlled FP v4, original source-manifest digest matches",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/foundational-principles-v4/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/foundational-principles-v4.html",
+          "bytes": 11765,
+          "sha256": "f8795415899740ecd642e0e71e63c0c94fc8f3d9b020f8e7d2fd59e952dbc14f"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/foundational-principles-v4.md",
+          "bytes": 10771,
+          "sha256": "16e5f8d01aa9597bebb4180fec8d406a2131761e534cb3061f38d1340553058a"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/foundational-principles-v4.pdf",
+          "bytes": 87144,
+          "sha256": "914d1493deb3648d281f2a7086dd50eb9f4cfb4419cee5b1e2069c5ad47368d8"
+        },
+        {
+          "format": "docx",
+          "path": "Foundation/foundational-principles-v4.docx",
+          "bytes": 16755,
+          "sha256": "4452fe04790cf8f3914fb413ae788159401e2517bd38efe6ef5cbac6183eed5c"
+        }
+      ]
+    },
+    {
+      "id": "governance-intelligence-tests",
+      "title": "The Governance Intelligence Tests",
+      "source_revision": "Governance Intelligence Tests, unnumbered, original source-manifest digest matches",
+      "edition_url": "https://www.governanceintelligence.co.uk/aos/releases/v1.0/doc/governance-intelligence-tests/",
+      "licence": "CC-BY-4.0",
+      "files": [
+        {
+          "format": "html",
+          "path": "Foundation/governance-intelligence-tests.html",
+          "bytes": 19233,
+          "sha256": "ec731c318ea4f3a5beeec78112484d7852342321c6e4c10db2ca3c78e16f26c4"
+        },
+        {
+          "format": "md",
+          "path": "Foundation/governance-intelligence-tests.md",
+          "bytes": 17040,
+          "sha256": "b6aef4fe7cb39b9c993c4b42153ea9d8991f00d2316fdde431218029cbf11a83"
+        },
+        {
+          "format": "pdf",
+          "path": "Foundation/governance-intelligence-tests.pdf",
+          "bytes": 127625,
+          "sha256": "7e52b62183e057fdcc27afe4141f90fb6b6ae6ede86e0e8464825bb9eba408de"
+        },
+        {
+          "format": "docx",
+          "path": "Foundation/governance-intelligence-tests.docx",
+          "bytes": 21948,
+          "sha256": "aa5271dd356a867bf13abd76974491f1f8433b8749c9c5d8df05cb77b9e54a68"
+        }
+      ]
+    }
+  ],
+  "supporting_files": [
+    {
+      "path": "ATTRIBUTION.md",
+      "sha256": "49a7d1f9d966eac9ab489f9f693c63314b580107c174fb35daf5b5fa0e63e592",
+      "bytes": 998
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "cc19bbac2dde4db2d948d54eb7039b4ef8b3a9d730e26f865028c1e553a6b696",
+      "bytes": 393
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "bytes": 18657
+    },
+    {
+      "path": "README.md",
+      "sha256": "7d280917a3df165eb7d7bf2a2cc6d35de8c4521fec435847f5c3b2a44d21020d",
+      "bytes": 1352
+    },
+    {
+      "path": "edition.css",
+      "sha256": "ad400b0abfe17999112f3daaeacc0da60dad52d2bdf58c840be48b5da6045796",
+      "bytes": 592
+    },
+    {
+      "path": "index.html",
+      "sha256": "7c1ddb68ed661fb9312fc1ec8a9f29df5ba0c8d2fa6e37dc3ee176c08a34cf61",
+      "bytes": 21689
+    }
+  ]
+}
